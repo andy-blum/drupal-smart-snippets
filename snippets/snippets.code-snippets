@@ -1,0 +1,3733 @@
+{
+	"hook_aggregator_fetcher_info_alter": {
+		"prefix": "hook_aggregator_fetcher_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_aggregator_fetcher_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_aggregator_fetcher_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on the available fetchers.",
+		"scope": "php, theme, module"
+	},
+	"hook_aggregator_parser_info_alter": {
+		"prefix": "hook_aggregator_parser_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_aggregator_parser_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_aggregator_parser_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on the available parsers.",
+		"scope": "php, theme, module"
+	},
+	"hook_aggregator_processor_info_alter": {
+		"prefix": "hook_aggregator_processor_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_aggregator_processor_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_aggregator_processor_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on the available processors.",
+		"scope": "php, theme, module"
+	},
+	"hook_ajax_render_alter": {
+		"prefix": "hook_ajax_render_alter",
+		"body": [
+			"/**",
+			" * Implements hook_ajax_render_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_ajax_render_alter(array &\\$data) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the Ajax command data that is sent to the client.",
+		"scope": "php, theme, module"
+	},
+	"hook_archiver_info_alter": {
+		"prefix": "hook_archiver_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_archiver_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_archiver_info_alter(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter archiver information declared by other modules.",
+		"scope": "php, theme, module"
+	},
+	"hook_batch_alter": {
+		"prefix": "hook_batch_alter",
+		"body": [
+			"/**",
+			" * Implements hook_batch_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_batch_alter(&\\$batch) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter batch information before a batch is processed.",
+		"scope": "php, theme, module"
+	},
+	"hook_block_access": {
+		"prefix": "hook_block_access",
+		"body": [
+			"/**",
+			" * Implements hook_block_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_access(\\Drupal\\block\\Entity\\Block \\$block, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Control access to a block instance.",
+		"scope": "php, theme, module"
+	},
+	"hook_block_build_alter": {
+		"prefix": "hook_block_build_alter",
+		"body": [
+			"/**",
+			" * Implements hook_block_build_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_build_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the result of \\Drupal\\Core\\Block\\BlockBase::build().",
+		"scope": "php, theme, module"
+	},
+	"hook_block_build_BASE_BLOCK_ID_alter": {
+		"prefix": "hook_block_build_BASE_BLOCK_ID_alter",
+		"body": [
+			"/**",
+			" * Implements hook_block_build_BASE_BLOCK_ID_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_build_${2:BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+			" $0",
+			"}"
+		],
+		"description": "Provide a block plugin specific block_build alteration.",
+		"scope": "php, theme, module"
+	},
+	"hook_block_view_alter": {
+		"prefix": "hook_block_view_alter",
+		"body": [
+			"/**",
+			" * Implements hook_block_view_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_view_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the result of \\Drupal\\Core\\Block\\BlockBase::build().",
+		"scope": "php, theme, module"
+	},
+	"hook_block_view_BASE_BLOCK_ID_alter": {
+		"prefix": "hook_block_view_BASE_BLOCK_ID_alter",
+		"body": [
+			"/**",
+			" * Implements hook_block_view_BASE_BLOCK_ID_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_view_${2:BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+			" $0",
+			"}"
+		],
+		"description": "Provide a block plugin specific block_view alteration.",
+		"scope": "php, theme, module"
+	},
+	"hook_cache_flush": {
+		"prefix": "hook_cache_flush",
+		"body": [
+			"/**",
+			" * Implements hook_cache_flush().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_cache_flush() {",
+			" $0",
+			"}"
+		],
+		"description": "Flush all persistent and static caches.",
+		"scope": "php, theme, module"
+	},
+	"hook_ckeditor_css_alter": {
+		"prefix": "hook_ckeditor_css_alter",
+		"body": [
+			"/**",
+			" * Implements hook_ckeditor_css_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_css_alter(array &\\$css, Editor \\$editor) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of CSS files that will be added to a CKEditor instance.",
+		"scope": "php, theme, module"
+	},
+	"hook_ckeditor_plugin_info_alter": {
+		"prefix": "hook_ckeditor_plugin_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_ckeditor_plugin_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_plugin_info_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available CKEditor plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_comment_links_alter": {
+		"prefix": "hook_comment_links_alter",
+		"body": [
+			"/**",
+			" * Implements hook_comment_links_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_comment_links_alter(array &\\$links, CommentInterface \\$entity, array &\\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the links of a comment.",
+		"scope": "php, theme, module"
+	},
+	"hook_config_import_steps_alter": {
+		"prefix": "hook_config_import_steps_alter",
+		"body": [
+			"/**",
+			" * Implements hook_config_import_steps_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_config_import_steps_alter(&\\$sync_steps, \\Drupal\\Core\\Config\\ConfigImporter \\$config_importer) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the configuration synchronization steps.",
+		"scope": "php, theme, module"
+	},
+	"hook_config_schema_info_alter": {
+		"prefix": "hook_config_schema_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_config_schema_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_config_schema_info_alter(&\\$definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter config typed data definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_config_translation_info": {
+		"prefix": "hook_config_translation_info",
+		"body": [
+			"/**",
+			" * Implements hook_config_translation_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_config_translation_info(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Introduce dynamic translation tabs for translation of configuration.",
+		"scope": "php, theme, module"
+	},
+	"hook_config_translation_info_alter": {
+		"prefix": "hook_config_translation_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_config_translation_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_config_translation_info_alter(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter existing translation tabs for translation of configuration.",
+		"scope": "php, theme, module"
+	},
+	"hook_contextual_links_alter": {
+		"prefix": "hook_contextual_links_alter",
+		"body": [
+			"/**",
+			" * Implements hook_contextual_links_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_alter(array &\\$links, \\$group, array \\$route_parameters) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter contextual links before they are rendered.",
+		"scope": "php, theme, module"
+	},
+	"hook_contextual_links_plugins_alter": {
+		"prefix": "hook_contextual_links_plugins_alter",
+		"body": [
+			"/**",
+			" * Implements hook_contextual_links_plugins_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_plugins_alter(array &\\$contextual_links) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the plugin definition of contextual links.",
+		"scope": "php, theme, module"
+	},
+	"hook_contextual_links_view_alter": {
+		"prefix": "hook_contextual_links_view_alter",
+		"body": [
+			"/**",
+			" * Implements hook_contextual_links_view_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_view_alter(&\\$element, \\$items) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter a contextual links element before it is rendered.",
+		"scope": "php, theme, module"
+	},
+	"hook_countries_alter": {
+		"prefix": "hook_countries_alter",
+		"body": [
+			"/**",
+			" * Implements hook_countries_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_countries_alter(&\\$countries) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the default country list.",
+		"scope": "php, theme, module"
+	},
+	"hook_cron": {
+		"prefix": "hook_cron",
+		"body": [
+			"/**",
+			" * Implements hook_cron().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_cron() {",
+			" $0",
+			"}"
+		],
+		"description": "Perform periodic actions.",
+		"scope": "php, theme, module"
+	},
+	"hook_css_alter": {
+		"prefix": "hook_css_alter",
+		"body": [
+			"/**",
+			" * Implements hook_css_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_css_alter(&\\$css, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter CSS files before they are output on the page.",
+		"scope": "php, theme, module"
+	},
+	"hook_data_type_info_alter": {
+		"prefix": "hook_data_type_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_data_type_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_data_type_info_alter(&\\$data_types) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter available data types for typed data wrappers.",
+		"scope": "php, theme, module"
+	},
+	"hook_display_variant_plugin_alter": {
+		"prefix": "hook_display_variant_plugin_alter",
+		"body": [
+			"/**",
+			" * Implements hook_display_variant_plugin_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_display_variant_plugin_alter(array &\\$definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter display variant plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_editor_info_alter": {
+		"prefix": "hook_editor_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_editor_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_editor_info_alter(array &\\$editors) {",
+			" $0",
+			"}"
+		],
+		"description": "Performs alterations on text editor definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_editor_js_settings_alter": {
+		"prefix": "hook_editor_js_settings_alter",
+		"body": [
+			"/**",
+			" * Implements hook_editor_js_settings_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_editor_js_settings_alter(array &\\$settings) {",
+			" $0",
+			"}"
+		],
+		"description": "Modifies JavaScript settings that are added for text editors.",
+		"scope": "php, theme, module"
+	},
+	"hook_editor_xss_filter_alter": {
+		"prefix": "hook_editor_xss_filter_alter",
+		"body": [
+			"/**",
+			" * Implements hook_editor_xss_filter_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_editor_xss_filter_alter(&\\$editor_xss_filter_class, FilterFormatInterface \\$format, FilterFormatInterface \\$original_format = ${2:NULL}) {",
+			" $0",
+			"}"
+		],
+		"description": "Modifies the text editor XSS filter that will used for the given text format.",
+		"scope": "php, theme, module"
+	},
+	"hook_element_info_alter": {
+		"prefix": "hook_element_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_element_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_element_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the element type information returned from modules.",
+		"scope": "php, theme, module"
+	},
+	"hook_element_plugin_alter": {
+		"prefix": "hook_element_plugin_alter",
+		"body": [
+			"/**",
+			" * Implements hook_element_plugin_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_element_plugin_alter(array &\\$definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter Element plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_access": {
+		"prefix": "hook_entity_access",
+		"body": [
+			"/**",
+			" * Implements hook_entity_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_access(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Control entity operation access.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_base_field_info": {
+		"prefix": "hook_entity_base_field_info",
+		"body": [
+			"/**",
+			" * Implements hook_entity_base_field_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_base_field_info(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+			" $0",
+			"}"
+		],
+		"description": "Provides custom base field definitions for a content entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_base_field_info_alter": {
+		"prefix": "hook_entity_base_field_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_base_field_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_base_field_info_alter(&\\$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter base field definitions for a content entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_build_defaults_alter": {
+		"prefix": "hook_entity_build_defaults_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_build_defaults_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_build_defaults_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$view_mode) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter entity renderable values before cache checking in drupal_render().",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_bundle_create": {
+		"prefix": "hook_entity_bundle_create",
+		"body": [
+			"/**",
+			" * Implements hook_entity_bundle_create().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_create(\\$entity_type_id, \\$bundle) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on entity_bundle_create().",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_bundle_delete": {
+		"prefix": "hook_entity_bundle_delete",
+		"body": [
+			"/**",
+			" * Implements hook_entity_bundle_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_delete(\\$entity_type_id, \\$bundle) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on entity_bundle_delete().",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_bundle_field_info": {
+		"prefix": "hook_entity_bundle_field_info",
+		"body": [
+			"/**",
+			" * Implements hook_entity_bundle_field_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_field_info(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\$bundle, array \\$base_field_definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Provides field definitions for a specific bundle within an entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_bundle_field_info_alter": {
+		"prefix": "hook_entity_bundle_field_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_bundle_field_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_field_info_alter(&\\$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\$bundle) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter bundle field definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_bundle_info": {
+		"prefix": "hook_entity_bundle_info",
+		"body": [
+			"/**",
+			" * Implements hook_entity_bundle_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_info() {",
+			" $0",
+			"}"
+		],
+		"description": "Describe the bundles for entity types.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_bundle_info_alter": {
+		"prefix": "hook_entity_bundle_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_bundle_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_info_alter(&\\$bundles) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the bundles for entity types.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_create": {
+		"prefix": "hook_entity_create",
+		"body": [
+			"/**",
+			" * Implements hook_entity_create().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_create(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when creating a new entity.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_create_access": {
+		"prefix": "hook_entity_create_access",
+		"body": [
+			"/**",
+			" * Implements hook_entity_create_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_create_access(\\Drupal\\Core\\Session\\AccountInterface \\$account, array \\$context, \\$entity_bundle) {",
+			" $0",
+			"}"
+		],
+		"description": "Control entity create access.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_delete": {
+		"prefix": "hook_entity_delete",
+		"body": [
+			"/**",
+			" * Implements hook_entity_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity deletion.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_display_build_alter": {
+		"prefix": "hook_entity_display_build_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_display_build_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_display_build_alter(&\\$build, \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the render array generated by an EntityDisplay for an entity.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_extra_field_info": {
+		"prefix": "hook_entity_extra_field_info",
+		"body": [
+			"/**",
+			" * Implements hook_entity_extra_field_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_extra_field_info() {",
+			" $0",
+			"}"
+		],
+		"description": "Exposes \"pseudo-field\" components on content entities.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_extra_field_info_alter": {
+		"prefix": "hook_entity_extra_field_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_extra_field_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_extra_field_info_alter(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter \"pseudo-field\" components on content entities.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_field_access": {
+		"prefix": "hook_entity_field_access",
+		"body": [
+			"/**",
+			" * Implements hook_entity_field_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_field_access(\\$operation, \\Drupal\\Core\\Field\\FieldDefinitionInterface \\$field_definition, \\Drupal\\Core\\Session\\AccountInterface \\$account, \\Drupal\\Core\\Field\\FieldItemListInterface \\$items = ${2:NULL}) {",
+			" $0",
+			"}"
+		],
+		"description": "Control access to fields.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_field_access_alter": {
+		"prefix": "hook_entity_field_access_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_field_access_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_field_access_alter(array &\\$grants, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the default access behavior for a given field.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_field_storage_info": {
+		"prefix": "hook_entity_field_storage_info",
+		"body": [
+			"/**",
+			" * Implements hook_entity_field_storage_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_field_storage_info(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+			" $0",
+			"}"
+		],
+		"description": "Provides field storage definitions for a content entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_field_storage_info_alter": {
+		"prefix": "hook_entity_field_storage_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_field_storage_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_field_storage_info_alter(&\\$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter field storage definitions for a content entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_field_values_init": {
+		"prefix": "hook_entity_field_values_init",
+		"body": [
+			"/**",
+			" * Implements hook_entity_field_values_init().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when initializing a fieldable entity object.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_form_display_alter": {
+		"prefix": "hook_entity_form_display_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_form_display_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_form_display_alter(\\Drupal\\Core\\Entity\\Display\\EntityFormDisplayInterface \\$form_display, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the settings used for displaying an entity form.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_insert": {
+		"prefix": "hook_entity_insert",
+		"body": [
+			"/**",
+			" * Implements hook_entity_insert().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_insert(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to creation of a new entity.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_load": {
+		"prefix": "hook_entity_load",
+		"body": [
+			"/**",
+			" * Implements hook_entity_load().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_load(array \\$entities, \\$entity_type_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on entities when loaded.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_operation": {
+		"prefix": "hook_entity_operation",
+		"body": [
+			"/**",
+			" * Implements hook_entity_operation().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_operation(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Declares entity operations.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_operation_alter": {
+		"prefix": "hook_entity_operation_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_operation_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_operation_alter(array &\\$operations, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter entity operations.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_predelete": {
+		"prefix": "hook_entity_predelete",
+		"body": [
+			"/**",
+			" * Implements hook_entity_predelete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_predelete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Act before entity deletion.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_preload": {
+		"prefix": "hook_entity_preload",
+		"body": [
+			"/**",
+			" * Implements hook_entity_preload().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_preload(array \\$ids, \\$entity_type_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on an array of entity IDs before they are loaded.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_prepare_form": {
+		"prefix": "hook_entity_prepare_form",
+		"body": [
+			"/**",
+			" * Implements hook_entity_prepare_form().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts on an entity object about to be shown on an entity form.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_prepare_view": {
+		"prefix": "hook_entity_prepare_view",
+		"body": [
+			"/**",
+			" * Implements hook_entity_prepare_view().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_prepare_view(\\$entity_type_id, array \\$entities, array \\$displays, \\$view_mode) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on entities as they are being prepared for view.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_presave": {
+		"prefix": "hook_entity_presave",
+		"body": [
+			"/**",
+			" * Implements hook_entity_presave().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_presave(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on an entity before it is created or updated.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_revision_create": {
+		"prefix": "hook_entity_revision_create",
+		"body": [
+			"/**",
+			" * Implements hook_entity_revision_create().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_create(Drupal\\Core\\Entity\\EntityInterface \\$new_revision, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity revision creation.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_revision_delete": {
+		"prefix": "hook_entity_revision_delete",
+		"body": [
+			"/**",
+			" * Implements hook_entity_revision_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity revision deletion.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_storage_load": {
+		"prefix": "hook_entity_storage_load",
+		"body": [
+			"/**",
+			" * Implements hook_entity_storage_load().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_storage_load(array \\$entities, \\$entity_type) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on content entities when loaded from the storage.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_translation_create": {
+		"prefix": "hook_entity_translation_create",
+		"body": [
+			"/**",
+			" * Implements hook_entity_translation_create().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_create(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when creating a new entity translation.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_translation_delete": {
+		"prefix": "hook_entity_translation_delete",
+		"body": [
+			"/**",
+			" * Implements hook_entity_translation_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity translation deletion.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_translation_insert": {
+		"prefix": "hook_entity_translation_insert",
+		"body": [
+			"/**",
+			" * Implements hook_entity_translation_insert().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to creation of a new entity translation.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_access": {
+		"prefix": "hook_ENTITY_TYPE_access",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_access(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Control entity operation access for a specific entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_type_alter": {
+		"prefix": "hook_entity_type_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_type_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_type_alter(array &\\$entity_types) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the entity type definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_type_build": {
+		"prefix": "hook_entity_type_build",
+		"body": [
+			"/**",
+			" * Implements hook_entity_type_build().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_type_build(array &\\$entity_types) {",
+			" $0",
+			"}"
+		],
+		"description": "Add to entity type definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_build_defaults_alter": {
+		"prefix": "hook_ENTITY_TYPE_build_defaults_alter",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_build_defaults_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_build_defaults_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$view_mode) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter entity renderable values before cache checking in drupal_render().",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_create": {
+		"prefix": "hook_ENTITY_TYPE_create",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_create().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when creating a new entity of a specific type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_create_access": {
+		"prefix": "hook_ENTITY_TYPE_create_access",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_create_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create_access(\\Drupal\\Core\\Session\\AccountInterface \\$account, array \\$context, \\$entity_bundle) {",
+			" $0",
+			"}"
+		],
+		"description": "Control entity create access for a specific entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_delete": {
+		"prefix": "hook_ENTITY_TYPE_delete",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity deletion of a particular type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_field_values_init": {
+		"prefix": "hook_ENTITY_TYPE_field_values_init",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_field_values_init().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when initializing a fieldable entity object.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_insert": {
+		"prefix": "hook_ENTITY_TYPE_insert",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_insert().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_insert(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to creation of a new entity of a particular type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_load": {
+		"prefix": "hook_ENTITY_TYPE_load",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_load().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_load(\\$entities) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on entities of a specific type when loaded.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_predelete": {
+		"prefix": "hook_ENTITY_TYPE_predelete",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_predelete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_predelete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Act before entity deletion of a particular entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_prepare_form": {
+		"prefix": "hook_ENTITY_TYPE_prepare_form",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_prepare_form().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts on a particular type of entity object about to be in an entity form.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_presave": {
+		"prefix": "hook_ENTITY_TYPE_presave",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_presave().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_presave(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on a specific type of entity before it is created or updated.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_revision_create": {
+		"prefix": "hook_ENTITY_TYPE_revision_create",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_revision_create().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_create(Drupal\\Core\\Entity\\EntityInterface \\$new_revision, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity revision creation.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_revision_delete": {
+		"prefix": "hook_ENTITY_TYPE_revision_delete",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_revision_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity revision deletion of a particular type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_storage_load": {
+		"prefix": "hook_ENTITY_TYPE_storage_load",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_storage_load().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_storage_load(array \\$entities) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on content entities of a given type when loaded from the storage.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_translation_create": {
+		"prefix": "hook_ENTITY_TYPE_translation_create",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_translation_create().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_create(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when creating a new entity translation of a specific type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_translation_delete": {
+		"prefix": "hook_ENTITY_TYPE_translation_delete",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_translation_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to entity translation deletion of a particular type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_translation_insert": {
+		"prefix": "hook_ENTITY_TYPE_translation_insert",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_translation_insert().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to creation of a new entity translation of a particular type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_update": {
+		"prefix": "hook_ENTITY_TYPE_update",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_update().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_update(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to updates to an entity of a particular type.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_view": {
+		"prefix": "hook_ENTITY_TYPE_view",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_view().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, \\$view_mode) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on entities of a particular type being assembled before rendering.",
+		"scope": "php, theme, module"
+	},
+	"hook_ENTITY_TYPE_view_alter": {
+		"prefix": "hook_ENTITY_TYPE_view_alter",
+		"body": [
+			"/**",
+			" * Implements hook_ENTITY_TYPE_view_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view_alter(array &\\$build, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the results of the entity build array for a particular entity type.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_update": {
+		"prefix": "hook_entity_update",
+		"body": [
+			"/**",
+			" * Implements hook_entity_update().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_update(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to updates to an entity.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_view": {
+		"prefix": "hook_entity_view",
+		"body": [
+			"/**",
+			" * Implements hook_entity_view().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, \\$view_mode) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on entities being assembled before rendering.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_view_alter": {
+		"prefix": "hook_entity_view_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_view_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_alter(array &\\$build, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the results of the entity build array.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_view_display_alter": {
+		"prefix": "hook_entity_view_display_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_view_display_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_display_alter(\\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the settings used for displaying an entity.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_view_mode_alter": {
+		"prefix": "hook_entity_view_mode_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_view_mode_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_alter(&\\$view_mode, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Change the view mode of an entity that is being displayed.",
+		"scope": "php, theme, module"
+	},
+	"hook_entity_view_mode_info_alter": {
+		"prefix": "hook_entity_view_mode_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_view_mode_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_info_alter(&\\$view_modes) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the view modes for entity types.",
+		"scope": "php, theme, module"
+	},
+	"hook_extension": {
+		"prefix": "hook_extension",
+		"body": [
+			"/**",
+			" * Implements hook_extension().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_extension() {",
+			" $0",
+			"}"
+		],
+		"description": "Declare a template file extension to be used with a theme engine.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_formatter_info_alter": {
+		"prefix": "hook_field_formatter_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_formatter_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_formatter_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on Field API formatter types.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_info_alter": {
+		"prefix": "hook_field_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_info_alter(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on Field API field types.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_info_max_weight": {
+		"prefix": "hook_field_info_max_weight",
+		"body": [
+			"/**",
+			" * Implements hook_field_info_max_weight().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_info_max_weight(\\$entity_type, \\$bundle, \\$context, \\$context_mode) {",
+			" $0",
+			"}"
+		],
+		"description": "Returns the maximum weight for the entity components handled by the module.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_purge_field": {
+		"prefix": "hook_field_purge_field",
+		"body": [
+			"/**",
+			" * Implements hook_field_purge_field().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_purge_field(\\Drupal\\field\\Entity\\FieldConfig \\$field) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when a field is being purged.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_purge_field_storage": {
+		"prefix": "hook_field_purge_field_storage",
+		"body": [
+			"/**",
+			" * Implements hook_field_purge_field_storage().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_purge_field_storage(\\Drupal\\field\\Entity\\FieldStorageConfig \\$field_storage) {",
+			" $0",
+			"}"
+		],
+		"description": "Acts when a field storage definition is being purged.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_storage_config_update_forbid": {
+		"prefix": "hook_field_storage_config_update_forbid",
+		"body": [
+			"/**",
+			" * Implements hook_field_storage_config_update_forbid().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_storage_config_update_forbid(\\Drupal\\field\\FieldStorageConfigInterface \\$field_storage, \\Drupal\\field\\FieldStorageConfigInterface \\$prior_field_storage) {",
+			" $0",
+			"}"
+		],
+		"description": "Forbid a field storage update from occurring.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_ui_preconfigured_options_alter": {
+		"prefix": "hook_field_ui_preconfigured_options_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_ui_preconfigured_options_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_ui_preconfigured_options_alter(array &\\$options, \\$field_type) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on preconfigured field options.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_views_data": {
+		"prefix": "hook_field_views_data",
+		"body": [
+			"/**",
+			" * Implements hook_field_views_data().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_views_data(\\Drupal\\field\\FieldStorageConfigInterface \\$field_storage) {",
+			" $0",
+			"}"
+		],
+		"description": "Override the default Views data for a Field API field.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_views_data_alter": {
+		"prefix": "hook_field_views_data_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_views_data_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_views_data_alter(array &\\$data, \\Drupal\\field\\FieldStorageConfigInterface \\$field_storage) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the Views data for a single Field API field.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_views_data_views_data_alter": {
+		"prefix": "hook_field_views_data_views_data_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_views_data_views_data_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_views_data_views_data_alter(array &\\$data, \\Drupal\\field\\FieldStorageConfigInterface \\$field) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the Views data on a per field basis.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_widget_form_alter": {
+		"prefix": "hook_field_widget_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter forms for field widgets provided by other modules.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_widget_info_alter": {
+		"prefix": "hook_field_widget_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on Field API widget types.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_widget_multivalue_form_alter": {
+		"prefix": "hook_field_widget_multivalue_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_multivalue_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter forms for multi-value field widgets provided by other modules.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_widget_multivalue_WIDGET_TYPE_form_alter": {
+		"prefix": "hook_field_widget_multivalue_WIDGET_TYPE_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter multi-value widget forms for a widget provided by another module.",
+		"scope": "php, theme, module"
+	},
+	"hook_field_widget_WIDGET_TYPE_form_alter": {
+		"prefix": "hook_field_widget_WIDGET_TYPE_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_WIDGET_TYPE_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${2:WIDGET_TYPE}_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter widget forms for a specific widget provided by another module.",
+		"scope": "php, theme, module"
+	},
+	"hook_filetransfer_info": {
+		"prefix": "hook_filetransfer_info",
+		"body": [
+			"/**",
+			" * Implements hook_filetransfer_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_filetransfer_info() {",
+			" $0",
+			"}"
+		],
+		"description": "Register information about FileTransfer classes provided by a module.",
+		"scope": "php, theme, module"
+	},
+	"hook_filetransfer_info_alter": {
+		"prefix": "hook_filetransfer_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_filetransfer_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_filetransfer_info_alter(&\\$filetransfer_info) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the FileTransfer class registry.",
+		"scope": "php, theme, module"
+	},
+	"hook_file_copy": {
+		"prefix": "hook_file_copy",
+		"body": [
+			"/**",
+			" * Implements hook_file_copy().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_copy(Drupal\\file\\FileInterface \\$file, Drupal\\file\\FileInterface \\$source) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to a file that has been copied.",
+		"scope": "php, theme, module"
+	},
+	"hook_file_download": {
+		"prefix": "hook_file_download",
+		"body": [
+			"/**",
+			" * Implements hook_file_download().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_download(\\$uri) {",
+			" $0",
+			"}"
+		],
+		"description": "Control access to private file downloads and specify HTTP headers.",
+		"scope": "php, theme, module"
+	},
+	"hook_file_mimetype_mapping_alter": {
+		"prefix": "hook_file_mimetype_mapping_alter",
+		"body": [
+			"/**",
+			" * Implements hook_file_mimetype_mapping_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_mimetype_mapping_alter(&\\$mapping) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter MIME type mappings used to determine MIME type from a file extension.",
+		"scope": "php, theme, module"
+	},
+	"hook_file_move": {
+		"prefix": "hook_file_move",
+		"body": [
+			"/**",
+			" * Implements hook_file_move().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_move(Drupal\\file\\FileInterface \\$file, Drupal\\file\\FileInterface \\$source) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to a file that has been moved.",
+		"scope": "php, theme, module"
+	},
+	"hook_file_url_alter": {
+		"prefix": "hook_file_url_alter",
+		"body": [
+			"/**",
+			" * Implements hook_file_url_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_url_alter(&\\$uri) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the URL to a file.",
+		"scope": "php, theme, module"
+	},
+	"hook_file_validate": {
+		"prefix": "hook_file_validate",
+		"body": [
+			"/**",
+			" * Implements hook_file_validate().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_validate(Drupal\\file\\FileInterface \\$file) {",
+			" $0",
+			"}"
+		],
+		"description": "Check that files meet a given criteria.",
+		"scope": "php, theme, module"
+	},
+	"hook_filter_format_disable": {
+		"prefix": "hook_filter_format_disable",
+		"body": [
+			"/**",
+			" * Implements hook_filter_format_disable().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_filter_format_disable(\\$format) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform actions when a text format has been disabled.",
+		"scope": "php, theme, module"
+	},
+	"hook_filter_info_alter": {
+		"prefix": "hook_filter_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_filter_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_filter_info_alter(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on filter definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_filter_secure_image_alter": {
+		"prefix": "hook_filter_secure_image_alter",
+		"body": [
+			"/**",
+			" * Implements hook_filter_secure_image_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_filter_secure_image_alter(&\\$image) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters images with an invalid source.",
+		"scope": "php, theme, module"
+	},
+	"hook_form_alter": {
+		"prefix": "hook_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_form_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations before a form is rendered.",
+		"scope": "php, theme, module"
+	},
+	"hook_form_BASE_FORM_ID_alter": {
+		"prefix": "hook_form_BASE_FORM_ID_alter",
+		"body": [
+			"/**",
+			" * Implements hook_form_BASE_FORM_ID_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_form_${2:BASE_FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Provide a form-specific alteration for shared ('base') forms.",
+		"scope": "php, theme, module"
+	},
+	"hook_form_FORM_ID_alter": {
+		"prefix": "hook_form_FORM_ID_alter",
+		"body": [
+			"/**",
+			" * Implements hook_form_FORM_ID_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_form_${2:FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Provide a form-specific alteration instead of the global hook_form_alter().",
+		"scope": "php, theme, module"
+	},
+	"hook_form_system_theme_settings_alter": {
+		"prefix": "hook_form_system_theme_settings_alter",
+		"body": [
+			"/**",
+			" * Implements hook_form_system_theme_settings_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_form_system_theme_settings_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+			" $0",
+			"}"
+		],
+		"description": "Allow themes to alter the theme-specific settings form.",
+		"scope": "php, theme, module"
+	},
+	"hook_hal_relation_uri_alter": {
+		"prefix": "hook_hal_relation_uri_alter",
+		"body": [
+			"/**",
+			" * Implements hook_hal_relation_uri_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_hal_relation_uri_alter(&\\$uri, \\$context = []) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the HAL relation URI.",
+		"scope": "php, theme, module"
+	},
+	"hook_hal_type_uri_alter": {
+		"prefix": "hook_hal_type_uri_alter",
+		"body": [
+			"/**",
+			" * Implements hook_hal_type_uri_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_hal_type_uri_alter(&\\$uri, \\$context = []) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the HAL type URI.",
+		"scope": "php, theme, module"
+	},
+	"hook_help": {
+		"prefix": "hook_help",
+		"body": [
+			"/**",
+			" * Implements hook_help().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_help(\\$route_name, \\Drupal\\Core\\Routing\\RouteMatchInterface \\$route_match) {",
+			" $0",
+			"}"
+		],
+		"description": "Provide online user help.",
+		"scope": "php, theme, module"
+	},
+	"hook_help_section_info_alter": {
+		"prefix": "hook_help_section_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_help_section_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_help_section_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on help page section plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_help_topics_info_alter": {
+		"prefix": "hook_help_topics_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_help_topics_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_help_topics_info_alter(array &\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on help topic definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_hook_info": {
+		"prefix": "hook_hook_info",
+		"body": [
+			"/**",
+			" * Implements hook_hook_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${1:${TM_FILENAME_BASE:hook}}_info() {",
+			" $0",
+			"}"
+		],
+		"description": "Defines one or more hooks that are exposed by a module.",
+		"scope": "php, theme, module"
+	},
+	"hook_image_effect_info_alter": {
+		"prefix": "hook_image_effect_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_image_effect_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_image_effect_info_alter(&\\$effects) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the information provided in \\Drupal\\image\\Annotation\\ImageEffect.",
+		"scope": "php, theme, module"
+	},
+	"hook_image_style_flush": {
+		"prefix": "hook_image_style_flush",
+		"body": [
+			"/**",
+			" * Implements hook_image_style_flush().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_image_style_flush(\\$style) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to image style flushing.",
+		"scope": "php, theme, module"
+	},
+	"hook_install": {
+		"prefix": "hook_install",
+		"body": [
+			"/**",
+			" * Implements hook_install().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_install(\\$is_syncing) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform setup tasks when the module is installed.",
+		"scope": "php, theme, module"
+	},
+	"hook_install_tasks": {
+		"prefix": "hook_install_tasks",
+		"body": [
+			"/**",
+			" * Implements hook_install_tasks().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_install_tasks(&\\$install_state) {",
+			" $0",
+			"}"
+		],
+		"description": "Return an array of tasks to be performed by an installation profile.",
+		"scope": "php, theme, module"
+	},
+	"hook_install_tasks_alter": {
+		"prefix": "hook_install_tasks_alter",
+		"body": [
+			"/**",
+			" * Implements hook_install_tasks_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_install_tasks_alter(&\\$tasks, \\$install_state) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the full list of installation tasks.",
+		"scope": "php, theme, module"
+	},
+	"hook_jsonapi_entity_field_filter_access": {
+		"prefix": "hook_jsonapi_entity_field_filter_access",
+		"body": [
+			"/**",
+			" * Implements hook_jsonapi_entity_field_filter_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_entity_field_filter_access(\\Drupal\\Core\\Field\\FieldDefinitionInterface \\$field_definition, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Restricts filtering access to the given field.",
+		"scope": "php, theme, module"
+	},
+	"hook_jsonapi_entity_filter_access": {
+		"prefix": "hook_jsonapi_entity_filter_access",
+		"body": [
+			"/**",
+			" * Implements hook_jsonapi_entity_filter_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_entity_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Controls access when filtering by entity data via JSON:API.",
+		"scope": "php, theme, module"
+	},
+	"hook_jsonapi_ENTITY_TYPE_filter_access": {
+		"prefix": "hook_jsonapi_ENTITY_TYPE_filter_access",
+		"body": [
+			"/**",
+			" * Implements hook_jsonapi_ENTITY_TYPE_filter_access().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_${2:ENTITY_TYPE}_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Controls access to filtering by entity data via JSON:API.",
+		"scope": "php, theme, module"
+	},
+	"hook_js_alter": {
+		"prefix": "hook_js_alter",
+		"body": [
+			"/**",
+			" * Implements hook_js_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_js_alter(&\\$javascript, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform necessary alterations to the JavaScript before it is presented on\nthe page.",
+		"scope": "php, theme, module"
+	},
+	"hook_js_settings_alter": {
+		"prefix": "hook_js_settings_alter",
+		"body": [
+			"/**",
+			" * Implements hook_js_settings_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_js_settings_alter(array &\\$settings, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform necessary alterations to the JavaScript settings (drupalSettings).",
+		"scope": "php, theme, module"
+	},
+	"hook_js_settings_build": {
+		"prefix": "hook_js_settings_build",
+		"body": [
+			"/**",
+			" * Implements hook_js_settings_build().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_js_settings_build(array &\\$settings, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the JavaScript settings (drupalSettings).",
+		"scope": "php, theme, module"
+	},
+	"hook_language_fallback_candidates_alter": {
+		"prefix": "hook_language_fallback_candidates_alter",
+		"body": [
+			"/**",
+			" * Implements hook_language_fallback_candidates_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_alter(array &\\$candidates, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to alter the language fallback candidates.",
+		"scope": "php, theme, module"
+	},
+	"hook_language_fallback_candidates_OPERATION_alter": {
+		"prefix": "hook_language_fallback_candidates_OPERATION_alter",
+		"body": [
+			"/**",
+			" * Implements hook_language_fallback_candidates_OPERATION_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_${2:OPERATION}_alter(array &\\$candidates, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to alter the fallback candidates for specific operations.",
+		"scope": "php, theme, module"
+	},
+	"hook_language_negotiation_info_alter": {
+		"prefix": "hook_language_negotiation_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_language_negotiation_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_language_negotiation_info_alter(array &\\$negotiation_info) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on language negotiation methods.",
+		"scope": "php, theme, module"
+	},
+	"hook_language_switch_links_alter": {
+		"prefix": "hook_language_switch_links_alter",
+		"body": [
+			"/**",
+			" * Implements hook_language_switch_links_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_language_switch_links_alter(array &\\$links, \\$type, \\Drupal\\Core\\Url \\$url) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on language switcher links.",
+		"scope": "php, theme, module"
+	},
+	"hook_language_types_info": {
+		"prefix": "hook_language_types_info",
+		"body": [
+			"/**",
+			" * Implements hook_language_types_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_language_types_info() {",
+			" $0",
+			"}"
+		],
+		"description": "Define language types.",
+		"scope": "php, theme, module"
+	},
+	"hook_language_types_info_alter": {
+		"prefix": "hook_language_types_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_language_types_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_language_types_info_alter(array &\\$language_types) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations on language types.",
+		"scope": "php, theme, module"
+	},
+	"hook_layout_alter": {
+		"prefix": "hook_layout_alter",
+		"body": [
+			"/**",
+			" * Implements hook_layout_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_layout_alter(&\\$definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to alter layout plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_library_info_alter": {
+		"prefix": "hook_library_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_library_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_library_info_alter(&\\$libraries, \\$extension) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter libraries provided by an extension.",
+		"scope": "php, theme, module"
+	},
+	"hook_library_info_build": {
+		"prefix": "hook_library_info_build",
+		"body": [
+			"/**",
+			" * Implements hook_library_info_build().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_library_info_build() {",
+			" $0",
+			"}"
+		],
+		"description": "Add dynamic library definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_link_alter": {
+		"prefix": "hook_link_alter",
+		"body": [
+			"/**",
+			" * Implements hook_link_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_link_alter(&\\$variables) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the parameters for links.",
+		"scope": "php, theme, module"
+	},
+	"hook_locale_translation_projects_alter": {
+		"prefix": "hook_locale_translation_projects_alter",
+		"body": [
+			"/**",
+			" * Implements hook_locale_translation_projects_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_locale_translation_projects_alter(&\\$projects) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the list of projects to be updated by locale's interface translation.",
+		"scope": "php, theme, module"
+	},
+	"hook_local_tasks_alter": {
+		"prefix": "hook_local_tasks_alter",
+		"body": [
+			"/**",
+			" * Implements hook_local_tasks_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_local_tasks_alter(&\\$local_tasks) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter local tasks plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_mail": {
+		"prefix": "hook_mail",
+		"body": [
+			"/**",
+			" * Implements hook_mail().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_mail(\\$key, &\\$message, \\$params) {",
+			" $0",
+			"}"
+		],
+		"description": "Prepares a message based on parameters;",
+		"scope": "php, theme, module"
+	},
+	"hook_mail_alter": {
+		"prefix": "hook_mail_alter",
+		"body": [
+			"/**",
+			" * Implements hook_mail_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_mail_alter(&\\$message) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter an email message created with MailManagerInterface->mail().",
+		"scope": "php, theme, module"
+	},
+	"hook_mail_backend_info_alter": {
+		"prefix": "hook_mail_backend_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_mail_backend_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_mail_backend_info_alter(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the list of mail backend plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_media_source_info_alter": {
+		"prefix": "hook_media_source_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_media_source_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_media_source_info_alter(array &\\$sources) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters the information provided in \\Drupal\\media\\Annotation\\MediaSource.",
+		"scope": "php, theme, module"
+	},
+	"hook_menu_links_discovered_alter": {
+		"prefix": "hook_menu_links_discovered_alter",
+		"body": [
+			"/**",
+			" * Implements hook_menu_links_discovered_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_menu_links_discovered_alter(&\\$links) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters all the menu links discovered by the menu link plugin manager.",
+		"scope": "php, theme, module"
+	},
+	"hook_menu_local_actions_alter": {
+		"prefix": "hook_menu_local_actions_alter",
+		"body": [
+			"/**",
+			" * Implements hook_menu_local_actions_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_menu_local_actions_alter(&\\$local_actions) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter local actions plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_menu_local_tasks_alter": {
+		"prefix": "hook_menu_local_tasks_alter",
+		"body": [
+			"/**",
+			" * Implements hook_menu_local_tasks_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_menu_local_tasks_alter(&\\$data, \\$route_name, \\Drupal\\Core\\Cache\\RefinableCacheableDependencyInterface &\\$cacheability) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter local tasks displayed on the page before they are rendered.",
+		"scope": "php, theme, module"
+	},
+	"hook_migrate_MIGRATION_ID_prepare_row": {
+		"prefix": "hook_migrate_MIGRATION_ID_prepare_row",
+		"body": [
+			"/**",
+			" * Implements hook_migrate_MIGRATION_ID_prepare_row().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_migrate_${2:MIGRATION_ID}_prepare_row(Row \\$row, MigrateSourceInterface \\$source, MigrationInterface \\$migration) {",
+			" $0",
+			"}"
+		],
+		"description": "Allows adding data to a row for a migration with the specified ID.",
+		"scope": "php, theme, module"
+	},
+	"hook_migrate_prepare_row": {
+		"prefix": "hook_migrate_prepare_row",
+		"body": [
+			"/**",
+			" * Implements hook_migrate_prepare_row().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_migrate_prepare_row(Row \\$row, MigrateSourceInterface \\$source, MigrationInterface \\$migration) {",
+			" $0",
+			"}"
+		],
+		"description": "Allows adding data to a row before processing it.",
+		"scope": "php, theme, module"
+	},
+	"hook_migration_plugins_alter": {
+		"prefix": "hook_migration_plugins_alter",
+		"body": [
+			"/**",
+			" * Implements hook_migration_plugins_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_migration_plugins_alter(array &\\$migrations) {",
+			" $0",
+			"}"
+		],
+		"description": "Allows altering the list of discovered migration plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_modules_installed": {
+		"prefix": "hook_modules_installed",
+		"body": [
+			"/**",
+			" * Implements hook_modules_installed().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_modules_installed(\\$modules, \\$is_syncing) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform necessary actions after modules are installed.",
+		"scope": "php, theme, module"
+	},
+	"hook_modules_uninstalled": {
+		"prefix": "hook_modules_uninstalled",
+		"body": [
+			"/**",
+			" * Implements hook_modules_uninstalled().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_modules_uninstalled(\\$modules, \\$is_syncing) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform necessary actions after modules are uninstalled.",
+		"scope": "php, theme, module"
+	},
+	"hook_module_implements_alter": {
+		"prefix": "hook_module_implements_alter",
+		"body": [
+			"/**",
+			" * Implements hook_module_implements_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_module_implements_alter(&\\$implementations, \\$hook) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the registry of modules implementing a hook.",
+		"scope": "php, theme, module"
+	},
+	"hook_module_preinstall": {
+		"prefix": "hook_module_preinstall",
+		"body": [
+			"/**",
+			" * Implements hook_module_preinstall().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_module_preinstall(\\$module) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform necessary actions before a module is installed.",
+		"scope": "php, theme, module"
+	},
+	"hook_module_preuninstall": {
+		"prefix": "hook_module_preuninstall",
+		"body": [
+			"/**",
+			" * Implements hook_module_preuninstall().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_module_preuninstall(\\$module) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform necessary actions before a module is uninstalled.",
+		"scope": "php, theme, module"
+	},
+	"hook_node_access_records": {
+		"prefix": "hook_node_access_records",
+		"body": [
+			"/**",
+			" * Implements hook_node_access_records().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_access_records(\\Drupal\\node\\NodeInterface \\$node) {",
+			" $0",
+			"}"
+		],
+		"description": "Set permissions for a node to be written to the database.",
+		"scope": "php, theme, module"
+	},
+	"hook_node_access_records_alter": {
+		"prefix": "hook_node_access_records_alter",
+		"body": [
+			"/**",
+			" * Implements hook_node_access_records_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_access_records_alter(&\\$grants, Drupal\\node\\NodeInterface \\$node) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter permissions for a node before it is written to the database.",
+		"scope": "php, theme, module"
+	},
+	"hook_node_grants": {
+		"prefix": "hook_node_grants",
+		"body": [
+			"/**",
+			" * Implements hook_node_grants().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_grants(\\Drupal\\Core\\Session\\AccountInterface \\$account, \\$op) {",
+			" $0",
+			"}"
+		],
+		"description": "Inform the node access system what permissions the user has.",
+		"scope": "php, theme, module"
+	},
+	"hook_node_grants_alter": {
+		"prefix": "hook_node_grants_alter",
+		"body": [
+			"/**",
+			" * Implements hook_node_grants_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_grants_alter(&\\$grants, \\Drupal\\Core\\Session\\AccountInterface \\$account, \\$op) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter user access rules when trying to view, edit or delete a node.",
+		"scope": "php, theme, module"
+	},
+	"hook_node_links_alter": {
+		"prefix": "hook_node_links_alter",
+		"body": [
+			"/**",
+			" * Implements hook_node_links_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_links_alter(array &\\$links, NodeInterface \\$entity, array &\\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the links of a node.",
+		"scope": "php, theme, module"
+	},
+	"hook_node_search_result": {
+		"prefix": "hook_node_search_result",
+		"body": [
+			"/**",
+			" * Implements hook_node_search_result().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_search_result(\\Drupal\\node\\NodeInterface \\$node) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on a node being displayed as a search result.",
+		"scope": "php, theme, module"
+	},
+	"hook_node_update_index": {
+		"prefix": "hook_node_update_index",
+		"body": [
+			"/**",
+			" * Implements hook_node_update_index().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_update_index(\\Drupal\\node\\NodeInterface \\$node) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on a node being indexed for searching.",
+		"scope": "php, theme, module"
+	},
+	"hook_oembed_resource_url_alter": {
+		"prefix": "hook_oembed_resource_url_alter",
+		"body": [
+			"/**",
+			" * Implements hook_oembed_resource_url_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_oembed_resource_url_alter(array &\\$parsed_url, \\Drupal\\media\\${2:OE}mbed\\Provider \\$provider) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters an oEmbed resource URL before it is fetched.",
+		"scope": "php, theme, module"
+	},
+	"hook_options_list_alter": {
+		"prefix": "hook_options_list_alter",
+		"body": [
+			"/**",
+			" * Implements hook_options_list_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_options_list_alter(array &\\$options, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters the list of options to be displayed for a field.",
+		"scope": "php, theme, module"
+	},
+	"hook_page_attachments": {
+		"prefix": "hook_page_attachments",
+		"body": [
+			"/**",
+			" * Implements hook_page_attachments().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_page_attachments(array &\\$attachments) {",
+			" $0",
+			"}"
+		],
+		"description": "Add attachments (typically assets) to a page before it is rendered.",
+		"scope": "php, theme, module"
+	},
+	"hook_page_attachments_alter": {
+		"prefix": "hook_page_attachments_alter",
+		"body": [
+			"/**",
+			" * Implements hook_page_attachments_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_page_attachments_alter(array &\\$attachments) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter attachments (typically assets) to a page before it is rendered.",
+		"scope": "php, theme, module"
+	},
+	"hook_page_bottom": {
+		"prefix": "hook_page_bottom",
+		"body": [
+			"/**",
+			" * Implements hook_page_bottom().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_page_bottom(array &\\$page_bottom) {",
+			" $0",
+			"}"
+		],
+		"description": "Add a renderable array to the bottom of the page.",
+		"scope": "php, theme, module"
+	},
+	"hook_page_top": {
+		"prefix": "hook_page_top",
+		"body": [
+			"/**",
+			" * Implements hook_page_top().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_page_top(array &\\$page_top) {",
+			" $0",
+			"}"
+		],
+		"description": "Add a renderable array to the top of the page.",
+		"scope": "php, theme, module"
+	},
+	"hook_path_delete": {
+		"prefix": "hook_path_delete",
+		"body": [
+			"/**",
+			" * Implements hook_path_delete().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_path_delete(\\$path) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to a path being deleted.",
+		"scope": "php, theme, module"
+	},
+	"hook_path_insert": {
+		"prefix": "hook_path_insert",
+		"body": [
+			"/**",
+			" * Implements hook_path_insert().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_path_insert(\\$path) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to a path being inserted.",
+		"scope": "php, theme, module"
+	},
+	"hook_path_update": {
+		"prefix": "hook_path_update",
+		"body": [
+			"/**",
+			" * Implements hook_path_update().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_path_update(\\$path) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to a path being updated.",
+		"scope": "php, theme, module"
+	},
+	"hook_plugin_filter_TYPE_alter": {
+		"prefix": "hook_plugin_filter_TYPE_alter",
+		"body": [
+			"/**",
+			" * Implements hook_plugin_filter_TYPE_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE}_alter(array &\\$definitions, array \\$extra, \\$consumer) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the filtering of plugin definitions for a specific plugin type.",
+		"scope": "php, theme, module"
+	},
+	"hook_plugin_filter_TYPE__CONSUMER_alter": {
+		"prefix": "hook_plugin_filter_TYPE__CONSUMER_alter",
+		"body": [
+			"/**",
+			" * Implements hook_plugin_filter_TYPE__CONSUMER_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE__CONSUMER}_alter(array &\\$definitions, array \\$extra) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the filtering of plugin definitions for a specific type and consumer.",
+		"scope": "php, theme, module"
+	},
+	"hook_post_update_NAME": {
+		"prefix": "hook_post_update_NAME",
+		"body": [
+			"/**",
+			" * Implements hook_post_update_NAME().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_post_update_${2:NAME}(&\\$sandbox) {",
+			" $0",
+			"}"
+		],
+		"description": "Executes an update which is intended to update data, like entities.",
+		"scope": "php, theme, module"
+	},
+	"hook_preprocess": {
+		"prefix": "hook_preprocess",
+		"body": [
+			"/**",
+			" * Implements hook_preprocess().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_preprocess(&\\$variables, \\$hook) {",
+			" $0",
+			"}"
+		],
+		"description": "Preprocess theme variables for templates.",
+		"scope": "php, theme, module"
+	},
+	"hook_preprocess_HOOK": {
+		"prefix": "hook_preprocess_HOOK",
+		"body": [
+			"/**",
+			" * Implements hook_preprocess_HOOK().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_preprocess_${2:HOOK}(&\\$variables) {",
+			" $0",
+			"}"
+		],
+		"description": "Preprocess theme variables for a specific theme hook.",
+		"scope": "php, theme, module"
+	},
+	"hook_query_alter": {
+		"prefix": "hook_query_alter",
+		"body": [
+			"/**",
+			" * Implements hook_query_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_query_alter(Drupal\\Core\\Database\\Query\\AlterableInterface \\$query) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations to a structured query.",
+		"scope": "php, theme, module"
+	},
+	"hook_query_TAG_alter": {
+		"prefix": "hook_query_TAG_alter",
+		"body": [
+			"/**",
+			" * Implements hook_query_TAG_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_query_${2:TAG}_alter(Drupal\\Core\\Database\\Query\\AlterableInterface \\$query) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations to a structured query for a given tag.",
+		"scope": "php, theme, module"
+	},
+	"hook_queue_info_alter": {
+		"prefix": "hook_queue_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_queue_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_queue_info_alter(&\\$queues) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter cron queue information before cron runs.",
+		"scope": "php, theme, module"
+	},
+	"hook_quickedit_editor_alter": {
+		"prefix": "hook_quickedit_editor_alter",
+		"body": [
+			"/**",
+			" * Implements hook_quickedit_editor_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_quickedit_editor_alter(&\\$editors) {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to alter in-place editor plugin metadata.",
+		"scope": "php, theme, module"
+	},
+	"hook_quickedit_render_field": {
+		"prefix": "hook_quickedit_render_field",
+		"body": [
+			"/**",
+			" * Implements hook_quickedit_render_field().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_quickedit_render_field(Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$field_name, \\$view_mode_id, \\$langcode) {",
+			" $0",
+			"}"
+		],
+		"description": "Returns a renderable array for the value of a single field in an entity.",
+		"scope": "php, theme, module"
+	},
+	"hook_ranking": {
+		"prefix": "hook_ranking",
+		"body": [
+			"/**",
+			" * Implements hook_ranking().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_ranking() {",
+			" $0",
+			"}"
+		],
+		"description": "Provide additional methods of scoring for core search results for nodes.",
+		"scope": "php, theme, module"
+	},
+	"hook_rdf_namespaces": {
+		"prefix": "hook_rdf_namespaces",
+		"body": [
+			"/**",
+			" * Implements hook_rdf_namespaces().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_rdf_namespaces() {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to define namespaces for RDF mappings.",
+		"scope": "php, theme, module"
+	},
+	"hook_rebuild": {
+		"prefix": "hook_rebuild",
+		"body": [
+			"/**",
+			" * Implements hook_rebuild().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_rebuild() {",
+			" $0",
+			"}"
+		],
+		"description": "Rebuild data based upon refreshed caches.",
+		"scope": "php, theme, module"
+	},
+	"hook_removed_post_updates": {
+		"prefix": "hook_removed_post_updates",
+		"body": [
+			"/**",
+			" * Implements hook_removed_post_updates().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_removed_post_updates() {",
+			" $0",
+			"}"
+		],
+		"description": "Return an array of removed hook_post_update_NAME() function names.",
+		"scope": "php, theme, module"
+	},
+	"hook_render_template": {
+		"prefix": "hook_render_template",
+		"body": [
+			"/**",
+			" * Implements hook_render_template().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_render_template(\\$template_file, \\$variables) {",
+			" $0",
+			"}"
+		],
+		"description": "Render a template using the theme engine.",
+		"scope": "php, theme, module"
+	},
+	"hook_requirements": {
+		"prefix": "hook_requirements",
+		"body": [
+			"/**",
+			" * Implements hook_requirements().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_requirements(\\$phase) {",
+			" $0",
+			"}"
+		],
+		"description": "Check installation requirements and do status reporting.",
+		"scope": "php, theme, module"
+	},
+	"hook_rest_relation_uri_alter": {
+		"prefix": "hook_rest_relation_uri_alter",
+		"body": [
+			"/**",
+			" * Implements hook_rest_relation_uri_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_rest_relation_uri_alter(&\\$uri, \\$context = []) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the REST relation URI.",
+		"scope": "php, theme, module"
+	},
+	"hook_rest_resource_alter": {
+		"prefix": "hook_rest_resource_alter",
+		"body": [
+			"/**",
+			" * Implements hook_rest_resource_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_rest_resource_alter(&\\$definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the resource plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_rest_type_uri_alter": {
+		"prefix": "hook_rest_type_uri_alter",
+		"body": [
+			"/**",
+			" * Implements hook_rest_type_uri_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_rest_type_uri_alter(&\\$uri, \\$context = []) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the REST type URI.",
+		"scope": "php, theme, module"
+	},
+	"hook_schema": {
+		"prefix": "hook_schema",
+		"body": [
+			"/**",
+			" * Implements hook_schema().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_schema() {",
+			" $0",
+			"}"
+		],
+		"description": "Define the current version of the database schema.",
+		"scope": "php, theme, module"
+	},
+	"hook_search_plugin_alter": {
+		"prefix": "hook_search_plugin_alter",
+		"body": [
+			"/**",
+			" * Implements hook_search_plugin_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_search_plugin_alter(array &\\$definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter search plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_search_preprocess": {
+		"prefix": "hook_search_preprocess",
+		"body": [
+			"/**",
+			" * Implements hook_search_preprocess().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_search_preprocess(\\$text, \\$langcode = ${2:NULL}) {",
+			" $0",
+			"}"
+		],
+		"description": "Preprocess text for search.",
+		"scope": "php, theme, module"
+	},
+	"hook_shortcut_default_set": {
+		"prefix": "hook_shortcut_default_set",
+		"body": [
+			"/**",
+			" * Implements hook_shortcut_default_set().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_shortcut_default_set(\\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Return the name of a default shortcut set for the provided user account.",
+		"scope": "php, theme, module"
+	},
+	"hook_simpletest_alter": {
+		"prefix": "hook_simpletest_alter",
+		"body": [
+			"/**",
+			" * Implements hook_simpletest_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_simpletest_alter(&\\$groups) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the list of tests.",
+		"scope": "php, theme, module"
+	},
+	"hook_system_breadcrumb_alter": {
+		"prefix": "hook_system_breadcrumb_alter",
+		"body": [
+			"/**",
+			" * Implements hook_system_breadcrumb_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_system_breadcrumb_alter(\\Drupal\\Core\\Breadcrumb\\Breadcrumb &\\$breadcrumb, \\Drupal\\Core\\Routing\\RouteMatchInterface \\$route_match, array \\$context) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform alterations to the breadcrumb built by the BreadcrumbManager.",
+		"scope": "php, theme, module"
+	},
+	"hook_system_info_alter": {
+		"prefix": "hook_system_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_system_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_system_info_alter(array &\\$info, \\Drupal\\Core\\Extension\\Extension \\$file, \\$type) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the information parsed from module and theme .info.yml files.",
+		"scope": "php, theme, module"
+	},
+	"hook_system_themes_page_alter": {
+		"prefix": "hook_system_themes_page_alter",
+		"body": [
+			"/**",
+			" * Implements hook_system_themes_page_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_system_themes_page_alter(&\\$theme_groups) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters theme operation links.",
+		"scope": "php, theme, module"
+	},
+	"hook_template_preprocess_default_variables_alter": {
+		"prefix": "hook_template_preprocess_default_variables_alter",
+		"body": [
+			"/**",
+			" * Implements hook_template_preprocess_default_variables_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_template_preprocess_default_variables_alter(&\\$variables) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the default, hook-independent variables for all templates.",
+		"scope": "php, theme, module"
+	},
+	"hook_test_finished": {
+		"prefix": "hook_test_finished",
+		"body": [
+			"/**",
+			" * Implements hook_test_finished().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_test_finished(\\$results) {",
+			" $0",
+			"}"
+		],
+		"description": "An individual test has finished.",
+		"scope": "php, theme, module"
+	},
+	"hook_test_group_finished": {
+		"prefix": "hook_test_group_finished",
+		"body": [
+			"/**",
+			" * Implements hook_test_group_finished().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_test_group_finished() {",
+			" $0",
+			"}"
+		],
+		"description": "A test group has finished.",
+		"scope": "php, theme, module"
+	},
+	"hook_test_group_started": {
+		"prefix": "hook_test_group_started",
+		"body": [
+			"/**",
+			" * Implements hook_test_group_started().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_test_group_started() {",
+			" $0",
+			"}"
+		],
+		"description": "A test group has started.",
+		"scope": "php, theme, module"
+	},
+	"hook_theme": {
+		"prefix": "hook_theme",
+		"body": [
+			"/**",
+			" * Implements hook_theme().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_theme(\\$existing, \\$type, \\$theme, \\$path) {",
+			" $0",
+			"}"
+		],
+		"description": "Register a module or theme's theme implementations.",
+		"scope": "php, theme, module"
+	},
+	"hook_themes_installed": {
+		"prefix": "hook_themes_installed",
+		"body": [
+			"/**",
+			" * Implements hook_themes_installed().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_themes_installed(\\$theme_list) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to themes being installed.",
+		"scope": "php, theme, module"
+	},
+	"hook_themes_uninstalled": {
+		"prefix": "hook_themes_uninstalled",
+		"body": [
+			"/**",
+			" * Implements hook_themes_uninstalled().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_themes_uninstalled(array \\$themes) {",
+			" $0",
+			"}"
+		],
+		"description": "Respond to themes being uninstalled.",
+		"scope": "php, theme, module"
+	},
+	"hook_theme_registry_alter": {
+		"prefix": "hook_theme_registry_alter",
+		"body": [
+			"/**",
+			" * Implements hook_theme_registry_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_theme_registry_alter(&\\$theme_registry) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the theme registry information returned from hook_theme().",
+		"scope": "php, theme, module"
+	},
+	"hook_theme_suggestions_alter": {
+		"prefix": "hook_theme_suggestions_alter",
+		"body": [
+			"/**",
+			" * Implements hook_theme_suggestions_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_alter(array &\\$suggestions, array \\$variables, \\$hook) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters named suggestions for all theme hooks.",
+		"scope": "php, theme, module"
+	},
+	"hook_theme_suggestions_HOOK": {
+		"prefix": "hook_theme_suggestions_HOOK",
+		"body": [
+			"/**",
+			" * Implements hook_theme_suggestions_HOOK().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}(array \\$variables) {",
+			" $0",
+			"}"
+		],
+		"description": "Provides alternate named suggestions for a specific theme hook.",
+		"scope": "php, theme, module"
+	},
+	"hook_theme_suggestions_HOOK_alter": {
+		"prefix": "hook_theme_suggestions_HOOK_alter",
+		"body": [
+			"/**",
+			" * Implements hook_theme_suggestions_HOOK_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}_alter(array &\\$suggestions, array \\$variables) {",
+			" $0",
+			"}"
+		],
+		"description": "Alters named suggestions for a specific theme hook.",
+		"scope": "php, theme, module"
+	},
+	"hook_tokens": {
+		"prefix": "hook_tokens",
+		"body": [
+			"/**",
+			" * Implements hook_tokens().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_tokens(\\$type, \\$tokens, array \\$data, array \\$options, \\Drupal\\Core\\Render\\BubbleableMetadata \\$bubbleable_metadata) {",
+			" $0",
+			"}"
+		],
+		"description": "Provide replacement values for placeholder tokens.",
+		"scope": "php, theme, module"
+	},
+	"hook_tokens_alter": {
+		"prefix": "hook_tokens_alter",
+		"body": [
+			"/**",
+			" * Implements hook_tokens_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_tokens_alter(array &\\$replacements, array \\$context, \\Drupal\\Core\\Render\\BubbleableMetadata \\$bubbleable_metadata) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter replacement values for placeholder tokens.",
+		"scope": "php, theme, module"
+	},
+	"hook_token_info": {
+		"prefix": "hook_token_info",
+		"body": [
+			"/**",
+			" * Implements hook_token_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_token_info() {",
+			" $0",
+			"}"
+		],
+		"description": "Provide information about available placeholder tokens and token types.",
+		"scope": "php, theme, module"
+	},
+	"hook_token_info_alter": {
+		"prefix": "hook_token_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_token_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_token_info_alter(&\\$data) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the metadata about available placeholder tokens and token types.",
+		"scope": "php, theme, module"
+	},
+	"hook_toolbar": {
+		"prefix": "hook_toolbar",
+		"body": [
+			"/**",
+			" * Implements hook_toolbar().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_toolbar() {",
+			" $0",
+			"}"
+		],
+		"description": "Add items to the toolbar menu.",
+		"scope": "php, theme, module"
+	},
+	"hook_toolbar_alter": {
+		"prefix": "hook_toolbar_alter",
+		"body": [
+			"/**",
+			" * Implements hook_toolbar_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_toolbar_alter(&\\$items) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the toolbar menu after hook_toolbar() is invoked.",
+		"scope": "php, theme, module"
+	},
+	"hook_tour_tips_alter": {
+		"prefix": "hook_tour_tips_alter",
+		"body": [
+			"/**",
+			" * Implements hook_tour_tips_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_alter(array &\\$tour_tips, Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to alter tour items before render.",
+		"scope": "php, theme, module"
+	},
+	"hook_tour_tips_info_alter": {
+		"prefix": "hook_tour_tips_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_tour_tips_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_info_alter(&\\$info) {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to alter tip plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_transliteration_overrides_alter": {
+		"prefix": "hook_transliteration_overrides_alter",
+		"body": [
+			"/**",
+			" * Implements hook_transliteration_overrides_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_transliteration_overrides_alter(&\\$overrides, \\$langcode) {",
+			" $0",
+			"}"
+		],
+		"description": "Provide language-specific overrides for transliteration.",
+		"scope": "php, theme, module"
+	},
+	"hook_uninstall": {
+		"prefix": "hook_uninstall",
+		"body": [
+			"/**",
+			" * Implements hook_uninstall().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_uninstall(\\$is_syncing) {",
+			" $0",
+			"}"
+		],
+		"description": "Remove any information that the module sets.",
+		"scope": "php, theme, module"
+	},
+	"hook_updater_info": {
+		"prefix": "hook_updater_info",
+		"body": [
+			"/**",
+			" * Implements hook_updater_info().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_updater_info() {",
+			" $0",
+			"}"
+		],
+		"description": "Provide information on Updaters (classes that can update Drupal).",
+		"scope": "php, theme, module"
+	},
+	"hook_updater_info_alter": {
+		"prefix": "hook_updater_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_updater_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_updater_info_alter(&\\$updaters) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the Updater information array.",
+		"scope": "php, theme, module"
+	},
+	"hook_update_dependencies": {
+		"prefix": "hook_update_dependencies",
+		"body": [
+			"/**",
+			" * Implements hook_update_dependencies().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_update_dependencies() {",
+			" $0",
+			"}"
+		],
+		"description": "Return an array of information about module update dependencies.",
+		"scope": "php, theme, module"
+	},
+	"hook_update_last_removed": {
+		"prefix": "hook_update_last_removed",
+		"body": [
+			"/**",
+			" * Implements hook_update_last_removed().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_update_last_removed() {",
+			" $0",
+			"}"
+		],
+		"description": "Return a number which is no longer available as hook_update_N().",
+		"scope": "php, theme, module"
+	},
+	"hook_update_N": {
+		"prefix": "hook_update_N",
+		"body": [
+			"/**",
+			" * Implements hook_update_N().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_update_N(&\\$sandbox) {",
+			" $0",
+			"}"
+		],
+		"description": "Perform a single update between minor versions.",
+		"scope": "php, theme, module"
+	},
+	"hook_update_projects_alter": {
+		"prefix": "hook_update_projects_alter",
+		"body": [
+			"/**",
+			" * Implements hook_update_projects_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_update_projects_alter(&\\$projects) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the list of projects before fetching data and comparing versions.",
+		"scope": "php, theme, module"
+	},
+	"hook_update_status_alter": {
+		"prefix": "hook_update_status_alter",
+		"body": [
+			"/**",
+			" * Implements hook_update_status_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_update_status_alter(&\\$projects) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the information about available updates for projects.",
+		"scope": "php, theme, module"
+	},
+	"hook_user_cancel": {
+		"prefix": "hook_user_cancel",
+		"body": [
+			"/**",
+			" * Implements hook_user_cancel().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_user_cancel(\\$edit, UserInterface \\$account, \\$method) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on user account cancellations.",
+		"scope": "php, theme, module"
+	},
+	"hook_user_cancel_methods_alter": {
+		"prefix": "hook_user_cancel_methods_alter",
+		"body": [
+			"/**",
+			" * Implements hook_user_cancel_methods_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_user_cancel_methods_alter(&\\$methods) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify account cancellation methods.",
+		"scope": "php, theme, module"
+	},
+	"hook_user_format_name_alter": {
+		"prefix": "hook_user_format_name_alter",
+		"body": [
+			"/**",
+			" * Implements hook_user_format_name_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_user_format_name_alter(&\\$name, AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the username that is displayed for a user.",
+		"scope": "php, theme, module"
+	},
+	"hook_user_login": {
+		"prefix": "hook_user_login",
+		"body": [
+			"/**",
+			" * Implements hook_user_login().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_user_login(UserInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "The user just logged in.",
+		"scope": "php, theme, module"
+	},
+	"hook_user_logout": {
+		"prefix": "hook_user_logout",
+		"body": [
+			"/**",
+			" * Implements hook_user_logout().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_user_logout(AccountInterface \\$account) {",
+			" $0",
+			"}"
+		],
+		"description": "The user just logged out.",
+		"scope": "php, theme, module"
+	},
+	"hook_validation_constraint_alter": {
+		"prefix": "hook_validation_constraint_alter",
+		"body": [
+			"/**",
+			" * Implements hook_validation_constraint_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_validation_constraint_alter(array &\\$definitions) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter validation constraint plugin definitions.",
+		"scope": "php, theme, module"
+	},
+	"hook_verify_update_archive": {
+		"prefix": "hook_verify_update_archive",
+		"body": [
+			"/**",
+			" * Implements hook_verify_update_archive().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_verify_update_archive(\\$project, \\$archive_file, \\$directory) {",
+			" $0",
+			"}"
+		],
+		"description": "Verify an archive after it has been downloaded and extracted.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_analyze": {
+		"prefix": "hook_views_analyze",
+		"body": [
+			"/**",
+			" * Implements hook_views_analyze().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_analyze(Drupal\\views\\ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Analyze a view to provide warnings about its configuration.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_data": {
+		"prefix": "hook_views_data",
+		"body": [
+			"/**",
+			" * Implements hook_views_data().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_data() {",
+			" $0",
+			"}"
+		],
+		"description": "Describe data tables and fields (or the equivalent) to Views.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_data_alter": {
+		"prefix": "hook_views_data_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_data_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_data_alter(array &\\$data) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the table and field information from hook_views_data().",
+		"scope": "php, theme, module"
+	},
+	"hook_views_form_substitutions": {
+		"prefix": "hook_views_form_substitutions",
+		"body": [
+			"/**",
+			" * Implements hook_views_form_substitutions().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_form_substitutions() {",
+			" $0",
+			"}"
+		],
+		"description": "Replace special strings when processing a view with form elements.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_invalidate_cache": {
+		"prefix": "hook_views_invalidate_cache",
+		"body": [
+			"/**",
+			" * Implements hook_views_invalidate_cache().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_invalidate_cache() {",
+			" $0",
+			"}"
+		],
+		"description": "Allow modules to respond to the invalidation of the Views cache.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_access_alter": {
+		"prefix": "hook_views_plugins_access_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_access_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_access_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views access plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_area_alter": {
+		"prefix": "hook_views_plugins_area_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_area_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_area_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views area handler plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_argument_alter": {
+		"prefix": "hook_views_plugins_argument_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_argument_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views argument handler plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_argument_default_alter": {
+		"prefix": "hook_views_plugins_argument_default_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_argument_default_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_default_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views default argument plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_argument_validator_alter": {
+		"prefix": "hook_views_plugins_argument_validator_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_argument_validator_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_validator_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views argument validation plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_cache_alter": {
+		"prefix": "hook_views_plugins_cache_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_cache_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_cache_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views cache plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_display_alter": {
+		"prefix": "hook_views_plugins_display_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_display_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_display_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views display plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_display_extenders_alter": {
+		"prefix": "hook_views_plugins_display_extenders_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_display_extenders_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_display_extenders_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views display extender plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_exposed_form_alter": {
+		"prefix": "hook_views_plugins_exposed_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_exposed_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_exposed_form_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views exposed form plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_field_alter": {
+		"prefix": "hook_views_plugins_field_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_field_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_field_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views field handler plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_filter_alter": {
+		"prefix": "hook_views_plugins_filter_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_filter_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_filter_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views filter handler plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_join_alter": {
+		"prefix": "hook_views_plugins_join_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_join_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_join_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views join plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_pager_alter": {
+		"prefix": "hook_views_plugins_pager_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_pager_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_pager_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views pager plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_query_alter": {
+		"prefix": "hook_views_plugins_query_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_query_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_query_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views query plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_relationship_alter": {
+		"prefix": "hook_views_plugins_relationship_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_relationship_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_relationship_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views relationship handler plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_row_alter": {
+		"prefix": "hook_views_plugins_row_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_row_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_row_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views row plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_sort_alter": {
+		"prefix": "hook_views_plugins_sort_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_sort_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_sort_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views sort handler plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_style_alter": {
+		"prefix": "hook_views_plugins_style_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_style_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_style_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views style plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_plugins_wizard_alter": {
+		"prefix": "hook_views_plugins_wizard_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_plugins_wizard_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_wizard_alter(array &\\$plugins) {",
+			" $0",
+			"}"
+		],
+		"description": "Modify the list of available views wizard plugins.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_post_build": {
+		"prefix": "hook_views_post_build",
+		"body": [
+			"/**",
+			" * Implements hook_views_post_build().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_post_build(ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on the view immediately after the query is built.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_post_execute": {
+		"prefix": "hook_views_post_execute",
+		"body": [
+			"/**",
+			" * Implements hook_views_post_execute().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_post_execute(ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on the view immediately after the query has been executed.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_post_render": {
+		"prefix": "hook_views_post_render",
+		"body": [
+			"/**",
+			" * Implements hook_views_post_render().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_post_render(ViewExecutable \\$view, &\\$output, CachePluginBase \\$cache) {",
+			" $0",
+			"}"
+		],
+		"description": "Post-process any rendered data.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_preview_info_alter": {
+		"prefix": "hook_views_preview_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_preview_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_preview_info_alter(array &\\$rows, ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the view preview information.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_pre_build": {
+		"prefix": "hook_views_pre_build",
+		"body": [
+			"/**",
+			" * Implements hook_views_pre_build().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_pre_build(ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on the view before the query is built, but after displays are attached.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_pre_execute": {
+		"prefix": "hook_views_pre_execute",
+		"body": [
+			"/**",
+			" * Implements hook_views_pre_execute().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_pre_execute(ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on the view after the query is built and just before it is executed.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_pre_render": {
+		"prefix": "hook_views_pre_render",
+		"body": [
+			"/**",
+			" * Implements hook_views_pre_render().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_pre_render(ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Act on the view immediately before rendering it.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_pre_view": {
+		"prefix": "hook_views_pre_view",
+		"body": [
+			"/**",
+			" * Implements hook_views_pre_view().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_pre_view(ViewExecutable \\$view, \\$display_id, array &\\$args) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter a view at the very beginning of Views processing.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_query_alter": {
+		"prefix": "hook_views_query_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_query_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_query_alter(ViewExecutable \\$view, QueryPluginBase \\$query) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the query before it is executed.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_query_substitutions": {
+		"prefix": "hook_views_query_substitutions",
+		"body": [
+			"/**",
+			" * Implements hook_views_query_substitutions().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_query_substitutions(ViewExecutable \\$view) {",
+			" $0",
+			"}"
+		],
+		"description": "Replace special strings in the query before it is executed.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_ui_display_tab_alter": {
+		"prefix": "hook_views_ui_display_tab_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_ui_display_tab_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_tab_alter(&\\$build, \\Drupal\\views_ui\\View${2:UI} \\$view, \\$display_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the renderable array representing the edit page for one display.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_ui_display_top_alter": {
+		"prefix": "hook_views_ui_display_top_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_ui_display_top_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_alter(&\\$build, \\Drupal\\views_ui\\View${2:UI} \\$view, \\$display_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the top of the display for the Views UI.",
+		"scope": "php, theme, module"
+	},
+	"hook_views_ui_display_top_links_alter": {
+		"prefix": "hook_views_ui_display_top_links_alter",
+		"body": [
+			"/**",
+			" * Implements hook_views_ui_display_top_links_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_links_alter(array &\\$links, ViewExecutable \\$view, \\$display_id) {",
+			" $0",
+			"}"
+		],
+		"description": "Alter the links displayed at the top of the view edit form.",
+		"scope": "php, theme, module"
+	}
+}
