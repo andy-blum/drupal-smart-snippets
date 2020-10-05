@@ -17,6 +17,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.0.3]
 - Fix snippets file & manifest to create base functionality
 
-## [0.0.4]
+## [0.1.0]
 - Update ReadMe & Manifest for marketplace changes
 - Update hooks snippets to adhere to Drupal code standards
