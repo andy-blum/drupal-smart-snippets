@@ -16,14 +16,14 @@ This includes those that are marked as deprecated
 ## Smart hook replacement
 Snippets will automatically replace the leading `hook` with the current file's name.
 
-![Gif showing usage of hook_views_data snippet](images/views_data.gif)
+![Gif showing usage of hook_views_data snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/views_data.gif)
 
 
 ## Tab Stops
 Snippets are formatted to have tab stops on values that need replaced like `HOOK`,
 `ENTITY_TYPE`, `BASE_FORM_ID`, etc.
 
-![Gif showing usage of hook_preprocess_HOOK snippet](images/preprocess.gif )
+![Gif showing usage of hook_preprocess_HOOK snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/preprocess.gif )
 
 
 

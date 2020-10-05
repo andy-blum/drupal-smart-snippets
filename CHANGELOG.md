@@ -20,3 +20,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.1.0]
 - Update ReadMe & Manifest for marketplace changes
 - Update hooks snippets to adhere to Drupal code standards
+
+## [0.1.1]
+- Change readme image paths to absolute urls
