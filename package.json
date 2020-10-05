@@ -2,7 +2,7 @@
     "name": "drupal-smart-snippets",
     "displayName": "Drupal Smart Snippets",
     "description": "Context-aware snippets for Drupal's hook system",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "andrewdavidblum",
     "repository": {
         "type": "git",
