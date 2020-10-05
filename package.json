@@ -1,7 +1,7 @@
 {
     "name": "drupal-smart-snippets",
     "displayName": "Drupal Smart Snippets",
-    "description": "Context-aware snippets for Drupal's hook system",
+    "description": "Context-aware snippets for Drupal development",
     "version": "0.0.3",
     "publisher": "andrewdavidblum",
     "repository": {
@@ -11,6 +11,11 @@
     "engines": {
         "vscode": "^1.49.0"
     },
+    "galleryBanner": {
+        "color": "#0678BE",
+        "theme": "dark"
+    },
+    "icon": "images/drupal_logo.png",
     "categories": [
         "Snippets"
     ],
@@ -19,6 +24,25 @@
             {
                 "language": "php",
                 "path": "./snippets/hooks.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "php",
+                "aliases": [
+                    "PHP",
+                    "php"
+                ],
+                "extensions": [
+                    ".engine",
+                    ".install",
+                    ".inc",
+                    ".make",
+                    ".module",
+                    ".profile",
+                    ".test",
+                    ".theme"
+                ]
             }
         ]
     }
