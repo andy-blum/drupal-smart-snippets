@@ -6,4 +6,17 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [0.0.1]
 - Initial release
+- Added hooks
+- Does not work due to faulty manifest
+
+## [0.0.2]
+- No changes
+
+## [0.0.3]
+- Fix snippets file & manifest to create base functionality
+
+## [0.0.4]
+- Update ReadMe & Manifest for marketplace changes
+- Update hooks snippets to adhere to Drupal code standards
