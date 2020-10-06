@@ -2409,6 +2409,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_path_delete().",
+			" *",
+			" * Deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Use hook_path_alias_delete() instead.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_path_delete(\\$path) {",
 			"  $0",
@@ -2422,6 +2425,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_path_insert().",
+			" *",
+			" * Deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Use hook_path_alias_insert() instead.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_path_insert(\\$path) {",
 			"  $0",
@@ -2435,6 +2441,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_path_update().",
+			" *",
+			" * Deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Use hook_path_alias_update() instead.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_path_update(\\$path) {",
 			"  $0",
@@ -2656,6 +2665,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_rest_relation_uri_alter().",
+			" *",
+			" * Deprecated in drupal:8.3.0 and is removed from drupal:9.0.0. Use hook_hal_relation_uri_alter() instead. This exists solely for BC. Modules may wish to alter the relation URI generated for a resource based on the context of the serializer/normalizer operation.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_rest_relation_uri_alter(&\\$uri, \\$context = []) {",
 			"  $0",
@@ -2682,6 +2694,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_rest_type_uri_alter().",
+			" *",
+			" * Deprecated in drupal:8.3.0 and is removed from drupal:9.0.0. Use hook_hal_type_uri_alter() instead. This exists solely for BC. Modules may wish to alter the type URI generated for a resource based on the context of the serializer/normalizer operation.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_rest_type_uri_alter(&\\$uri, \\$context = []) {",
 			"  $0",
@@ -2747,6 +2762,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_simpletest_alter().",
+			" *",
+			" * Deprecated in drupal:8.6.0 and is removed from drupal:9.0.0. Convert your test to a PHPUnit-based one and implement test listeners.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_simpletest_alter(&\\$groups) {",
 			"  $0",
@@ -2812,6 +2830,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_test_finished().",
+			" *",
+			" * Deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Convert your test to a PHPUnit-based one and implement test listeners.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_test_finished(\\$results) {",
 			"  $0",
@@ -2825,6 +2846,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_test_group_finished().",
+			" *",
+			" * Deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Convert your test to a PHPUnit-based one and implement test listeners.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_test_group_finished() {",
 			"  $0",
@@ -2838,6 +2862,9 @@
 		"body": [
 			"/**",
 			" * Implements hook_test_group_started().",
+			" *",
+			" * Deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Convert your test to a PHPUnit-based one and implement test listeners.",
+			" *",
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_test_group_started() {",
 			"  $0",
