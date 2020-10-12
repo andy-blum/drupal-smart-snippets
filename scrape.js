@@ -105,8 +105,6 @@ const renderElements = {};
             "scope": "php"
           };
 
-          console.log(`${hooks.length} hooks found.`);
-
         }
       }
     }
