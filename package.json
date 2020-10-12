@@ -45,5 +45,15 @@
                 ]
             }
         ]
+    },
+    "dependencies": {
+        "del": "^6.0.0",
+        "download": "^8.0.0",
+        "find": "^0.3.0",
+        "tar": "^6.0.5",
+        "write-json-file": "^4.3.0"
+    },
+    "scripts": {
+        "vscode:prepublish": "node scrape.js"
     }
 }

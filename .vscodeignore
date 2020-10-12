@@ -1,4 +1,9 @@
 .vscode/**
 .vscode-test/**
+node_modules/
+tmp/
+package-lock.json
 .gitignore
+.nvmrc
+scrape.js
 vsc-extension-quickstart.md
