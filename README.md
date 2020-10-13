@@ -8,10 +8,9 @@ to VS Code. This extension is intended as a successor to
 # Usage & Features
 Type part of a snippet, press enter and/Or tab, and the snippet unfolds.
 
-## Built from Drupal 8.9.x API
-Hooks gathered by scraping the offical
-[Drupal documentation](https://api.drupal.org/api/drupal/core%21core.api.php/group/hooks/8.9.x).
-This includes those that are marked as deprecated
+## Built from Drupal Core
+Hooks gathered by scraping the codebase of the latest minor versions of Drupal
+8 and 9. This includes those that are marked as deprecated.
 
 ## Smart hook replacement
 Snippets will automatically replace the leading `hook` with the current file's name.
@@ -25,7 +24,15 @@ Snippets are formatted to have tab stops on values that need replaced like `HOOK
 
 ![Gif showing usage of hook_preprocess_HOOK snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/preprocess.gif )
 
+## Core Versions & Deprecation Warnings
+Hook descriptions begin with the lowest version of core in which the hook is found.
+Additionally, hooks that have been deprecated are labelled as such in the hook's
+description and have an inline comment of `//deprecated` following the closing of
+the function.
 
+![Screenshot of hook description showing minimum version, purpose, and deprecation](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/deprecation-inline.png)
+
+![Gif showing deprecated hook](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/deprecations.gif)
 
 # Installation
 

@@ -23,3 +23,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [0.1.1]
 - Change readme image paths to absolute urls
+
+## [0.2.0]
+### Added
+- Miniumum core versions in hook description
+- Deprecation warnings in hook description
+- Inline deprecation comments in hook body
+- Documentation & images for above additions
+
+### Changed
+- Altered all hooks to account for additions
+- Reordered hook snippets based on scraper script
