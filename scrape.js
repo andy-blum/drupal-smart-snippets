@@ -5,13 +5,13 @@ const find = require('find');
 const fs = require('fs');
 const writeJsonFile = require('write-json-file');
 
+// Set up dest object for hooks snippets
 const hooks = {};
-const renderElements = {};
 
 (async () => {
   const versions = [
     '9.0.6',
-    '8.9.6'
+    '8.9.7'
   ];
   const drupal_org = 'https://ftp.drupal.org/files/projects/';
 
@@ -55,7 +55,9 @@ const renderElements = {};
         });
       });
 
+      // Get all hook definitions & documentation
       const funcDefs = contents.match(/function hook.* \{/g);
+      const funcDocs = contents.match(/\/\*(\*(?!\/)|[^*])*\*\/\s*function hook[^\(]*/g);
 
       // Iterate over each hook definition
       if (funcDefs) {
@@ -89,7 +91,6 @@ const renderElements = {};
 
           hooks[hookName] = {
             "prefix": hookName,
-            "minCore": coreVersion,
             "body": [
               `/**`,
               ` * Implements ${hookName}.`,
@@ -107,13 +108,51 @@ const renderElements = {};
 
         }
       }
+
+      // Iterate over each hook doc block
+      if (funcDocs) {
+        for (const doc of funcDocs) {
+          const hookName = doc.match(/hook_.*$/g)[0];
+          let block = doc.match(/\*(\*(?!\/)|[^*])*\*/g)[0];
+
+          // Compress whitespace, remove '*' characters
+          let lines = block.match(/\ \*\ .+\n/g);
+          block = [];
+          for (let line of lines) {
+            line = line.substr(3);
+            if (line.trim()) {
+              block.push(line.trim());
+            }
+          }
+          block = block.join('\n').trim();
+
+          // Add hook description to hooks object
+          let hookDesc = block.match(/^[^@]*/g)[0];
+          hookDesc = hookDesc.trim().split(/\n/g);
+          hooks[hookName].description.push(...hookDesc);
+
+          // Iterate over notes, add deprecation warnings
+          const notes = block.match(/@[^@]*/g);
+          if (notes) {
+            for (let note of notes) {
+              note = note.substr(1);
+              const type = note.match(/^\w*/g)[0];
+
+              if (type == 'deprecated') {
+                note = note.trim().split(/\n/g);
+                hooks[hookName].description.push("", ...note);
+              }
+            }
+          }
+        }
+      }
     }
-
-
-
   }
 
   console.log(`Writing hooks snippet file.`);
   await writeJsonFile('./snippets/hooks.json', hooks);
+
+  // Remove downloaded/extracted files
+  await del('./tmp');
 
 })();
