@@ -141,6 +141,7 @@ const hooks = {};
               if (type == 'deprecated') {
                 note = note.trim().split(/\n/g);
                 hooks[hookName].description.push("", ...note);
+                hooks[hookName].body.push('//deprecated');
               }
             }
           }
