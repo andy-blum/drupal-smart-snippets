@@ -34,3 +34,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changed
 - Altered all hooks to account for additions
 - Reordered hook snippets based on scraper script
+
+## [0.3.0]
+### Changed
+- scraper pulls from 9.0.7 (prev 9.0.6)
+- scraper now checks hookName variable for secondary hooks ("HOOK", "ENTITY_TYPE",
+etc) instead of the function usage to prevent matching on arguments with multiple
+capitalized letters (e.g. "OEmbed", "ViewsUI")
+- scraper has better regex matching for secondary hooks, leading to...
+- hook_update_N now has second tab-stop for "N"
+- hook_plugin_filter_TYPE__CONSUMER_alter differentiates between second tab-stop
+"TYPE" and third tab-stop "CONSUMER"
