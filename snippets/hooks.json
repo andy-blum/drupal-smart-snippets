@@ -313,7 +313,7 @@
 			"/**",
 			" * Implements hook_query_TAG_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_query_${02: TAG}_alter(Drupal\\Core\\Database\\Query\\AlterableInterface \\$query) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_query_${2:TAG}_alter(Drupal\\Core\\Database\\Query\\AlterableInterface \\$query) {",
 			"  $0",
 			"}"
 		],
@@ -386,7 +386,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_access.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_access(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_access(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
 			"  $0",
 			"}"
 		],
@@ -422,7 +422,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_create_access.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_create_access(\\Drupal\\Core\\Session\\AccountInterface \\$account, array \\$context, \\$entity_bundle) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create_access(\\Drupal\\Core\\Session\\AccountInterface \\$account, array \\$context, \\$entity_bundle) {",
 			"  $0",
 			"}"
 		],
@@ -592,7 +592,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_create.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_create(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -627,7 +627,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_revision_create.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_revision_create(Drupal\\Core\\Entity\\EntityInterface \\$new_revision, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_create(Drupal\\Core\\Entity\\EntityInterface \\$new_revision, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
 			"  $0",
 			"}"
 		],
@@ -684,7 +684,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_load.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_load(\\$entities) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_load(\\$entities) {",
 			"  $0",
 			"}"
 		],
@@ -719,7 +719,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_storage_load.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_storage_load(array \\$entities) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_storage_load(array \\$entities) {",
 			"  $0",
 			"}"
 		],
@@ -756,7 +756,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_presave.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_presave(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_presave(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -794,7 +794,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_insert.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_insert(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_insert(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -833,7 +833,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_update.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_update(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_update(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -872,7 +872,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_translation_create.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_translation_create(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_create(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
 			"  $0",
 			"}"
 		],
@@ -910,7 +910,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_translation_insert.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
 			"  $0",
 			"}"
 		],
@@ -947,7 +947,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_translation_delete.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
 			"  $0",
 			"}"
 		],
@@ -982,7 +982,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_predelete.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_predelete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_predelete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -1017,7 +1017,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_delete.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -1053,7 +1053,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_revision_delete.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_revision_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -1088,7 +1088,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_view.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_view(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, \\$view_mode) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, \\$view_mode) {",
 			"  $0",
 			"}"
 		],
@@ -1130,7 +1130,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_view_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_view_alter(array &\\$build, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view_alter(array &\\$build, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
 			"  $0",
 			"}"
 		],
@@ -1192,7 +1192,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_build_defaults_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_build_defaults_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$view_mode) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_build_defaults_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$view_mode) {",
 			"  $0",
 			"}"
 		],
@@ -1287,7 +1287,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_prepare_form.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
 			"  $0",
 			"}"
 		],
@@ -1530,7 +1530,7 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_field_values_init.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${02: ENTITY_TYPE}_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
@@ -1882,7 +1882,7 @@
 			"/**",
 			" * Implements hook_update_N.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_update_N() {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_update_${2:N}() {",
 			"  $0",
 			"}"
 		],
@@ -1902,7 +1902,7 @@
 			"/**",
 			" * Implements hook_post_update_NAME.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_post_update_${02: NAME}(&\\$sandbox) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_post_update_${2:NAME}(&\\$sandbox) {",
 			"  $0",
 			"}"
 		],
@@ -2253,7 +2253,7 @@
 			"/**",
 			" * Implements hook_form_FORM_ID_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_form_${02: FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_form_${2:FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
 			"  $0",
 			"}"
 		],
@@ -2278,7 +2278,7 @@
 			"/**",
 			" * Implements hook_form_BASE_FORM_ID_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_form_${02: BASE_FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_form_${2:BASE_FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
 			"  $0",
 			"}"
 		],
@@ -2530,7 +2530,7 @@
 			"/**",
 			" * Implements hook_plugin_filter_TYPE_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${02: TYPE}_alter(array &\\$definitions, array \\$extra, \\$consumer) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE}_alter(array &\\$definitions, array \\$extra, \\$consumer) {",
 			"  $0",
 			"}"
 		],
@@ -2551,7 +2551,7 @@
 			"/**",
 			" * Implements hook_plugin_filter_TYPE__CONSUMER_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${02: TYPE__CONSUMER}_alter(array &\\$definitions, array \\$extra) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE}__${3:CONSUMER}_alter(array &\\$definitions, array \\$extra) {",
 			"  $0",
 			"}"
 		],
@@ -2621,7 +2621,7 @@
 			"/**",
 			" * Implements hook_preprocess_HOOK.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_preprocess_${02: HOOK}(&\\$variables) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_preprocess_${2:HOOK}(&\\$variables) {",
 			"  $0",
 			"}"
 		],
@@ -2642,7 +2642,7 @@
 			"/**",
 			" * Implements hook_theme_suggestions_HOOK.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${02: HOOK}(array \\$variables) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}(array \\$variables) {",
 			"  $0",
 			"}"
 		],
@@ -2698,7 +2698,7 @@
 			"/**",
 			" * Implements hook_theme_suggestions_HOOK_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${02: HOOK}_alter(array &\\$suggestions, array \\$variables) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}_alter(array &\\$suggestions, array \\$variables) {",
 			"  $0",
 			"}"
 		],
@@ -3260,7 +3260,7 @@
 			"/**",
 			" * Implements hook_block_view_BASE_BLOCK_ID_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_block_view_${02: BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_view_${2:BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
 			"  $0",
 			"}"
 		],
@@ -3308,7 +3308,7 @@
 			"/**",
 			" * Implements hook_block_build_BASE_BLOCK_ID_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_block_build_${02: BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_build_${2:BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
 			"  $0",
 			"}"
 		],
@@ -3624,7 +3624,7 @@
 			"/**",
 			" * Implements hook_field_widget_WIDGET_TYPE_form_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${02: WIDGET_TYPE}_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${2:WIDGET_TYPE}_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
 			"  $0",
 			"}"
 		],
@@ -3667,7 +3667,7 @@
 			"/**",
 			" * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${02: WIDGET_TYPE}_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
 			"  $0",
 			"}"
 		],
@@ -4105,7 +4105,7 @@
 			"/**",
 			" * Implements hook_jsonapi_ENTITY_TYPE_filter_access.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_${02: ENTITY_TYPE}_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_${2:ENTITY_TYPE}_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
 			"  $0",
 			"}"
 		],
@@ -4227,7 +4227,7 @@
 			"/**",
 			" * Implements hook_language_fallback_candidates_OPERATION_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_${02: OPERATION}_alter(array &\\$candidates, array \\$context) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_${2:OPERATION}_alter(array &\\$candidates, array \\$context) {",
 			"  $0",
 			"}"
 		],
@@ -4294,7 +4294,7 @@
 			"/**",
 			" * Implements hook_oembed_resource_url_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_oembed_resource_url_alter(array &\\$parsed_url, \\Drupal\\media\\${02: OE}mbed\\Provider \\$provider) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_oembed_resource_url_alter(array &\\$parsed_url, \\Drupal\\media\\OEmbed\\Provider \\$provider) {",
 			"  $0",
 			"}"
 		],
@@ -4332,7 +4332,7 @@
 			"/**",
 			" * Implements hook_migrate_MIGRATION_ID_prepare_row.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_migrate_${02: MIGRATION_ID}_prepare_row(Row \\$row, MigrateSourceInterface \\$source, MigrationInterface \\$migration) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_migrate_${2:MIGRATION_ID}_prepare_row(Row \\$row, MigrateSourceInterface \\$source, MigrationInterface \\$migration) {",
 			"  $0",
 			"}"
 		],
@@ -5776,7 +5776,7 @@
 			"/**",
 			" * Implements hook_views_ui_display_top_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_alter(&\\$build, \\Drupal\\views_ui\\View${02: UI} \\$view, \\$display_id) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_alter(&\\$build, \\Drupal\\views_ui\\ViewUI \\$view, \\$display_id) {",
 			"  $0",
 			"}"
 		],
@@ -5794,7 +5794,7 @@
 			"/**",
 			" * Implements hook_views_ui_display_tab_alter.",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_tab_alter(&\\$build, \\Drupal\\views_ui\\View${02: UI} \\$view, \\$display_id) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_tab_alter(&\\$build, \\Drupal\\views_ui\\ViewUI \\$view, \\$display_id) {",
 			"  $0",
 			"}"
 		],
