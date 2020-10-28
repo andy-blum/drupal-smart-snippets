@@ -72,14 +72,15 @@ const hooks = {};
           usage = usage.replace(/\$/g, '\\$');
 
           //Check for additional placeholders
-          const secondaryVars = usage.match(/([A-Z][A-Z_]*[A-Z])/g);
+          const secondaryVars = hookName.match(/[A-Z]+(_(?=[A-Z])[A-Z]+)*/g);
           if (secondaryVars) {
             for (const secondaryVar in secondaryVars) {
               if (secondaryVars.hasOwnProperty(secondaryVar)) {
                 const secondaryVarValue = secondaryVars[secondaryVar];
+                const i = parseInt(secondaryVar);
 
                 if (secondaryVarValue != "NULL") {
-                  const replacement = `${secondaryVar + 2}: ${secondaryVarValue}`
+                  const replacement = `${i + 2}:${secondaryVarValue}`
                   usage = usage.replace(secondaryVarValue, '${' + replacement + '}');
                 }
               }
