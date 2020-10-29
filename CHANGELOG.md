@@ -45,3 +45,11 @@ capitalized letters (e.g. "OEmbed", "ViewsUI")
 - hook_update_N now has second tab-stop for "N"
 - hook_plugin_filter_TYPE__CONSUMER_alter differentiates between second tab-stop
 "TYPE" and third tab-stop "CONSUMER"
+
+## [0.3.1]
+### Changed
+- hook docblocks now include parenthesis after hook name
+(`implements hook_preprocess().` vs `implements hook_preprocess.`)
+- hook descriptions now include hookname and deprecation warning at the very
+beginning, hopefully making it easier to know which hook snippet you're about to
+use and if it's been deprecated
