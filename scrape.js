@@ -94,13 +94,14 @@ const hooks = {};
             "prefix": hookName,
             "body": [
               `/**`,
-              ` * Implements ${hookName}.`,
+              ` * Implements ${hookName}().`,
               ` */`,
               `function ${usage} {`,
               `  $0`,
               `}`
             ],
             "description": [
+              `${hookName}`,
               `Drupal ${coreVersion}+`,
               ``
             ],
@@ -140,6 +141,8 @@ const hooks = {};
               const type = note.match(/^\w*/g)[0];
 
               if (type == 'deprecated') {
+
+                hooks[hookName].description[0] = `${hookName} (Deprecated)`;
                 note = note.trim().split(/\n/g);
                 hooks[hookName].description.push("", ...note);
                 hooks[hookName].body.push('//deprecated');
