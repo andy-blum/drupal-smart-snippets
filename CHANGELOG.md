@@ -54,7 +54,7 @@ capitalized letters (e.g. "OEmbed", "ViewsUI")
 beginning, hopefully making it easier to know which hook snippet you're about to
 use and if it's been deprecated
 
-## [0.3.2]
+## [0.4.0]
 ### Changed
 - Updated scraper to load snippets from 9.1.0, 8.9.11. No changes to hooks
 at this time.
