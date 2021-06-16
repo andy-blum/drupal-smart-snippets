@@ -1368,6 +1368,24 @@
 		],
 		"scope": "php"
 	},
+	"hook_entity_form_mode_alter": {
+		"prefix": "hook_entity_form_mode_alter",
+		"body": [
+			"/**",
+			" * Implements hook_entity_form_mode_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_form_mode_alter(&\\$form_mode, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_entity_form_mode_alter",
+			"Drupal 9+",
+			"",
+			"Change the form mode used to build an entity form."
+		],
+		"scope": "php"
+	},
 	"hook_entity_form_display_alter": {
 		"prefix": "hook_entity_form_display_alter",
 		"body": [
@@ -2339,7 +2357,7 @@
 			"altering a node form, the node entity can be retrieved by invoking",
 			"$form_state->getFormObject()->getEntity().",
 			"Implementations are responsible for adding cache contexts/tags/max-age as",
-			"needed. See https://www.drupal.org/developing/api/8/cache.",
+			"needed. See https://www.drupal.org/docs/8/api/cache-api/cache-api.",
 			"In addition to hook_form_alter(), which is called for all forms, there are",
 			"two more specific form hooks available. The first,",
 			"hook_form_BASE_FORM_ID_alter(), allows targeting of a form/forms via a base",
@@ -2372,7 +2390,7 @@
 			"",
 			"Provide a form-specific alteration instead of the global hook_form_alter().",
 			"Implementations are responsible for adding cache contexts/tags/max-age as",
-			"needed. See https://www.drupal.org/developing/api/8/cache.",
+			"needed. See https://www.drupal.org/docs/8/api/cache-api/cache-api.",
 			"Modules can implement hook_form_FORM_ID_alter() to modify a specific form,",
 			"rather than implementing hook_form_alter() and checking the form ID, or",
 			"using long switch statements to alter multiple forms.",
@@ -2398,7 +2416,7 @@
 			"",
 			"Provide a form-specific alteration for shared ('base') forms.",
 			"Implementations are responsible for adding cache contexts/tags/max-age as",
-			"needed. See https://www.drupal.org/developing/api/8/cache.",
+			"needed. See https://www.drupal.org/docs/8/api/cache-api/cache-api.",
 			"By default, when \\Drupal::formBuilder()->getForm() is called, Drupal looks",
 			"for a function with the same name as the form ID, and uses that function to",
 			"build the form. In contrast, base forms allow multiple form IDs to be mapped",
@@ -3506,6 +3524,24 @@
 		],
 		"scope": "php"
 	},
+	"hook_block_alter": {
+		"prefix": "hook_block_alter",
+		"body": [
+			"/**",
+			" * Implements hook_block_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_block_alter(&\\$definitions) {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_block_alter",
+			"Drupal 9+",
+			"",
+			"Allow modules to alter the block plugin definitions."
+		],
+		"scope": "php"
+	},
 	"hook_ckeditor_plugin_info_alter": {
 		"prefix": "hook_ckeditor_plugin_info_alter",
 		"body": [
@@ -3815,6 +3851,93 @@
 			"cannot alter the top level (parent element) for multi-value fields. In most",
 			"cases, you should use hook_field_widget_multivalue_WIDGET_TYPE_form_alter()",
 			"instead and loop over the elements."
+		],
+		"scope": "php"
+	},
+	"hook_field_widget_single_element_form_alter": {
+		"prefix": "hook_field_widget_single_element_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_single_element_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_form_alter(array &\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_field_widget_single_element_form_alter",
+			"Drupal 9+",
+			"",
+			"Alter forms for field widgets provided by other modules.",
+			"This hook can only modify individual elements within a field widget and",
+			"cannot alter the top level (parent element) for multi-value fields. In most",
+			"cases, you should use hook_field_widget_complete_form_alter() instead and",
+			"loop over the elements."
+		],
+		"scope": "php"
+	},
+	"hook_field_widget_single_element_WIDGET_TYPE_form_alter": {
+		"prefix": "hook_field_widget_single_element_WIDGET_TYPE_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_${2:WIDGET_TYPE}_form_alter(array &\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_field_widget_single_element_WIDGET_TYPE_form_alter",
+			"Drupal 9+",
+			"",
+			"Alter widget forms for a specific widget provided by another module.",
+			"Modules can implement",
+			"hook_field_widget_single_element_WIDGET_TYPE_form_alter() to modify a",
+			"specific widget form, rather than using",
+			"hook_field_widget_single_element_form_alter() and checking the widget type.",
+			"This hook can only modify individual elements within a field widget and",
+			"cannot alter the top level (parent element) for multi-value fields. In most",
+			"cases, you should use hook_field_widget_complete_WIDGET_TYPE_form_alter()",
+			"instead and loop over the elements."
+		],
+		"scope": "php"
+	},
+	"hook_field_widget_complete_form_alter": {
+		"prefix": "hook_field_widget_complete_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_complete_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_complete_form_alter(&\\$field_widget_complete_form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_field_widget_complete_form_alter",
+			"Drupal 9+",
+			"",
+			"Alter the complete form for field widgets provided by other modules."
+		],
+		"scope": "php"
+	},
+	"hook_field_widget_complete_WIDGET_TYPE_form_alter": {
+		"prefix": "hook_field_widget_complete_WIDGET_TYPE_form_alter",
+		"body": [
+			"/**",
+			" * Implements hook_field_widget_complete_WIDGET_TYPE_form_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_complete_${2:WIDGET_TYPE}_form_alter(&\\$field_widget_complete_form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_field_widget_complete_WIDGET_TYPE_form_alter",
+			"Drupal 9+",
+			"",
+			"Alter the complete form for a specific widget provided by other modules.",
+			"Modules can implement hook_field_widget_complete_WIDGET_TYPE_form_alter()",
+			"to modify a specific widget form, rather than using",
+			"hook_field_widget_complete_form_alter() and checking the widget type."
 		],
 		"scope": "php"
 	},

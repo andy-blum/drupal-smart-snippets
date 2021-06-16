@@ -58,3 +58,15 @@ use and if it's been deprecated
 ### Changed
 - Updated scraper to load snippets from 9.1.0, 8.9.11. No changes to hooks
 at this time.
+
+## [0.5.0]
+### Added
+- Added new snippets
+  - hook_entity_form_mode_alter
+  - hook_block_alter
+  - hook_field_widget_single_element_form_alter
+  - hook_field_widget_single_element_WIDGET_TYPE_form_alter
+  - hook_field_widget_complete_form_alter
+  - hook_field_widget_complete_WIDGET_TYPE_form_alter
+### Changed
+- Snippets load from 9.2.0 & 8.9.16
