@@ -90,3 +90,7 @@ at this time.
   - hook_test_group_started
   - hook_test_group_finished
   - hook_test_finished
+
+## [1.0.1]
+### Changed
+- Updated README to reflect changes in 1.0.0

@@ -1,7 +1,7 @@
 # Visual Studio Code Smart Drupal Snippets
 
 This extension adds rich language support for the
-[Drupal 8.9.x Hooks API](https://api.drupal.org/api/drupal/core%21core.api.php/group/hooks/8.9.x)
+[Drupal 9.3.x Hooks API](https://api.drupal.org/api/drupal/core%21core.api.php/group/hooks/9.3.x)
 to VS Code. This extension is intended as a successor to
 [Drupal 8 Snippets](https://marketplace.visualstudio.com/items?itemName=dssiqueira.drupal-8-snippets).
 
@@ -9,8 +9,7 @@ to VS Code. This extension is intended as a successor to
 Type part of a snippet, press enter and/Or tab, and the snippet unfolds.
 
 ## Built from Drupal Core
-Hooks gathered by scraping the codebase of the latest minor versions of Drupal
-8 and 9. This includes those that are marked as deprecated.
+Hooks gathered by scraping the codebase of the latest minor versions of Drupal 9. This includes those that are marked as deprecated.
 
 ## Smart hook replacement
 Snippets will automatically replace the leading `hook` with the current file's name.
