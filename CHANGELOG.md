@@ -70,3 +70,23 @@ at this time.
   - hook_field_widget_complete_WIDGET_TYPE_form_alter
 ### Changed
 - Snippets load from 9.2.0 & 8.9.16
+
+## [1.0.0]
+### Added
+- Added 9.3.0 hooks
+  - hook_ckeditor5_plugin_info_alter
+  - hook_ckeditor4to5upgrade_plugin_info_alter
+### Changed
+- Updated D9 source (9.2.0 t0 9.3.0)
+### Removed
+- Removed support for Drupal 8 (EOL)
+- Removed D8-deprecated hooks
+  - hook_path_insert
+  - hook_path_update
+  - hook_path_delete
+  - hook_rest_type_uri_alter
+  - hook_rest_relation_uri_alter
+  - hook_simpletest_alter
+  - hook_test_group_started
+  - hook_test_group_finished
+  - hook_test_finished

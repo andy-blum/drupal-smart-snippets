@@ -10,8 +10,7 @@ const hooks = {};
 
 (async () => {
   const versions = [
-    '9.2.0',
-    '8.9.16'
+    '9.3.0'
   ];
   const drupal_org = 'https://ftp.drupal.org/files/projects/';
 

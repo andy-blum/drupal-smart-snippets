@@ -11,7 +11,7 @@
 		],
 		"description": [
 			"hook_cron",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform periodic actions.",
 			"Modules that require some commands to be executed periodically can",
@@ -41,7 +41,7 @@
 		],
 		"description": [
 			"hook_data_type_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter available data types for typed data wrappers."
 		],
@@ -59,7 +59,7 @@
 		],
 		"description": [
 			"hook_queue_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter cron queue information before cron runs.",
 			"Called by \\Drupal\\Core\\Cron to allow modules to alter cron queue settings",
@@ -79,7 +79,7 @@
 		],
 		"description": [
 			"hook_mail_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter an email message created with MailManagerInterface->mail().",
 			"Hook hook_mail_alter() allows modification of email messages created and sent",
@@ -105,9 +105,9 @@
 		],
 		"description": [
 			"hook_mail",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
-			"Prepares a message based on parameters;",
+			"Prepares a message based on parameters.",
 			"This hook is called from MailManagerInterface->mail(). Note that hook_mail(),",
 			"unlike hook_mail_alter(), is only called on the $module argument to",
 			"MailManagerInterface->mail(), not all modules."
@@ -126,7 +126,7 @@
 		],
 		"description": [
 			"hook_mail_backend_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the list of mail backend plugin definitions."
 		],
@@ -144,7 +144,7 @@
 		],
 		"description": [
 			"hook_countries_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the default country list."
 		],
@@ -162,7 +162,7 @@
 		],
 		"description": [
 			"hook_display_variant_plugin_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter display variant plugin definitions."
 		],
@@ -180,7 +180,7 @@
 		],
 		"description": [
 			"hook_layout_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to alter layout plugin definitions."
 		],
@@ -198,7 +198,7 @@
 		],
 		"description": [
 			"hook_cache_flush",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Flush all persistent and static caches.",
 			"This hook asks your module to clear all of its static caches,",
@@ -226,7 +226,7 @@
 		],
 		"description": [
 			"hook_rebuild",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Rebuild data based upon refreshed caches.",
 			"This hook allows your module to rebuild its data based on the latest/current",
@@ -251,7 +251,7 @@
 		],
 		"description": [
 			"hook_config_import_steps_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the configuration synchronization steps."
 		],
@@ -269,7 +269,7 @@
 		],
 		"description": [
 			"hook_config_schema_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter config typed data definitions.",
 			"For example you can alter the typed data types representing each",
@@ -296,7 +296,7 @@
 		],
 		"description": [
 			"hook_validation_constraint_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter validation constraint plugin definitions."
 		],
@@ -314,7 +314,7 @@
 		],
 		"description": [
 			"hook_query_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations to a structured query.",
 			"Structured (aka dynamic) queries that have tags associated may be altered by any module",
@@ -334,7 +334,7 @@
 		],
 		"description": [
 			"hook_query_TAG_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations to a structured query for a given tag.",
 			"Some common tags include:",
@@ -357,7 +357,7 @@
 		],
 		"description": [
 			"hook_schema",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Define the current version of the database schema.",
 			"A Drupal schema definition is an array structure representing one or more",
@@ -390,7 +390,7 @@
 		],
 		"description": [
 			"hook_entity_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Control entity operation access.",
 			"Note that this hook is not called for listings (e.g., from entity queries",
@@ -410,7 +410,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Control entity operation access for a specific entity type.",
 			"Note that this hook is not called for listings (e.g., from entity queries",
@@ -430,7 +430,7 @@
 		],
 		"description": [
 			"hook_entity_create_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Control entity create access."
 		],
@@ -448,7 +448,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_create_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Control entity create access for a specific entity type."
 		],
@@ -466,7 +466,7 @@
 		],
 		"description": [
 			"hook_entity_type_build",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Add to entity type definitions.",
 			"Modules may implement this hook to add information to defined entity types,",
@@ -488,7 +488,7 @@
 		],
 		"description": [
 			"hook_entity_type_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the entity type definitions.",
 			"Modules may implement this hook to alter the information that defines an",
@@ -516,7 +516,7 @@
 		],
 		"description": [
 			"hook_entity_view_mode_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the view modes for entity types."
 		],
@@ -534,7 +534,7 @@
 		],
 		"description": [
 			"hook_entity_bundle_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Describe the bundles for entity types."
 		],
@@ -552,7 +552,7 @@
 		],
 		"description": [
 			"hook_entity_bundle_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the bundles for entity types."
 		],
@@ -570,7 +570,7 @@
 		],
 		"description": [
 			"hook_entity_bundle_create",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on entity_bundle_create().",
 			"This hook is invoked after the operation has been performed."
@@ -589,7 +589,7 @@
 		],
 		"description": [
 			"hook_entity_bundle_delete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on entity_bundle_delete().",
 			"This hook is invoked after the operation has been performed."
@@ -608,7 +608,7 @@
 		],
 		"description": [
 			"hook_entity_create",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when creating a new entity.",
 			"This hook runs after a new entity object has just been instantiated."
@@ -627,7 +627,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_create",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when creating a new entity of a specific type.",
 			"This hook runs after a new entity object has just been instantiated."
@@ -640,13 +640,13 @@
 			"/**",
 			" * Implements hook_entity_revision_create().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_create(Drupal\\Core\\Entity\\EntityInterface \\$new_revision, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_create(\\Drupal\\Core\\Entity\\EntityInterface \\$new_revision, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_revision_create",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity revision creation."
 		],
@@ -658,13 +658,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_revision_create().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_create(Drupal\\Core\\Entity\\EntityInterface \\$new_revision, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_create(\\Drupal\\Core\\Entity\\EntityInterface \\$new_revision, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_revision_create",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity revision creation."
 		],
@@ -682,7 +682,7 @@
 		],
 		"description": [
 			"hook_entity_preload",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on an array of entity IDs before they are loaded.",
 			"This hook can be used by modules that need, for example, to return a",
@@ -702,7 +702,7 @@
 		],
 		"description": [
 			"hook_entity_load",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on entities when loaded.",
 			"This is a generic load hook called for all entity types loaded via the",
@@ -724,7 +724,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_load",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on entities of a specific type when loaded."
 		],
@@ -742,7 +742,7 @@
 		],
 		"description": [
 			"hook_entity_storage_load",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on content entities when loaded from the storage.",
 			"The results of this hook will be cached."
@@ -761,7 +761,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_storage_load",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on content entities of a given type when loaded from the storage.",
 			"The results of this hook will be cached if the entity type supports it."
@@ -774,13 +774,13 @@
 			"/**",
 			" * Implements hook_entity_presave().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_presave(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_presave(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_presave",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on an entity before it is created or updated.",
 			"You can get the original entity object from $entity->original when it is an",
@@ -794,13 +794,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_presave().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_presave(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_presave(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_presave",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on a specific type of entity before it is created or updated.",
 			"You can get the original entity object from $entity->original when it is an",
@@ -814,13 +814,13 @@
 			"/**",
 			" * Implements hook_entity_insert().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_insert(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_insert",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to creation of a new entity.",
 			"This hook runs once the entity has been stored. Note that hook",
@@ -834,13 +834,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_insert().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_insert(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_insert",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to creation of a new entity of a particular type.",
 			"This hook runs once the entity has been stored. Note that hook",
@@ -854,13 +854,13 @@
 			"/**",
 			" * Implements hook_entity_update().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_update(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_update(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_update",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to updates to an entity.",
 			"This hook runs once the entity storage has been updated. Note that hook",
@@ -875,13 +875,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_update().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_update(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_update(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_update",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to updates to an entity of a particular type.",
 			"This hook runs once the entity storage has been updated. Note that hook",
@@ -902,7 +902,7 @@
 		],
 		"description": [
 			"hook_entity_translation_create",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when creating a new entity translation.",
 			"This hook runs after a new entity translation object has just been",
@@ -922,7 +922,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_translation_create",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when creating a new entity translation of a specific type.",
 			"This hook runs after a new entity translation object has just been",
@@ -942,7 +942,7 @@
 		],
 		"description": [
 			"hook_entity_translation_insert",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to creation of a new entity translation.",
 			"This hook runs once the entity translation has been stored. Note that hook",
@@ -962,7 +962,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_translation_insert",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to creation of a new entity translation of a particular type.",
 			"This hook runs once the entity translation has been stored. Note that hook",
@@ -982,7 +982,7 @@
 		],
 		"description": [
 			"hook_entity_translation_delete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity translation deletion.",
 			"This hook runs once the entity translation has been deleted from storage."
@@ -1001,7 +1001,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_translation_delete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity translation deletion of a particular type.",
 			"This hook runs once the entity translation has been deleted from storage."
@@ -1014,13 +1014,13 @@
 			"/**",
 			" * Implements hook_entity_predelete().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_predelete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_predelete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_predelete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act before entity deletion."
 		],
@@ -1032,13 +1032,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_predelete().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_predelete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_predelete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_predelete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act before entity deletion of a particular entity type."
 		],
@@ -1050,13 +1050,13 @@
 			"/**",
 			" * Implements hook_entity_delete().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_delete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity deletion.",
 			"This hook runs once the entity has been deleted from the storage."
@@ -1069,13 +1069,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_delete().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_delete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity deletion of a particular type.",
 			"This hook runs once the entity has been deleted from the storage."
@@ -1088,13 +1088,13 @@
 			"/**",
 			" * Implements hook_entity_revision_delete().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_revision_delete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity revision deletion.",
 			"This hook runs once the entity revision has been deleted from the storage."
@@ -1107,13 +1107,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_revision_delete().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_delete(Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_revision_delete",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to entity revision deletion of a particular type.",
 			"This hook runs once the entity revision has been deleted from the storage."
@@ -1132,7 +1132,7 @@
 		],
 		"description": [
 			"hook_entity_view",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on entities being assembled before rendering."
 		],
@@ -1150,7 +1150,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_view",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on entities of a particular type being assembled before rendering."
 		],
@@ -1162,13 +1162,13 @@
 			"/**",
 			" * Implements hook_entity_view_alter().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_alter(array &\\$build, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_view_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the results of the entity build array.",
 			"This hook is called after the content has been assembled in a structured",
@@ -1188,13 +1188,13 @@
 			"/**",
 			" * Implements hook_ENTITY_TYPE_view_alter().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view_alter(array &\\$build, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_ENTITY_TYPE_view_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the results of the entity build array for a particular entity type.",
 			"This hook is called after the content has been assembled in a structured",
@@ -1220,7 +1220,7 @@
 		],
 		"description": [
 			"hook_entity_prepare_view",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on entities as they are being prepared for view.",
 			"Allows you to operate on multiple entities as they are being prepared for",
@@ -1235,13 +1235,13 @@
 			"/**",
 			" * Implements hook_entity_view_mode_alter().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_alter(&\\$view_mode, Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$context) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_alter(&\\$view_mode, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_entity_view_mode_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Change the view mode of an entity that is being displayed."
 		],
@@ -1259,9 +1259,9 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_build_defaults_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
-			"Alter entity renderable values before cache checking in drupal_render().",
+			"Alter entity renderable values before cache checking during rendering.",
 			"Invoked for a specific entity type.",
 			"The values in the #cache key of the renderable array are used to determine if",
 			"a cache entry exists for the entity's rendered output. Ideally only values",
@@ -1281,9 +1281,9 @@
 		],
 		"description": [
 			"hook_entity_build_defaults_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
-			"Alter entity renderable values before cache checking in drupal_render().",
+			"Alter entity renderable values before cache checking during rendering.",
 			"The values in the #cache key of the renderable array are used to determine if",
 			"a cache entry exists for the entity's rendered output. Ideally only values",
 			"that pertain to caching should be altered in this hook."
@@ -1302,7 +1302,7 @@
 		],
 		"description": [
 			"hook_entity_view_display_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the settings used for displaying an entity."
 		],
@@ -1320,7 +1320,7 @@
 		],
 		"description": [
 			"hook_entity_display_build_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the render array generated by an EntityDisplay for an entity."
 		],
@@ -1338,7 +1338,7 @@
 		],
 		"description": [
 			"hook_entity_prepare_form",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts on an entity object about to be shown on an entity form.",
 			"This can be typically used to pre-fill entity values or change the form state",
@@ -1359,7 +1359,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_prepare_form",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts on a particular type of entity object about to be in an entity form.",
 			"This can be typically used to pre-fill entity values or change the form state",
@@ -1398,7 +1398,7 @@
 		],
 		"description": [
 			"hook_entity_form_display_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the settings used for displaying an entity form."
 		],
@@ -1416,7 +1416,7 @@
 		],
 		"description": [
 			"hook_entity_base_field_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provides custom base field definitions for a content entity type.",
 			"Field (storage) definitions returned by this hook must run through the",
@@ -1438,7 +1438,7 @@
 		],
 		"description": [
 			"hook_entity_base_field_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter base field definitions for a content entity type."
 		],
@@ -1456,7 +1456,7 @@
 		],
 		"description": [
 			"hook_entity_bundle_field_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provides field definitions for a specific bundle within an entity type.",
 			"Bundle fields either have to override an existing base field, or need to",
@@ -1477,7 +1477,7 @@
 		],
 		"description": [
 			"hook_entity_bundle_field_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter bundle field definitions."
 		],
@@ -1495,7 +1495,7 @@
 		],
 		"description": [
 			"hook_entity_field_storage_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provides field storage definitions for a content entity type.",
 			"Field storage definitions returned by this hook must run through the regular",
@@ -1517,7 +1517,7 @@
 		],
 		"description": [
 			"hook_entity_field_storage_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter field storage definitions for a content entity type."
 		],
@@ -1535,7 +1535,7 @@
 		],
 		"description": [
 			"hook_entity_operation",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Declares entity operations."
 		],
@@ -1553,7 +1553,7 @@
 		],
 		"description": [
 			"hook_entity_operation_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter entity operations."
 		],
@@ -1571,7 +1571,7 @@
 		],
 		"description": [
 			"hook_entity_field_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Control access to fields.",
 			"This hook is invoked from",
@@ -1592,7 +1592,7 @@
 		],
 		"description": [
 			"hook_entity_field_access_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the default access behavior for a given field.",
 			"Use this hook to override access grants from another module. Note that the",
@@ -1612,7 +1612,7 @@
 		],
 		"description": [
 			"hook_entity_field_values_init",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when initializing a fieldable entity object.",
 			"This hook runs after a new entity object or a new entity translation object",
@@ -1633,7 +1633,7 @@
 		],
 		"description": [
 			"hook_ENTITY_TYPE_field_values_init",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when initializing a fieldable entity object.",
 			"This hook runs after a new entity object or a new entity translation object",
@@ -1654,7 +1654,7 @@
 		],
 		"description": [
 			"hook_entity_extra_field_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Exposes \"pseudo-field\" components on content entities.",
 			"Field UI's \"Manage fields\" and \"Manage display\" pages let users re-order",
@@ -1679,7 +1679,7 @@
 		],
 		"description": [
 			"hook_entity_extra_field_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter \"pseudo-field\" components on content entities."
 		],
@@ -1697,7 +1697,7 @@
 		],
 		"description": [
 			"hook_hook_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Defines one or more hooks that are exposed by a module.",
 			"Normally hooks do not need to be explicitly defined. However, by declaring a",
@@ -1725,7 +1725,7 @@
 		],
 		"description": [
 			"hook_module_implements_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the registry of modules implementing a hook.",
 			"This hook is invoked during \\Drupal::moduleHandler()->getImplementations().",
@@ -1754,7 +1754,7 @@
 		],
 		"description": [
 			"hook_system_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the information parsed from module and theme .info.yml files.",
 			"This hook is invoked in \\Drupal\\Core\\Extension\\ExtensionList::doList(). A",
@@ -1779,7 +1779,7 @@
 		],
 		"description": [
 			"hook_module_preinstall",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform necessary actions before a module is installed."
 		],
@@ -1797,7 +1797,7 @@
 		],
 		"description": [
 			"hook_modules_installed",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform necessary actions after modules are installed.",
 			"This function differs from hook_install() in that it gives all other modules",
@@ -1821,7 +1821,7 @@
 		],
 		"description": [
 			"hook_install",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform setup tasks when the module is installed.",
 			"If the module implements hook_schema(), the database tables will",
@@ -1853,7 +1853,7 @@
 		],
 		"description": [
 			"hook_module_preuninstall",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform necessary actions before a module is uninstalled."
 		],
@@ -1871,7 +1871,7 @@
 		],
 		"description": [
 			"hook_modules_uninstalled",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform necessary actions after modules are uninstalled.",
 			"This function differs from hook_uninstall() in that it gives all other",
@@ -1894,7 +1894,7 @@
 		],
 		"description": [
 			"hook_uninstall",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Remove any information that the module sets.",
 			"The information that the module should remove includes:",
@@ -1905,7 +1905,11 @@
 			"The uninstall hook must be implemented in the module's .install file. It",
 			"will fire when the module gets uninstalled but before the module's database",
 			"tables are removed, allowing your module to query its own tables during",
-			"this routine."
+			"this routine.",
+			"Adding custom logic to hook_uninstall implementations to check for",
+			"criteria before uninstalling, does not take advantage of the module",
+			"uninstall page UI. Instead, use",
+			"\\Drupal\\Core\\Extension\\ModuleUninstallValidatorInterface."
 		],
 		"scope": "php"
 	},
@@ -1921,7 +1925,7 @@
 		],
 		"description": [
 			"hook_install_tasks",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Return an array of tasks to be performed by an installation profile.",
 			"Any tasks you define here will be run, in order, after the installer has",
@@ -1978,7 +1982,7 @@
 		],
 		"description": [
 			"hook_install_tasks_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the full list of installation tasks.",
 			"You can use this hook to change or replace any part of the Drupal",
@@ -1999,7 +2003,7 @@
 		],
 		"description": [
 			"hook_update_N",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform a single update between minor versions.",
 			"Hook hook_update_N() can only be used to update between minor versions of a",
@@ -2020,7 +2024,7 @@
 		],
 		"description": [
 			"hook_post_update_NAME",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Executes an update which is intended to update data, like entities.",
 			"These implementations have to be placed in a MODULE.post_update.php file.",
@@ -2047,7 +2051,7 @@
 		],
 		"description": [
 			"hook_removed_post_updates",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Return an array of removed hook_post_update_NAME() function names.",
 			"This should be used to indicate post-update functions that have existed in",
@@ -2068,7 +2072,7 @@
 		],
 		"description": [
 			"hook_update_dependencies",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Return an array of information about module update dependencies.",
 			"This can be used to indicate update functions from other modules that your",
@@ -2092,7 +2096,7 @@
 		],
 		"description": [
 			"hook_update_last_removed",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Return a number which is no longer available as hook_update_N().",
 			"If you remove some update functions from your mymodule.install file, you",
@@ -2115,7 +2119,7 @@
 		],
 		"description": [
 			"hook_updater_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide information on Updaters (classes that can update Drupal).",
 			"Drupal\\Core\\Updater\\Updater is a class that knows how to update various parts",
@@ -2136,7 +2140,7 @@
 		],
 		"description": [
 			"hook_updater_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the Updater information array.",
 			"An Updater is a class that knows how to update various parts of the Drupal",
@@ -2157,7 +2161,7 @@
 		],
 		"description": [
 			"hook_requirements",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Check installation requirements and do status reporting.",
 			"This hook has three closely related uses, determined by the $phase argument:",
@@ -2202,7 +2206,7 @@
 		],
 		"description": [
 			"hook_file_download",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Control access to private file downloads and specify HTTP headers.",
 			"This hook allows modules to enforce permissions on file downloads whenever",
@@ -2224,12 +2228,12 @@
 		],
 		"description": [
 			"hook_file_url_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the URL to a file.",
-			"This hook is called from file_create_url(), and  is called fairly",
-			"frequently (10+ times per page), depending on how many files there are in a",
-			"given page.",
+			"This hook is called from \\Drupal\\Core\\File\\FileUrlGenerator::generate(),",
+			"and is called fairly frequently (10+ times per page), depending on how many",
+			"files there are in a given page.",
 			"If CSS and JS aggregation are disabled, this can become very frequently",
 			"(50+ times per page) so performance is critical.",
 			"This function should alter the URI, if it wants to rewrite the file URL."
@@ -2248,11 +2252,12 @@
 		],
 		"description": [
 			"hook_file_mimetype_mapping_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter MIME type mappings used to determine MIME type from a file extension.",
-			"Invoked by \\Drupal\\Core\\File\\MimeType\\ExtensionMimeTypeGuesser::guess(). It",
-			"is used to allow modules to add to or modify the default mapping from",
+			"Invoked by",
+			"\\Drupal\\Core\\File\\MimeType\\ExtensionMimeTypeGuesser::guessMimeType(). It is",
+			"used to allow modules to add to or modify the default mapping from",
 			"\\Drupal\\Core\\File\\MimeType\\ExtensionMimeTypeGuesser::$defaultMapping."
 		],
 		"scope": "php"
@@ -2269,7 +2274,7 @@
 		],
 		"description": [
 			"hook_archiver_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter archiver information declared by other modules.",
 			"See hook_archiver_info() for a description of archivers and the archiver",
@@ -2289,7 +2294,7 @@
 		],
 		"description": [
 			"hook_filetransfer_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Register information about FileTransfer classes provided by a module.",
 			"The FileTransfer class allows transferring files over a specific type of",
@@ -2314,7 +2319,7 @@
 		],
 		"description": [
 			"hook_filetransfer_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the FileTransfer class registry."
 		],
@@ -2332,7 +2337,7 @@
 		],
 		"description": [
 			"hook_ajax_render_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the Ajax command data that is sent to the client."
 		],
@@ -2350,7 +2355,7 @@
 		],
 		"description": [
 			"hook_form_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations before a form is rendered.",
 			"One popular use of this hook is to add form elements to the node form. When",
@@ -2386,7 +2391,7 @@
 		],
 		"description": [
 			"hook_form_FORM_ID_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide a form-specific alteration instead of the global hook_form_alter().",
 			"Implementations are responsible for adding cache contexts/tags/max-age as",
@@ -2412,7 +2417,7 @@
 		],
 		"description": [
 			"hook_form_BASE_FORM_ID_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide a form-specific alteration for shared ('base') forms.",
 			"Implementations are responsible for adding cache contexts/tags/max-age as",
@@ -2445,7 +2450,7 @@
 		],
 		"description": [
 			"hook_batch_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter batch information before a batch is processed.",
 			"Called by batch_process() to allow modules to alter a batch before it is",
@@ -2465,7 +2470,7 @@
 		],
 		"description": [
 			"hook_language_switch_links_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on language switcher links.",
 			"A language switcher link may need to point to a different path or use a",
@@ -2486,7 +2491,7 @@
 		],
 		"description": [
 			"hook_transliteration_overrides_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide language-specific overrides for transliteration.",
 			"If the overrides you want to provide are standard for your language, consider",
@@ -2509,7 +2514,7 @@
 		],
 		"description": [
 			"hook_menu_links_discovered_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters all the menu links discovered by the menu link plugin manager."
 		],
@@ -2527,7 +2532,7 @@
 		],
 		"description": [
 			"hook_menu_local_tasks_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter local tasks displayed on the page before they are rendered.",
 			"This hook is invoked by \\Drupal\\Core\\Menu\\LocalTaskManager::getLocalTasks().",
@@ -2558,7 +2563,7 @@
 		],
 		"description": [
 			"hook_menu_local_actions_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter local actions plugins."
 		],
@@ -2576,7 +2581,7 @@
 		],
 		"description": [
 			"hook_local_tasks_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter local tasks plugins."
 		],
@@ -2594,7 +2599,7 @@
 		],
 		"description": [
 			"hook_contextual_links_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter contextual links before they are rendered.",
 			"This hook is invoked by",
@@ -2622,7 +2627,7 @@
 		],
 		"description": [
 			"hook_contextual_links_plugins_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the plugin definition of contextual links."
 		],
@@ -2640,7 +2645,7 @@
 		],
 		"description": [
 			"hook_system_breadcrumb_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations to the breadcrumb built by the BreadcrumbManager."
 		],
@@ -2658,7 +2663,7 @@
 		],
 		"description": [
 			"hook_link_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the parameters for links."
 		],
@@ -2676,7 +2681,7 @@
 		],
 		"description": [
 			"hook_plugin_filter_TYPE_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the filtering of plugin definitions for a specific plugin type.",
 			"TYPE (e.g. \"block\", \"layout\") limits hook scope to a plugin type.",
@@ -2698,7 +2703,7 @@
 		],
 		"description": [
 			"hook_plugin_filter_TYPE__CONSUMER_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the filtering of plugin definitions for a specific type and consumer.",
 			"TYPE (e.g. \"block\", \"layout\") limits hook scope to a plugin type.",
@@ -2723,7 +2728,7 @@
 		],
 		"description": [
 			"hook_form_system_theme_settings_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow themes to alter the theme-specific settings form.",
 			"With this hook, themes can alter the theme-specific settings form in any way",
@@ -2747,7 +2752,7 @@
 		],
 		"description": [
 			"hook_preprocess",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Preprocess theme variables for templates.",
 			"This hook allows modules to preprocess theme variables for theme templates.",
@@ -2771,7 +2776,7 @@
 		],
 		"description": [
 			"hook_preprocess_HOOK",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Preprocess theme variables for a specific theme hook.",
 			"This hook allows modules to preprocess theme variables for a specific theme",
@@ -2793,7 +2798,7 @@
 		],
 		"description": [
 			"hook_theme_suggestions_HOOK",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provides alternate named suggestions for a specific theme hook.",
 			"This hook allows modules to provide alternative theme function or template",
@@ -2821,7 +2826,7 @@
 		],
 		"description": [
 			"hook_theme_suggestions_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters named suggestions for all theme hooks.",
 			"This hook is invoked for all theme hooks, if you are targeting a specific",
@@ -2851,7 +2856,7 @@
 		],
 		"description": [
 			"hook_theme_suggestions_HOOK_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters named suggestions for a specific theme hook.",
 			"This hook allows any module or theme to provide alternative theme function or",
@@ -2880,7 +2885,7 @@
 		],
 		"description": [
 			"hook_themes_installed",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to themes being installed."
 		],
@@ -2898,7 +2903,7 @@
 		],
 		"description": [
 			"hook_themes_uninstalled",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to themes being uninstalled."
 		],
@@ -2916,7 +2921,7 @@
 		],
 		"description": [
 			"hook_extension",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Declare a template file extension to be used with a theme engine.",
 			"This hook is used in a theme engine implementation in the format of",
@@ -2936,7 +2941,7 @@
 		],
 		"description": [
 			"hook_render_template",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Render a template using the theme engine.",
 			"It is the theme engine's responsibility to escape variables. The only",
@@ -2959,7 +2964,7 @@
 		],
 		"description": [
 			"hook_element_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the element type information returned from modules.",
 			"A module may implement this hook in order to alter the element type defaults",
@@ -2979,7 +2984,7 @@
 		],
 		"description": [
 			"hook_element_plugin_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter Element plugin definitions.",
 			"Whenever possible, hook_element_info_alter() should be used to alter the",
@@ -3000,7 +3005,7 @@
 		],
 		"description": [
 			"hook_js_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform necessary alterations to the JavaScript before it is presented on",
 			"the page."
@@ -3019,7 +3024,7 @@
 		],
 		"description": [
 			"hook_library_info_build",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Add dynamic library definitions.",
 			"Modules may implement this hook to add dynamic library definitions. Static",
@@ -3040,7 +3045,7 @@
 		],
 		"description": [
 			"hook_js_settings_build",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the JavaScript settings (drupalSettings)."
 		],
@@ -3058,7 +3063,7 @@
 		],
 		"description": [
 			"hook_js_settings_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform necessary alterations to the JavaScript settings (drupalSettings)."
 		],
@@ -3076,7 +3081,7 @@
 		],
 		"description": [
 			"hook_library_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter libraries provided by an extension.",
 			"Allows modules and themes to change libraries' definitions; mostly used to",
@@ -3099,7 +3104,7 @@
 		],
 		"description": [
 			"hook_css_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter CSS files before they are output on the page."
 		],
@@ -3117,7 +3122,7 @@
 		],
 		"description": [
 			"hook_page_attachments",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Add attachments (typically assets) to a page before it is rendered.",
 			"Use this hook when you want to conditionally add attachments to a page.",
@@ -3141,7 +3146,7 @@
 		],
 		"description": [
 			"hook_page_attachments_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter attachments (typically assets) to a page before it is rendered.",
 			"Use this hook when you want to remove or alter attachments on the page, or",
@@ -3164,7 +3169,7 @@
 		],
 		"description": [
 			"hook_page_top",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Add a renderable array to the top of the page."
 		],
@@ -3182,7 +3187,7 @@
 		],
 		"description": [
 			"hook_page_bottom",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Add a renderable array to the bottom of the page."
 		],
@@ -3200,7 +3205,7 @@
 		],
 		"description": [
 			"hook_theme",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Register a module or theme's theme implementations.",
 			"The implementations declared by this hook specify how a particular render",
@@ -3220,7 +3225,7 @@
 		],
 		"description": [
 			"hook_theme_registry_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the theme registry information returned from hook_theme().",
 			"The theme registry stores information about all available theme hooks,",
@@ -3247,7 +3252,7 @@
 		],
 		"description": [
 			"hook_template_preprocess_default_variables_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the default, hook-independent variables for all templates.",
 			"Allows modules to provide additional default template variables or manipulate",
@@ -3273,7 +3278,7 @@
 		],
 		"description": [
 			"hook_tokens",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide replacement values for placeholder tokens.",
 			"This hook is invoked when someone calls",
@@ -3299,7 +3304,7 @@
 		],
 		"description": [
 			"hook_tokens_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter replacement values for placeholder tokens."
 		],
@@ -3317,7 +3322,7 @@
 		],
 		"description": [
 			"hook_token_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide information about available placeholder tokens and token types.",
 			"Tokens are placeholders that can be put into text by using the syntax",
@@ -3344,7 +3349,7 @@
 		],
 		"description": [
 			"hook_token_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the metadata about available placeholder tokens and token types."
 		],
@@ -3362,7 +3367,7 @@
 		],
 		"description": [
 			"hook_aggregator_fetcher_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on the available fetchers."
 		],
@@ -3380,7 +3385,7 @@
 		],
 		"description": [
 			"hook_aggregator_parser_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on the available parsers."
 		],
@@ -3398,7 +3403,7 @@
 		],
 		"description": [
 			"hook_aggregator_processor_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on the available processors."
 		],
@@ -3416,7 +3421,7 @@
 		],
 		"description": [
 			"hook_block_view_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the result of \\Drupal\\Core\\Block\\BlockBase::build().",
 			"This hook is called after the content has been assembled in a structured",
@@ -3425,7 +3430,8 @@
 			"If the module wishes to act on the rendered HTML of the block rather than",
 			"the structured content array, it may use this hook to add a #post_render",
 			"callback. Alternatively, it could also implement hook_preprocess_HOOK() for",
-			"block.html.twig. See drupal_render() documentation or the"
+			"block.html.twig. See \\Drupal\\Core\\Render\\RendererInterface::render()",
+			"documentation or the"
 		],
 		"scope": "php"
 	},
@@ -3441,7 +3447,7 @@
 		],
 		"description": [
 			"hook_block_view_BASE_BLOCK_ID_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide a block plugin specific block_view alteration.",
 			"In this hook name, BASE_BLOCK_ID refers to the block implementation's plugin",
@@ -3466,7 +3472,7 @@
 		],
 		"description": [
 			"hook_block_build_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the result of \\Drupal\\Core\\Block\\BlockBase::build().",
 			"Unlike hook_block_view_alter(), this hook is called very early, before the",
@@ -3491,7 +3497,7 @@
 		],
 		"description": [
 			"hook_block_build_BASE_BLOCK_ID_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide a block plugin specific block_build alteration.",
 			"In this hook name, BASE_BLOCK_ID refers to the block implementation's plugin",
@@ -3516,7 +3522,7 @@
 		],
 		"description": [
 			"hook_block_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Control access to a block instance.",
 			"Modules may implement this hook if they want to have a say in whether or not",
@@ -3554,7 +3560,7 @@
 		],
 		"description": [
 			"hook_ckeditor_plugin_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available CKEditor plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -3574,7 +3580,7 @@
 		],
 		"description": [
 			"hook_ckeditor_css_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of CSS files that will be added to a CKEditor instance.",
 			"Modules may use this hook to provide their own custom CSS file without",
@@ -3582,6 +3588,46 @@
 			"iframe versions of CKEditor.",
 			"Front-end themes (and base themes) can easily specify CSS files to be used in",
 			"iframe instances of CKEditor through an entry in their .info.yml file:"
+		],
+		"scope": "php"
+	},
+	"hook_ckeditor5_plugin_info_alter": {
+		"prefix": "hook_ckeditor5_plugin_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_ckeditor5_plugin_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_ckeditor5_plugin_info_alter(array &\\$plugin_definitions): void {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_ckeditor5_plugin_info_alter",
+			"Drupal 9+",
+			"",
+			"Modify the list of available CKEditor 5 plugins.",
+			"This hook may be used to modify plugin properties after they have been",
+			"specified by other modules."
+		],
+		"scope": "php"
+	},
+	"hook_ckeditor4to5upgrade_plugin_info_alter": {
+		"prefix": "hook_ckeditor4to5upgrade_plugin_info_alter",
+		"body": [
+			"/**",
+			" * Implements hook_ckeditor4to5upgrade_plugin_info_alter().",
+			" */",
+			"function ${1:${TM_FILENAME_BASE:hook}}_ckeditor4to5upgrade_plugin_info_alter(array &\\$plugin_definitions): void {",
+			"  $0",
+			"}"
+		],
+		"description": [
+			"hook_ckeditor4to5upgrade_plugin_info_alter",
+			"Drupal 9+",
+			"",
+			"Modify the list of available CKEditor 4 to 5 Upgrade plugins.",
+			"This hook may be used to modify plugin properties after they have been",
+			"specified by other modules. For example, to override a default upgrade path."
 		],
 		"scope": "php"
 	},
@@ -3597,7 +3643,7 @@
 		],
 		"description": [
 			"hook_comment_links_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the links of a comment."
 		],
@@ -3615,7 +3661,7 @@
 		],
 		"description": [
 			"hook_config_translation_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Introduce dynamic translation tabs for translation of configuration.",
 			"This hook augments MODULE.config_translation.yml as well as",
@@ -3639,7 +3685,7 @@
 		],
 		"description": [
 			"hook_config_translation_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter existing translation tabs for translation of configuration.",
 			"This hook is useful to extend existing configuration mappers with new",
@@ -3661,7 +3707,7 @@
 		],
 		"description": [
 			"hook_contextual_links_view_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter a contextual links element before it is rendered.",
 			"This hook is invoked by contextual_pre_render_links(). The renderable array",
@@ -3683,7 +3729,7 @@
 		],
 		"description": [
 			"hook_editor_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Performs alterations on text editor definitions."
 		],
@@ -3701,7 +3747,7 @@
 		],
 		"description": [
 			"hook_editor_js_settings_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modifies JavaScript settings that are added for text editors."
 		],
@@ -3719,7 +3765,7 @@
 		],
 		"description": [
 			"hook_editor_xss_filter_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modifies the text editor XSS filter that will used for the given text format.",
 			"Is only called when an EditorXssFilter will effectively be used; this hook",
@@ -3739,7 +3785,7 @@
 		],
 		"description": [
 			"hook_field_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on Field API field types."
 		],
@@ -3757,7 +3803,7 @@
 		],
 		"description": [
 			"hook_field_ui_preconfigured_options_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on preconfigured field options."
 		],
@@ -3775,7 +3821,7 @@
 		],
 		"description": [
 			"hook_field_storage_config_update_forbid",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Forbid a field storage update from occurring.",
 			"Any module may forbid any update for any reason. For example, the",
@@ -3801,7 +3847,7 @@
 		],
 		"description": [
 			"hook_field_widget_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on Field API widget types."
 		],
@@ -3815,17 +3861,21 @@
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
 			"  $0",
-			"}"
+			"}",
+			"//deprecated"
 		],
 		"description": [
-			"hook_field_widget_form_alter",
-			"Drupal 8+",
+			"hook_field_widget_form_alter (Deprecated)",
+			"Drupal 9+",
 			"",
 			"Alter forms for field widgets provided by other modules.",
 			"This hook can only modify individual elements within a field widget and",
 			"cannot alter the top level (parent element) for multi-value fields. In most",
 			"cases, you should use hook_field_widget_multivalue_form_alter() instead and",
-			"loop over the elements."
+			"loop over the elements.",
+			"",
+			"deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
+			"hook_field_widget_single_element_form_alter instead."
 		],
 		"scope": "php"
 	},
@@ -3837,11 +3887,12 @@
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${2:WIDGET_TYPE}_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
 			"  $0",
-			"}"
+			"}",
+			"//deprecated"
 		],
 		"description": [
-			"hook_field_widget_WIDGET_TYPE_form_alter",
-			"Drupal 8+",
+			"hook_field_widget_WIDGET_TYPE_form_alter (Deprecated)",
+			"Drupal 9+",
 			"",
 			"Alter widget forms for a specific widget provided by another module.",
 			"Modules can implement hook_field_widget_WIDGET_TYPE_form_alter() to modify a",
@@ -3850,7 +3901,10 @@
 			"This hook can only modify individual elements within a field widget and",
 			"cannot alter the top level (parent element) for multi-value fields. In most",
 			"cases, you should use hook_field_widget_multivalue_WIDGET_TYPE_form_alter()",
-			"instead and loop over the elements."
+			"instead and loop over the elements.",
+			"",
+			"deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
+			"hook_field_widget_single_element_WIDGET_TYPE_form_alter instead."
 		],
 		"scope": "php"
 	},
@@ -3949,15 +4003,19 @@
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
 			"  $0",
-			"}"
+			"}",
+			"//deprecated"
 		],
 		"description": [
-			"hook_field_widget_multivalue_form_alter",
-			"Drupal 8+",
+			"hook_field_widget_multivalue_form_alter (Deprecated)",
+			"Drupal 9+",
 			"",
 			"Alter forms for multi-value field widgets provided by other modules.",
 			"To alter the individual elements within the widget, loop over",
-			"\\Drupal\\Core\\Render\\Element::children($elements)."
+			"\\Drupal\\Core\\Render\\Element::children($elements).",
+			"",
+			"deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
+			"hook_field_widget_complete_form_alter instead."
 		],
 		"scope": "php"
 	},
@@ -3969,18 +4027,22 @@
 			" */",
 			"function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
 			"  $0",
-			"}"
+			"}",
+			"//deprecated"
 		],
 		"description": [
-			"hook_field_widget_multivalue_WIDGET_TYPE_form_alter",
-			"Drupal 8+",
+			"hook_field_widget_multivalue_WIDGET_TYPE_form_alter (Deprecated)",
+			"Drupal 9+",
 			"",
 			"Alter multi-value widget forms for a widget provided by another module.",
 			"Modules can implement hook_field_widget_multivalue_WIDGET_TYPE_form_alter() to",
 			"modify a specific widget form, rather than using",
 			"hook_field_widget_form_alter() and checking the widget type.",
 			"To alter the individual elements within the widget, loop over",
-			"\\Drupal\\Core\\Render\\Element::children($elements)."
+			"\\Drupal\\Core\\Render\\Element::children($elements).",
+			"",
+			"deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
+			"hook_field_widget_complete_WIDGET_TYPE_form_alter instead."
 		],
 		"scope": "php"
 	},
@@ -3996,7 +4058,7 @@
 		],
 		"description": [
 			"hook_field_formatter_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on Field API formatter types."
 		],
@@ -4014,7 +4076,7 @@
 		],
 		"description": [
 			"hook_field_info_max_weight",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Returns the maximum weight for the entity components handled by the module.",
 			"Field API takes care of fields and 'extra_fields'. This hook is intended for",
@@ -4034,7 +4096,7 @@
 		],
 		"description": [
 			"hook_field_purge_field_storage",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when a field storage definition is being purged.",
 			"In field_purge_field_storage(), after the storage definition has been removed",
@@ -4056,7 +4118,7 @@
 		],
 		"description": [
 			"hook_field_purge_field",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Acts when a field is being purged.",
 			"In field_purge_field(), after the field definition has been removed",
@@ -4078,7 +4140,7 @@
 		],
 		"description": [
 			"hook_field_formatter_third_party_settings_form",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to add settings to field formatters provided by other modules."
 		],
@@ -4096,7 +4158,7 @@
 		],
 		"description": [
 			"hook_field_widget_third_party_settings_form",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to add settings to field widgets provided by other modules."
 		],
@@ -4114,7 +4176,7 @@
 		],
 		"description": [
 			"hook_field_formatter_settings_summary_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters the field formatter settings summary."
 		],
@@ -4132,7 +4194,7 @@
 		],
 		"description": [
 			"hook_field_widget_settings_summary_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters the field widget settings summary."
 		],
@@ -4144,13 +4206,13 @@
 			"/**",
 			" * Implements hook_file_validate().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_file_validate(Drupal\\file\\FileInterface \\$file) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_validate(\\Drupal\\file\\FileInterface \\$file) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_file_validate",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Check that files meet a given criteria.",
 			"This hook lets modules perform additional validation on files. They're able",
@@ -4164,13 +4226,13 @@
 			"/**",
 			" * Implements hook_file_copy().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_file_copy(Drupal\\file\\FileInterface \\$file, Drupal\\file\\FileInterface \\$source) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_copy(\\Drupal\\file\\FileInterface \\$file, \\Drupal\\file\\FileInterface \\$source) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_file_copy",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to a file that has been copied."
 		],
@@ -4182,13 +4244,13 @@
 			"/**",
 			" * Implements hook_file_move().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_file_move(Drupal\\file\\FileInterface \\$file, Drupal\\file\\FileInterface \\$source) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_file_move(\\Drupal\\file\\FileInterface \\$file, \\Drupal\\file\\FileInterface \\$source) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_file_move",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to a file that has been moved."
 		],
@@ -4206,7 +4268,7 @@
 		],
 		"description": [
 			"hook_filter_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on filter definitions."
 		],
@@ -4224,7 +4286,7 @@
 		],
 		"description": [
 			"hook_filter_secure_image_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters images with an invalid source.",
 			"When the 'Restrict images to this site' filter is enabled, any images that",
@@ -4245,7 +4307,7 @@
 		],
 		"description": [
 			"hook_filter_format_disable",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform actions when a text format has been disabled."
 		],
@@ -4263,7 +4325,7 @@
 		],
 		"description": [
 			"hook_hal_type_uri_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the HAL type URI.",
 			"Modules may wish to alter the type URI generated for a resource based on the",
@@ -4283,7 +4345,7 @@
 		],
 		"description": [
 			"hook_hal_relation_uri_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the HAL relation URI.",
 			"Modules may wish to alter the relation URI generated for a resource based on",
@@ -4303,7 +4365,7 @@
 		],
 		"description": [
 			"hook_help",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide online user help.",
 			"By implementing hook_help(), a module can make documentation available to",
@@ -4334,7 +4396,7 @@
 		],
 		"description": [
 			"hook_help_section_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on help page section plugin definitions.",
 			"Sections for the page at /admin/help are provided by plugins. This hook",
@@ -4354,7 +4416,7 @@
 		],
 		"description": [
 			"hook_help_topics_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on help topic definitions."
 		],
@@ -4372,7 +4434,7 @@
 		],
 		"description": [
 			"hook_image_effect_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the information provided in \\Drupal\\image\\Annotation\\ImageEffect."
 		],
@@ -4390,7 +4452,7 @@
 		],
 		"description": [
 			"hook_image_style_flush",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Respond to image style flushing.",
 			"This hook enables modules to take effect when a style is being flushed (all",
@@ -4413,7 +4475,7 @@
 		],
 		"description": [
 			"hook_jsonapi_entity_filter_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Controls access when filtering by entity data via JSON:API.",
 			"This module supports filtering by resource object attributes referenced by",
@@ -4434,7 +4496,7 @@
 		],
 		"description": [
 			"hook_jsonapi_ENTITY_TYPE_filter_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Controls access to filtering by entity data via JSON:API.",
 			"This is the entity-type-specific variant of",
@@ -4457,7 +4519,7 @@
 		],
 		"description": [
 			"hook_jsonapi_entity_field_filter_access",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Restricts filtering access to the given field.",
 			"Some fields may contain sensitive information. In these cases, modules are",
@@ -4490,7 +4552,7 @@
 		],
 		"description": [
 			"hook_language_types_info",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Define language types."
 		],
@@ -4508,7 +4570,7 @@
 		],
 		"description": [
 			"hook_language_types_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on language types."
 		],
@@ -4526,7 +4588,7 @@
 		],
 		"description": [
 			"hook_language_negotiation_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Perform alterations on language negotiation methods."
 		],
@@ -4544,7 +4606,7 @@
 		],
 		"description": [
 			"hook_language_fallback_candidates_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to alter the language fallback candidates."
 		],
@@ -4562,7 +4624,7 @@
 		],
 		"description": [
 			"hook_language_fallback_candidates_OPERATION_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to alter the fallback candidates for specific operations."
 		],
@@ -4580,7 +4642,7 @@
 		],
 		"description": [
 			"hook_locale_translation_projects_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the list of projects to be updated by locale's interface translation.",
 			"Locale module attempts to update the translation of those modules returned",
@@ -4614,7 +4676,7 @@
 		],
 		"description": [
 			"hook_media_source_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters the information provided in \\Drupal\\media\\Annotation\\MediaSource."
 		],
@@ -4632,7 +4694,7 @@
 		],
 		"description": [
 			"hook_oembed_resource_url_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters an oEmbed resource URL before it is fetched."
 		],
@@ -4650,7 +4712,7 @@
 		],
 		"description": [
 			"hook_migrate_prepare_row",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allows adding data to a row before processing it.",
 			"For example, filter module used to store filter format settings in the",
@@ -4672,7 +4734,7 @@
 		],
 		"description": [
 			"hook_migrate_MIGRATION_ID_prepare_row",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allows adding data to a row for a migration with the specified ID.",
 			"This provides the same functionality as hook_migrate_prepare_row() but",
@@ -4692,7 +4754,7 @@
 		],
 		"description": [
 			"hook_migration_plugins_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allows altering the list of discovered migration plugins.",
 			"Modules are able to alter specific migrations structures or even remove or",
@@ -4714,7 +4776,7 @@
 		],
 		"description": [
 			"hook_node_grants",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Inform the node access system what permissions the user has.",
 			"This hook is for implementation by node access modules. In this hook,",
@@ -4753,7 +4815,7 @@
 		],
 		"description": [
 			"hook_node_access_records",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Set permissions for a node to be written to the database.",
 			"When a node is saved, a module implementing hook_node_access_records() will",
@@ -4798,13 +4860,13 @@
 			"/**",
 			" * Implements hook_node_access_records_alter().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_node_access_records_alter(&\\$grants, Drupal\\node\\NodeInterface \\$node) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_node_access_records_alter(&\\$grants, \\Drupal\\node\\NodeInterface \\$node) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_node_access_records_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter permissions for a node before it is written to the database.",
 			"Node access modules establish rules for user access to content. Node access",
@@ -4836,7 +4898,7 @@
 		],
 		"description": [
 			"hook_node_grants_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter user access rules when trying to view, edit or delete a node.",
 			"Node access modules establish rules for user access to content.",
@@ -4867,7 +4929,7 @@
 		],
 		"description": [
 			"hook_node_search_result",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on a node being displayed as a search result.",
 			"This hook is invoked from the node search plugin during search execution,",
@@ -4887,7 +4949,7 @@
 		],
 		"description": [
 			"hook_node_update_index",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on a node being indexed for searching.",
 			"This hook is invoked during search indexing, after loading, and after the",
@@ -4907,7 +4969,7 @@
 		],
 		"description": [
 			"hook_ranking",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Provide additional methods of scoring for core search results for nodes.",
 			"A node's search score is used to rank it among other nodes matched by the",
@@ -4940,7 +5002,7 @@
 		],
 		"description": [
 			"hook_node_links_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the links of a node."
 		],
@@ -4958,7 +5020,7 @@
 		],
 		"description": [
 			"hook_options_list_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters the list of options to be displayed for a field.",
 			"This hook can notably be used to change the label of the empty option."
@@ -4977,7 +5039,7 @@
 		],
 		"description": [
 			"hook_quickedit_editor_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to alter in-place editor plugin metadata.",
 			"This hook is called after the in-place editor plugins have been discovered,",
@@ -4991,13 +5053,13 @@
 			"/**",
 			" * Implements hook_quickedit_render_field().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_quickedit_render_field(Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$field_name, \\$view_mode_id, \\$langcode) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_quickedit_render_field(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$field_name, \\$view_mode_id, \\$langcode) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_quickedit_render_field",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Returns a renderable array for the value of a single field in an entity.",
 			"To integrate with in-place field editing when a non-standard render pipeline",
@@ -5028,7 +5090,7 @@
 		],
 		"description": [
 			"hook_rdf_namespaces",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to define namespaces for RDF mappings.",
 			"Many common namespace prefixes are defined in rdf_rdf_namespaces(). However,",
@@ -5050,7 +5112,7 @@
 		],
 		"description": [
 			"hook_rest_resource_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the resource plugin definitions."
 		],
@@ -5068,7 +5130,7 @@
 		],
 		"description": [
 			"hook_search_preprocess",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Preprocess text for search.",
 			"This hook is called to preprocess both the text added to the search index",
@@ -5094,7 +5156,7 @@
 		],
 		"description": [
 			"hook_search_plugin_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter search plugin definitions."
 		],
@@ -5112,7 +5174,7 @@
 		],
 		"description": [
 			"hook_shortcut_default_set",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Return the name of a default shortcut set for the provided user account.",
 			"This hook allows modules to define default shortcut sets for a particular",
@@ -5138,7 +5200,7 @@
 		],
 		"description": [
 			"hook_system_themes_page_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alters theme operation links."
 		],
@@ -5156,7 +5218,7 @@
 		],
 		"description": [
 			"hook_toolbar",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Add items to the toolbar menu.",
 			"The toolbar is a container for administrative and site-global interactive",
@@ -5190,7 +5252,7 @@
 		],
 		"description": [
 			"hook_toolbar_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the toolbar menu after hook_toolbar() is invoked.",
 			"This hook is invoked by Toolbar::preRenderToolbar() immediately after",
@@ -5206,13 +5268,13 @@
 			"/**",
 			" * Implements hook_tour_tips_alter().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_alter(array &\\$tour_tips, Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_alter(array &\\$tour_tips, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_tour_tips_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to alter tour items before render."
 		],
@@ -5230,7 +5292,7 @@
 		],
 		"description": [
 			"hook_tour_tips_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to alter tip plugin definitions."
 		],
@@ -5248,7 +5310,7 @@
 		],
 		"description": [
 			"hook_update_projects_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the list of projects before fetching data and comparing versions.",
 			"Most modules will never need to implement this hook. It is for advanced",
@@ -5275,7 +5337,7 @@
 		],
 		"description": [
 			"hook_update_status_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the information about available updates for projects."
 		],
@@ -5293,7 +5355,7 @@
 		],
 		"description": [
 			"hook_verify_update_archive",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Verify an archive after it has been downloaded and extracted."
 		],
@@ -5311,7 +5373,7 @@
 		],
 		"description": [
 			"hook_user_cancel",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on user account cancellations.",
 			"This hook is invoked from user_cancel() before a user account is canceled.",
@@ -5339,7 +5401,7 @@
 		],
 		"description": [
 			"hook_user_cancel_methods_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify account cancellation methods.",
 			"By implementing this hook, modules are able to add, customize, or remove",
@@ -5369,7 +5431,7 @@
 		],
 		"description": [
 			"hook_user_format_name_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the username that is displayed for a user.",
 			"Called by $account->getDisplayName() to allow modules to alter the username",
@@ -5391,7 +5453,7 @@
 		],
 		"description": [
 			"hook_user_login",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"The user just logged in."
 		],
@@ -5409,7 +5471,7 @@
 		],
 		"description": [
 			"hook_user_logout",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"The user just logged out."
 		],
@@ -5421,13 +5483,13 @@
 			"/**",
 			" * Implements hook_views_analyze().",
 			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_views_analyze(Drupal\\views\\ViewExecutable \\$view) {",
+			"function ${1:${TM_FILENAME_BASE:hook}}_views_analyze(\\Drupal\\views\\ViewExecutable \\$view) {",
 			"  $0",
 			"}"
 		],
 		"description": [
 			"hook_views_analyze",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Analyze a view to provide warnings about its configuration."
 		],
@@ -5445,7 +5507,7 @@
 		],
 		"description": [
 			"hook_views_data",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Describe data tables and fields (or the equivalent) to Views.",
 			"The table and fields are processed in Views using various plugins. See",
@@ -5465,7 +5527,7 @@
 		],
 		"description": [
 			"hook_views_data_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the table and field information from hook_views_data()."
 		],
@@ -5483,7 +5545,7 @@
 		],
 		"description": [
 			"hook_field_views_data",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Override the default Views data for a Field API field.",
 			"The field module's implementation of hook_views_data() invokes this for each",
@@ -5506,7 +5568,7 @@
 		],
 		"description": [
 			"hook_field_views_data_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the Views data for a single Field API field.",
 			"This is called on all modules even if there is no hook_field_views_data()",
@@ -5528,7 +5590,7 @@
 		],
 		"description": [
 			"hook_field_views_data_views_data_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the Views data on a per field basis.",
 			"The field module's implementation of hook_views_data_alter() invokes this for",
@@ -5538,8 +5600,8 @@
 			"data. This allows a field type to add data that concerns its fields in",
 			"other tables, which would not yet be defined at the point when",
 			"hook_field_views_data() and hook_field_views_data_alter() are invoked. For",
-			"example, entityreference adds reverse relationships on the tables for the",
-			"entities which are referenced by entityreference fields.",
+			"example, entity_reference adds reverse relationships on the tables for the",
+			"entities which are referenced by entity_reference fields.",
 			"(Note: this is weirdly named so as not to conflict with",
 			"hook_field_views_data_alter().)"
 		],
@@ -5557,7 +5619,7 @@
 		],
 		"description": [
 			"hook_views_query_substitutions",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Replace special strings in the query before it is executed.",
 			"The idea is that certain dynamic values can be placed in a query when it is",
@@ -5578,7 +5640,7 @@
 		],
 		"description": [
 			"hook_views_form_substitutions",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Replace special strings when processing a view with form elements."
 		],
@@ -5596,7 +5658,7 @@
 		],
 		"description": [
 			"hook_views_pre_view",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter a view at the very beginning of Views processing.",
 			"Output can be added to the view by setting $view->attachment_before",
@@ -5616,7 +5678,7 @@
 		],
 		"description": [
 			"hook_views_pre_build",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on the view before the query is built, but after displays are attached.",
 			"Output can be added to the view by setting $view->attachment_before",
@@ -5636,7 +5698,7 @@
 		],
 		"description": [
 			"hook_views_post_build",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on the view immediately after the query is built.",
 			"Output can be added to the view by setting $view->attachment_before",
@@ -5656,7 +5718,7 @@
 		],
 		"description": [
 			"hook_views_pre_execute",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on the view after the query is built and just before it is executed.",
 			"Output can be added to the view by setting $view->attachment_before",
@@ -5676,7 +5738,7 @@
 		],
 		"description": [
 			"hook_views_post_execute",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on the view immediately after the query has been executed.",
 			"At this point the query has been executed, but the preRender() phase has",
@@ -5698,7 +5760,7 @@
 		],
 		"description": [
 			"hook_views_pre_render",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Act on the view immediately before rendering it.",
 			"At this point the query has been executed, and the preRender() phase has",
@@ -5721,7 +5783,7 @@
 		],
 		"description": [
 			"hook_views_post_render",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Post-process any rendered data.",
 			"This can be valuable to be able to cache a view and still have some level of",
@@ -5745,7 +5807,7 @@
 		],
 		"description": [
 			"hook_views_query_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the query before it is executed."
 		],
@@ -5763,7 +5825,7 @@
 		],
 		"description": [
 			"hook_views_preview_info_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the view preview information.",
 			"The view preview information is optionally displayed when a view is",
@@ -5784,7 +5846,7 @@
 		],
 		"description": [
 			"hook_views_invalidate_cache",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Allow modules to respond to the invalidation of the Views cache.",
 			"This hook will fire whenever a view is enabled, disabled, created,",
@@ -5804,7 +5866,7 @@
 		],
 		"description": [
 			"hook_views_plugins_access_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views access plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5824,7 +5886,7 @@
 		],
 		"description": [
 			"hook_views_plugins_argument_default_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views default argument plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5844,7 +5906,7 @@
 		],
 		"description": [
 			"hook_views_plugins_argument_validator_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views argument validation plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5864,7 +5926,7 @@
 		],
 		"description": [
 			"hook_views_plugins_cache_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views cache plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5884,7 +5946,7 @@
 		],
 		"description": [
 			"hook_views_plugins_display_extenders_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views display extender plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5904,7 +5966,7 @@
 		],
 		"description": [
 			"hook_views_plugins_display_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views display plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5924,7 +5986,7 @@
 		],
 		"description": [
 			"hook_views_plugins_exposed_form_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views exposed form plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5944,7 +6006,7 @@
 		],
 		"description": [
 			"hook_views_plugins_join_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views join plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5964,7 +6026,7 @@
 		],
 		"description": [
 			"hook_views_plugins_pager_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views pager plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -5984,7 +6046,7 @@
 		],
 		"description": [
 			"hook_views_plugins_query_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views query plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -6004,7 +6066,7 @@
 		],
 		"description": [
 			"hook_views_plugins_row_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views row plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -6024,7 +6086,7 @@
 		],
 		"description": [
 			"hook_views_plugins_style_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views style plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -6044,7 +6106,7 @@
 		],
 		"description": [
 			"hook_views_plugins_wizard_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views wizard plugins.",
 			"This hook may be used to modify plugin properties after they have been",
@@ -6064,7 +6126,7 @@
 		],
 		"description": [
 			"hook_views_plugins_area_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views area handler plugins.",
 			"This hook may be used to modify handler properties after they have been",
@@ -6084,7 +6146,7 @@
 		],
 		"description": [
 			"hook_views_plugins_argument_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views argument handler plugins.",
 			"This hook may be used to modify handler properties after they have been",
@@ -6104,7 +6166,7 @@
 		],
 		"description": [
 			"hook_views_plugins_field_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views field handler plugins.",
 			"This hook may be used to modify handler properties after they have been",
@@ -6124,7 +6186,7 @@
 		],
 		"description": [
 			"hook_views_plugins_filter_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views filter handler plugins.",
 			"This hook may be used to modify handler properties after they have been",
@@ -6144,7 +6206,7 @@
 		],
 		"description": [
 			"hook_views_plugins_relationship_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views relationship handler plugins.",
 			"This hook may be used to modify handler properties after they have been",
@@ -6164,7 +6226,7 @@
 		],
 		"description": [
 			"hook_views_plugins_sort_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Modify the list of available views sort handler plugins.",
 			"This hook may be used to modify handler properties after they have been",
@@ -6184,7 +6246,7 @@
 		],
 		"description": [
 			"hook_views_ui_display_top_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the top of the display for the Views UI.",
 			"This hook can be implemented by themes."
@@ -6203,7 +6265,7 @@
 		],
 		"description": [
 			"hook_views_ui_display_tab_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the renderable array representing the edit page for one display.",
 			"This hook can be implemented by themes."
@@ -6222,217 +6284,9 @@
 		],
 		"description": [
 			"hook_views_ui_display_top_links_alter",
-			"Drupal 8+",
+			"Drupal 9+",
 			"",
 			"Alter the links displayed at the top of the view edit form."
-		],
-		"scope": "php"
-	},
-	"hook_path_insert": {
-		"prefix": "hook_path_insert",
-		"body": [
-			"/**",
-			" * Implements hook_path_insert().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_path_insert(\\$path) {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_path_insert (Deprecated)",
-			"Drupal 8+",
-			"",
-			"Respond to a path being inserted.",
-			"",
-			"deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Use",
-			"hook_path_alias_insert() instead."
-		],
-		"scope": "php"
-	},
-	"hook_path_update": {
-		"prefix": "hook_path_update",
-		"body": [
-			"/**",
-			" * Implements hook_path_update().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_path_update(\\$path) {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_path_update (Deprecated)",
-			"Drupal 8+",
-			"",
-			"Respond to a path being updated.",
-			"",
-			"deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Use",
-			"hook_path_alias_update() instead."
-		],
-		"scope": "php"
-	},
-	"hook_path_delete": {
-		"prefix": "hook_path_delete",
-		"body": [
-			"/**",
-			" * Implements hook_path_delete().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_path_delete(\\$path) {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_path_delete (Deprecated)",
-			"Drupal 8+",
-			"",
-			"Respond to a path being deleted.",
-			"",
-			"deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Use",
-			"hook_path_alias_delete() instead."
-		],
-		"scope": "php"
-	},
-	"hook_rest_type_uri_alter": {
-		"prefix": "hook_rest_type_uri_alter",
-		"body": [
-			"/**",
-			" * Implements hook_rest_type_uri_alter().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_rest_type_uri_alter(&\\$uri, \\$context = []) {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_rest_type_uri_alter (Deprecated)",
-			"Drupal 8+",
-			"",
-			"Alter the REST type URI.",
-			"",
-			"deprecated in drupal:8.3.0 and is removed from drupal:9.0.0. Use",
-			"hook_hal_type_uri_alter() instead. This exists solely for BC."
-		],
-		"scope": "php"
-	},
-	"hook_rest_relation_uri_alter": {
-		"prefix": "hook_rest_relation_uri_alter",
-		"body": [
-			"/**",
-			" * Implements hook_rest_relation_uri_alter().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_rest_relation_uri_alter(&\\$uri, \\$context = []) {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_rest_relation_uri_alter (Deprecated)",
-			"Drupal 8+",
-			"",
-			"Alter the REST relation URI.",
-			"",
-			"deprecated in drupal:8.3.0 and is removed from drupal:9.0.0. Use",
-			"hook_hal_relation_uri_alter() instead. This exists solely for BC."
-		],
-		"scope": "php"
-	},
-	"hook_simpletest_alter": {
-		"prefix": "hook_simpletest_alter",
-		"body": [
-			"/**",
-			" * Implements hook_simpletest_alter().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_simpletest_alter(&\\$groups) {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_simpletest_alter (Deprecated)",
-			"Drupal 8+",
-			"",
-			"Alter the list of tests.",
-			"This hook will not be invoked by the phpunit tool.",
-			"",
-			"deprecated in drupal:8.6.0 and is removed from drupal:9.0.0. Convert",
-			"your test to a PHPUnit-based one and implement test listeners."
-		],
-		"scope": "php"
-	},
-	"hook_test_group_started": {
-		"prefix": "hook_test_group_started",
-		"body": [
-			"/**",
-			" * Implements hook_test_group_started().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_test_group_started() {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_test_group_started (Deprecated)",
-			"Drupal 8+",
-			"",
-			"A test group has started.",
-			"This hook is called just once at the beginning of a test group.",
-			"This hook is only invoked by the Simpletest UI form runner. It will not be",
-			"invoked by run-tests.sh or the phpunit tool.",
-			"",
-			"deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Convert your",
-			"test to a PHPUnit-based one and implement test listeners."
-		],
-		"scope": "php"
-	},
-	"hook_test_group_finished": {
-		"prefix": "hook_test_group_finished",
-		"body": [
-			"/**",
-			" * Implements hook_test_group_finished().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_test_group_finished() {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_test_group_finished (Deprecated)",
-			"Drupal 8+",
-			"",
-			"A test group has finished.",
-			"This hook is called just once at the end of a test group.",
-			"This hook is only invoked by the Simpletest UI form runner. It will not be",
-			"invoked by run-tests.sh or the phpunit tool.",
-			"",
-			"deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Convert your",
-			"test to a PHPUnit-based one and implement test listeners."
-		],
-		"scope": "php"
-	},
-	"hook_test_finished": {
-		"prefix": "hook_test_finished",
-		"body": [
-			"/**",
-			" * Implements hook_test_finished().",
-			" */",
-			"function ${1:${TM_FILENAME_BASE:hook}}_test_finished(\\$results) {",
-			"  $0",
-			"}",
-			"//deprecated"
-		],
-		"description": [
-			"hook_test_finished (Deprecated)",
-			"Drupal 8+",
-			"",
-			"An individual test has finished.",
-			"This hook is called when an individual test has finished.",
-			"This hook is only invoked by the Simpletest UI form runner. It will not be",
-			"invoked by run-tests.sh or the phpunit tool.",
-			"",
-			"deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Convert your",
-			"test to a PHPUnit-based one and implement test listeners."
 		],
 		"scope": "php"
 	}
