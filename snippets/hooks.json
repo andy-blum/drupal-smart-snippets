@@ -337,11 +337,13 @@
       "Drupal 9+",
       "",
       "Perform alterations to a structured query for a given tag.",
-      "Some common tags include:",
-      "- 'entity_reference': For queries that return entities that may be referenced",
-      "by an entity reference field.",
-      "- ENTITY_TYPE . '_access': For queries of entities that will be displayed in",
-      "a listing (e.g., from Views) and therefore require access control."
+      "Some common tags include:</p>",
+      "<ul>",
+      "<li>'entity_reference': For queries that return entities that may be referenced",
+      "by an entity reference field.</li>",
+      "<li>ENTITY_TYPE . '_access': For queries of entities that will be displayed in",
+      "a listing (e.g., from Views) and therefore require access control.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -371,7 +373,7 @@
       "hook_schema(), these tables will be available on all supported database",
       "engines. You don't have to deal with the different SQL dialects for table",
       "creation and alteration of the supported database engines.",
-      "See the Schema API Handbook at https://www.drupal.org/node/146843 for details",
+      "See the Schema API Handbook at <a href=\"https://www.drupal.org/node/146843\">https://www.drupal.org/node/146843</a> for details",
       "on schema definition structures. Note that foreign key definitions are for",
       "documentation purposes only; foreign keys are not created in the database,",
       "nor are they enforced by Drupal."
@@ -393,8 +395,7 @@
       "Drupal 9+",
       "",
       "Control entity operation access.",
-      "Note that this hook is not called for listings (e.g., from entity queries",
-      "and Views). For nodes, see"
+      "Note that this hook is not called for listings (e.g., from entity queries"
     ],
     "scope": "php"
   },
@@ -413,8 +414,7 @@
       "Drupal 9+",
       "",
       "Control entity operation access for a specific entity type.",
-      "Note that this hook is not called for listings (e.g., from entity queries",
-      "and Views). For nodes, see"
+      "Note that this hook is not called for listings (e.g., from entity queries"
     ],
     "scope": "php"
   },
@@ -496,11 +496,13 @@
       "\\Drupal\\Core\\Entity\\Annotation\\EntityType and all the ones additionally",
       "provided by modules can be altered here.",
       "Do not use this hook to add information to entity types, unless one of the",
-      "following is true:",
-      "- You are filling in default values.",
-      "- You need to dynamically add information only in certain circumstances.",
-      "- Your hook needs to run after hook_entity_type_build() implementations.",
-      "Use hook_entity_type_build() instead in all other cases."
+      "following is true:</p>",
+      "<ul>",
+      "<li>You are filling in default values.</li>",
+      "<li>You need to dynamically add information only in certain circumstances.</li>",
+      "<li>Your hook needs to run after hook_entity_type_build() implementations.",
+      "Use hook_entity_type_build() instead in all other cases.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -1177,8 +1179,7 @@
       "If a module wishes to act on the rendered HTML of the entity rather than the",
       "structured content array, it may use this hook to add a #post_render",
       "callback. Alternatively, it could also implement hook_preprocess_HOOK() for",
-      "the particular entity type template, if there is one (e.g., node.html.twig).",
-      "See the"
+      "the particular entity type template, if there is one (e.g., node.html.twig)."
     ],
     "scope": "php"
   },
@@ -1203,8 +1204,7 @@
       "If a module wishes to act on the rendered HTML of the entity rather than the",
       "structured content array, it may use this hook to add a #post_render",
       "callback. Alternatively, it could also implement hook_preprocess_HOOK() for",
-      "the particular entity type template, if there is one (e.g., node.html.twig).",
-      "See the"
+      "the particular entity type template, if there is one (e.g., node.html.twig)."
     ],
     "scope": "php"
   },
@@ -1691,7 +1691,7 @@
       "/**",
       " * Implements hook_hook_info().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${1:${TM_FILENAME_BASE:hook}}_info() {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_hook_info() {",
       "  $0",
       "}"
     ],
@@ -1836,8 +1836,7 @@
       "The hook will only be called when a module is installed. The module's schema",
       "version will be set to the module's greatest numbered update hook. Because of",
       "this, any time a hook_update_N() is added to the module, this function needs",
-      "to be updated to reflect the current version of the database schema.",
-      "See the"
+      "to be updated to reflect the current version of the database schema."
     ],
     "scope": "php"
   },
@@ -1897,9 +1896,10 @@
       "Drupal 9+",
       "",
       "Remove any information that the module sets.",
-      "The information that the module should remove includes:",
-      "- state that the module has set using \\Drupal::state()",
-      "- modifications to existing tables",
+      "The information that the module should remove includes:</p>",
+      "<ul>",
+      "<li>state that the module has set using \\Drupal::state()</li>",
+      "<li>modifications to existing tables",
       "The module should not remove its entry from the module configuration.",
       "Database tables defined by hook_schema() will be removed automatically.",
       "The uninstall hook must be implemented in the module's .install file. It",
@@ -1909,7 +1909,8 @@
       "Adding custom logic to hook_uninstall implementations to check for",
       "criteria before uninstalling, does not take advantage of the module",
       "uninstall page UI. Instead, use",
-      "\\Drupal\\Core\\Extension\\ModuleUninstallValidatorInterface."
+      "\\Drupal\\Core\\Extension\\ModuleUninstallValidatorInterface.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -1997,7 +1998,7 @@
       "/**",
       " * Implements hook_update_N().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_update_${2:N}() {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_update_${2:N}(&$sandbox) {",
       "  $0",
       "}"
     ],
@@ -2007,8 +2008,7 @@
       "",
       "Perform a single update between minor versions.",
       "Hook hook_update_N() can only be used to update between minor versions of a",
-      "module. To upgrade between major versions of Drupal (for example, between",
-      "Drupal 7 and 8), use the"
+      "module. To upgrade between major versions of Drupal (for example, between"
     ],
     "scope": "php"
   },
@@ -2165,10 +2165,11 @@
       "Drupal 9+",
       "",
       "Check installation requirements and do status reporting.",
-      "This hook has three closely related uses, determined by the $phase argument:",
-      "- Checking installation requirements ($phase == 'install').",
-      "- Checking update requirements ($phase == 'update').",
-      "- Status reporting ($phase == 'runtime').",
+      "This hook has three closely related uses, determined by the $phase argument:</p>",
+      "<ul>",
+      "<li>Checking installation requirements ($phase == 'install').</li>",
+      "<li>Checking update requirements ($phase == 'update').</li>",
+      "<li>Status reporting ($phase == 'runtime').",
       "Note that this hook, like all others dealing with installation and updates,",
       "must reside in a module_name.install file, or it will not properly abort",
       "the installation of the module if a critical requirement is missing.",
@@ -2191,7 +2192,8 @@
       "The returned 'requirements' will be listed on the status report in the",
       "administration section, with indication of the severity level.",
       "Moreover, any requirement with a severity of REQUIREMENT_ERROR severity will",
-      "result in a notice on the administration configuration page."
+      "result in a notice on the administration configuration page.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -2363,7 +2365,7 @@
       "altering a node form, the node entity can be retrieved by invoking",
       "$form_state->getFormObject()->getEntity().",
       "Implementations are responsible for adding cache contexts/tags/max-age as",
-      "needed. See https://www.drupal.org/docs/8/api/cache-api/cache-api.",
+      "needed. See <a href=\"https://www.drupal.org/docs/8/api/cache-api/cache-api\">https://www.drupal.org/docs/8/api/cache-api/cache-api</a>.",
       "In addition to hook_form_alter(), which is called for all forms, there are",
       "two more specific form hooks available. The first,",
       "hook_form_BASE_FORM_ID_alter(), allows targeting of a form/forms via a base",
@@ -2396,7 +2398,7 @@
       "",
       "Provide a form-specific alteration instead of the global hook_form_alter().",
       "Implementations are responsible for adding cache contexts/tags/max-age as",
-      "needed. See https://www.drupal.org/docs/8/api/cache-api/cache-api.",
+      "needed. See <a href=\"https://www.drupal.org/docs/8/api/cache-api/cache-api\">https://www.drupal.org/docs/8/api/cache-api/cache-api</a>.",
       "Modules can implement hook_form_FORM_ID_alter() to modify a specific form,",
       "rather than implementing hook_form_alter() and checking the form ID, or",
       "using long switch statements to alter multiple forms.",
@@ -2422,7 +2424,7 @@
       "",
       "Provide a form-specific alteration for shared ('base') forms.",
       "Implementations are responsible for adding cache contexts/tags/max-age as",
-      "needed. See https://www.drupal.org/docs/8/api/cache-api/cache-api.",
+      "needed. See <a href=\"https://www.drupal.org/docs/8/api/cache-api/cache-api\">https://www.drupal.org/docs/8/api/cache-api/cache-api</a>.",
       "By default, when \\Drupal::formBuilder()->getForm() is called, Drupal looks",
       "for a function with the same name as the form ID, and uses that function to",
       "build the form. In contrast, base forms allow multiple form IDs to be mapped",
@@ -2540,15 +2542,19 @@
       "The system-determined tabs and actions are passed in by reference. Additional",
       "tabs may be added.",
       "The local tasks are under the 'tabs' element and keyed by plugin ID.",
-      "Each local task is an associative array containing:",
-      "- #theme: The theme function to use to render.",
-      "- #link: An associative array containing:",
-      "- title: The localized title of the link.",
-      "- url: a Url object.",
-      "- localized_options: An array of options to pass to",
-      "\\Drupal\\Core\\Utility\\LinkGeneratorInterface::generate().",
-      "- #weight: The link's weight compared to other links.",
-      "- #active: Whether the link should be marked as 'active'."
+      "Each local task is an associative array containing:</p>",
+      "<ul>",
+      "<li>#theme: The theme function to use to render.</li>",
+      "<li>#link: An associative array containing:<ul>",
+      "<li>title: The localized title of the link.</li>",
+      "<li>url: a Url object.</li>",
+      "<li>localized_options: An array of options to pass to",
+      "\\Drupal\\Core\\Utility\\LinkGeneratorInterface::generate().</li>",
+      "</ul>",
+      "</li>",
+      "<li>#weight: The link's weight compared to other links.</li>",
+      "<li>#active: Whether the link should be marked as 'active'.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -2607,12 +2613,14 @@
       "\\Drupal\\Core\\Menu\\ContextualLinkManager::getContextualLinkPluginsByGroup().",
       "The system-determined contextual links are passed in by reference. Additional",
       "links may be added and existing links can be altered.",
-      "Each contextual link contains the following entries:",
-      "- title: The localized title of the link.",
-      "- route_name: The route name of the link.",
-      "- route_parameters: The route parameters of the link.",
-      "- localized_options: An array of URL options.",
-      "- (optional) weight: The weight of the link, which is used to sort the links."
+      "Each contextual link contains the following entries:</p>",
+      "<ul>",
+      "<li>title: The localized title of the link.</li>",
+      "<li>route_name: The route name of the link.</li>",
+      "<li>route_parameters: The route parameters of the link.</li>",
+      "<li>localized_options: An array of URL options.</li>",
+      "<li>(optional) weight: The weight of the link, which is used to sort the links.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -3355,60 +3363,6 @@
     ],
     "scope": "php"
   },
-  "hook_aggregator_fetcher_info_alter": {
-    "prefix": "hook_aggregator_fetcher_info_alter",
-    "body": [
-      "/**",
-      " * Implements hook_aggregator_fetcher_info_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_fetcher_info_alter(array &$info) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_aggregator_fetcher_info_alter",
-      "Drupal 9+",
-      "",
-      "Perform alterations on the available fetchers."
-    ],
-    "scope": "php"
-  },
-  "hook_aggregator_parser_info_alter": {
-    "prefix": "hook_aggregator_parser_info_alter",
-    "body": [
-      "/**",
-      " * Implements hook_aggregator_parser_info_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_parser_info_alter(array &$info) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_aggregator_parser_info_alter",
-      "Drupal 9+",
-      "",
-      "Perform alterations on the available parsers."
-    ],
-    "scope": "php"
-  },
-  "hook_aggregator_processor_info_alter": {
-    "prefix": "hook_aggregator_processor_info_alter",
-    "body": [
-      "/**",
-      " * Implements hook_aggregator_processor_info_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_processor_info_alter(array &$info) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_aggregator_processor_info_alter",
-      "Drupal 9+",
-      "",
-      "Perform alterations on the available processors."
-    ],
-    "scope": "php"
-  },
   "hook_block_view_alter": {
     "prefix": "hook_block_view_alter",
     "body": [
@@ -3430,8 +3384,7 @@
       "If the module wishes to act on the rendered HTML of the block rather than",
       "the structured content array, it may use this hook to add a #post_render",
       "callback. Alternatively, it could also implement hook_preprocess_HOOK() for",
-      "block.html.twig. See \\Drupal\\Core\\Render\\RendererInterface::render()",
-      "documentation or the"
+      "block.html.twig. See \\Drupal\\Core\\Render\\RendererInterface::render()"
     ],
     "scope": "php"
   },
@@ -3548,56 +3501,13 @@
     ],
     "scope": "php"
   },
-  "hook_ckeditor_plugin_info_alter": {
-    "prefix": "hook_ckeditor_plugin_info_alter",
-    "body": [
-      "/**",
-      " * Implements hook_ckeditor_plugin_info_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_plugin_info_alter(array &$plugins) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_ckeditor_plugin_info_alter",
-      "Drupal 9+",
-      "",
-      "Modify the list of available CKEditor plugins.",
-      "This hook may be used to modify plugin properties after they have been",
-      "specified by other modules."
-    ],
-    "scope": "php"
-  },
-  "hook_ckeditor_css_alter": {
-    "prefix": "hook_ckeditor_css_alter",
-    "body": [
-      "/**",
-      " * Implements hook_ckeditor_css_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_css_alter(array &$css, Editor $editor) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_ckeditor_css_alter",
-      "Drupal 9+",
-      "",
-      "Modify the list of CSS files that will be added to a CKEditor instance.",
-      "Modules may use this hook to provide their own custom CSS file without",
-      "providing a CKEditor plugin. This list of CSS files is only used in the",
-      "iframe versions of CKEditor.",
-      "Front-end themes (and base themes) can easily specify CSS files to be used in",
-      "iframe instances of CKEditor through an entry in their .info.yml file:"
-    ],
-    "scope": "php"
-  },
   "hook_ckeditor5_plugin_info_alter": {
     "prefix": "hook_ckeditor5_plugin_info_alter",
     "body": [
       "/**",
       " * Implements hook_ckeditor5_plugin_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor5_plugin_info_alter(array &$plugin_definitions): void {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor5_plugin_info_alter(array &$plugin_definitions) {",
       "  $0",
       "}"
     ],
@@ -3617,7 +3527,7 @@
       "/**",
       " * Implements hook_ckeditor4to5upgrade_plugin_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor4to5upgrade_plugin_info_alter(array &$plugin_definitions): void {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor4to5upgrade_plugin_info_alter(array &$plugin_definitions) {",
       "  $0",
       "}"
     ],
@@ -3853,61 +3763,6 @@
     ],
     "scope": "php"
   },
-  "hook_field_widget_form_alter": {
-    "prefix": "hook_field_widget_form_alter",
-    "body": [
-      "/**",
-      " * Implements hook_field_widget_form_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_form_alter(&$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
-      "  $0",
-      "}",
-      "//deprecated"
-    ],
-    "description": [
-      "hook_field_widget_form_alter (Deprecated)",
-      "Drupal 9+",
-      "",
-      "Alter forms for field widgets provided by other modules.",
-      "This hook can only modify individual elements within a field widget and",
-      "cannot alter the top level (parent element) for multi-value fields. In most",
-      "cases, you should use hook_field_widget_multivalue_form_alter() instead and",
-      "loop over the elements.",
-      "",
-      "deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
-      "hook_field_widget_single_element_form_alter instead."
-    ],
-    "scope": "php"
-  },
-  "hook_field_widget_WIDGET_TYPE_form_alter": {
-    "prefix": "hook_field_widget_WIDGET_TYPE_form_alter",
-    "body": [
-      "/**",
-      " * Implements hook_field_widget_WIDGET_TYPE_form_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${2:WIDGET_TYPE}_form_alter(&$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
-      "  $0",
-      "}",
-      "//deprecated"
-    ],
-    "description": [
-      "hook_field_widget_WIDGET_TYPE_form_alter (Deprecated)",
-      "Drupal 9+",
-      "",
-      "Alter widget forms for a specific widget provided by another module.",
-      "Modules can implement hook_field_widget_WIDGET_TYPE_form_alter() to modify a",
-      "specific widget form, rather than using hook_field_widget_form_alter() and",
-      "checking the widget type.",
-      "This hook can only modify individual elements within a field widget and",
-      "cannot alter the top level (parent element) for multi-value fields. In most",
-      "cases, you should use hook_field_widget_multivalue_WIDGET_TYPE_form_alter()",
-      "instead and loop over the elements.",
-      "",
-      "deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
-      "hook_field_widget_single_element_WIDGET_TYPE_form_alter instead."
-    ],
-    "scope": "php"
-  },
   "hook_field_widget_single_element_form_alter": {
     "prefix": "hook_field_widget_single_element_form_alter",
     "body": [
@@ -3992,57 +3847,6 @@
       "Modules can implement hook_field_widget_complete_WIDGET_TYPE_form_alter()",
       "to modify a specific widget form, rather than using",
       "hook_field_widget_complete_form_alter() and checking the widget type."
-    ],
-    "scope": "php"
-  },
-  "hook_field_widget_multivalue_form_alter": {
-    "prefix": "hook_field_widget_multivalue_form_alter",
-    "body": [
-      "/**",
-      " * Implements hook_field_widget_multivalue_form_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_form_alter(array &$elements, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
-      "  $0",
-      "}",
-      "//deprecated"
-    ],
-    "description": [
-      "hook_field_widget_multivalue_form_alter (Deprecated)",
-      "Drupal 9+",
-      "",
-      "Alter forms for multi-value field widgets provided by other modules.",
-      "To alter the individual elements within the widget, loop over",
-      "\\Drupal\\Core\\Render\\Element::children($elements).",
-      "",
-      "deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
-      "hook_field_widget_complete_form_alter instead."
-    ],
-    "scope": "php"
-  },
-  "hook_field_widget_multivalue_WIDGET_TYPE_form_alter": {
-    "prefix": "hook_field_widget_multivalue_WIDGET_TYPE_form_alter",
-    "body": [
-      "/**",
-      " * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(array &$elements, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
-      "  $0",
-      "}",
-      "//deprecated"
-    ],
-    "description": [
-      "hook_field_widget_multivalue_WIDGET_TYPE_form_alter (Deprecated)",
-      "Drupal 9+",
-      "",
-      "Alter multi-value widget forms for a widget provided by another module.",
-      "Modules can implement hook_field_widget_multivalue_WIDGET_TYPE_form_alter() to",
-      "modify a specific widget form, rather than using",
-      "hook_field_widget_form_alter() and checking the widget type.",
-      "To alter the individual elements within the widget, loop over",
-      "\\Drupal\\Core\\Render\\Element::children($elements).",
-      "",
-      "deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use",
-      "hook_field_widget_complete_WIDGET_TYPE_form_alter instead."
     ],
     "scope": "php"
   },
@@ -4313,46 +4117,6 @@
     ],
     "scope": "php"
   },
-  "hook_hal_type_uri_alter": {
-    "prefix": "hook_hal_type_uri_alter",
-    "body": [
-      "/**",
-      " * Implements hook_hal_type_uri_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_hal_type_uri_alter(&$uri, $context = []) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_hal_type_uri_alter",
-      "Drupal 9+",
-      "",
-      "Alter the HAL type URI.",
-      "Modules may wish to alter the type URI generated for a resource based on the",
-      "context of the serializer/normalizer operation."
-    ],
-    "scope": "php"
-  },
-  "hook_hal_relation_uri_alter": {
-    "prefix": "hook_hal_relation_uri_alter",
-    "body": [
-      "/**",
-      " * Implements hook_hal_relation_uri_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_hal_relation_uri_alter(&$uri, $context = []) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_hal_relation_uri_alter",
-      "Drupal 9+",
-      "",
-      "Alter the HAL relation URI.",
-      "Modules may wish to alter the relation URI generated for a resource based on",
-      "the context of the serializer/normalizer operation."
-    ],
-    "scope": "php"
-  },
   "hook_help": {
     "prefix": "hook_help",
     "body": [
@@ -4378,9 +4142,11 @@
       "module. It can be accessed from the page at /admin/help or from the Extend",
       "page. If a module implements hook_help() the help system expects module",
       "overview help to be provided.",
-      "For detailed usage examples of:",
-      "- Module overview help, see content_translation_help(). Module overview",
-      "help should follow"
+      "For detailed usage examples of:</p>",
+      "<ul>",
+      "<li>Module overview help, see content_translation_help(). Module overview",
+      "help should follow</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -4524,8 +4290,8 @@
       "Restricts filtering access to the given field.",
       "Some fields may contain sensitive information. In these cases, modules are",
       "supposed to implement hook_entity_field_access(). However, this hook receives",
-      "an optional `$items` argument and often must return AccessResult::neutral()",
-      "when `$items === NULL`. This is because access may or may not be allowed",
+      "an optional <code>$items</code> argument and often must return AccessResult::neutral()",
+      "when <code>$items === NULL</code>. This is because access may or may not be allowed",
       "based on the field items or based on the entity on which the field is",
       "attached (if the user is the entity owner, for example).",
       "Since JSON:API must check field access prior to having a field item list",
@@ -4534,8 +4300,8 @@
       "This hook exists so that modules which cannot return",
       "AccessResult::forbidden() from hook_entity_field_access() can still secure",
       "JSON:API requests where necessary.",
-      "If a corresponding implementation of hook_entity_field_access() *can* be",
-      "forbidden for one or more values of the `$items` argument, this hook *MUST*",
+      "If a corresponding implementation of hook_entity_field_access() <em>can</em> be",
+      "forbidden for one or more values of the <code>$items</code> argument, this hook <em>MUST</em>",
       "return AccessResult::forbidden()."
     ],
     "scope": "php"
@@ -4652,15 +4418,17 @@
       "Modules or distributions that use a dedicated translation server should use",
       "this hook to specify the interface translation server pattern, or to add",
       "additional custom/non-Drupal.org modules to the list of modules known to",
-      "locale.",
-      "- \"interface translation server pattern\": URL of the .po translation files",
+      "locale.</p>",
+      "<ul>",
+      "<li>\"interface translation server pattern\": URL of the .po translation files",
       "used to download the files from. The URL contains tokens which will be",
       "replaced by appropriate values.",
-      "The following tokens are available for the server pattern:",
-      "- \"%core\": Core version. Value example: \"8.x\".",
-      "- \"%project\": Project name. Value examples: \"drupal\", \"media_gallery\".",
-      "- \"%version\": Project version release. Value examples: \"8.1\", \"8.x-1.0\".",
-      "- \"%language\": Language code. Value examples: \"fr\", \"pt-pt\"."
+      "The following tokens are available for the server pattern:</li>",
+      "<li>\"%core\": Core version. Value example: \"8.x\".</li>",
+      "<li>\"%project\": Project name. Value examples: \"drupal\", \"media_gallery\".</li>",
+      "<li>\"%version\": Project version release. Value examples: \"8.1\", \"8.x-1.0\".</li>",
+      "<li>\"%language\": Language code. Value examples: \"fr\", \"pt-pt\".</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -4829,19 +4597,20 @@
       "access to unpublished nodes.",
       "Note that the grant values in the return value from your hook must be",
       "integers and not boolean TRUE and FALSE.",
-      "Each permissions item in the array is an array with the following elements:",
-      "- 'realm': The name of a realm that the module has defined in",
-      "hook_node_grants().",
-      "- 'gid': A 'grant ID' from hook_node_grants().",
-      "- 'grant_view': If set to 1 a user that has been identified as a member",
+      "Each permissions item in the array is an array with the following elements:</p>",
+      "<ul>",
+      "<li>'realm': The name of a realm that the module has defined in",
+      "hook_node_grants().</li>",
+      "<li>'gid': A 'grant ID' from hook_node_grants().</li>",
+      "<li>'grant_view': If set to 1 a user that has been identified as a member",
       "of this gid within this realm can view this node. This should usually be",
       "set to $node->isPublished(). Failure to do so may expose unpublished content",
-      "to some users.",
-      "- 'grant_update': If set to 1 a user that has been identified as a member",
-      "of this gid within this realm can edit this node.",
-      "- 'grant_delete': If set to 1 a user that has been identified as a member",
-      "of this gid within this realm can delete this node.",
-      "- langcode: (optional) The language code of a specific translation of the",
+      "to some users.</li>",
+      "<li>'grant_update': If set to 1 a user that has been identified as a member",
+      "of this gid within this realm can edit this node.</li>",
+      "<li>'grant_delete': If set to 1 a user that has been identified as a member",
+      "of this gid within this realm can delete this node.</li>",
+      "<li>langcode: (optional) The language code of a specific translation of the",
       "node, if any. Modules may add this key to grant different access to",
       "different translations of a node, such that (e.g.) a particular group is",
       "granted access to edit the Catalan version of the node, but not the",
@@ -4850,7 +4619,8 @@
       "specified) is used as a fallback. Only specify multiple grant records with",
       "different languages for a node if the site has those languages configured.",
       "A \"deny all\" grant may be used to deny all access to a particular node or",
-      "node translation:"
+      "node translation:</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -5027,79 +4797,6 @@
     ],
     "scope": "php"
   },
-  "hook_quickedit_editor_alter": {
-    "prefix": "hook_quickedit_editor_alter",
-    "body": [
-      "/**",
-      " * Implements hook_quickedit_editor_alter().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_editor_alter(&$editors) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_quickedit_editor_alter",
-      "Drupal 9+",
-      "",
-      "Allow modules to alter in-place editor plugin metadata.",
-      "This hook is called after the in-place editor plugins have been discovered,",
-      "but before they are cached. Hence any alterations will be cached."
-    ],
-    "scope": "php"
-  },
-  "hook_quickedit_render_field": {
-    "prefix": "hook_quickedit_render_field",
-    "body": [
-      "/**",
-      " * Implements hook_quickedit_render_field().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_render_field(\\Drupal\\Core\\Entity\\EntityInterface $entity, $field_name, $view_mode_id, $langcode) {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_quickedit_render_field",
-      "Drupal 9+",
-      "",
-      "Returns a renderable array for the value of a single field in an entity.",
-      "To integrate with in-place field editing when a non-standard render pipeline",
-      "is used (FieldItemListInterface::view() is not sufficient to render back the",
-      "field following in-place editing in the exact way it was displayed",
-      "originally), implement this hook.",
-      "Edit module integrates with HTML elements with data-edit-field-id attributes.",
-      "For example:",
-      "data-edit-field-id=\"node/1/<field-name>/und/<module-name>-<custom-id>\"",
-      "After the editing is complete, this hook is invoked on the module with",
-      "the custom render pipeline identifier (last part of data-edit-field-id) to",
-      "re-render the field. Use the same logic used when rendering the field for",
-      "the original display.",
-      "The implementation should take care of invoking the prepare_view steps. It",
-      "should also respect field access permissions."
-    ],
-    "scope": "php"
-  },
-  "hook_rdf_namespaces": {
-    "prefix": "hook_rdf_namespaces",
-    "body": [
-      "/**",
-      " * Implements hook_rdf_namespaces().",
-      " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_rdf_namespaces() {",
-      "  $0",
-      "}"
-    ],
-    "description": [
-      "hook_rdf_namespaces",
-      "Drupal 9+",
-      "",
-      "Allow modules to define namespaces for RDF mappings.",
-      "Many common namespace prefixes are defined in rdf_rdf_namespaces(). However,",
-      "if a module implements rdf mappings that use prefixes that are not",
-      "defined in rdf_rdf_namespaces(), this hook should be used to define the new",
-      "namespace prefixes."
-    ],
-    "scope": "php"
-  },
   "hook_rest_resource_alter": {
     "prefix": "hook_rest_resource_alter",
     "body": [
@@ -5136,11 +4833,13 @@
       "This hook is called to preprocess both the text added to the search index",
       "and the keywords users have submitted for searching. The same processing",
       "needs to be applied to both so that searches will find matches.",
-      "Possible uses:",
-      "- Adding spaces between words of Chinese or Japanese text.",
-      "- Stemming words down to their root words to allow matches between, for",
-      "instance, walk, walked, walking, and walks in searching.",
-      "- Expanding abbreviations and acronyms that occur in text."
+      "Possible uses:</p>",
+      "<ul>",
+      "<li>Adding spaces between words of Chinese or Japanese text.</li>",
+      "<li>Stemming words down to their root words to allow matches between, for",
+      "instance, walk, walked, walking, and walks in searching.</li>",
+      "<li>Expanding abbreviations and acronyms that occur in text.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -5231,12 +4930,14 @@
       "large screens. To create this association, hook_toolbar() returns one or",
       "more render elements of type 'toolbar_item', containing the toggle and tray",
       "elements in its 'tab' and 'tray' properties.",
-      "The following properties are available:",
-      "- 'tab': A renderable array.",
-      "- 'tray': Optional. A renderable array.",
-      "- '#weight': Optional. Integer weight used for sorting toolbar items in",
+      "The following properties are available:</p>",
+      "<ul>",
+      "<li>'tab': A renderable array.</li>",
+      "<li>'tray': Optional. A renderable array.</li>",
+      "<li>'#weight': Optional. Integer weight used for sorting toolbar items in",
       "administration bar area.",
-      "This hook is invoked in Toolbar::preRenderToolbar()."
+      "This hook is invoked in Toolbar::preRenderToolbar().</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -5407,15 +5108,17 @@
       "By implementing this hook, modules are able to add, customize, or remove",
       "account cancellation methods. All defined methods are turned into radio",
       "button form elements by user_cancel_methods() after this hook is invoked.",
-      "The following properties can be defined for each method:",
-      "- title: The radio button's title.",
-      "- description: (optional) A description to display on the confirmation form",
+      "The following properties can be defined for each method:</p>",
+      "<ul>",
+      "<li>title: The radio button's title.</li>",
+      "<li>description: (optional) A description to display on the confirmation form",
       "if the user is not allowed to select the account cancellation method. The",
       "description is NOT used for the radio button, but instead should provide",
-      "additional explanation to the user seeking to cancel their account.",
-      "- access: (optional) A boolean value indicating whether the user can access",
+      "additional explanation to the user seeking to cancel their account.</li>",
+      "<li>access: (optional) A boolean value indicating whether the user can access",
       "a method. If 'access' is defined, the method cannot be configured as",
-      "default method."
+      "default method.</li>",
+      "</ul>"
     ],
     "scope": "php"
   },
@@ -5510,8 +5213,7 @@
       "Drupal 9+",
       "",
       "Describe data tables and fields (or the equivalent) to Views.",
-      "The table and fields are processed in Views using various plugins. See",
-      "the"
+      "The table and fields are processed in Views using various plugins. See"
     ],
     "scope": "php"
   },
@@ -6288,6 +5990,306 @@
       "Drupal 9+",
       "",
       "Alter the links displayed at the top of the view edit form."
+    ],
+    "scope": "php"
+  },
+  "hook_aggregator_fetcher_info_alter": {
+    "prefix": "hook_aggregator_fetcher_info_alter",
+    "body": [
+      "/**",
+      " * Implements hook_aggregator_fetcher_info_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_fetcher_info_alter(array &$info) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_aggregator_fetcher_info_alter",
+      "Drupal 9+",
+      "",
+      "Perform alterations on the available fetchers."
+    ],
+    "scope": "php"
+  },
+  "hook_aggregator_parser_info_alter": {
+    "prefix": "hook_aggregator_parser_info_alter",
+    "body": [
+      "/**",
+      " * Implements hook_aggregator_parser_info_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_parser_info_alter(array &$info) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_aggregator_parser_info_alter",
+      "Drupal 9+",
+      "",
+      "Perform alterations on the available parsers."
+    ],
+    "scope": "php"
+  },
+  "hook_aggregator_processor_info_alter": {
+    "prefix": "hook_aggregator_processor_info_alter",
+    "body": [
+      "/**",
+      " * Implements hook_aggregator_processor_info_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_processor_info_alter(array &$info) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_aggregator_processor_info_alter",
+      "Drupal 9+",
+      "",
+      "Perform alterations on the available processors."
+    ],
+    "scope": "php"
+  },
+  "hook_ckeditor_plugin_info_alter": {
+    "prefix": "hook_ckeditor_plugin_info_alter",
+    "body": [
+      "/**",
+      " * Implements hook_ckeditor_plugin_info_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_plugin_info_alter(array &$plugins) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_ckeditor_plugin_info_alter",
+      "Drupal 9+",
+      "",
+      "Modify the list of available CKEditor plugins.",
+      "This hook may be used to modify plugin properties after they have been",
+      "specified by other modules."
+    ],
+    "scope": "php"
+  },
+  "hook_ckeditor_css_alter": {
+    "prefix": "hook_ckeditor_css_alter",
+    "body": [
+      "/**",
+      " * Implements hook_ckeditor_css_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_css_alter(array &$css, Editor $editor) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_ckeditor_css_alter",
+      "Drupal 9+",
+      "",
+      "Modify the list of CSS files that will be added to a CKEditor instance.",
+      "Modules may use this hook to provide their own custom CSS file without",
+      "providing a CKEditor plugin. This list of CSS files is only used in the",
+      "iframe versions of CKEditor.",
+      "Front-end themes (and base themes) can easily specify CSS files to be used in",
+      "iframe instances of CKEditor through an entry in their .info.yml file:"
+    ],
+    "scope": "php"
+  },
+  "hook_field_widget_form_alter": {
+    "prefix": "hook_field_widget_form_alter",
+    "body": [
+      "/**",
+      " * Implements hook_field_widget_form_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_form_alter(&$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_field_widget_form_alter",
+      "Drupal 9+",
+      "",
+      "Alter forms for field widgets provided by other modules.",
+      "This hook can only modify individual elements within a field widget and",
+      "cannot alter the top level (parent element) for multi-value fields. In most",
+      "cases, you should use hook_field_widget_multivalue_form_alter() instead and",
+      "loop over the elements."
+    ],
+    "scope": "php"
+  },
+  "hook_field_widget_WIDGET_TYPE_form_alter": {
+    "prefix": "hook_field_widget_WIDGET_TYPE_form_alter",
+    "body": [
+      "/**",
+      " * Implements hook_field_widget_WIDGET_TYPE_form_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${2:WIDGET_TYPE}_form_alter(&$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_field_widget_WIDGET_TYPE_form_alter",
+      "Drupal 9+",
+      "",
+      "Alter widget forms for a specific widget provided by another module.",
+      "Modules can implement hook_field_widget_WIDGET_TYPE_form_alter() to modify a",
+      "specific widget form, rather than using hook_field_widget_form_alter() and",
+      "checking the widget type.",
+      "This hook can only modify individual elements within a field widget and",
+      "cannot alter the top level (parent element) for multi-value fields. In most",
+      "cases, you should use hook_field_widget_multivalue_WIDGET_TYPE_form_alter()",
+      "instead and loop over the elements."
+    ],
+    "scope": "php"
+  },
+  "hook_field_widget_multivalue_form_alter": {
+    "prefix": "hook_field_widget_multivalue_form_alter",
+    "body": [
+      "/**",
+      " * Implements hook_field_widget_multivalue_form_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_form_alter(array &$elements, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_field_widget_multivalue_form_alter",
+      "Drupal 9+",
+      "",
+      "Alter forms for multi-value field widgets provided by other modules.",
+      "To alter the individual elements within the widget, loop over",
+      "\\Drupal\\Core\\Render\\Element::children($elements)."
+    ],
+    "scope": "php"
+  },
+  "hook_field_widget_multivalue_WIDGET_TYPE_form_alter": {
+    "prefix": "hook_field_widget_multivalue_WIDGET_TYPE_form_alter",
+    "body": [
+      "/**",
+      " * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(array &$elements, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_field_widget_multivalue_WIDGET_TYPE_form_alter",
+      "Drupal 9+",
+      "",
+      "Alter multi-value widget forms for a widget provided by another module.",
+      "Modules can implement hook_field_widget_multivalue_WIDGET_TYPE_form_alter() to",
+      "modify a specific widget form, rather than using",
+      "hook_field_widget_form_alter() and checking the widget type.",
+      "To alter the individual elements within the widget, loop over",
+      "\\Drupal\\Core\\Render\\Element::children($elements)."
+    ],
+    "scope": "php"
+  },
+  "hook_hal_type_uri_alter": {
+    "prefix": "hook_hal_type_uri_alter",
+    "body": [
+      "/**",
+      " * Implements hook_hal_type_uri_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_hal_type_uri_alter(&$uri, $context = []) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_hal_type_uri_alter",
+      "Drupal 9+",
+      "",
+      "Alter the HAL type URI.",
+      "Modules may wish to alter the type URI generated for a resource based on the",
+      "context of the serializer/normalizer operation."
+    ],
+    "scope": "php"
+  },
+  "hook_hal_relation_uri_alter": {
+    "prefix": "hook_hal_relation_uri_alter",
+    "body": [
+      "/**",
+      " * Implements hook_hal_relation_uri_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_hal_relation_uri_alter(&$uri, $context = []) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_hal_relation_uri_alter",
+      "Drupal 9+",
+      "",
+      "Alter the HAL relation URI.",
+      "Modules may wish to alter the relation URI generated for a resource based on",
+      "the context of the serializer/normalizer operation."
+    ],
+    "scope": "php"
+  },
+  "hook_quickedit_editor_alter": {
+    "prefix": "hook_quickedit_editor_alter",
+    "body": [
+      "/**",
+      " * Implements hook_quickedit_editor_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_editor_alter(&$editors) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_quickedit_editor_alter",
+      "Drupal 9+",
+      "",
+      "Allow modules to alter in-place editor plugin metadata.",
+      "This hook is called after the in-place editor plugins have been discovered,",
+      "but before they are cached. Hence any alterations will be cached."
+    ],
+    "scope": "php"
+  },
+  "hook_quickedit_render_field": {
+    "prefix": "hook_quickedit_render_field",
+    "body": [
+      "/**",
+      " * Implements hook_quickedit_render_field().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_render_field(\\Drupal\\Core\\Entity\\EntityInterface $entity, $field_name, $view_mode_id, $langcode) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_quickedit_render_field",
+      "Drupal 9+",
+      "",
+      "Returns a renderable array for the value of a single field in an entity.",
+      "To integrate with in-place field editing when a non-standard render pipeline",
+      "is used (FieldItemListInterface::view() is not sufficient to render back the",
+      "field following in-place editing in the exact way it was displayed",
+      "originally), implement this hook.",
+      "Edit module integrates with HTML elements with data-edit-field-id attributes.",
+      "For example:",
+      "  data-edit-field-id=\"node/1/<field-name>/und/<module-name>-<custom-id>\"",
+      "After the editing is complete, this hook is invoked on the module with",
+      "the custom render pipeline identifier (last part of data-edit-field-id) to",
+      "re-render the field. Use the same logic used when rendering the field for",
+      "the original display.",
+      "The implementation should take care of invoking the prepare_view steps. It",
+      "should also respect field access permissions."
+    ],
+    "scope": "php"
+  },
+  "hook_rdf_namespaces": {
+    "prefix": "hook_rdf_namespaces",
+    "body": [
+      "/**",
+      " * Implements hook_rdf_namespaces().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_rdf_namespaces() {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "hook_rdf_namespaces",
+      "Drupal 9+",
+      "",
+      "Allow modules to define namespaces for RDF mappings.",
+      "Many common namespace prefixes are defined in rdf_rdf_namespaces(). However,",
+      "if a module implements rdf mappings that use prefixes that are not",
+      "defined in rdf_rdf_namespaces(), this hook should be used to define the new",
+      "namespace prefixes."
     ],
     "scope": "php"
   }
