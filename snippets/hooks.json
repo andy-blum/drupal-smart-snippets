@@ -35,7 +35,7 @@
       "/**",
       " * Implements hook_data_type_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_data_type_info_alter(&\\$data_types) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_data_type_info_alter(&$data_types) {",
       "  $0",
       "}"
     ],
@@ -53,7 +53,7 @@
       "/**",
       " * Implements hook_queue_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_queue_info_alter(&\\$queues) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_queue_info_alter(&$queues) {",
       "  $0",
       "}"
     ],
@@ -73,7 +73,7 @@
       "/**",
       " * Implements hook_mail_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_mail_alter(&\\$message) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_mail_alter(&$message) {",
       "  $0",
       "}"
     ],
@@ -99,7 +99,7 @@
       "/**",
       " * Implements hook_mail().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_mail(\\$key, &\\$message, \\$params) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_mail($key, &$message, $params) {",
       "  $0",
       "}"
     ],
@@ -120,7 +120,7 @@
       "/**",
       " * Implements hook_mail_backend_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_mail_backend_info_alter(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_mail_backend_info_alter(&$info) {",
       "  $0",
       "}"
     ],
@@ -138,7 +138,7 @@
       "/**",
       " * Implements hook_countries_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_countries_alter(&\\$countries) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_countries_alter(&$countries) {",
       "  $0",
       "}"
     ],
@@ -156,7 +156,7 @@
       "/**",
       " * Implements hook_display_variant_plugin_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_display_variant_plugin_alter(array &\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_display_variant_plugin_alter(array &$definitions) {",
       "  $0",
       "}"
     ],
@@ -174,7 +174,7 @@
       "/**",
       " * Implements hook_layout_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_layout_alter(&\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_layout_alter(&$definitions) {",
       "  $0",
       "}"
     ],
@@ -245,7 +245,7 @@
       "/**",
       " * Implements hook_config_import_steps_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_config_import_steps_alter(&\\$sync_steps, \\Drupal\\Core\\Config\\ConfigImporter \\$config_importer) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_config_import_steps_alter(&$sync_steps, \\Drupal\\Core\\Config\\ConfigImporter $config_importer) {",
       "  $0",
       "}"
     ],
@@ -263,7 +263,7 @@
       "/**",
       " * Implements hook_config_schema_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_config_schema_info_alter(&\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_config_schema_info_alter(&$definitions) {",
       "  $0",
       "}"
     ],
@@ -290,7 +290,7 @@
       "/**",
       " * Implements hook_validation_constraint_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_validation_constraint_alter(array &\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_validation_constraint_alter(array &$definitions) {",
       "  $0",
       "}"
     ],
@@ -308,7 +308,7 @@
       "/**",
       " * Implements hook_query_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_query_alter(Drupal\\Core\\Database\\Query\\AlterableInterface \\$query) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_query_alter(Drupal\\Core\\Database\\Query\\AlterableInterface $query) {",
       "  $0",
       "}"
     ],
@@ -328,7 +328,7 @@
       "/**",
       " * Implements hook_query_TAG_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_query_${2:TAG}_alter(Drupal\\Core\\Database\\Query\\AlterableInterface \\$query) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_query_${2:TAG}_alter(Drupal\\Core\\Database\\Query\\AlterableInterface $query) {",
       "  $0",
       "}"
     ],
@@ -384,7 +384,7 @@
       "/**",
       " * Implements hook_entity_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_access(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_access(\\Drupal\\Core\\Entity\\EntityInterface $entity, $operation, \\Drupal\\Core\\Session\\AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -404,7 +404,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_access(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_access(\\Drupal\\Core\\Entity\\EntityInterface $entity, $operation, \\Drupal\\Core\\Session\\AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -424,7 +424,7 @@
       "/**",
       " * Implements hook_entity_create_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_create_access(\\Drupal\\Core\\Session\\AccountInterface \\$account, array \\$context, \\$entity_bundle) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_create_access(\\Drupal\\Core\\Session\\AccountInterface $account, array $context, $entity_bundle) {",
       "  $0",
       "}"
     ],
@@ -442,7 +442,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_create_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create_access(\\Drupal\\Core\\Session\\AccountInterface \\$account, array \\$context, \\$entity_bundle) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create_access(\\Drupal\\Core\\Session\\AccountInterface $account, array $context, $entity_bundle) {",
       "  $0",
       "}"
     ],
@@ -460,7 +460,7 @@
       "/**",
       " * Implements hook_entity_type_build().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_type_build(array &\\$entity_types) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_type_build(array &$entity_types) {",
       "  $0",
       "}"
     ],
@@ -482,7 +482,7 @@
       "/**",
       " * Implements hook_entity_type_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_type_alter(array &\\$entity_types) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_type_alter(array &$entity_types) {",
       "  $0",
       "}"
     ],
@@ -510,7 +510,7 @@
       "/**",
       " * Implements hook_entity_view_mode_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_info_alter(&\\$view_modes) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_info_alter(&$view_modes) {",
       "  $0",
       "}"
     ],
@@ -546,7 +546,7 @@
       "/**",
       " * Implements hook_entity_bundle_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_info_alter(&\\$bundles) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_info_alter(&$bundles) {",
       "  $0",
       "}"
     ],
@@ -564,7 +564,7 @@
       "/**",
       " * Implements hook_entity_bundle_create().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_create(\\$entity_type_id, \\$bundle) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_create($entity_type_id, $bundle) {",
       "  $0",
       "}"
     ],
@@ -583,7 +583,7 @@
       "/**",
       " * Implements hook_entity_bundle_delete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_delete(\\$entity_type_id, \\$bundle) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_delete($entity_type_id, $bundle) {",
       "  $0",
       "}"
     ],
@@ -602,7 +602,7 @@
       "/**",
       " * Implements hook_entity_create().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_create(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_create(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -621,7 +621,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_create().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_create(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -640,7 +640,7 @@
       "/**",
       " * Implements hook_entity_revision_create().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_create(\\Drupal\\Core\\Entity\\EntityInterface \\$new_revision, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_create(\\Drupal\\Core\\Entity\\EntityInterface $new_revision, \\Drupal\\Core\\Entity\\EntityInterface $entity, $keep_untranslatable_fields) {",
       "  $0",
       "}"
     ],
@@ -658,7 +658,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_revision_create().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_create(\\Drupal\\Core\\Entity\\EntityInterface \\$new_revision, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$keep_untranslatable_fields) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_create(\\Drupal\\Core\\Entity\\EntityInterface $new_revision, \\Drupal\\Core\\Entity\\EntityInterface $entity, $keep_untranslatable_fields) {",
       "  $0",
       "}"
     ],
@@ -676,7 +676,7 @@
       "/**",
       " * Implements hook_entity_preload().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_preload(array \\$ids, \\$entity_type_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_preload(array $ids, $entity_type_id) {",
       "  $0",
       "}"
     ],
@@ -696,7 +696,7 @@
       "/**",
       " * Implements hook_entity_load().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_load(array \\$entities, \\$entity_type_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_load(array $entities, $entity_type_id) {",
       "  $0",
       "}"
     ],
@@ -718,7 +718,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_load().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_load(\\$entities) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_load($entities) {",
       "  $0",
       "}"
     ],
@@ -736,7 +736,7 @@
       "/**",
       " * Implements hook_entity_storage_load().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_storage_load(array \\$entities, \\$entity_type) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_storage_load(array $entities, $entity_type) {",
       "  $0",
       "}"
     ],
@@ -755,7 +755,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_storage_load().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_storage_load(array \\$entities) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_storage_load(array $entities) {",
       "  $0",
       "}"
     ],
@@ -774,7 +774,7 @@
       "/**",
       " * Implements hook_entity_presave().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_presave(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_presave(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -794,7 +794,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_presave().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_presave(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_presave(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -814,7 +814,7 @@
       "/**",
       " * Implements hook_entity_insert().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_insert(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -834,7 +834,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_insert().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_insert(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -854,7 +854,7 @@
       "/**",
       " * Implements hook_entity_update().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_update(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_update(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -875,7 +875,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_update().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_update(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_update(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -896,7 +896,7 @@
       "/**",
       " * Implements hook_entity_translation_create().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_create(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_create(\\Drupal\\Core\\Entity\\EntityInterface $translation) {",
       "  $0",
       "}"
     ],
@@ -916,7 +916,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_translation_create().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_create(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_create(\\Drupal\\Core\\Entity\\EntityInterface $translation) {",
       "  $0",
       "}"
     ],
@@ -936,7 +936,7 @@
       "/**",
       " * Implements hook_entity_translation_insert().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface $translation) {",
       "  $0",
       "}"
     ],
@@ -956,7 +956,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_translation_insert().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_insert(\\Drupal\\Core\\Entity\\EntityInterface $translation) {",
       "  $0",
       "}"
     ],
@@ -976,7 +976,7 @@
       "/**",
       " * Implements hook_entity_translation_delete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface $translation) {",
       "  $0",
       "}"
     ],
@@ -995,7 +995,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_translation_delete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$translation) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_translation_delete(\\Drupal\\Core\\Entity\\EntityInterface $translation) {",
       "  $0",
       "}"
     ],
@@ -1014,7 +1014,7 @@
       "/**",
       " * Implements hook_entity_predelete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_predelete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_predelete(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1032,7 +1032,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_predelete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_predelete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_predelete(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1050,7 +1050,7 @@
       "/**",
       " * Implements hook_entity_delete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_delete(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1069,7 +1069,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_delete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_delete(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1088,7 +1088,7 @@
       "/**",
       " * Implements hook_entity_revision_delete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_revision_delete(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1107,7 +1107,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_revision_delete().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_delete(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_revision_delete(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1126,7 +1126,7 @@
       "/**",
       " * Implements hook_entity_view().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, \\$view_mode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view(array &$build, \\Drupal\\Core\\Entity\\EntityInterface $entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface $display, $view_mode) {",
       "  $0",
       "}"
     ],
@@ -1144,7 +1144,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_view().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, \\$view_mode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view(array &$build, \\Drupal\\Core\\Entity\\EntityInterface $entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface $display, $view_mode) {",
       "  $0",
       "}"
     ],
@@ -1162,7 +1162,7 @@
       "/**",
       " * Implements hook_entity_view_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_alter(array &$build, \\Drupal\\Core\\Entity\\EntityInterface $entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface $display) {",
       "  $0",
       "}"
     ],
@@ -1188,7 +1188,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_view_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_view_alter(array &$build, \\Drupal\\Core\\Entity\\EntityInterface $entity, \\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface $display) {",
       "  $0",
       "}"
     ],
@@ -1214,7 +1214,7 @@
       "/**",
       " * Implements hook_entity_prepare_view().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_prepare_view(\\$entity_type_id, array \\$entities, array \\$displays, \\$view_mode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_prepare_view($entity_type_id, array $entities, array $displays, $view_mode) {",
       "  $0",
       "}"
     ],
@@ -1235,7 +1235,7 @@
       "/**",
       " * Implements hook_entity_view_mode_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_alter(&\\$view_mode, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_mode_alter(&$view_mode, \\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1253,7 +1253,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_build_defaults_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_build_defaults_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$view_mode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_build_defaults_alter(array &$build, \\Drupal\\Core\\Entity\\EntityInterface $entity, $view_mode) {",
       "  $0",
       "}"
     ],
@@ -1275,7 +1275,7 @@
       "/**",
       " * Implements hook_entity_build_defaults_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_build_defaults_alter(array &\\$build, \\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$view_mode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_build_defaults_alter(array &$build, \\Drupal\\Core\\Entity\\EntityInterface $entity, $view_mode) {",
       "  $0",
       "}"
     ],
@@ -1296,7 +1296,7 @@
       "/**",
       " * Implements hook_entity_view_display_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_display_alter(\\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface \\$display, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_view_display_alter(\\Drupal\\Core\\Entity\\Display\\EntityViewDisplayInterface $display, array $context) {",
       "  $0",
       "}"
     ],
@@ -1314,7 +1314,7 @@
       "/**",
       " * Implements hook_entity_display_build_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_display_build_alter(&\\$build, \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_display_build_alter(&$build, $context) {",
       "  $0",
       "}"
     ],
@@ -1332,7 +1332,7 @@
       "/**",
       " * Implements hook_entity_prepare_form().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface $entity, $operation, \\Drupal\\Core\\Form\\FormStateInterface $form_state) {",
       "  $0",
       "}"
     ],
@@ -1353,7 +1353,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_prepare_form().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$operation, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_prepare_form(\\Drupal\\Core\\Entity\\EntityInterface $entity, $operation, \\Drupal\\Core\\Form\\FormStateInterface $form_state) {",
       "  $0",
       "}"
     ],
@@ -1374,7 +1374,7 @@
       "/**",
       " * Implements hook_entity_form_mode_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_form_mode_alter(&\\$form_mode, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_form_mode_alter(&$form_mode, \\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1392,7 +1392,7 @@
       "/**",
       " * Implements hook_entity_form_display_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_form_display_alter(\\Drupal\\Core\\Entity\\Display\\EntityFormDisplayInterface \\$form_display, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_form_display_alter(\\Drupal\\Core\\Entity\\Display\\EntityFormDisplayInterface $form_display, array $context) {",
       "  $0",
       "}"
     ],
@@ -1410,7 +1410,7 @@
       "/**",
       " * Implements hook_entity_base_field_info().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_base_field_info(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_base_field_info(\\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type) {",
       "  $0",
       "}"
     ],
@@ -1432,7 +1432,7 @@
       "/**",
       " * Implements hook_entity_base_field_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_base_field_info_alter(&\\$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_base_field_info_alter(&$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type) {",
       "  $0",
       "}"
     ],
@@ -1450,7 +1450,7 @@
       "/**",
       " * Implements hook_entity_bundle_field_info().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_field_info(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\$bundle, array \\$base_field_definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_field_info(\\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {",
       "  $0",
       "}"
     ],
@@ -1471,7 +1471,7 @@
       "/**",
       " * Implements hook_entity_bundle_field_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_field_info_alter(&\\$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\$bundle) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_bundle_field_info_alter(&$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type, $bundle) {",
       "  $0",
       "}"
     ],
@@ -1489,7 +1489,7 @@
       "/**",
       " * Implements hook_entity_field_storage_info().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_storage_info(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_storage_info(\\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type) {",
       "  $0",
       "}"
     ],
@@ -1511,7 +1511,7 @@
       "/**",
       " * Implements hook_entity_field_storage_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_storage_info_alter(&\\$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_storage_info_alter(&$fields, \\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type) {",
       "  $0",
       "}"
     ],
@@ -1529,7 +1529,7 @@
       "/**",
       " * Implements hook_entity_operation().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_operation(\\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_operation(\\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1547,7 +1547,7 @@
       "/**",
       " * Implements hook_entity_operation_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_operation_alter(array &\\$operations, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_operation_alter(array &$operations, \\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1565,7 +1565,7 @@
       "/**",
       " * Implements hook_entity_field_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_access(\\$operation, \\Drupal\\Core\\Field\\FieldDefinitionInterface \\$field_definition, \\Drupal\\Core\\Session\\AccountInterface \\$account, \\Drupal\\Core\\Field\\FieldItemListInterface \\$items = NULL) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_access($operation, \\Drupal\\Core\\Field\\FieldDefinitionInterface $field_definition, \\Drupal\\Core\\Session\\AccountInterface $account, \\Drupal\\Core\\Field\\FieldItemListInterface $items = NULL) {",
       "  $0",
       "}"
     ],
@@ -1586,7 +1586,7 @@
       "/**",
       " * Implements hook_entity_field_access_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_access_alter(array &\\$grants, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_access_alter(array &$grants, array $context) {",
       "  $0",
       "}"
     ],
@@ -1606,7 +1606,7 @@
       "/**",
       " * Implements hook_entity_field_values_init().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1627,7 +1627,7 @@
       "/**",
       " * Implements hook_ENTITY_TYPE_field_values_init().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_field_values_init(\\Drupal\\Core\\Entity\\FieldableEntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -1673,7 +1673,7 @@
       "/**",
       " * Implements hook_entity_extra_field_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_entity_extra_field_info_alter(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_extra_field_info_alter(&$info) {",
       "  $0",
       "}"
     ],
@@ -1719,7 +1719,7 @@
       "/**",
       " * Implements hook_module_implements_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_module_implements_alter(&\\$implementations, \\$hook) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_module_implements_alter(&$implementations, $hook) {",
       "  $0",
       "}"
     ],
@@ -1748,7 +1748,7 @@
       "/**",
       " * Implements hook_system_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_system_info_alter(array &\\$info, \\Drupal\\Core\\Extension\\Extension \\$file, \\$type) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_system_info_alter(array &$info, \\Drupal\\Core\\Extension\\Extension $file, $type) {",
       "  $0",
       "}"
     ],
@@ -1773,7 +1773,7 @@
       "/**",
       " * Implements hook_module_preinstall().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_module_preinstall(\\$module) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_module_preinstall($module) {",
       "  $0",
       "}"
     ],
@@ -1791,7 +1791,7 @@
       "/**",
       " * Implements hook_modules_installed().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_modules_installed(\\$modules, \\$is_syncing) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_modules_installed($modules, $is_syncing) {",
       "  $0",
       "}"
     ],
@@ -1815,7 +1815,7 @@
       "/**",
       " * Implements hook_install().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_install(\\$is_syncing) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_install($is_syncing) {",
       "  $0",
       "}"
     ],
@@ -1847,7 +1847,7 @@
       "/**",
       " * Implements hook_module_preuninstall().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_module_preuninstall(\\$module) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_module_preuninstall($module) {",
       "  $0",
       "}"
     ],
@@ -1865,7 +1865,7 @@
       "/**",
       " * Implements hook_modules_uninstalled().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_modules_uninstalled(\\$modules, \\$is_syncing) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_modules_uninstalled($modules, $is_syncing) {",
       "  $0",
       "}"
     ],
@@ -1888,7 +1888,7 @@
       "/**",
       " * Implements hook_uninstall().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_uninstall(\\$is_syncing) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_uninstall($is_syncing) {",
       "  $0",
       "}"
     ],
@@ -1919,7 +1919,7 @@
       "/**",
       " * Implements hook_install_tasks().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_install_tasks(&\\$install_state) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_install_tasks(&$install_state) {",
       "  $0",
       "}"
     ],
@@ -1976,7 +1976,7 @@
       "/**",
       " * Implements hook_install_tasks_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_install_tasks_alter(&\\$tasks, \\$install_state) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_install_tasks_alter(&$tasks, $install_state) {",
       "  $0",
       "}"
     ],
@@ -2018,7 +2018,7 @@
       "/**",
       " * Implements hook_post_update_NAME().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_post_update_${2:NAME}(&\\$sandbox) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_post_update_${2:NAME}(&$sandbox) {",
       "  $0",
       "}"
     ],
@@ -2135,7 +2135,7 @@
       "/**",
       " * Implements hook_updater_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_updater_info_alter(&\\$updaters) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_updater_info_alter(&$updaters) {",
       "  $0",
       "}"
     ],
@@ -2156,7 +2156,7 @@
       "/**",
       " * Implements hook_requirements().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_requirements(\\$phase) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_requirements($phase) {",
       "  $0",
       "}"
     ],
@@ -2201,7 +2201,7 @@
       "/**",
       " * Implements hook_file_download().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_file_download(\\$uri) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_file_download($uri) {",
       "  $0",
       "}"
     ],
@@ -2223,7 +2223,7 @@
       "/**",
       " * Implements hook_file_url_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_file_url_alter(&\\$uri) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_file_url_alter(&$uri) {",
       "  $0",
       "}"
     ],
@@ -2247,7 +2247,7 @@
       "/**",
       " * Implements hook_file_mimetype_mapping_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_file_mimetype_mapping_alter(&\\$mapping) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_file_mimetype_mapping_alter(&$mapping) {",
       "  $0",
       "}"
     ],
@@ -2269,7 +2269,7 @@
       "/**",
       " * Implements hook_archiver_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_archiver_info_alter(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_archiver_info_alter(&$info) {",
       "  $0",
       "}"
     ],
@@ -2314,7 +2314,7 @@
       "/**",
       " * Implements hook_filetransfer_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_filetransfer_info_alter(&\\$filetransfer_info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_filetransfer_info_alter(&$filetransfer_info) {",
       "  $0",
       "}"
     ],
@@ -2332,7 +2332,7 @@
       "/**",
       " * Implements hook_ajax_render_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ajax_render_alter(array &\\$data) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ajax_render_alter(array &$data) {",
       "  $0",
       "}"
     ],
@@ -2350,7 +2350,7 @@
       "/**",
       " * Implements hook_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_form_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_form_alter(&$form, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $form_id) {",
       "  $0",
       "}"
     ],
@@ -2386,7 +2386,7 @@
       "/**",
       " * Implements hook_form_FORM_ID_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_form_${2:FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_form_${2:FORM_ID}_alter(&$form, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $form_id) {",
       "  $0",
       "}"
     ],
@@ -2412,7 +2412,7 @@
       "/**",
       " * Implements hook_form_BASE_FORM_ID_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_form_${2:BASE_FORM_ID}_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$form_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_form_${2:BASE_FORM_ID}_alter(&$form, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $form_id) {",
       "  $0",
       "}"
     ],
@@ -2445,7 +2445,7 @@
       "/**",
       " * Implements hook_batch_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_batch_alter(&\\$batch) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_batch_alter(&$batch) {",
       "  $0",
       "}"
     ],
@@ -2465,7 +2465,7 @@
       "/**",
       " * Implements hook_language_switch_links_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_language_switch_links_alter(array &\\$links, \\$type, \\Drupal\\Core\\Url \\$url) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_language_switch_links_alter(array &$links, $type, \\Drupal\\Core\\Url $url) {",
       "  $0",
       "}"
     ],
@@ -2486,7 +2486,7 @@
       "/**",
       " * Implements hook_transliteration_overrides_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_transliteration_overrides_alter(&\\$overrides, \\$langcode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_transliteration_overrides_alter(&$overrides, $langcode) {",
       "  $0",
       "}"
     ],
@@ -2509,7 +2509,7 @@
       "/**",
       " * Implements hook_menu_links_discovered_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_menu_links_discovered_alter(&\\$links) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_menu_links_discovered_alter(&$links) {",
       "  $0",
       "}"
     ],
@@ -2527,7 +2527,7 @@
       "/**",
       " * Implements hook_menu_local_tasks_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_menu_local_tasks_alter(&\\$data, \\$route_name, \\Drupal\\Core\\Cache\\RefinableCacheableDependencyInterface &\\$cacheability) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_menu_local_tasks_alter(&$data, $route_name, \\Drupal\\Core\\Cache\\RefinableCacheableDependencyInterface &$cacheability) {",
       "  $0",
       "}"
     ],
@@ -2558,7 +2558,7 @@
       "/**",
       " * Implements hook_menu_local_actions_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_menu_local_actions_alter(&\\$local_actions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_menu_local_actions_alter(&$local_actions) {",
       "  $0",
       "}"
     ],
@@ -2576,7 +2576,7 @@
       "/**",
       " * Implements hook_local_tasks_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_local_tasks_alter(&\\$local_tasks) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_local_tasks_alter(&$local_tasks) {",
       "  $0",
       "}"
     ],
@@ -2594,7 +2594,7 @@
       "/**",
       " * Implements hook_contextual_links_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_alter(array &\\$links, \\$group, array \\$route_parameters) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_alter(array &$links, $group, array $route_parameters) {",
       "  $0",
       "}"
     ],
@@ -2622,7 +2622,7 @@
       "/**",
       " * Implements hook_contextual_links_plugins_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_plugins_alter(array &\\$contextual_links) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_plugins_alter(array &$contextual_links) {",
       "  $0",
       "}"
     ],
@@ -2640,7 +2640,7 @@
       "/**",
       " * Implements hook_system_breadcrumb_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_system_breadcrumb_alter(\\Drupal\\Core\\Breadcrumb\\Breadcrumb &\\$breadcrumb, \\Drupal\\Core\\Routing\\RouteMatchInterface \\$route_match, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_system_breadcrumb_alter(\\Drupal\\Core\\Breadcrumb\\Breadcrumb &$breadcrumb, \\Drupal\\Core\\Routing\\RouteMatchInterface $route_match, array $context) {",
       "  $0",
       "}"
     ],
@@ -2658,7 +2658,7 @@
       "/**",
       " * Implements hook_link_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_link_alter(&\\$variables) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_link_alter(&$variables) {",
       "  $0",
       "}"
     ],
@@ -2676,7 +2676,7 @@
       "/**",
       " * Implements hook_plugin_filter_TYPE_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE}_alter(array &\\$definitions, array \\$extra, \\$consumer) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE}_alter(array &$definitions, array $extra, $consumer) {",
       "  $0",
       "}"
     ],
@@ -2698,7 +2698,7 @@
       "/**",
       " * Implements hook_plugin_filter_TYPE__CONSUMER_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE}__${3:CONSUMER}_alter(array &\\$definitions, array \\$extra) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_plugin_filter_${2:TYPE}__${3:CONSUMER}_alter(array &$definitions, array $extra) {",
       "  $0",
       "}"
     ],
@@ -2723,7 +2723,7 @@
       "/**",
       " * Implements hook_form_system_theme_settings_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_form_system_theme_settings_alter(&\\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_form_system_theme_settings_alter(&$form, \\Drupal\\Core\\Form\\FormStateInterface $form_state) {",
       "  $0",
       "}"
     ],
@@ -2747,7 +2747,7 @@
       "/**",
       " * Implements hook_preprocess().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_preprocess(&\\$variables, \\$hook) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_preprocess(&$variables, $hook) {",
       "  $0",
       "}"
     ],
@@ -2769,7 +2769,7 @@
       "/**",
       " * Implements hook_preprocess_HOOK().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_preprocess_${2:HOOK}(&\\$variables) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_preprocess_${2:HOOK}(&$variables) {",
       "  $0",
       "}"
     ],
@@ -2791,7 +2791,7 @@
       "/**",
       " * Implements hook_theme_suggestions_HOOK().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}(array \\$variables) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}(array $variables) {",
       "  $0",
       "}"
     ],
@@ -2818,7 +2818,7 @@
       "/**",
       " * Implements hook_theme_suggestions_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_alter(array &\\$suggestions, array \\$variables, \\$hook) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {",
       "  $0",
       "}"
     ],
@@ -2848,7 +2848,7 @@
       "/**",
       " * Implements hook_theme_suggestions_HOOK_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}_alter(array &\\$suggestions, array \\$variables) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_theme_suggestions_${2:HOOK}_alter(array &$suggestions, array $variables) {",
       "  $0",
       "}"
     ],
@@ -2877,7 +2877,7 @@
       "/**",
       " * Implements hook_themes_installed().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_themes_installed(\\$theme_list) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_themes_installed($theme_list) {",
       "  $0",
       "}"
     ],
@@ -2895,7 +2895,7 @@
       "/**",
       " * Implements hook_themes_uninstalled().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_themes_uninstalled(array \\$themes) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_themes_uninstalled(array $themes) {",
       "  $0",
       "}"
     ],
@@ -2933,7 +2933,7 @@
       "/**",
       " * Implements hook_render_template().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_render_template(\\$template_file, \\$variables) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_render_template($template_file, $variables) {",
       "  $0",
       "}"
     ],
@@ -2956,7 +2956,7 @@
       "/**",
       " * Implements hook_element_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_element_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_element_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -2976,7 +2976,7 @@
       "/**",
       " * Implements hook_element_plugin_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_element_plugin_alter(array &\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_element_plugin_alter(array &$definitions) {",
       "  $0",
       "}"
     ],
@@ -2997,7 +2997,7 @@
       "/**",
       " * Implements hook_js_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_js_alter(&\\$javascript, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_js_alter(&$javascript, \\Drupal\\Core\\Asset\\AttachedAssetsInterface $assets) {",
       "  $0",
       "}"
     ],
@@ -3037,7 +3037,7 @@
       "/**",
       " * Implements hook_js_settings_build().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_js_settings_build(array &\\$settings, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_js_settings_build(array &$settings, \\Drupal\\Core\\Asset\\AttachedAssetsInterface $assets) {",
       "  $0",
       "}"
     ],
@@ -3055,7 +3055,7 @@
       "/**",
       " * Implements hook_js_settings_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_js_settings_alter(array &\\$settings, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_js_settings_alter(array &$settings, \\Drupal\\Core\\Asset\\AttachedAssetsInterface $assets) {",
       "  $0",
       "}"
     ],
@@ -3073,7 +3073,7 @@
       "/**",
       " * Implements hook_library_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_library_info_alter(&\\$libraries, \\$extension) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_library_info_alter(&$libraries, $extension) {",
       "  $0",
       "}"
     ],
@@ -3096,7 +3096,7 @@
       "/**",
       " * Implements hook_css_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_css_alter(&\\$css, \\Drupal\\Core\\Asset\\AttachedAssetsInterface \\$assets) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_css_alter(&$css, \\Drupal\\Core\\Asset\\AttachedAssetsInterface $assets) {",
       "  $0",
       "}"
     ],
@@ -3114,7 +3114,7 @@
       "/**",
       " * Implements hook_page_attachments().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_page_attachments(array &\\$attachments) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_page_attachments(array &$attachments) {",
       "  $0",
       "}"
     ],
@@ -3139,7 +3139,7 @@
       "/**",
       " * Implements hook_page_attachments_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_page_attachments_alter(array &\\$attachments) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_page_attachments_alter(array &$attachments) {",
       "  $0",
       "}"
     ],
@@ -3163,7 +3163,7 @@
       "/**",
       " * Implements hook_page_top().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_page_top(array &\\$page_top) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_page_top(array &$page_top) {",
       "  $0",
       "}"
     ],
@@ -3181,7 +3181,7 @@
       "/**",
       " * Implements hook_page_bottom().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_page_bottom(array &\\$page_bottom) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_page_bottom(array &$page_bottom) {",
       "  $0",
       "}"
     ],
@@ -3199,7 +3199,7 @@
       "/**",
       " * Implements hook_theme().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_theme(\\$existing, \\$type, \\$theme, \\$path) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_theme($existing, $type, $theme, $path) {",
       "  $0",
       "}"
     ],
@@ -3219,7 +3219,7 @@
       "/**",
       " * Implements hook_theme_registry_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_theme_registry_alter(&\\$theme_registry) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_theme_registry_alter(&$theme_registry) {",
       "  $0",
       "}"
     ],
@@ -3246,7 +3246,7 @@
       "/**",
       " * Implements hook_template_preprocess_default_variables_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_template_preprocess_default_variables_alter(&\\$variables) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_template_preprocess_default_variables_alter(&$variables) {",
       "  $0",
       "}"
     ],
@@ -3272,7 +3272,7 @@
       "/**",
       " * Implements hook_tokens().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_tokens(\\$type, \\$tokens, array \\$data, array \\$options, \\Drupal\\Core\\Render\\BubbleableMetadata \\$bubbleable_metadata) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_tokens($type, $tokens, array $data, array $options, \\Drupal\\Core\\Render\\BubbleableMetadata $bubbleable_metadata) {",
       "  $0",
       "}"
     ],
@@ -3298,7 +3298,7 @@
       "/**",
       " * Implements hook_tokens_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_tokens_alter(array &\\$replacements, array \\$context, \\Drupal\\Core\\Render\\BubbleableMetadata \\$bubbleable_metadata) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_tokens_alter(array &$replacements, array $context, \\Drupal\\Core\\Render\\BubbleableMetadata $bubbleable_metadata) {",
       "  $0",
       "}"
     ],
@@ -3343,7 +3343,7 @@
       "/**",
       " * Implements hook_token_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_token_info_alter(&\\$data) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_token_info_alter(&$data) {",
       "  $0",
       "}"
     ],
@@ -3361,7 +3361,7 @@
       "/**",
       " * Implements hook_aggregator_fetcher_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_fetcher_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_fetcher_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -3379,7 +3379,7 @@
       "/**",
       " * Implements hook_aggregator_parser_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_parser_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_parser_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -3397,7 +3397,7 @@
       "/**",
       " * Implements hook_aggregator_processor_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_processor_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_aggregator_processor_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -3415,7 +3415,7 @@
       "/**",
       " * Implements hook_block_view_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_block_view_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_block_view_alter(array &$build, \\Drupal\\Core\\Block\\BlockPluginInterface $block) {",
       "  $0",
       "}"
     ],
@@ -3441,7 +3441,7 @@
       "/**",
       " * Implements hook_block_view_BASE_BLOCK_ID_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_block_view_${2:BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_block_view_${2:BASE_BLOCK_ID}_alter(array &$build, \\Drupal\\Core\\Block\\BlockPluginInterface $block) {",
       "  $0",
       "}"
     ],
@@ -3466,7 +3466,7 @@
       "/**",
       " * Implements hook_block_build_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_block_build_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_block_build_alter(array &$build, \\Drupal\\Core\\Block\\BlockPluginInterface $block) {",
       "  $0",
       "}"
     ],
@@ -3491,7 +3491,7 @@
       "/**",
       " * Implements hook_block_build_BASE_BLOCK_ID_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_block_build_${2:BASE_BLOCK_ID}_alter(array &\\$build, \\Drupal\\Core\\Block\\BlockPluginInterface \\$block) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_block_build_${2:BASE_BLOCK_ID}_alter(array &$build, \\Drupal\\Core\\Block\\BlockPluginInterface $block) {",
       "  $0",
       "}"
     ],
@@ -3516,7 +3516,7 @@
       "/**",
       " * Implements hook_block_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_block_access(\\Drupal\\block\\Entity\\Block \\$block, \\$operation, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_block_access(\\Drupal\\block\\Entity\\Block $block, $operation, \\Drupal\\Core\\Session\\AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -3536,7 +3536,7 @@
       "/**",
       " * Implements hook_block_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_block_alter(&\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_block_alter(&$definitions) {",
       "  $0",
       "}"
     ],
@@ -3554,7 +3554,7 @@
       "/**",
       " * Implements hook_ckeditor_plugin_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_plugin_info_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_plugin_info_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -3574,7 +3574,7 @@
       "/**",
       " * Implements hook_ckeditor_css_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_css_alter(array &\\$css, Editor \\$editor) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor_css_alter(array &$css, Editor $editor) {",
       "  $0",
       "}"
     ],
@@ -3597,7 +3597,7 @@
       "/**",
       " * Implements hook_ckeditor5_plugin_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor5_plugin_info_alter(array &\\$plugin_definitions): void {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor5_plugin_info_alter(array &$plugin_definitions): void {",
       "  $0",
       "}"
     ],
@@ -3617,7 +3617,7 @@
       "/**",
       " * Implements hook_ckeditor4to5upgrade_plugin_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor4to5upgrade_plugin_info_alter(array &\\$plugin_definitions): void {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_ckeditor4to5upgrade_plugin_info_alter(array &$plugin_definitions): void {",
       "  $0",
       "}"
     ],
@@ -3637,7 +3637,7 @@
       "/**",
       " * Implements hook_comment_links_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_comment_links_alter(array &\\$links, CommentInterface \\$entity, array &\\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_comment_links_alter(array &$links, CommentInterface $entity, array &$context) {",
       "  $0",
       "}"
     ],
@@ -3655,7 +3655,7 @@
       "/**",
       " * Implements hook_config_translation_info().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_config_translation_info(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_config_translation_info(&$info) {",
       "  $0",
       "}"
     ],
@@ -3679,7 +3679,7 @@
       "/**",
       " * Implements hook_config_translation_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_config_translation_info_alter(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_config_translation_info_alter(&$info) {",
       "  $0",
       "}"
     ],
@@ -3701,7 +3701,7 @@
       "/**",
       " * Implements hook_contextual_links_view_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_view_alter(&\\$element, \\$items) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_contextual_links_view_alter(&$element, $items) {",
       "  $0",
       "}"
     ],
@@ -3723,7 +3723,7 @@
       "/**",
       " * Implements hook_editor_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_editor_info_alter(array &\\$editors) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_editor_info_alter(array &$editors) {",
       "  $0",
       "}"
     ],
@@ -3741,7 +3741,7 @@
       "/**",
       " * Implements hook_editor_js_settings_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_editor_js_settings_alter(array &\\$settings) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_editor_js_settings_alter(array &$settings) {",
       "  $0",
       "}"
     ],
@@ -3759,7 +3759,7 @@
       "/**",
       " * Implements hook_editor_xss_filter_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_editor_xss_filter_alter(&\\$editor_xss_filter_class, FilterFormatInterface \\$format, FilterFormatInterface \\$original_format = NULL) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_editor_xss_filter_alter(&$editor_xss_filter_class, FilterFormatInterface $format, FilterFormatInterface $original_format = NULL) {",
       "  $0",
       "}"
     ],
@@ -3779,7 +3779,7 @@
       "/**",
       " * Implements hook_field_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_info_alter(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_info_alter(&$info) {",
       "  $0",
       "}"
     ],
@@ -3797,7 +3797,7 @@
       "/**",
       " * Implements hook_field_ui_preconfigured_options_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_ui_preconfigured_options_alter(array &\\$options, \\$field_type) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_ui_preconfigured_options_alter(array &$options, $field_type) {",
       "  $0",
       "}"
     ],
@@ -3815,7 +3815,7 @@
       "/**",
       " * Implements hook_field_storage_config_update_forbid().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_storage_config_update_forbid(\\Drupal\\field\\FieldStorageConfigInterface \\$field_storage, \\Drupal\\field\\FieldStorageConfigInterface \\$prior_field_storage) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_storage_config_update_forbid(\\Drupal\\field\\FieldStorageConfigInterface $field_storage, \\Drupal\\field\\FieldStorageConfigInterface $prior_field_storage) {",
       "  $0",
       "}"
     ],
@@ -3841,7 +3841,7 @@
       "/**",
       " * Implements hook_field_widget_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -3859,7 +3859,7 @@
       "/**",
       " * Implements hook_field_widget_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_form_alter(&$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
       "  $0",
       "}",
       "//deprecated"
@@ -3885,7 +3885,7 @@
       "/**",
       " * Implements hook_field_widget_WIDGET_TYPE_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${2:WIDGET_TYPE}_form_alter(&\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_${2:WIDGET_TYPE}_form_alter(&$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
       "  $0",
       "}",
       "//deprecated"
@@ -3914,7 +3914,7 @@
       "/**",
       " * Implements hook_field_widget_single_element_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_form_alter(array &\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_form_alter(array &$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
       "  $0",
       "}"
     ],
@@ -3936,7 +3936,7 @@
       "/**",
       " * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_${2:WIDGET_TYPE}_form_alter(array &\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_${2:WIDGET_TYPE}_form_alter(array &$element, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
       "  $0",
       "}"
     ],
@@ -3962,7 +3962,7 @@
       "/**",
       " * Implements hook_field_widget_complete_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_complete_form_alter(&\\$field_widget_complete_form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_complete_form_alter(&$field_widget_complete_form, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
       "  $0",
       "}"
     ],
@@ -3980,7 +3980,7 @@
       "/**",
       " * Implements hook_field_widget_complete_WIDGET_TYPE_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_complete_${2:WIDGET_TYPE}_form_alter(&\\$field_widget_complete_form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_complete_${2:WIDGET_TYPE}_form_alter(&$field_widget_complete_form, \\Drupal\\Core\\Form\\FormStateInterface $form_state, $context) {",
       "  $0",
       "}"
     ],
@@ -4001,7 +4001,7 @@
       "/**",
       " * Implements hook_field_widget_multivalue_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_form_alter(array &$elements, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
       "  $0",
       "}",
       "//deprecated"
@@ -4025,7 +4025,7 @@
       "/**",
       " * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(array &\\$elements, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(array &$elements, \\Drupal\\Core\\Form\\FormStateInterface $form_state, array $context) {",
       "  $0",
       "}",
       "//deprecated"
@@ -4052,7 +4052,7 @@
       "/**",
       " * Implements hook_field_formatter_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_formatter_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_formatter_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -4070,7 +4070,7 @@
       "/**",
       " * Implements hook_field_info_max_weight().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_info_max_weight(\\$entity_type, \\$bundle, \\$context, \\$context_mode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_info_max_weight($entity_type, $bundle, $context, $context_mode) {",
       "  $0",
       "}"
     ],
@@ -4090,7 +4090,7 @@
       "/**",
       " * Implements hook_field_purge_field_storage().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_purge_field_storage(\\Drupal\\field\\Entity\\FieldStorageConfig \\$field_storage) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_purge_field_storage(\\Drupal\\field\\Entity\\FieldStorageConfig $field_storage) {",
       "  $0",
       "}"
     ],
@@ -4112,7 +4112,7 @@
       "/**",
       " * Implements hook_field_purge_field().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_purge_field(\\Drupal\\field\\Entity\\FieldConfig \\$field) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_purge_field(\\Drupal\\field\\Entity\\FieldConfig $field) {",
       "  $0",
       "}"
     ],
@@ -4134,7 +4134,7 @@
       "/**",
       " * Implements hook_field_formatter_third_party_settings_form().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_formatter_third_party_settings_form(\\Drupal\\Core\\Field\\FormatterInterface \\$plugin, \\Drupal\\Core\\Field\\FieldDefinitionInterface \\$field_definition, \\$view_mode, array \\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_formatter_third_party_settings_form(\\Drupal\\Core\\Field\\FormatterInterface $plugin, \\Drupal\\Core\\Field\\FieldDefinitionInterface $field_definition, $view_mode, array $form, \\Drupal\\Core\\Form\\FormStateInterface $form_state) {",
       "  $0",
       "}"
     ],
@@ -4152,7 +4152,7 @@
       "/**",
       " * Implements hook_field_widget_third_party_settings_form().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_third_party_settings_form(\\Drupal\\Core\\Field\\WidgetInterface \\$plugin, \\Drupal\\Core\\Field\\FieldDefinitionInterface \\$field_definition, \\$form_mode, array \\$form, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_third_party_settings_form(\\Drupal\\Core\\Field\\WidgetInterface $plugin, \\Drupal\\Core\\Field\\FieldDefinitionInterface $field_definition, $form_mode, array $form, \\Drupal\\Core\\Form\\FormStateInterface $form_state) {",
       "  $0",
       "}"
     ],
@@ -4170,7 +4170,7 @@
       "/**",
       " * Implements hook_field_formatter_settings_summary_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_formatter_settings_summary_alter(array &\\$summary, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_formatter_settings_summary_alter(array &$summary, array $context) {",
       "  $0",
       "}"
     ],
@@ -4188,7 +4188,7 @@
       "/**",
       " * Implements hook_field_widget_settings_summary_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_settings_summary_alter(array &\\$summary, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_settings_summary_alter(array &$summary, array $context) {",
       "  $0",
       "}"
     ],
@@ -4206,7 +4206,7 @@
       "/**",
       " * Implements hook_file_validate().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_file_validate(\\Drupal\\file\\FileInterface \\$file) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_file_validate(\\Drupal\\file\\FileInterface $file) {",
       "  $0",
       "}"
     ],
@@ -4226,7 +4226,7 @@
       "/**",
       " * Implements hook_file_copy().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_file_copy(\\Drupal\\file\\FileInterface \\$file, \\Drupal\\file\\FileInterface \\$source) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_file_copy(\\Drupal\\file\\FileInterface $file, \\Drupal\\file\\FileInterface $source) {",
       "  $0",
       "}"
     ],
@@ -4244,7 +4244,7 @@
       "/**",
       " * Implements hook_file_move().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_file_move(\\Drupal\\file\\FileInterface \\$file, \\Drupal\\file\\FileInterface \\$source) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_file_move(\\Drupal\\file\\FileInterface $file, \\Drupal\\file\\FileInterface $source) {",
       "  $0",
       "}"
     ],
@@ -4262,7 +4262,7 @@
       "/**",
       " * Implements hook_filter_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_filter_info_alter(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_filter_info_alter(&$info) {",
       "  $0",
       "}"
     ],
@@ -4280,7 +4280,7 @@
       "/**",
       " * Implements hook_filter_secure_image_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_filter_secure_image_alter(&\\$image) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_filter_secure_image_alter(&$image) {",
       "  $0",
       "}"
     ],
@@ -4301,7 +4301,7 @@
       "/**",
       " * Implements hook_filter_format_disable().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_filter_format_disable(\\$format) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_filter_format_disable($format) {",
       "  $0",
       "}"
     ],
@@ -4319,7 +4319,7 @@
       "/**",
       " * Implements hook_hal_type_uri_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_hal_type_uri_alter(&\\$uri, \\$context = []) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_hal_type_uri_alter(&$uri, $context = []) {",
       "  $0",
       "}"
     ],
@@ -4339,7 +4339,7 @@
       "/**",
       " * Implements hook_hal_relation_uri_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_hal_relation_uri_alter(&\\$uri, \\$context = []) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_hal_relation_uri_alter(&$uri, $context = []) {",
       "  $0",
       "}"
     ],
@@ -4359,7 +4359,7 @@
       "/**",
       " * Implements hook_help().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_help(\\$route_name, \\Drupal\\Core\\Routing\\RouteMatchInterface \\$route_match) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_help($route_name, \\Drupal\\Core\\Routing\\RouteMatchInterface $route_match) {",
       "  $0",
       "}"
     ],
@@ -4390,7 +4390,7 @@
       "/**",
       " * Implements hook_help_section_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_help_section_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_help_section_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -4410,7 +4410,7 @@
       "/**",
       " * Implements hook_help_topics_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_help_topics_info_alter(array &\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_help_topics_info_alter(array &$info) {",
       "  $0",
       "}"
     ],
@@ -4428,7 +4428,7 @@
       "/**",
       " * Implements hook_image_effect_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_image_effect_info_alter(&\\$effects) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_image_effect_info_alter(&$effects) {",
       "  $0",
       "}"
     ],
@@ -4446,7 +4446,7 @@
       "/**",
       " * Implements hook_image_style_flush().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_image_style_flush(\\$style) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_image_style_flush($style) {",
       "  $0",
       "}"
     ],
@@ -4469,7 +4469,7 @@
       "/**",
       " * Implements hook_jsonapi_entity_filter_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_entity_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_entity_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type, \\Drupal\\Core\\Session\\AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -4490,7 +4490,7 @@
       "/**",
       " * Implements hook_jsonapi_ENTITY_TYPE_filter_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_${2:ENTITY_TYPE}_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface \\$entity_type, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_${2:ENTITY_TYPE}_filter_access(\\Drupal\\Core\\Entity\\EntityTypeInterface $entity_type, \\Drupal\\Core\\Session\\AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -4513,7 +4513,7 @@
       "/**",
       " * Implements hook_jsonapi_entity_field_filter_access().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_entity_field_filter_access(\\Drupal\\Core\\Field\\FieldDefinitionInterface \\$field_definition, \\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_jsonapi_entity_field_filter_access(\\Drupal\\Core\\Field\\FieldDefinitionInterface $field_definition, \\Drupal\\Core\\Session\\AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -4564,7 +4564,7 @@
       "/**",
       " * Implements hook_language_types_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_language_types_info_alter(array &\\$language_types) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_language_types_info_alter(array &$language_types) {",
       "  $0",
       "}"
     ],
@@ -4582,7 +4582,7 @@
       "/**",
       " * Implements hook_language_negotiation_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_language_negotiation_info_alter(array &\\$negotiation_info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_language_negotiation_info_alter(array &$negotiation_info) {",
       "  $0",
       "}"
     ],
@@ -4600,7 +4600,7 @@
       "/**",
       " * Implements hook_language_fallback_candidates_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_alter(array &\\$candidates, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_alter(array &$candidates, array $context) {",
       "  $0",
       "}"
     ],
@@ -4618,7 +4618,7 @@
       "/**",
       " * Implements hook_language_fallback_candidates_OPERATION_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_${2:OPERATION}_alter(array &\\$candidates, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_language_fallback_candidates_${2:OPERATION}_alter(array &$candidates, array $context) {",
       "  $0",
       "}"
     ],
@@ -4636,7 +4636,7 @@
       "/**",
       " * Implements hook_locale_translation_projects_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_locale_translation_projects_alter(&\\$projects) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_locale_translation_projects_alter(&$projects) {",
       "  $0",
       "}"
     ],
@@ -4670,7 +4670,7 @@
       "/**",
       " * Implements hook_media_source_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_media_source_info_alter(array &\\$sources) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_media_source_info_alter(array &$sources) {",
       "  $0",
       "}"
     ],
@@ -4688,7 +4688,7 @@
       "/**",
       " * Implements hook_oembed_resource_url_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_oembed_resource_url_alter(array &\\$parsed_url, \\Drupal\\media\\OEmbed\\Provider \\$provider) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_oembed_resource_url_alter(array &$parsed_url, \\Drupal\\media\\OEmbed\\Provider $provider) {",
       "  $0",
       "}"
     ],
@@ -4706,7 +4706,7 @@
       "/**",
       " * Implements hook_migrate_prepare_row().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_migrate_prepare_row(Row \\$row, MigrateSourceInterface \\$source, MigrationInterface \\$migration) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {",
       "  $0",
       "}"
     ],
@@ -4728,7 +4728,7 @@
       "/**",
       " * Implements hook_migrate_MIGRATION_ID_prepare_row().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_migrate_${2:MIGRATION_ID}_prepare_row(Row \\$row, MigrateSourceInterface \\$source, MigrationInterface \\$migration) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_migrate_${2:MIGRATION_ID}_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {",
       "  $0",
       "}"
     ],
@@ -4748,7 +4748,7 @@
       "/**",
       " * Implements hook_migration_plugins_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_migration_plugins_alter(array &\\$migrations) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_migration_plugins_alter(array &$migrations) {",
       "  $0",
       "}"
     ],
@@ -4770,7 +4770,7 @@
       "/**",
       " * Implements hook_node_grants().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_node_grants(\\Drupal\\Core\\Session\\AccountInterface \\$account, \\$op) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_grants(\\Drupal\\Core\\Session\\AccountInterface $account, $op) {",
       "  $0",
       "}"
     ],
@@ -4809,7 +4809,7 @@
       "/**",
       " * Implements hook_node_access_records().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_node_access_records(\\Drupal\\node\\NodeInterface \\$node) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_access_records(\\Drupal\\node\\NodeInterface $node) {",
       "  $0",
       "}"
     ],
@@ -4860,7 +4860,7 @@
       "/**",
       " * Implements hook_node_access_records_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_node_access_records_alter(&\\$grants, \\Drupal\\node\\NodeInterface \\$node) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_access_records_alter(&$grants, \\Drupal\\node\\NodeInterface $node) {",
       "  $0",
       "}"
     ],
@@ -4892,7 +4892,7 @@
       "/**",
       " * Implements hook_node_grants_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_node_grants_alter(&\\$grants, \\Drupal\\Core\\Session\\AccountInterface \\$account, \\$op) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_grants_alter(&$grants, \\Drupal\\Core\\Session\\AccountInterface $account, $op) {",
       "  $0",
       "}"
     ],
@@ -4923,7 +4923,7 @@
       "/**",
       " * Implements hook_node_search_result().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_node_search_result(\\Drupal\\node\\NodeInterface \\$node) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_search_result(\\Drupal\\node\\NodeInterface $node) {",
       "  $0",
       "}"
     ],
@@ -4943,7 +4943,7 @@
       "/**",
       " * Implements hook_node_update_index().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_node_update_index(\\Drupal\\node\\NodeInterface \\$node) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_update_index(\\Drupal\\node\\NodeInterface $node) {",
       "  $0",
       "}"
     ],
@@ -4996,7 +4996,7 @@
       "/**",
       " * Implements hook_node_links_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_node_links_alter(array &\\$links, NodeInterface \\$entity, array &\\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_links_alter(array &$links, NodeInterface $entity, array &$context) {",
       "  $0",
       "}"
     ],
@@ -5014,7 +5014,7 @@
       "/**",
       " * Implements hook_options_list_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_options_list_alter(array &\\$options, array \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_options_list_alter(array &$options, array $context) {",
       "  $0",
       "}"
     ],
@@ -5033,7 +5033,7 @@
       "/**",
       " * Implements hook_quickedit_editor_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_editor_alter(&\\$editors) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_editor_alter(&$editors) {",
       "  $0",
       "}"
     ],
@@ -5053,7 +5053,7 @@
       "/**",
       " * Implements hook_quickedit_render_field().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_render_field(\\Drupal\\Core\\Entity\\EntityInterface \\$entity, \\$field_name, \\$view_mode_id, \\$langcode) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_quickedit_render_field(\\Drupal\\Core\\Entity\\EntityInterface $entity, $field_name, $view_mode_id, $langcode) {",
       "  $0",
       "}"
     ],
@@ -5106,7 +5106,7 @@
       "/**",
       " * Implements hook_rest_resource_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_rest_resource_alter(&\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_rest_resource_alter(&$definitions) {",
       "  $0",
       "}"
     ],
@@ -5124,7 +5124,7 @@
       "/**",
       " * Implements hook_search_preprocess().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_search_preprocess(\\$text, \\$langcode = NULL) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_search_preprocess($text, $langcode = NULL) {",
       "  $0",
       "}"
     ],
@@ -5150,7 +5150,7 @@
       "/**",
       " * Implements hook_search_plugin_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_search_plugin_alter(array &\\$definitions) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_search_plugin_alter(array &$definitions) {",
       "  $0",
       "}"
     ],
@@ -5168,7 +5168,7 @@
       "/**",
       " * Implements hook_shortcut_default_set().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_shortcut_default_set(\\Drupal\\Core\\Session\\AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_shortcut_default_set(\\Drupal\\Core\\Session\\AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -5194,7 +5194,7 @@
       "/**",
       " * Implements hook_system_themes_page_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_system_themes_page_alter(&\\$theme_groups) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_system_themes_page_alter(&$theme_groups) {",
       "  $0",
       "}"
     ],
@@ -5246,7 +5246,7 @@
       "/**",
       " * Implements hook_toolbar_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_toolbar_alter(&\\$items) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_toolbar_alter(&$items) {",
       "  $0",
       "}"
     ],
@@ -5268,7 +5268,7 @@
       "/**",
       " * Implements hook_tour_tips_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_alter(array &\\$tour_tips, \\Drupal\\Core\\Entity\\EntityInterface \\$entity) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_alter(array &$tour_tips, \\Drupal\\Core\\Entity\\EntityInterface $entity) {",
       "  $0",
       "}"
     ],
@@ -5286,7 +5286,7 @@
       "/**",
       " * Implements hook_tour_tips_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_info_alter(&\\$info) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_tour_tips_info_alter(&$info) {",
       "  $0",
       "}"
     ],
@@ -5304,7 +5304,7 @@
       "/**",
       " * Implements hook_update_projects_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_update_projects_alter(&\\$projects) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_update_projects_alter(&$projects) {",
       "  $0",
       "}"
     ],
@@ -5331,7 +5331,7 @@
       "/**",
       " * Implements hook_update_status_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_update_status_alter(&\\$projects) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_update_status_alter(&$projects) {",
       "  $0",
       "}"
     ],
@@ -5349,7 +5349,7 @@
       "/**",
       " * Implements hook_verify_update_archive().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_verify_update_archive(\\$project, \\$archive_file, \\$directory) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_verify_update_archive($project, $archive_file, $directory) {",
       "  $0",
       "}"
     ],
@@ -5367,7 +5367,7 @@
       "/**",
       " * Implements hook_user_cancel().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_user_cancel(\\$edit, UserInterface \\$account, \\$method) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_user_cancel($edit, UserInterface $account, $method) {",
       "  $0",
       "}"
     ],
@@ -5395,7 +5395,7 @@
       "/**",
       " * Implements hook_user_cancel_methods_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_user_cancel_methods_alter(&\\$methods) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_user_cancel_methods_alter(&$methods) {",
       "  $0",
       "}"
     ],
@@ -5425,7 +5425,7 @@
       "/**",
       " * Implements hook_user_format_name_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_user_format_name_alter(&\\$name, AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_user_format_name_alter(&$name, AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -5447,7 +5447,7 @@
       "/**",
       " * Implements hook_user_login().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_user_login(UserInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_user_login(UserInterface $account) {",
       "  $0",
       "}"
     ],
@@ -5465,7 +5465,7 @@
       "/**",
       " * Implements hook_user_logout().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_user_logout(AccountInterface \\$account) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_user_logout(AccountInterface $account) {",
       "  $0",
       "}"
     ],
@@ -5483,7 +5483,7 @@
       "/**",
       " * Implements hook_views_analyze().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_analyze(\\Drupal\\views\\ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_analyze(\\Drupal\\views\\ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5521,7 +5521,7 @@
       "/**",
       " * Implements hook_views_data_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_data_alter(array &\\$data) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_data_alter(array &$data) {",
       "  $0",
       "}"
     ],
@@ -5539,7 +5539,7 @@
       "/**",
       " * Implements hook_field_views_data().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_views_data(\\Drupal\\field\\FieldStorageConfigInterface \\$field_storage) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_views_data(\\Drupal\\field\\FieldStorageConfigInterface $field_storage) {",
       "  $0",
       "}"
     ],
@@ -5564,7 +5564,7 @@
       "/**",
       " * Implements hook_field_views_data_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_views_data_alter(array &\\$data, \\Drupal\\field\\FieldStorageConfigInterface \\$field_storage) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_views_data_alter(array &$data, \\Drupal\\field\\FieldStorageConfigInterface $field_storage) {",
       "  $0",
       "}"
     ],
@@ -5586,7 +5586,7 @@
       "/**",
       " * Implements hook_field_views_data_views_data_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_views_data_views_data_alter(array &\\$data, \\Drupal\\field\\FieldStorageConfigInterface \\$field) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_views_data_views_data_alter(array &$data, \\Drupal\\field\\FieldStorageConfigInterface $field) {",
       "  $0",
       "}"
     ],
@@ -5615,7 +5615,7 @@
       "/**",
       " * Implements hook_views_query_substitutions().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_query_substitutions(ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_query_substitutions(ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5654,7 +5654,7 @@
       "/**",
       " * Implements hook_views_pre_view().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_view(ViewExecutable \\$view, \\$display_id, array &\\$args) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_view(ViewExecutable $view, $display_id, array &$args) {",
       "  $0",
       "}"
     ],
@@ -5674,7 +5674,7 @@
       "/**",
       " * Implements hook_views_pre_build().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_build(ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_build(ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5694,7 +5694,7 @@
       "/**",
       " * Implements hook_views_post_build().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_post_build(ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_post_build(ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5714,7 +5714,7 @@
       "/**",
       " * Implements hook_views_pre_execute().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_execute(ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_execute(ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5734,7 +5734,7 @@
       "/**",
       " * Implements hook_views_post_execute().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_post_execute(ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_post_execute(ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5756,7 +5756,7 @@
       "/**",
       " * Implements hook_views_pre_render().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_render(ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_pre_render(ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5779,7 +5779,7 @@
       "/**",
       " * Implements hook_views_post_render().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_post_render(ViewExecutable \\$view, array &\\$output, CachePluginBase \\$cache) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_post_render(ViewExecutable $view, array &$output, CachePluginBase $cache) {",
       "  $0",
       "}"
     ],
@@ -5802,7 +5802,7 @@
       "/**",
       " * Implements hook_views_query_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_query_alter(ViewExecutable \\$view, QueryPluginBase \\$query) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {",
       "  $0",
       "}"
     ],
@@ -5820,7 +5820,7 @@
       "/**",
       " * Implements hook_views_preview_info_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_preview_info_alter(array &\\$rows, ViewExecutable \\$view) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_preview_info_alter(array &$rows, ViewExecutable $view) {",
       "  $0",
       "}"
     ],
@@ -5861,7 +5861,7 @@
       "/**",
       " * Implements hook_views_plugins_access_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_access_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_access_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -5881,7 +5881,7 @@
       "/**",
       " * Implements hook_views_plugins_argument_default_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_default_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_default_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -5901,7 +5901,7 @@
       "/**",
       " * Implements hook_views_plugins_argument_validator_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_validator_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_validator_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -5921,7 +5921,7 @@
       "/**",
       " * Implements hook_views_plugins_cache_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_cache_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_cache_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -5941,7 +5941,7 @@
       "/**",
       " * Implements hook_views_plugins_display_extenders_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_display_extenders_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_display_extenders_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -5961,7 +5961,7 @@
       "/**",
       " * Implements hook_views_plugins_display_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_display_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_display_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -5981,7 +5981,7 @@
       "/**",
       " * Implements hook_views_plugins_exposed_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_exposed_form_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_exposed_form_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6001,7 +6001,7 @@
       "/**",
       " * Implements hook_views_plugins_join_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_join_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_join_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6021,7 +6021,7 @@
       "/**",
       " * Implements hook_views_plugins_pager_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_pager_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_pager_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6041,7 +6041,7 @@
       "/**",
       " * Implements hook_views_plugins_query_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_query_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_query_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6061,7 +6061,7 @@
       "/**",
       " * Implements hook_views_plugins_row_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_row_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_row_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6081,7 +6081,7 @@
       "/**",
       " * Implements hook_views_plugins_style_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_style_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_style_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6101,7 +6101,7 @@
       "/**",
       " * Implements hook_views_plugins_wizard_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_wizard_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_wizard_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6121,7 +6121,7 @@
       "/**",
       " * Implements hook_views_plugins_area_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_area_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_area_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6141,7 +6141,7 @@
       "/**",
       " * Implements hook_views_plugins_argument_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_argument_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6161,7 +6161,7 @@
       "/**",
       " * Implements hook_views_plugins_field_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_field_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_field_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6181,7 +6181,7 @@
       "/**",
       " * Implements hook_views_plugins_filter_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_filter_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_filter_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6201,7 +6201,7 @@
       "/**",
       " * Implements hook_views_plugins_relationship_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_relationship_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_relationship_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6221,7 +6221,7 @@
       "/**",
       " * Implements hook_views_plugins_sort_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_sort_alter(array &\\$plugins) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_plugins_sort_alter(array &$plugins) {",
       "  $0",
       "}"
     ],
@@ -6241,7 +6241,7 @@
       "/**",
       " * Implements hook_views_ui_display_top_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_alter(&\\$build, \\Drupal\\views_ui\\ViewUI \\$view, \\$display_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_alter(&$build, \\Drupal\\views_ui\\ViewUI $view, $display_id) {",
       "  $0",
       "}"
     ],
@@ -6260,7 +6260,7 @@
       "/**",
       " * Implements hook_views_ui_display_tab_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_tab_alter(&\\$build, \\Drupal\\views_ui\\ViewUI \\$view, \\$display_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_tab_alter(&$build, \\Drupal\\views_ui\\ViewUI $view, $display_id) {",
       "  $0",
       "}"
     ],
@@ -6279,7 +6279,7 @@
       "/**",
       " * Implements hook_views_ui_display_top_links_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_links_alter(array &\\$links, ViewExecutable \\$view, \\$display_id) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_views_ui_display_top_links_alter(array &$links, ViewExecutable $view, $display_id) {",
       "  $0",
       "}"
     ],
