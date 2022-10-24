@@ -49,12 +49,15 @@
     },
     "dependencies": {
         "del": "^6.1.1",
+        "docblock": "^0.4.5",
         "download": "^8.0.0",
         "find": "^0.3.0",
+        "he": "^1.2.0",
         "tar": "^6.1.11",
         "write-json-file": "^4.3.0"
     },
     "scripts": {
-        "vscode:prepublish": "node scrape.js"
+        "start": "node index.js",
+        "vscode:prepublish": "node index.js"
     }
 }
