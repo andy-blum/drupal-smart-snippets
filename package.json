@@ -19,6 +19,13 @@
     "categories": [
         "Snippets"
     ],
+    "keywords": [
+        "Drupal",
+        "Drupal-9",
+        "Drupal-10",
+        "PHP",
+        "Snippets"
+    ],
     "contributes": {
         "snippets": [
             {
