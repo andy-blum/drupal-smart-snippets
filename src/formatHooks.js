@@ -36,6 +36,7 @@ export function formatHooks(rawHooks, version) {
 
       const descArray = tags.description
       .replaceAll("&quot;", "\"")
+      .replaceAll(/<([^>]*)>/g, "")
       .split("\n")
       .filter(line => Boolean(line));
 
