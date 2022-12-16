@@ -6,21 +6,24 @@ import { getRawHooks } from "./src/getRawHooks.js";
 import { formatHooks } from "./src/formatHooks.js";
 
 const SUPPORTED_VERSIONS = [
-  '10.0.0-beta2',
-  '9.5.0-beta2',
-  '9.4.0'
+  '10.0.0',
+  '9.5.0',
 ];
 
 // 1. Set up final snippets file.
 const allHooks = {};
 
 // 2. Clean tmp directory.
-const contents = await readdir('./tmp');
-for (const item of contents) {
-  await rm(`./tmp/${item}`, {
-    force: true,
-    recursive: true
-  });
+try {
+  const contents = await readdir('./tmp');
+  for (const item of contents) {
+    await rm(`./tmp/${item}`, {
+      force: true,
+      recursive: true
+    });
+  }
+} catch (error) {
+  // If ./tmp doesn't exist, no worries.
 }
 
 for (const version of SUPPORTED_VERSIONS) {
