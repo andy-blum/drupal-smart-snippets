@@ -16,6 +16,8 @@ Snippets will automatically replace the leading `hook` with the current file's n
 
 ![Gif showing usage of hook_views_data snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/views_data.gif)
 
+### Smart element replacement
+Snippets will automatically render the element array base on RenderElement or FormElement. FormElement will prepend #title, #title_display, #description and #required properties by default. Properties listed on docblock description is generated relatively.
 
 ## Tab Stops
 Snippets are formatted to have tab stops on values that need replaced like `HOOK`,

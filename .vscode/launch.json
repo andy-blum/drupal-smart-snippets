@@ -12,6 +12,19 @@
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}"
             ]
+        },
+        {
+            "type": "node",
+            "name": "Debug JavaScript file",
+            "request": "launch",
+            "program": "${workspaceFolder}/scrape_elements.js",
+            "runtimeExecutable": "node",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "sourceMaps": true,
+            "skipFiles": [
+              "<node_internals>/**"
+            ]
         }
     ]
 }
