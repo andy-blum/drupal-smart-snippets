@@ -1,7 +1,7 @@
 # Visual Studio Code Smart Drupal Snippets
 
 This extension adds rich language support for the
-[Drupal 9.4.x Hooks API](https://api.drupal.org/api/drupal/core%21core.api.php/group/hooks/9.4.x)
+[Drupal Hooks API](https://api.drupal.org/api/drupal/core%21core.api.php/group/hooks) and [Drupal Form and render elements](https://api.drupal.org/api/drupal/elements)
 to VS Code. This extension is intended as a successor to
 [Drupal 8 Snippets](https://marketplace.visualstudio.com/items?itemName=dssiqueira.drupal-8-snippets).
 

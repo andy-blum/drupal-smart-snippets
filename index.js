@@ -4,6 +4,9 @@ import { getApiFiles } from "./src/getApiFiles.js";
 import { getCoreVersion } from "./src/getCoreVersion.js";
 import { getRawHooks } from "./src/getRawHooks.js";
 import { formatHooks } from "./src/formatHooks.js";
+import { getElementFiles } from "./src/getElementFiles.js";
+import { getRawElements } from "./src/getRawElements.js";
+import { formatElements } from "./src/formatElements.js";
 
 const SUPPORTED_VERSIONS = [
   '10.0.0',
@@ -12,6 +15,7 @@ const SUPPORTED_VERSIONS = [
 
 // 1. Set up final snippets file.
 let allHooks = {};
+let allElements = {};
 
 // 2. Clean tmp directory.
 try {
@@ -46,9 +50,25 @@ for (const version of SUPPORTED_VERSIONS) {
   formattedHooks.forEach(hook => {
     allHooks[hook.prefix] = hook;
   });
+
+  // 8. Find all .php files for element.
+  const elementFiles = await getElementFiles(version);
+  console.log(`  - Found ${elementFiles.length} files under core/lib/Drupal/Core/Render/Element`);
+
+  // 9. Find all Element docblocks.
+  const rawElements = await getRawElements(elementFiles);
+  console.log(`  - Found ${rawElements.length} defined Elements`);
+
+  // 10. Format element objects for VS Code usage.
+  const formattedElements = formatElements(rawElements, version);
+
+  // 11. Add element snippet to full set.
+  formattedElements.forEach(element => {
+    allElements[element.prefix[1]] = element;
+  });
 }
 
-// 8. Sort hooks alphabetically
+// 12. Sort hooks alphabetically
 allHooks = Object.fromEntries(
   Object
     .entries(allHooks)
@@ -67,8 +87,14 @@ allHooks = Object.fromEntries(
     })
 )
 
-// 9. Write final file.
+// 13. Write final hook file.
 await writeFile(
   './snippets/hooks.json',
   he.unescape(JSON.stringify(allHooks, null, 2)),
+);
+
+// 14. Write final element file.
+await writeFile(
+  './snippets/elements.json',
+  he.unescape(JSON.stringify(allElements, null, 2)),
 );

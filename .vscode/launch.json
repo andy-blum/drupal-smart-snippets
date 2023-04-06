@@ -17,7 +17,7 @@
             "type": "node",
             "name": "Debug JavaScript file",
             "request": "launch",
-            "program": "${workspaceFolder}/scrape_elements.js",
+            "program": "${workspaceFolder}/index.js",
             "runtimeExecutable": "node",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
