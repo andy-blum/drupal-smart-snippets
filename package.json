@@ -4,6 +4,7 @@
     "description": "Context-aware snippets for Drupal development",
     "version": "1.1.0",
     "publisher": "andrewdavidblum",
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "https://github.com/andy-blum/smart-drupal-snippets"
@@ -57,10 +58,13 @@
         "del": "^6.1.1",
         "download": "^8.0.0",
         "find": "^0.3.0",
+        "he": "^1.2.0",
+        "php-parser": "^3.1.4",
         "tar": "^6.1.11",
         "write-json-file": "^4.3.0"
     },
     "scripts": {
-        "vscode:prepublish": "node scrape.js"
+        "start": "node index.js",
+        "vscode:prepublish": "node index.js"
     }
 }
