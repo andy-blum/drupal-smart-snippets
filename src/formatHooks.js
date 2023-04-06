@@ -4,68 +4,43 @@ export function formatHooks(rawHooks, version) {
   const majVersion = version.split('.')[0];
 
   const formattedHooks = rawHooks
-    .map(({code, tags}) => {
+    .map(({name, definition, docs}) => {
 
-      // Strip function keyword and contents.
-      const fn = code.substr(9).match(/(\w)*\([^\)]*\)/g)[0];
+      const desc = docs.value
+        .split('\n')
+        .map(line => (
+          line
+            // Remove PHP comment markup
+            .replace(/^\/\*\*/g, '!!!')
+            .replace(/\s\*\//g, '!!!')
+            .replace(/^\s\*\s{0,1}/g, '')
 
-      // Function name, no parentheses/params.
-      const title = fn.match(/(\w)*/g)[0];
-
-      // Function parentheses & params.
-      const params = fn.substr(title.length);
-
-      // Parts of the function name that need replaced.
-      const placeholders = [
-        'hook',
-        ...Array.from(
-          title.match(/[A-Z]+(_(?=[A-Z])[A-Z]+)*/g) || []
-        )
-      ];
-
-      // Create tab-stops at placeholders
-      let titleWithPlaceholders = title;
-      placeholders.forEach((placeholder, i) => {
-        titleWithPlaceholders = titleWithPlaceholders
-          .replace(placeholder, `\${${i + 1}:${placeholder}}`);
-      })
-
-      // Auto-replace `hook`
-      titleWithPlaceholders = titleWithPlaceholders
-        .replace("${1:hook}", "${1:${TM_FILENAME_BASE:hook}}");
-
-      const descArray = tags.description
-      .replaceAll("&quot;", "\"")
-      .replaceAll(/<([^>]*)>/g, "")
-      .split("\n")
-      .filter(line => Boolean(line));
+            // Special/escaped character replacement
+            .replaceAll("&quot;", "\"")
+            .replaceAll(/<([^>]*)>/g, "")
+        ))
+        .filter(line => line !== '!!!')
 
       const hookObj = {
-        prefix: title,
+        prefix: name,
         body: [
           `/**`,
-          ` * Implements ${title}().`,
+          ` * Implements ${name}().`,
           ` */`,
-          `function ${titleWithPlaceholders}${params} {`,
+          `${definition} {`,
           `  $0`,
           `}`
         ],
         description: [
-          `${title}${tags.deprecated ? " (Deprecated)" : ''}`,
           `Drupal ${majVersion}+`,
           "",
-          `${tags.title.replaceAll("&quot;", "\"")}`,
-          ...descArray,
+          ...desc,
         ],
         scope: 'php',
       }
 
-      if (tags.deprecated) {
+      if (docs.value.includes('@deprecated')) {
         hookObj.body.push("// deprecated");
-      }
-
-      if (title === 'hook_entity_extra_field_info') {
-        debugger;
       }
 
       return hookObj;

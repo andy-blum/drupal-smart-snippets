@@ -1,6 +1,6 @@
 import { stdout } from "node:process";
 import { readFile } from "fs/promises";
-import DocBlock from "docblock";
+import engine from "php-parser";
 
 export async function getRawHooks(apiFiles) {
 
@@ -16,14 +16,31 @@ export async function getRawHooks(apiFiles) {
       encoding: 'utf-8',
     });
 
-    (new DocBlock())
-      .parse(contents, 'php')
-      .filter(block => block.code.startsWith('function hook'))
-      .forEach(block => rawHooks.push(block));
+    const parser = new engine({
+      parser: {
+        locations: true,
+        extractDoc: true,
+      },
+      ast: {
+        withPositions: true,
+        withSource: true
+      }
+    });
 
-    i++;
-    pct = Math.floor(i / apiFiles.length);
-    stdout.write(`  - ${pct}% scanning\r`);
+    const parsedHooks = parser.parseCode(contents).children;
+
+    parsedHooks
+      .filter(hook => (
+        hook.kind === 'function' &&
+        hook.name.name.startsWith('hook_')
+      ))
+      .forEach(hook => {
+        const docs = hook.leadingComments.at(-1);
+        const { name } = hook.name;
+        const definition = hook.loc.source;
+
+        rawHooks.push({name, definition, docs});
+      });
   }
 
   return rawHooks;
