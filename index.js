@@ -11,7 +11,7 @@ const SUPPORTED_VERSIONS = [
 ];
 
 // 1. Set up final snippets file.
-const allHooks = {};
+let allHooks = {};
 
 // 2. Clean tmp directory.
 try {
@@ -22,9 +22,7 @@ try {
       recursive: true
     });
   }
-} catch (error) {
-  // If ./tmp doesn't exist, no worries.
-}
+} catch (error) {}
 
 for (const version of SUPPORTED_VERSIONS) {
   console.log(`Drupal ${version}`);
@@ -50,7 +48,26 @@ for (const version of SUPPORTED_VERSIONS) {
   });
 }
 
-// 8. Write final file.
+// 8. Sort hooks alphabetically
+allHooks = Object.fromEntries(
+  Object
+    .entries(allHooks)
+    .sort((a, b) => {
+      const aName = a[0].toLowerCase()
+      const bName = b[0].toLowerCase()
+      if (aName > bName) {
+        return 1;
+      }
+
+      if (aName < bName) {
+        return -1;
+      }
+
+      return 0;
+    })
+)
+
+// 9. Write final file.
 await writeFile(
   './snippets/hooks.json',
   he.unescape(JSON.stringify(allHooks, null, 2)),
