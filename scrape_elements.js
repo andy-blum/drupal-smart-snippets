@@ -77,7 +77,7 @@ const formElements = {};
                 formElements[elementName] = {
                   "prefix": [matches[0] , elementName],
                   "body": [
-                    `\\$form['${formElementName}'] = [`,
+                    `[`,
                     `  '#type' => '${elementName}',`,
                   ],
                   "description": [
