@@ -38,7 +38,7 @@ Snippets are formatted to have tab stops on values that need replaced like `HOOK
 ![Gif showing usage of hook_preprocess_HOOK snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/preprocess.gif )
 
 ### Element Replacement
-Element snippets have $form[`key`] as final tab stop. FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description` and `#required`.
+FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description` and `#required` as deafult tab stops.
 ![Gif showing usage of element snippet tab stops](images/element_tabstop.gif)
 
 ## Core Versions & Deprecation Warnings
