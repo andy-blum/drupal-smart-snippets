@@ -6,20 +6,40 @@ export function formatHooks(rawHooks, version) {
   const formattedHooks = rawHooks
     .map(({name, definition, docs}) => {
 
+      // Parts of the function name that need replaced.
+      const placeholders = [
+        'hook',
+        ...Array.from(
+          name.match(/[A-Z]+(_(?=[A-Z])[A-Z]+)*/g) || []
+        )
+      ];
+
+      // Create tab-stops at placeholders.
+      let titleWithPlaceholders = definition;
+      placeholders.forEach((placeholder, i) => {
+        titleWithPlaceholders = titleWithPlaceholders
+          .replace(placeholder, `\${${i + 1}:${placeholder}}`);
+      })
+
+      // Auto-replace `hook` with filename.
+      titleWithPlaceholders = titleWithPlaceholders
+        .replace("${1:hook}", "${1:${TM_FILENAME_BASE:hook}}");
+
+      // Format description text
       const desc = docs.value
         .split('\n')
-        .map(line => (
-          line
-            // Remove PHP comment markup
-            .replace(/^\/\*\*/g, '!!!')
-            .replace(/\s\*\//g, '!!!')
-            .replace(/^\s\*\s{0,1}/g, '')
+        .map(line => {
+          if (line !== '/**' && line !== ' */') {
+            return line
+              // Remove PHP comment markup
+              .replace(/^\s\*\s{0,1}/g, '')
 
-            // Special/escaped character replacement
-            .replaceAll("&quot;", "\"")
-            .replaceAll(/<([^>]*)>/g, "")
-        ))
-        .filter(line => line !== '!!!')
+              // Special/escaped character replacement
+              .replaceAll("&quot;", "\"")
+              .replaceAll(/<([^>]*)>/g, "");
+          }
+        })
+        .filter(line => line !== undefined)
 
       const hookObj = {
         prefix: name,
@@ -27,20 +47,18 @@ export function formatHooks(rawHooks, version) {
           `/**`,
           ` * Implements ${name}().`,
           ` */`,
-          `${definition} {`,
+          `${titleWithPlaceholders} {`,
           `  $0`,
           `}`
         ],
-        description: [
-          `Drupal ${majVersion}+`,
-          "",
-          ...desc,
-        ],
+        description: desc,
         scope: 'php',
       }
 
+      // Add notices of deprecated hooks.
       if (docs.value.includes('@deprecated')) {
-        hookObj.body.push("// deprecated");
+        hookObj.description.splice(0, 0, 'DEPRECATED', '');
+        hookObj.body.splice(2, 0, ' * @deprecated');
       }
 
       return hookObj;
