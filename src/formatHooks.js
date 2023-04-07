@@ -11,8 +11,11 @@ export function formatHooks(rawHooks) {
         )
       ];
 
+      // Escape variable names.
+      // @see https://code.visualstudio.com/docs/editor/userdefinedsnippets#_how-do-i-have-a-snippet-place-a-variable-in-the-pasted-script
+      let titleWithPlaceholders = definition.replaceAll('$', '\\$');
+
       // Create tab-stops at placeholders.
-      let titleWithPlaceholders = definition;
       placeholders.forEach((placeholder, i) => {
         titleWithPlaceholders = titleWithPlaceholders
           .replace(placeholder, `\${${i + 1}:${placeholder}}`);
