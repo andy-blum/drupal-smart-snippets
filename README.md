@@ -27,6 +27,9 @@ FormElement will have `#title`, `#title_display`, `#description` and `#required`
 ### @RenderElement
 ![Gif showing usage of render element snippet](images/render_element_snippet.gif)
 
+### @Element
+![Gif showing usage of form/render element snippet](images/element_prefix.gif)
+
 ### Typing [type_name]
 ![Gif showing usage of element type snippet](images/element_type.gif)
 
@@ -38,8 +41,8 @@ Snippets are formatted to have tab stops on values that need replaced like `HOOK
 ![Gif showing usage of hook_preprocess_HOOK snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/preprocess.gif )
 
 ### Element Replacement
-FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description` and `#required` as deafult tab stops.
-![Gif showing usage of element snippet tab stops](images/element_tabstop.gif)
+FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description`, `#required` and final ending option of `(comman ',' or semi-colon ';')` as deafult tab stops.
+![Gif showing usage of element snippet tab stops](images/element_tabstop_options.gif)
 
 ## Core Versions & Deprecation Warnings
 Hook descriptions begin with the lowest version of core in which the hook is found.
