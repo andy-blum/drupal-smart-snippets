@@ -36,8 +36,9 @@ export async function getRawElements(apiFiles) {
         element.loc.source.includes('@FormElement'))
       ))
       .forEach(element => {
-        const docs = element.children.at(-1).leadingComments.at(-1);
-        const name = element.children.at(-1).name.name.toLowerCase();
+        const classElement = element.children.find(child => child.kind === 'class');
+        const docs = classElement ? classElement.leadingComments.at(-1) : undefined;
+        const name = classElement ? classElement.name.name.toLowerCase(): undefined;
         const type = element.loc.source.includes('@RenderElement') ? 'RenderElement' : 'FormElement';
 
         rawElements.push({name, type, docs});
