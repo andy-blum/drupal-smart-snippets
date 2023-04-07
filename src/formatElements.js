@@ -1,6 +1,4 @@
-export function formatElements(rawElements, version) {
-
-  const majVersion = version.split('.')[0];
+export function formatElements(rawElements) {
 
   const formattedElements = rawElements
     .map(({name, type, docs}) => {
