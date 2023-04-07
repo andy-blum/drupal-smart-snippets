@@ -1,7 +1,8 @@
 {
-  "actions": {
+  "@Element (\"actions\")": {
     "prefix": [
       "@RenderElement (\"actions\")",
+      "@Element (\"actions\")",
       "actions"
     ],
     "body": [
@@ -29,9 +30,10 @@
     ],
     "scope": "php"
   },
-  "ajax": {
+  "@Element (\"ajax\")": {
     "prefix": [
       "@RenderElement (\"ajax\")",
+      "@Element (\"ajax\")",
       "ajax"
     ],
     "body": [
@@ -50,9 +52,10 @@
     ],
     "scope": "php"
   },
-  "button": {
+  "@Element (\"button\")": {
     "prefix": [
       "@FormElement (\"button\")",
+      "@Element (\"button\")",
       "button"
     ],
     "body": [
@@ -93,9 +96,10 @@
     ],
     "scope": "php"
   },
-  "checkbox": {
+  "@Element (\"checkbox\")": {
     "prefix": [
       "@FormElement (\"checkbox\")",
+      "@Element (\"checkbox\")",
       "checkbox"
     ],
     "body": [
@@ -128,9 +132,10 @@
     ],
     "scope": "php"
   },
-  "checkboxes": {
+  "@Element (\"checkboxes\")": {
     "prefix": [
       "@FormElement (\"checkboxes\")",
+      "@Element (\"checkboxes\")",
       "checkboxes"
     ],
     "body": [
@@ -175,9 +180,10 @@
     ],
     "scope": "php"
   },
-  "color": {
+  "@Element (\"color\")": {
     "prefix": [
       "@FormElement (\"color\")",
+      "@Element (\"color\")",
       "color"
     ],
     "body": [
@@ -209,9 +215,10 @@
     ],
     "scope": "php"
   },
-  "container": {
+  "@Element (\"container\")": {
     "prefix": [
       "@RenderElement (\"container\")",
+      "@Element (\"container\")",
       "container"
     ],
     "body": [
@@ -259,9 +266,10 @@
     ],
     "scope": "php"
   },
-  "date": {
+  "@Element (\"date\")": {
     "prefix": [
       "@FormElement (\"date\")",
+      "@Element (\"date\")",
       "date"
     ],
     "body": [
@@ -294,9 +302,10 @@
     ],
     "scope": "php"
   },
-  "details": {
+  "@Element (\"details\")": {
     "prefix": [
       "@RenderElement (\"details\")",
+      "@Element (\"details\")",
       "details"
     ],
     "body": [
@@ -340,9 +349,10 @@
     ],
     "scope": "php"
   },
-  "dropbutton": {
+  "@Element (\"dropbutton\")": {
     "prefix": [
       "@RenderElement (\"dropbutton\")",
+      "@Element (\"dropbutton\")",
       "dropbutton"
     ],
     "body": [
@@ -394,9 +404,10 @@
     ],
     "scope": "php"
   },
-  "email": {
+  "@Element (\"email\")": {
     "prefix": [
       "@FormElement (\"email\")",
+      "@Element (\"email\")",
       "email"
     ],
     "body": [
@@ -434,9 +445,10 @@
     ],
     "scope": "php"
   },
-  "fieldgroup": {
+  "@Element (\"fieldgroup\")": {
     "prefix": [
       "@RenderElement (\"fieldgroup\")",
+      "@Element (\"fieldgroup\")",
       "fieldgroup"
     ],
     "body": [
@@ -460,9 +472,10 @@
     ],
     "scope": "php"
   },
-  "fieldset": {
+  "@Element (\"fieldset\")": {
     "prefix": [
       "@RenderElement (\"fieldset\")",
+      "@Element (\"fieldset\")",
       "fieldset"
     ],
     "body": [
@@ -493,9 +506,10 @@
     ],
     "scope": "php"
   },
-  "file": {
+  "@Element (\"file\")": {
     "prefix": [
       "@FormElement (\"file\")",
+      "@Element (\"file\")",
       "file"
     ],
     "body": [
@@ -525,9 +539,10 @@
     ],
     "scope": "php"
   },
-  "form": {
+  "@Element (\"form\")": {
     "prefix": [
       "@RenderElement (\"form\")",
+      "@Element (\"form\")",
       "form"
     ],
     "body": [
@@ -542,9 +557,10 @@
     ],
     "scope": "php"
   },
-  "hidden": {
+  "@Element (\"hidden\")": {
     "prefix": [
       "@FormElement (\"hidden\")",
+      "@Element (\"hidden\")",
       "hidden"
     ],
     "body": [
@@ -580,9 +596,10 @@
     ],
     "scope": "php"
   },
-  "html": {
+  "@Element (\"html\")": {
     "prefix": [
       "@RenderElement (\"html\")",
+      "@Element (\"html\")",
       "html"
     ],
     "body": [
@@ -597,9 +614,10 @@
     ],
     "scope": "php"
   },
-  "htmltag": {
+  "@Element (\"htmltag\")": {
     "prefix": [
       "@RenderElement (\"htmltag\")",
+      "@Element (\"htmltag\")",
       "htmltag"
     ],
     "body": [
@@ -636,9 +654,10 @@
     ],
     "scope": "php"
   },
-  "imagebutton": {
+  "@Element (\"imagebutton\")": {
     "prefix": [
       "@FormElement (\"imagebutton\")",
+      "@Element (\"imagebutton\")",
       "imagebutton"
     ],
     "body": [
@@ -657,9 +676,10 @@
     ],
     "scope": "php"
   },
-  "inlinetemplate": {
+  "@Element (\"inlinetemplate\")": {
     "prefix": [
       "@RenderElement (\"inlinetemplate\")",
+      "@Element (\"inlinetemplate\")",
       "inlinetemplate"
     ],
     "body": [
@@ -692,9 +712,10 @@
     ],
     "scope": "php"
   },
-  "item": {
+  "@Element (\"item\")": {
     "prefix": [
       "@FormElement (\"item\")",
+      "@Element (\"item\")",
       "item"
     ],
     "body": [
@@ -717,9 +738,10 @@
     ],
     "scope": "php"
   },
-  "label": {
+  "@Element (\"label\")": {
     "prefix": [
       "@RenderElement (\"label\")",
+      "@Element (\"label\")",
       "label"
     ],
     "body": [
@@ -738,9 +760,10 @@
     ],
     "scope": "php"
   },
-  "languageselect": {
+  "@Element (\"languageselect\")": {
     "prefix": [
       "@FormElement (\"languageselect\")",
+      "@Element (\"languageselect\")",
       "languageselect"
     ],
     "body": [
@@ -765,9 +788,10 @@
     ],
     "scope": "php"
   },
-  "link": {
+  "@Element (\"link\")": {
     "prefix": [
       "@RenderElement (\"link\")",
+      "@Element (\"link\")",
       "link"
     ],
     "body": [
@@ -797,9 +821,10 @@
     ],
     "scope": "php"
   },
-  "machinename": {
+  "@Element (\"machinename\")": {
     "prefix": [
       "@FormElement (\"machinename\")",
+      "@Element (\"machinename\")",
       "machinename"
     ],
     "body": [
@@ -880,9 +905,10 @@
     ],
     "scope": "php"
   },
-  "morelink": {
+  "@Element (\"morelink\")": {
     "prefix": [
       "@RenderElement (\"morelink\")",
+      "@Element (\"morelink\")",
       "morelink"
     ],
     "body": [
@@ -910,9 +936,10 @@
     ],
     "scope": "php"
   },
-  "number": {
+  "@Element (\"number\")": {
     "prefix": [
       "@FormElement (\"number\")",
+      "@Element (\"number\")",
       "number"
     ],
     "body": [
@@ -954,9 +981,10 @@
     ],
     "scope": "php"
   },
-  "operations": {
+  "@Element (\"operations\")": {
     "prefix": [
       "@RenderElement (\"operations\")",
+      "@Element (\"operations\")",
       "operations"
     ],
     "body": [
@@ -977,9 +1005,10 @@
     ],
     "scope": "php"
   },
-  "page": {
+  "@Element (\"page\")": {
     "prefix": [
       "@RenderElement (\"page\")",
+      "@Element (\"page\")",
       "page"
     ],
     "body": [
@@ -996,9 +1025,10 @@
     ],
     "scope": "php"
   },
-  "pagetitle": {
+  "@Element (\"pagetitle\")": {
     "prefix": [
       "@RenderElement (\"pagetitle\")",
+      "@Element (\"pagetitle\")",
       "pagetitle"
     ],
     "body": [
@@ -1015,9 +1045,10 @@
     ],
     "scope": "php"
   },
-  "pager": {
+  "@Element (\"pager\")": {
     "prefix": [
       "@RenderElement (\"pager\")",
+      "@Element (\"pager\")",
       "pager"
     ],
     "body": [
@@ -1060,9 +1091,10 @@
     ],
     "scope": "php"
   },
-  "password": {
+  "@Element (\"password\")": {
     "prefix": [
       "@FormElement (\"password\")",
+      "@Element (\"password\")",
       "password"
     ],
     "body": [
@@ -1100,9 +1132,10 @@
     ],
     "scope": "php"
   },
-  "passwordconfirm": {
+  "@Element (\"passwordconfirm\")": {
     "prefix": [
       "@FormElement (\"passwordconfirm\")",
+      "@Element (\"passwordconfirm\")",
       "passwordconfirm"
     ],
     "body": [
@@ -1139,9 +1172,10 @@
     ],
     "scope": "php"
   },
-  "pathelement": {
+  "@Element (\"pathelement\")": {
     "prefix": [
       "@FormElement (\"pathelement\")",
+      "@Element (\"pathelement\")",
       "pathelement"
     ],
     "body": [
@@ -1164,9 +1198,10 @@
     ],
     "scope": "php"
   },
-  "radio": {
+  "@Element (\"radio\")": {
     "prefix": [
       "@FormElement (\"radio\")",
+      "@Element (\"radio\")",
       "radio"
     ],
     "body": [
@@ -1191,9 +1226,10 @@
     ],
     "scope": "php"
   },
-  "radios": {
+  "@Element (\"radios\")": {
     "prefix": [
       "@FormElement (\"radios\")",
+      "@Element (\"radios\")",
       "radios"
     ],
     "body": [
@@ -1237,9 +1273,10 @@
     ],
     "scope": "php"
   },
-  "range": {
+  "@Element (\"range\")": {
     "prefix": [
       "@FormElement (\"range\")",
+      "@Element (\"range\")",
       "range"
     ],
     "body": [
@@ -1277,9 +1314,10 @@
     ],
     "scope": "php"
   },
-  "search": {
+  "@Element (\"search\")": {
     "prefix": [
       "@FormElement (\"search\")",
+      "@Element (\"search\")",
       "search"
     ],
     "body": [
@@ -1308,9 +1346,10 @@
     ],
     "scope": "php"
   },
-  "select": {
+  "@Element (\"select\")": {
     "prefix": [
       "@FormElement (\"select\")",
+      "@Element (\"select\")",
       "select"
     ],
     "body": [
@@ -1406,9 +1445,10 @@
     ],
     "scope": "php"
   },
-  "statusmessages": {
+  "@Element (\"statusmessages\")": {
     "prefix": [
       "@RenderElement (\"statusmessages\")",
+      "@Element (\"statusmessages\")",
       "statusmessages"
     ],
     "body": [
@@ -1432,9 +1472,10 @@
     ],
     "scope": "php"
   },
-  "statusreport": {
+  "@Element (\"statusreport\")": {
     "prefix": [
       "@RenderElement (\"statusreport\")",
+      "@Element (\"statusreport\")",
       "statusreport"
     ],
     "body": [
@@ -1449,9 +1490,10 @@
     ],
     "scope": "php"
   },
-  "submit": {
+  "@Element (\"submit\")": {
     "prefix": [
       "@FormElement (\"submit\")",
+      "@Element (\"submit\")",
       "submit"
     ],
     "body": [
@@ -1491,9 +1533,10 @@
     ],
     "scope": "php"
   },
-  "systemcompactlink": {
+  "@Element (\"systemcompactlink\")": {
     "prefix": [
       "@RenderElement (\"systemcompactlink\")",
+      "@Element (\"systemcompactlink\")",
       "systemcompactlink"
     ],
     "body": [
@@ -1515,9 +1558,10 @@
     ],
     "scope": "php"
   },
-  "table": {
+  "@Element (\"table\")": {
     "prefix": [
       "@FormElement (\"table\")",
+      "@Element (\"table\")",
       "table"
     ],
     "body": [
@@ -1587,9 +1631,10 @@
     ],
     "scope": "php"
   },
-  "tableselect": {
+  "@Element (\"tableselect\")": {
     "prefix": [
       "@FormElement (\"tableselect\")",
+      "@Element (\"tableselect\")",
       "tableselect"
     ],
     "body": [
@@ -1653,9 +1698,10 @@
     ],
     "scope": "php"
   },
-  "tel": {
+  "@Element (\"tel\")": {
     "prefix": [
       "@FormElement (\"tel\")",
+      "@Element (\"tel\")",
       "tel"
     ],
     "body": [
@@ -1694,9 +1740,10 @@
     ],
     "scope": "php"
   },
-  "textarea": {
+  "@Element (\"textarea\")": {
     "prefix": [
       "@FormElement (\"textarea\")",
+      "@Element (\"textarea\")",
       "textarea"
     ],
     "body": [
@@ -1737,9 +1784,10 @@
     ],
     "scope": "php"
   },
-  "textfield": {
+  "@Element (\"textfield\")": {
     "prefix": [
       "@FormElement (\"textfield\")",
+      "@Element (\"textfield\")",
       "textfield"
     ],
     "body": [
@@ -1795,9 +1843,10 @@
     ],
     "scope": "php"
   },
-  "token": {
+  "@Element (\"token\")": {
     "prefix": [
       "@FormElement (\"token\")",
+      "@Element (\"token\")",
       "token"
     ],
     "body": [
@@ -1821,9 +1870,10 @@
     ],
     "scope": "php"
   },
-  "url": {
+  "@Element (\"url\")": {
     "prefix": [
       "@FormElement (\"url\")",
+      "@Element (\"url\")",
       "url"
     ],
     "body": [
@@ -1863,9 +1913,10 @@
     ],
     "scope": "php"
   },
-  "value": {
+  "@Element (\"value\")": {
     "prefix": [
       "@FormElement (\"value\")",
+      "@Element (\"value\")",
       "value"
     ],
     "body": [
@@ -1897,9 +1948,10 @@
     ],
     "scope": "php"
   },
-  "verticaltabs": {
+  "@Element (\"verticaltabs\")": {
     "prefix": [
       "@FormElement (\"verticaltabs\")",
+      "@Element (\"verticaltabs\")",
       "verticaltabs"
     ],
     "body": [
@@ -1956,9 +2008,10 @@
     ],
     "scope": "php"
   },
-  "weight": {
+  "@Element (\"weight\")": {
     "prefix": [
       "@FormElement (\"weight\")",
+      "@Element (\"weight\")",
       "weight"
     ],
     "body": [

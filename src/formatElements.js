@@ -20,7 +20,7 @@ export function formatElements(rawElements) {
         .filter(line => line !== undefined)
 
       const elementObj = {
-        prefix: [`@${type} ("${name}")` , name],
+        prefix: [`@${type} ("${name}")` ,`@Element ("${name}")` , name],
         body: [
           `[`,
           `  '#type' => '${name}',`,
