@@ -7,7 +7,7 @@
     "body": [
       "[",
       "  '#type' => 'actions',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a wrapper element to group one or more buttons in a form.",
@@ -37,7 +37,7 @@
     "body": [
       "[",
       "  '#type' => 'ajax',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for adding Ajax to a render element.",
@@ -64,7 +64,7 @@
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#limit_validation_errors' => '',",
       "  '#value' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides an action button form element.",
@@ -106,7 +106,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#return_value' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for a single checkbox.",
@@ -141,7 +141,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#options' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for a set of checkboxes.",
@@ -188,7 +188,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#default_value' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for choosing a color.",
@@ -218,7 +218,7 @@
       "[",
       "  '#type' => 'container',",
       "  '#optional' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element that wraps child elements in a container.",
@@ -273,7 +273,7 @@
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#default_value' => '',",
       "  '#size' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for date selection.",
@@ -304,7 +304,7 @@
       "  '#type' => 'details',",
       "  '#open' => '',",
       "  '#summary_attributes' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a details element, similar to a fieldset.",
@@ -350,7 +350,7 @@
       "  '#type' => 'dropbutton',",
       "  '#links' => '',",
       "  '#dropbutton_type' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a set of links rendered as a drop-down button.",
@@ -409,7 +409,7 @@
       "  '#default_value' => '',",
       "  '#size' => '',",
       "  '#pattern' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form input element for entering an email address.",
@@ -442,7 +442,7 @@
     "body": [
       "[",
       "  '#type' => 'fieldgroup',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a group of form elements.",
@@ -468,7 +468,7 @@
     "body": [
       "[",
       "  '#type' => 'fieldset',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a group of form elements.",
@@ -505,7 +505,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for uploading a file.",
@@ -533,7 +533,7 @@
     "body": [
       "[",
       "  '#type' => 'form',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a form.",
@@ -556,7 +556,7 @@
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#default_value' => '',",
       "  '#value' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for an HTML 'hidden' input element.",
@@ -588,7 +588,7 @@
     "body": [
       "[",
       "  '#type' => 'html',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for an entire HTML page:  plus its children.",
@@ -609,7 +609,7 @@
       "  '#attributes' => '',",
       "  '#value' => '',",
       "  '#noscript' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for any HTML tag, with properties and value.",
@@ -648,7 +648,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for a submit button with an image.",
@@ -667,7 +667,7 @@
       "  '#type' => 'inlinetemplate',",
       "  '#template' => '',",
       "  '#context' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element where the user supplies an in-line Twig template.",
@@ -704,7 +704,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a display-only form element with an optional title and description.",
@@ -725,7 +725,7 @@
     "body": [
       "[",
       "  '#type' => 'label',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for displaying the label for a form element.",
@@ -750,7 +750,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for selecting a language.",
@@ -774,7 +774,7 @@
       "[",
       "  '#type' => 'link',",
       "  '#url' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a link render element.",
@@ -812,7 +812,7 @@
       "  '#machine_name' => '',",
       "  '#maxlength' => '',",
       "  '#disabled' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a machine name render element.",
@@ -888,7 +888,7 @@
     "body": [
       "[",
       "  '#type' => 'morelink',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a link render element for a \"more\" link, like those used in blocks.",
@@ -926,7 +926,7 @@
       "  '#min' => '',",
       "  '#max' => '',",
       "  '#step' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for numeric input, with special numeric validation.",
@@ -962,7 +962,7 @@
     "body": [
       "[",
       "  '#type' => 'operations',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a set of operations links.",
@@ -985,7 +985,7 @@
     "body": [
       "[",
       "  '#type' => 'page',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for the content of an HTML page.",
@@ -1004,7 +1004,7 @@
     "body": [
       "[",
       "  '#type' => 'pagetitle',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for the title of an HTML page.",
@@ -1028,7 +1028,7 @@
       "  '#quantity' => '',",
       "  '#tags' => '',",
       "  '#route_name' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a pager.",
@@ -1074,7 +1074,7 @@
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#size' => '',",
       "  '#pattern' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for entering a password, with hidden text.",
@@ -1113,7 +1113,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#size' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for double-input of passwords.",
@@ -1151,7 +1151,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a matched path render element.",
@@ -1176,7 +1176,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for a single radio button.",
@@ -1204,7 +1204,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#options' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for a set of radio buttons.",
@@ -1251,7 +1251,7 @@
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#min' => '',",
       "  '#max' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a slider for input of a number within a specific range.",
@@ -1289,7 +1289,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides an HTML5 input element with type of \"search\".",
@@ -1328,7 +1328,7 @@
       "  '#multiple' => '',",
       "  '#default_value' => '',",
       "  '#size' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for a drop-down menu or scrolling selection box.",
@@ -1414,7 +1414,7 @@
     "body": [
       "[",
       "  '#type' => 'statusmessages',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a messages element.",
@@ -1440,7 +1440,7 @@
     "body": [
       "[",
       "  '#type' => 'statusreport',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Creates status report page element.",
@@ -1463,7 +1463,7 @@
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#submit' => '',",
       "  '#value' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form submit button.",
@@ -1499,7 +1499,7 @@
     "body": [
       "[",
       "  '#type' => 'systemcompactlink',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a link to show or hide help text on administration pages.",
@@ -1532,7 +1532,7 @@
       "  '#empty' => '',",
       "  '#responsive' => '',",
       "  '#sticky' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a table.",
@@ -1604,7 +1604,7 @@
       "  '#empty' => '',",
       "  '#multiple' => '',",
       "  '#js_select' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for a table with radios or checkboxes in left column.",
@@ -1667,7 +1667,7 @@
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#size' => '',",
       "  '#pattern' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for entering a telephone number.",
@@ -1710,7 +1710,7 @@
       "  '#cols' => '',",
       "  '#resizable' => '',",
       "  '#maxlength' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for input of multiple-line text.",
@@ -1754,7 +1754,7 @@
       "  '#autocomplete_route_name' => '',",
       "  '#autocomplete_route_parameters' => '',",
       "  '#pattern' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a one-line text field form element.",
@@ -1807,7 +1807,7 @@
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Stores token data in a hidden form field.",
@@ -1836,7 +1836,7 @@
       "  '#default_value' => '',",
       "  '#size' => '',",
       "  '#pattern' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for input of a URL.",
@@ -1876,7 +1876,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#value' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for storage of internal information.",
@@ -1910,7 +1910,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#default_tab' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for vertical tabs in a form.",
@@ -1969,7 +1969,7 @@
       "  '#description' => ${3|t(''),$this->t('')|},",
       "  '#required' => '${4|TRUE,FALSE|}',",
       "  '#delta' => '',",
-      "];"
+      "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a form element for input of a weight.",

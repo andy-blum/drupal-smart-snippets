@@ -76,7 +76,7 @@ export function formatElements(rawElements) {
       }
       
       // Close body
-      elementObj.body.push(`];`);
+      elementObj.body.push(']${5|\\,,;|}');
       
 
       return elementObj;
