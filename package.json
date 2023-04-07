@@ -32,6 +32,10 @@
             {
                 "language": "php",
                 "path": "./snippets/hooks.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/elements.json"
             }
         ],
         "languages": [
