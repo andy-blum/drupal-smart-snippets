@@ -3425,7 +3425,7 @@
       "/**",
       " * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_${2:WIDGET_TYPE}_form_alter(array &\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, \\$context) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_widget_single_element_${2:WIDGET_TYPE}_form_alter(array &\\$element, \\Drupal\\Core\\Form\\FormStateInterface \\$form_state, array \\$context) {",
       "  $0",
       "}"
     ],
