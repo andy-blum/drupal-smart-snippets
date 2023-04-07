@@ -60,7 +60,7 @@ for (const version of SUPPORTED_VERSIONS) {
   console.log(`  - Found ${rawElements.length} defined Elements`);
 
   // 10. Format element objects for VS Code usage.
-  const formattedElements = formatElements(rawElements, version);
+  const formattedElements = formatElements(rawElements);
 
   // 11. Add element snippet to full set.
   formattedElements.forEach(element => {
