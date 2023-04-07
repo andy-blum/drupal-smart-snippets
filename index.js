@@ -44,7 +44,7 @@ for (const version of SUPPORTED_VERSIONS) {
   console.log(`  - Found ${rawHooks.length} defined hooks`);
 
   // 6. Format hook object for VS Code usage.
-  const formattedHooks = formatHooks(rawHooks, version);
+  const formattedHooks = formatHooks(rawHooks);
 
   // 7. Add hook snippet to full set.
   formattedHooks.forEach(hook => {

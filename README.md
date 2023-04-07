@@ -44,16 +44,6 @@ Snippets are formatted to have tab stops on values that need replaced like `HOOK
 FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description`, `#required` and final ending option of `(comman ',' or semi-colon ';')` as deafult tab stops.
 ![Gif showing usage of element snippet tab stops](images/element_tabstop_options.gif)
 
-## Core Versions & Deprecation Warnings
-Hook descriptions begin with the lowest version of core in which the hook is found.
-Additionally, hooks that have been deprecated are labelled as such in the hook's
-description and have an inline comment of `//deprecated` following the closing of
-the function.
-
-![Screenshot of hook description showing minimum version, purpose, and deprecation](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/deprecation-inline.png)
-
-![Gif showing deprecated hook](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/deprecations.gif)
-
 # Installation
 
 1. Open VS Code
