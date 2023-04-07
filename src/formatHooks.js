@@ -1,7 +1,4 @@
-import he from "he";
-export function formatHooks(rawHooks, version) {
-
-  const majVersion = version.split('.')[0];
+export function formatHooks(rawHooks) {
 
   const formattedHooks = rawHooks
     .map(({name, definition, docs}) => {
