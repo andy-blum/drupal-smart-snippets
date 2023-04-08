@@ -40,7 +40,7 @@ export function formatElements(rawElements) {
           `  '#title' => ${titleInput},`,
           `  '#title_display' => '${titleDisplayOption}',`,
           `  '#description' => ${descriptionInput},`,
-          `  '#required' => '${boolOption}',`
+          `  '#required' => ${boolOption},`
         ];
         defaultSettings.forEach(setting => {
           elementObj.body.push(setting);
