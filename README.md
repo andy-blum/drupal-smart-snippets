@@ -17,7 +17,7 @@ Snippets will automatically replace the leading `hook` with the current file's n
 ![Gif showing usage of hook_views_data snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/views_data.gif)
 
 ## Smart element replacement
-Snippets will automatically render the element array base on RenderElement or FormElement. Start by typing '@RenderElement', '@FormElement' or the [type_name] itself.
+Snippets will automatically render the element array base on RenderElement or FormElement. Start by typing `@RenderElement`, `@FormElement`, `@Element` or the `[type_name]` itself.
 
 FormElement will have `#title`, `#title_display`, `#description` and `#required` properties by default. Additional properties listed on docblock is generated automatically.
 
@@ -41,7 +41,7 @@ Snippets are formatted to have tab stops on values that need replaced like `HOOK
 ![Gif showing usage of hook_preprocess_HOOK snippet](https://raw.githubusercontent.com/andy-blum/smart-drupal-snippets/main/images/preprocess.gif )
 
 ### Element Replacement
-FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description`, `#required` and final ending option of `(comman ',' or semi-colon ';')` as deafult tab stops.
+FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description`, `#required` (*TRUE* or *FALSE*) and final ending option of comma `','` or semi-colon `';'` as deafult tab stops.
 ![Gif showing usage of element snippet tab stops](images/element_tabstop_options.gif)
 
 # Installation
