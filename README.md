@@ -30,7 +30,6 @@ FormElement will have `#title`, `#title_display`, `#description` and `#required`
 ### @Element
 ![Gif showing usage of form/render element snippet](images/element_prefix.gif)
 
-
 ### Typing [type_name]
 ![Gif showing usage of element type snippet](images/element_type.gif)
 
