@@ -66,7 +66,7 @@ export async function formatServices(rawServices, version) {
             `/**`,
             ` * @var ${classNamespace}`,
             ` */`,
-            `\${1:{${name.replaceAll('.', '_')}_service} = \\Drupal::service('${name}');`,
+            `\${1:\\$${name.replaceAll('.', '_')}_service} = \\Drupal::service('${name}');`,
             ``
           ],
           description,

@@ -7,7 +7,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\AccessArgumentsResolverFactory",
       " */",
-      "${1:{access_arguments_resolver_factory_service} = \\Drupal::service('access_arguments_resolver_factory');",
+      "${1:\\$access_arguments_resolver_factory_service} = \\Drupal::service('access_arguments_resolver_factory');",
       ""
     ],
     "description": [
@@ -23,7 +23,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\CsrfAccessCheck",
       " */",
-      "${1:{access_check_csrf_service} = \\Drupal::service('access_check.csrf');",
+      "${1:\\$access_check_csrf_service} = \\Drupal::service('access_check.csrf');",
       ""
     ],
     "description": [
@@ -43,7 +43,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\CustomAccessCheck",
       " */",
-      "${1:{access_check_custom_service} = \\Drupal::service('access_check.custom');",
+      "${1:\\$access_check_custom_service} = \\Drupal::service('access_check.custom');",
       ""
     ],
     "description": [
@@ -66,7 +66,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\DefaultAccessCheck",
       " */",
-      "${1:{access_check_default_service} = \\Drupal::service('access_check.default');",
+      "${1:\\$access_check_default_service} = \\Drupal::service('access_check.default');",
       ""
     ],
     "description": [
@@ -82,7 +82,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityAccessCheck",
       " */",
-      "${1:{access_check_entity_service} = \\Drupal::service('access_check.entity');",
+      "${1:\\$access_check_entity_service} = \\Drupal::service('access_check.entity');",
       ""
     ],
     "description": [
@@ -98,7 +98,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityBundleAccessCheck",
       " */",
-      "${1:{access_check_entity_bundles_service} = \\Drupal::service('access_check.entity_bundles');",
+      "${1:\\$access_check_entity_bundles_service} = \\Drupal::service('access_check.entity_bundles');",
       ""
     ],
     "description": [
@@ -120,7 +120,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityCreateAccessCheck",
       " */",
-      "${1:{access_check_entity_create_service} = \\Drupal::service('access_check.entity_create');",
+      "${1:\\$access_check_entity_create_service} = \\Drupal::service('access_check.entity_create');",
       ""
     ],
     "description": [
@@ -136,7 +136,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityCreateAnyAccessCheck",
       " */",
-      "${1:{access_check_entity_create_any_service} = \\Drupal::service('access_check.entity_create_any');",
+      "${1:\\$access_check_entity_create_any_service} = \\Drupal::service('access_check.entity_create_any');",
       ""
     ],
     "description": [
@@ -152,7 +152,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityDeleteMultipleAccessCheck",
       " */",
-      "${1:{access_check_entity_delete_multiple_service} = \\Drupal::service('access_check.entity_delete_multiple');",
+      "${1:\\$access_check_entity_delete_multiple_service} = \\Drupal::service('access_check.entity_delete_multiple');",
       ""
     ],
     "description": [
@@ -168,7 +168,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\CsrfRequestHeaderAccessCheck",
       " */",
-      "${1:{access_check_header_csrf_service} = \\Drupal::service('access_check.header.csrf');",
+      "${1:\\$access_check_header_csrf_service} = \\Drupal::service('access_check.header.csrf');",
       ""
     ],
     "description": [
@@ -184,7 +184,7 @@
       "/**",
       " * @var Drupal\\Core\\Theme\\ThemeAccessCheck",
       " */",
-      "${1:{access_check_theme_service} = \\Drupal::service('access_check.theme');",
+      "${1:\\$access_check_theme_service} = \\Drupal::service('access_check.theme');",
       ""
     ],
     "description": [
@@ -200,7 +200,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\AccessManager",
       " */",
-      "${1:{access_manager_service} = \\Drupal::service('access_manager');",
+      "${1:\\$access_manager_service} = \\Drupal::service('access_manager');",
       ""
     ],
     "description": [
@@ -218,7 +218,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\AccountSwitcher",
       " */",
-      "${1:{account_switcher_service} = \\Drupal::service('account_switcher');",
+      "${1:\\$account_switcher_service} = \\Drupal::service('account_switcher');",
       ""
     ],
     "description": [
@@ -238,7 +238,7 @@
       "/**",
       " * @var Drupal\\Core\\Ajax\\AjaxResponseAttachmentsProcessor",
       " */",
-      "${1:{ajax_response_attachments_processor_service} = \\Drupal::service('ajax_response.attachments_processor');",
+      "${1:\\$ajax_response_attachments_processor_service} = \\Drupal::service('ajax_response.attachments_processor');",
       ""
     ],
     "description": [
@@ -257,7 +257,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\AjaxResponseSubscriber",
       " */",
-      "${1:{ajax_response_subscriber_service} = \\Drupal::service('ajax_response.subscriber');",
+      "${1:\\$ajax_response_subscriber_service} = \\Drupal::service('ajax_response.subscriber');",
       ""
     ],
     "description": [
@@ -273,7 +273,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\AnonymousUserResponseSubscriber",
       " */",
-      "${1:{anonymous_user_response_subscriber_service} = \\Drupal::service('anonymous_user_response_subscriber');",
+      "${1:\\$anonymous_user_response_subscriber_service} = \\Drupal::service('anonymous_user_response_subscriber');",
       ""
     ],
     "description": [
@@ -289,7 +289,7 @@
       "/**",
       " * @var \\SplString",
       " */",
-      "${1:{app_root_service} = \\Drupal::service('app.root');",
+      "${1:\\$app_root_service} = \\Drupal::service('app.root');",
       ""
     ],
     "description": [],
@@ -303,7 +303,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\CssCollectionGrouper",
       " */",
-      "${1:{asset_css_collection_grouper_service} = \\Drupal::service('asset.css.collection_grouper');",
+      "${1:\\$asset_css_collection_grouper_service} = \\Drupal::service('asset.css.collection_grouper');",
       ""
     ],
     "description": [
@@ -319,7 +319,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\CssCollectionOptimizer",
       " */",
-      "${1:{asset_css_collection_optimizer_service} = \\Drupal::service('asset.css.collection_optimizer');",
+      "${1:\\$asset_css_collection_optimizer_service} = \\Drupal::service('asset.css.collection_optimizer');",
       ""
     ],
     "description": [
@@ -335,7 +335,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\CssCollectionRenderer",
       " */",
-      "${1:{asset_css_collection_renderer_service} = \\Drupal::service('asset.css.collection_renderer');",
+      "${1:\\$asset_css_collection_renderer_service} = \\Drupal::service('asset.css.collection_renderer');",
       ""
     ],
     "description": [
@@ -351,7 +351,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\AssetDumper",
       " */",
-      "${1:{asset_css_dumper_service} = \\Drupal::service('asset.css.dumper');",
+      "${1:\\$asset_css_dumper_service} = \\Drupal::service('asset.css.dumper');",
       ""
     ],
     "description": [
@@ -367,7 +367,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\CssOptimizer",
       " */",
-      "${1:{asset_css_optimizer_service} = \\Drupal::service('asset.css.optimizer');",
+      "${1:\\$asset_css_optimizer_service} = \\Drupal::service('asset.css.optimizer');",
       ""
     ],
     "description": [
@@ -383,7 +383,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\JsCollectionGrouper",
       " */",
-      "${1:{asset_js_collection_grouper_service} = \\Drupal::service('asset.js.collection_grouper');",
+      "${1:\\$asset_js_collection_grouper_service} = \\Drupal::service('asset.js.collection_grouper');",
       ""
     ],
     "description": [
@@ -399,7 +399,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\JsCollectionOptimizer",
       " */",
-      "${1:{asset_js_collection_optimizer_service} = \\Drupal::service('asset.js.collection_optimizer');",
+      "${1:\\$asset_js_collection_optimizer_service} = \\Drupal::service('asset.js.collection_optimizer');",
       ""
     ],
     "description": [
@@ -415,7 +415,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\JsCollectionRenderer",
       " */",
-      "${1:{asset_js_collection_renderer_service} = \\Drupal::service('asset.js.collection_renderer');",
+      "${1:\\$asset_js_collection_renderer_service} = \\Drupal::service('asset.js.collection_renderer');",
       ""
     ],
     "description": [
@@ -431,7 +431,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\AssetDumper",
       " */",
-      "${1:{asset_js_dumper_service} = \\Drupal::service('asset.js.dumper');",
+      "${1:\\$asset_js_dumper_service} = \\Drupal::service('asset.js.dumper');",
       ""
     ],
     "description": [
@@ -447,7 +447,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\JsOptimizer",
       " */",
-      "${1:{asset_js_optimizer_service} = \\Drupal::service('asset.js.optimizer');",
+      "${1:\\$asset_js_optimizer_service} = \\Drupal::service('asset.js.optimizer');",
       ""
     ],
     "description": [
@@ -463,7 +463,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\AssetResolver",
       " */",
-      "${1:{asset_resolver_service} = \\Drupal::service('asset.resolver');",
+      "${1:\\$asset_resolver_service} = \\Drupal::service('asset.resolver');",
       ""
     ],
     "description": [
@@ -479,7 +479,7 @@
       "/**",
       " * @var Drupal\\Core\\Authentication\\AuthenticationManager",
       " */",
-      "${1:{authentication_service} = \\Drupal::service('authentication');",
+      "${1:\\$authentication_service} = \\Drupal::service('authentication');",
       ""
     ],
     "description": [
@@ -502,7 +502,7 @@
       "/**",
       " * @var Drupal\\Core\\Authentication\\AuthenticationCollector",
       " */",
-      "${1:{authentication_collector_service} = \\Drupal::service('authentication_collector');",
+      "${1:\\$authentication_collector_service} = \\Drupal::service('authentication_collector');",
       ""
     ],
     "description": [
@@ -518,7 +518,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\AuthenticationSubscriber",
       " */",
-      "${1:{authentication_subscriber_service} = \\Drupal::service('authentication_subscriber');",
+      "${1:\\$authentication_subscriber_service} = \\Drupal::service('authentication_subscriber');",
       ""
     ],
     "description": [
@@ -536,7 +536,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\BareHtmlPageRenderer",
       " */",
-      "${1:{bare_html_page_renderer_service} = \\Drupal::service('bare_html_page_renderer');",
+      "${1:\\$bare_html_page_renderer_service} = \\Drupal::service('bare_html_page_renderer');",
       ""
     ],
     "description": [
@@ -552,7 +552,7 @@
       "/**",
       " * @var Drupal\\Core\\Batch\\BatchStorage",
       " */",
-      "${1:{batch_storage_service} = \\Drupal::service('batch.storage');",
+      "${1:\\$batch_storage_service} = \\Drupal::service('batch.storage');",
       ""
     ],
     "description": [
@@ -569,7 +569,7 @@
       "/**",
       " * @var Drupal\\Core\\Breadcrumb\\BreadcrumbManager",
       " */",
-      "${1:{breadcrumb_service} = \\Drupal::service('breadcrumb');",
+      "${1:\\$breadcrumb_service} = \\Drupal::service('breadcrumb');",
       ""
     ],
     "description": [
@@ -592,7 +592,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\ApcuBackendFactory",
       " */",
-      "${1:{cache_backend_apcu_service} = \\Drupal::service('cache.backend.apcu');",
+      "${1:\\$cache_backend_apcu_service} = \\Drupal::service('cache.backend.apcu');",
       ""
     ],
     "description": [
@@ -611,7 +611,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\ChainedFastBackendFactory",
       " */",
-      "${1:{cache_backend_chainedfast_service} = \\Drupal::service('cache.backend.chainedfast');",
+      "${1:\\$cache_backend_chainedfast_service} = \\Drupal::service('cache.backend.chainedfast');",
       ""
     ],
     "description": [
@@ -629,7 +629,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\DatabaseBackendFactory",
       " */",
-      "${1:{cache_backend_database_service} = \\Drupal::service('cache.backend.database');",
+      "${1:\\$cache_backend_database_service} = \\Drupal::service('cache.backend.database');",
       ""
     ],
     "description": [
@@ -648,7 +648,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\MemoryBackendFactory",
       " */",
-      "${1:{cache_backend_memory_service} = \\Drupal::service('cache.backend.memory');",
+      "${1:\\$cache_backend_memory_service} = \\Drupal::service('cache.backend.memory');",
       ""
     ],
     "description": [
@@ -667,7 +667,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\PhpBackendFactory",
       " */",
-      "${1:{cache_backend_php_service} = \\Drupal::service('cache.backend.php');",
+      "${1:\\$cache_backend_php_service} = \\Drupal::service('cache.backend.php');",
       ""
     ],
     "description": [
@@ -686,7 +686,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_bootstrap_service} = \\Drupal::service('cache.bootstrap');",
+      "${1:\\$cache_bootstrap_service} = \\Drupal::service('cache.bootstrap');",
       ""
     ],
     "description": [
@@ -710,7 +710,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_config_service} = \\Drupal::service('cache.config');",
+      "${1:\\$cache_config_service} = \\Drupal::service('cache.config');",
       ""
     ],
     "description": [
@@ -734,7 +734,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_data_service} = \\Drupal::service('cache.data');",
+      "${1:\\$cache_data_service} = \\Drupal::service('cache.data');",
       ""
     ],
     "description": [
@@ -758,7 +758,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_default_service} = \\Drupal::service('cache.default');",
+      "${1:\\$cache_default_service} = \\Drupal::service('cache.default');",
       ""
     ],
     "description": [
@@ -782,7 +782,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_discovery_service} = \\Drupal::service('cache.discovery');",
+      "${1:\\$cache_discovery_service} = \\Drupal::service('cache.discovery');",
       ""
     ],
     "description": [
@@ -806,7 +806,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_entity_service} = \\Drupal::service('cache.entity');",
+      "${1:\\$cache_entity_service} = \\Drupal::service('cache.entity');",
       ""
     ],
     "description": [
@@ -830,7 +830,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_menu_service} = \\Drupal::service('cache.menu');",
+      "${1:\\$cache_menu_service} = \\Drupal::service('cache.menu');",
       ""
     ],
     "description": [
@@ -854,7 +854,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_render_service} = \\Drupal::service('cache.render');",
+      "${1:\\$cache_render_service} = \\Drupal::service('cache.render');",
       ""
     ],
     "description": [
@@ -878,7 +878,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
       " */",
-      "${1:{cache_static_service} = \\Drupal::service('cache.static');",
+      "${1:\\$cache_static_service} = \\Drupal::service('cache.static');",
       ""
     ],
     "description": [
@@ -902,7 +902,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\CookiesCacheContext",
       " */",
-      "${1:{cache_context_cookies_service} = \\Drupal::service('cache_context.cookies');",
+      "${1:\\$cache_context_cookies_service} = \\Drupal::service('cache_context.cookies');",
       ""
     ],
     "description": [
@@ -922,7 +922,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\HeadersCacheContext",
       " */",
-      "${1:{cache_context_headers_service} = \\Drupal::service('cache_context.headers');",
+      "${1:\\$cache_context_headers_service} = \\Drupal::service('cache_context.headers');",
       ""
     ],
     "description": [
@@ -942,7 +942,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\IpCacheContext",
       " */",
-      "${1:{cache_context_ip_service} = \\Drupal::service('cache_context.ip');",
+      "${1:\\$cache_context_ip_service} = \\Drupal::service('cache_context.ip');",
       ""
     ],
     "description": [
@@ -960,7 +960,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\LanguagesCacheContext",
       " */",
-      "${1:{cache_context_languages_service} = \\Drupal::service('cache_context.languages');",
+      "${1:\\$cache_context_languages_service} = \\Drupal::service('cache_context.languages');",
       ""
     ],
     "description": [
@@ -976,7 +976,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\ProtocolVersionCacheContext",
       " */",
-      "${1:{cache_context_protocol_version_service} = \\Drupal::service('cache_context.protocol_version');",
+      "${1:\\$cache_context_protocol_version_service} = \\Drupal::service('cache_context.protocol_version');",
       ""
     ],
     "description": [
@@ -997,7 +997,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\RequestFormatCacheContext",
       " */",
-      "${1:{cache_context_request_format_service} = \\Drupal::service('cache_context.request_format');",
+      "${1:\\$cache_context_request_format_service} = \\Drupal::service('cache_context.request_format');",
       ""
     ],
     "description": [
@@ -1015,7 +1015,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\RouteCacheContext",
       " */",
-      "${1:{cache_context_route_service} = \\Drupal::service('cache_context.route');",
+      "${1:\\$cache_context_route_service} = \\Drupal::service('cache_context.route');",
       ""
     ],
     "description": [
@@ -1033,7 +1033,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\MenuActiveTrailsCacheContext",
       " */",
-      "${1:{cache_context_route_menu_active_trails_service} = \\Drupal::service('cache_context.route.menu_active_trails');",
+      "${1:\\$cache_context_route_menu_active_trails_service} = \\Drupal::service('cache_context.route.menu_active_trails');",
       ""
     ],
     "description": [
@@ -1052,7 +1052,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\RouteNameCacheContext",
       " */",
-      "${1:{cache_context_route_name_service} = \\Drupal::service('cache_context.route.name');",
+      "${1:\\$cache_context_route_name_service} = \\Drupal::service('cache_context.route.name');",
       ""
     ],
     "description": [
@@ -1070,7 +1070,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\SessionCacheContext",
       " */",
-      "${1:{cache_context_session_service} = \\Drupal::service('cache_context.session');",
+      "${1:\\$cache_context_session_service} = \\Drupal::service('cache_context.session');",
       ""
     ],
     "description": [
@@ -1088,7 +1088,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\SessionExistsCacheContext",
       " */",
-      "${1:{cache_context_session_exists_service} = \\Drupal::service('cache_context.session.exists');",
+      "${1:\\$cache_context_session_exists_service} = \\Drupal::service('cache_context.session.exists');",
       ""
     ],
     "description": [
@@ -1106,7 +1106,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\ThemeCacheContext",
       " */",
-      "${1:{cache_context_theme_service} = \\Drupal::service('cache_context.theme');",
+      "${1:\\$cache_context_theme_service} = \\Drupal::service('cache_context.theme');",
       ""
     ],
     "description": [
@@ -1124,7 +1124,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\TimeZoneCacheContext",
       " */",
-      "${1:{cache_context_timezone_service} = \\Drupal::service('cache_context.timezone');",
+      "${1:\\$cache_context_timezone_service} = \\Drupal::service('cache_context.timezone');",
       ""
     ],
     "description": [
@@ -1144,7 +1144,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\UrlCacheContext",
       " */",
-      "${1:{cache_context_url_service} = \\Drupal::service('cache_context.url');",
+      "${1:\\$cache_context_url_service} = \\Drupal::service('cache_context.url');",
       ""
     ],
     "description": [
@@ -1162,7 +1162,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\PathCacheContext",
       " */",
-      "${1:{cache_context_url_path_service} = \\Drupal::service('cache_context.url.path');",
+      "${1:\\$cache_context_url_path_service} = \\Drupal::service('cache_context.url.path');",
       ""
     ],
     "description": [
@@ -1185,7 +1185,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\IsFrontPathCacheContext",
       " */",
-      "${1:{cache_context_url_path_is_front_service} = \\Drupal::service('cache_context.url.path.is_front');",
+      "${1:\\$cache_context_url_path_is_front_service} = \\Drupal::service('cache_context.url.path.is_front');",
       ""
     ],
     "description": [
@@ -1203,7 +1203,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\PathParentCacheContext",
       " */",
-      "${1:{cache_context_url_path_parent_service} = \\Drupal::service('cache_context.url.path.parent');",
+      "${1:\\$cache_context_url_path_parent_service} = \\Drupal::service('cache_context.url.path.parent');",
       ""
     ],
     "description": [
@@ -1224,7 +1224,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\QueryArgsCacheContext",
       " */",
-      "${1:{cache_context_url_query_args_service} = \\Drupal::service('cache_context.url.query_args');",
+      "${1:\\$cache_context_url_query_args_service} = \\Drupal::service('cache_context.url.query_args');",
       ""
     ],
     "description": [
@@ -1244,7 +1244,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\PagersCacheContext",
       " */",
-      "${1:{cache_context_url_query_args_pagers_service} = \\Drupal::service('cache_context.url.query_args.pagers');",
+      "${1:\\$cache_context_url_query_args_pagers_service} = \\Drupal::service('cache_context.url.query_args.pagers');",
       ""
     ],
     "description": [
@@ -1264,7 +1264,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\SiteCacheContext",
       " */",
-      "${1:{cache_context_url_site_service} = \\Drupal::service('cache_context.url.site');",
+      "${1:\\$cache_context_url_site_service} = \\Drupal::service('cache_context.url.site');",
       ""
     ],
     "description": [
@@ -1290,7 +1290,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\UserCacheContext",
       " */",
-      "${1:{cache_context_user_service} = \\Drupal::service('cache_context.user');",
+      "${1:\\$cache_context_user_service} = \\Drupal::service('cache_context.user');",
       ""
     ],
     "description": [
@@ -1308,7 +1308,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\IsSuperUserCacheContext",
       " */",
-      "${1:{cache_context_user_is_super_user_service} = \\Drupal::service('cache_context.user.is_super_user');",
+      "${1:\\$cache_context_user_is_super_user_service} = \\Drupal::service('cache_context.user.is_super_user');",
       ""
     ],
     "description": [
@@ -1326,7 +1326,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\AccountPermissionsCacheContext",
       " */",
-      "${1:{cache_context_user_permissions_service} = \\Drupal::service('cache_context.user.permissions');",
+      "${1:\\$cache_context_user_permissions_service} = \\Drupal::service('cache_context.user.permissions');",
       ""
     ],
     "description": [
@@ -1344,7 +1344,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\UserRolesCacheContext",
       " */",
-      "${1:{cache_context_user_roles_service} = \\Drupal::service('cache_context.user.roles');",
+      "${1:\\$cache_context_user_roles_service} = \\Drupal::service('cache_context.user.roles');",
       ""
     ],
     "description": [
@@ -1367,7 +1367,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\Context\\CacheContextsManager",
       " */",
-      "${1:{cache_contexts_manager_service} = \\Drupal::service('cache_contexts_manager');",
+      "${1:\\$cache_contexts_manager_service} = \\Drupal::service('cache_contexts_manager');",
       ""
     ],
     "description": [
@@ -1395,7 +1395,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheFactory",
       " */",
-      "${1:{cache_factory_service} = \\Drupal::service('cache_factory');",
+      "${1:\\$cache_factory_service} = \\Drupal::service('cache_factory');",
       ""
     ],
     "description": [
@@ -1411,7 +1411,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\CacheRouterRebuildSubscriber",
       " */",
-      "${1:{cache_router_rebuild_subscriber_service} = \\Drupal::service('cache_router_rebuild_subscriber');",
+      "${1:\\$cache_router_rebuild_subscriber_service} = \\Drupal::service('cache_router_rebuild_subscriber');",
       ""
     ],
     "description": [
@@ -1427,7 +1427,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\CacheTagsInvalidator",
       " */",
-      "${1:{cache_tags_invalidator_service} = \\Drupal::service('cache_tags.invalidator');",
+      "${1:\\$cache_tags_invalidator_service} = \\Drupal::service('cache_tags.invalidator');",
       ""
     ],
     "description": [
@@ -1443,7 +1443,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\DatabaseCacheTagsChecksum",
       " */",
-      "${1:{cache_tags_invalidator_checksum_service} = \\Drupal::service('cache_tags.invalidator.checksum');",
+      "${1:\\$cache_tags_invalidator_checksum_service} = \\Drupal::service('cache_tags.invalidator.checksum');",
       ""
     ],
     "description": [
@@ -1459,7 +1459,7 @@
       "/**",
       " * @var Drupal\\Core\\DependencyInjection\\ClassResolver",
       " */",
-      "${1:{class_resolver_service} = \\Drupal::service('class_resolver');",
+      "${1:\\$class_resolver_service} = \\Drupal::service('class_resolver');",
       ""
     ],
     "description": [
@@ -1475,7 +1475,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ClientErrorResponseSubscriber",
       " */",
-      "${1:{client_error_response_subscriber_service} = \\Drupal::service('client_error_response_subscriber');",
+      "${1:\\$client_error_response_subscriber_service} = \\Drupal::service('client_error_response_subscriber');",
       ""
     ],
     "description": [
@@ -1491,7 +1491,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\ConfigFactory",
       " */",
-      "${1:{config_factory_service} = \\Drupal::service('config.factory');",
+      "${1:\\$config_factory_service} = \\Drupal::service('config.factory');",
       ""
     ],
     "description": [
@@ -1519,7 +1519,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\ImportStorageTransformer",
       " */",
-      "${1:{config_import_transformer_service} = \\Drupal::service('config.import_transformer');",
+      "${1:\\$config_import_transformer_service} = \\Drupal::service('config.import_transformer');",
       ""
     ],
     "description": [
@@ -1540,7 +1540,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\Importer\\FinalMissingContentSubscriber",
       " */",
-      "${1:{config_importer_subscriber_service} = \\Drupal::service('config.importer_subscriber');",
+      "${1:\\$config_importer_subscriber_service} = \\Drupal::service('config.importer_subscriber');",
       ""
     ],
     "description": [
@@ -1561,7 +1561,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\ConfigInstaller",
       " */",
-      "${1:{config_installer_service} = \\Drupal::service('config.installer');",
+      "${1:\\$config_installer_service} = \\Drupal::service('config.installer');",
       ""
     ],
     "description": [
@@ -1580,7 +1580,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\ConfigManager",
       " */",
-      "${1:{config_manager_service} = \\Drupal::service('config.manager');",
+      "${1:\\$config_manager_service} = \\Drupal::service('config.manager');",
       ""
     ],
     "description": [
@@ -1596,7 +1596,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\CachedStorage",
       " */",
-      "${1:{config_storage_service} = \\Drupal::service('config.storage');",
+      "${1:\\$config_storage_service} = \\Drupal::service('config.storage');",
       ""
     ],
     "description": [
@@ -1616,7 +1616,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\ManagedStorage",
       " */",
-      "${1:{config_storage_export_service} = \\Drupal::service('config.storage.export');",
+      "${1:\\$config_storage_export_service} = \\Drupal::service('config.storage.export');",
       ""
     ],
     "description": [
@@ -1640,7 +1640,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\ExtensionInstallStorage",
       " */",
-      "${1:{config_storage_schema_service} = \\Drupal::service('config.storage.schema');",
+      "${1:\\$config_storage_schema_service} = \\Drupal::service('config.storage.schema');",
       ""
     ],
     "description": [
@@ -1659,7 +1659,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\DatabaseStorage",
       " */",
-      "${1:{config_storage_snapshot_service} = \\Drupal::service('config.storage.snapshot');",
+      "${1:\\$config_storage_snapshot_service} = \\Drupal::service('config.storage.snapshot');",
       ""
     ],
     "description": [
@@ -1675,7 +1675,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\FileStorage",
       " */",
-      "${1:{config_storage_sync_service} = \\Drupal::service('config.storage.sync');",
+      "${1:\\$config_storage_sync_service} = \\Drupal::service('config.storage.sync');",
       ""
     ],
     "description": [
@@ -1691,7 +1691,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\TypedConfigManager",
       " */",
-      "${1:{config_typed_service} = \\Drupal::service('config.typed');",
+      "${1:\\$config_typed_service} = \\Drupal::service('config.typed');",
       ""
     ],
     "description": [
@@ -1707,7 +1707,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ExcludedModulesEventSubscriber",
       " */",
-      "${1:{config_exclude_modules_subscriber_service} = \\Drupal::service('config_exclude_modules_subscriber');",
+      "${1:\\$config_exclude_modules_subscriber_service} = \\Drupal::service('config_exclude_modules_subscriber');",
       ""
     ],
     "description": [
@@ -1723,7 +1723,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ConfigImportSubscriber",
       " */",
-      "${1:{config_import_subscriber_service} = \\Drupal::service('config_import_subscriber');",
+      "${1:\\$config_import_subscriber_service} = \\Drupal::service('config_import_subscriber');",
       ""
     ],
     "description": [
@@ -1739,7 +1739,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ConfigSnapshotSubscriber",
       " */",
-      "${1:{config_snapshot_subscriber_service} = \\Drupal::service('config_snapshot_subscriber');",
+      "${1:\\$config_snapshot_subscriber_service} = \\Drupal::service('config_snapshot_subscriber');",
       ""
     ],
     "description": [
@@ -1755,7 +1755,7 @@
       "/**",
       " * @var ArrayObject",
       " */",
-      "${1:{container_namespaces_service} = \\Drupal::service('container.namespaces');",
+      "${1:\\$container_namespaces_service} = \\Drupal::service('container.namespaces');",
       ""
     ],
     "description": [],
@@ -1769,7 +1769,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\ContentTypeHeaderMatcher",
       " */",
-      "${1:{content_type_header_matcher_service} = \\Drupal::service('content_type_header_matcher');",
+      "${1:\\$content_type_header_matcher_service} = \\Drupal::service('content_type_header_matcher');",
       ""
     ],
     "description": [
@@ -1785,7 +1785,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\ContentUninstallValidator",
       " */",
-      "${1:{content_uninstall_validator_service} = \\Drupal::service('content_uninstall_validator');",
+      "${1:\\$content_uninstall_validator_service} = \\Drupal::service('content_uninstall_validator');",
       ""
     ],
     "description": [
@@ -1801,7 +1801,7 @@
       "/**",
       " * @var Drupal\\Core\\Plugin\\Context\\ContextHandler",
       " */",
-      "${1:{context_handler_service} = \\Drupal::service('context.handler');",
+      "${1:\\$context_handler_service} = \\Drupal::service('context.handler');",
       ""
     ],
     "description": [
@@ -1817,7 +1817,7 @@
       "/**",
       " * @var Drupal\\Core\\Plugin\\Context\\LazyContextRepository",
       " */",
-      "${1:{context_repository_service} = \\Drupal::service('context.repository');",
+      "${1:\\$context_repository_service} = \\Drupal::service('context.repository');",
       ""
     ],
     "description": [
@@ -1833,7 +1833,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\HtmlEntityFormController",
       " */",
-      "${1:{controller_entity_form_service} = \\Drupal::service('controller.entity_form');",
+      "${1:\\$controller_entity_form_service} = \\Drupal::service('controller.entity_form');",
       ""
     ],
     "description": [
@@ -1849,7 +1849,7 @@
       "/**",
       " * @var Drupal\\Core\\Controller\\HtmlFormController",
       " */",
-      "${1:{controller_form_service} = \\Drupal::service('controller.form');",
+      "${1:\\$controller_form_service} = \\Drupal::service('controller.form');",
       ""
     ],
     "description": [
@@ -1865,7 +1865,7 @@
       "/**",
       " * @var Drupal\\Core\\Controller\\ControllerResolver",
       " */",
-      "${1:{controller_resolver_service} = \\Drupal::service('controller_resolver');",
+      "${1:\\$controller_resolver_service} = \\Drupal::service('controller_resolver');",
       ""
     ],
     "description": [
@@ -1893,7 +1893,7 @@
       "/**",
       " * @var Drupal\\Core\\Locale\\CountryManager",
       " */",
-      "${1:{country_manager_service} = \\Drupal::service('country_manager');",
+      "${1:\\$country_manager_service} = \\Drupal::service('country_manager');",
       ""
     ],
     "description": [
@@ -1909,7 +1909,7 @@
       "/**",
       " * @var Drupal\\Core\\Cron",
       " */",
-      "${1:{cron_service} = \\Drupal::service('cron');",
+      "${1:\\$cron_service} = \\Drupal::service('cron');",
       ""
     ],
     "description": [
@@ -1925,7 +1925,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\CsrfTokenGenerator",
       " */",
-      "${1:{csrf_token_service} = \\Drupal::service('csrf_token');",
+      "${1:\\$csrf_token_service} = \\Drupal::service('csrf_token');",
       ""
     ],
     "description": [
@@ -1943,7 +1943,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\CurrentRouteMatch",
       " */",
-      "${1:{current_route_match_service} = \\Drupal::service('current_route_match');",
+      "${1:\\$current_route_match_service} = \\Drupal::service('current_route_match');",
       ""
     ],
     "description": [
@@ -1959,7 +1959,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\AccountProxy",
       " */",
-      "${1:{current_user_service} = \\Drupal::service('current_user');",
+      "${1:\\$current_user_service} = \\Drupal::service('current_user');",
       ""
     ],
     "description": [
@@ -1983,7 +1983,7 @@
       "/**",
       " * @var Drupal\\Core\\Database\\Connection",
       " */",
-      "${1:{database_service} = \\Drupal::service('database');",
+      "${1:\\$database_service} = \\Drupal::service('database');",
       ""
     ],
     "description": [
@@ -2006,7 +2006,7 @@
       "/**",
       " * @var Drupal\\Core\\Database\\Connection",
       " */",
-      "${1:{database_replica_service} = \\Drupal::service('database.replica');",
+      "${1:\\$database_replica_service} = \\Drupal::service('database.replica');",
       ""
     ],
     "description": [
@@ -2029,7 +2029,7 @@
       "/**",
       " * @var Drupal\\Core\\Database\\ReplicaKillSwitch",
       " */",
-      "${1:{database_replica_kill_switch_service} = \\Drupal::service('database.replica_kill_switch');",
+      "${1:\\$database_replica_kill_switch_service} = \\Drupal::service('database.replica_kill_switch');",
       ""
     ],
     "description": [
@@ -2045,7 +2045,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\DatabaseDriverUninstallValidator",
       " */",
-      "${1:{database_driver_uninstall_validator_service} = \\Drupal::service('database_driver_uninstall_validator');",
+      "${1:\\$database_driver_uninstall_validator_service} = \\Drupal::service('database_driver_uninstall_validator');",
       ""
     ],
     "description": [
@@ -2061,7 +2061,7 @@
       "/**",
       " * @var Drupal\\Core\\Datetime\\DateFormatter",
       " */",
-      "${1:{date_formatter_service} = \\Drupal::service('date.formatter');",
+      "${1:\\$date_formatter_service} = \\Drupal::service('date.formatter');",
       ""
     ],
     "description": [
@@ -2079,7 +2079,7 @@
       "/**",
       " * @var Drupal\\Component\\Datetime\\Time",
       " */",
-      "${1:{datetime_time_service} = \\Drupal::service('datetime.time');",
+      "${1:\\$datetime_time_service} = \\Drupal::service('datetime.time');",
       ""
     ],
     "description": [
@@ -2095,7 +2095,7 @@
       "/**",
       " * @var Drupal\\Core\\Diff\\DiffFormatter",
       " */",
-      "${1:{diff_formatter_service} = \\Drupal::service('diff.formatter');",
+      "${1:\\$diff_formatter_service} = \\Drupal::service('diff.formatter');",
       ""
     ],
     "description": [
@@ -2111,7 +2111,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\EarlyRenderingControllerWrapperSubscriber",
       " */",
-      "${1:{early_rendering_controller_wrapper_subscriber_service} = \\Drupal::service('early_rendering_controller_wrapper_subscriber');",
+      "${1:\\$early_rendering_controller_wrapper_subscriber_service} = \\Drupal::service('early_rendering_controller_wrapper_subscriber');",
       ""
     ],
     "description": [
@@ -2162,7 +2162,7 @@
       "/**",
       " * @var Drupal\\Component\\Utility\\EmailValidator",
       " */",
-      "${1:{email_validator_service} = \\Drupal::service('email.validator');",
+      "${1:\\$email_validator_service} = \\Drupal::service('email.validator');",
       ""
     ],
     "description": [
@@ -2178,7 +2178,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityAutocompleteMatcher",
       " */",
-      "${1:{entity_autocomplete_matcher_service} = \\Drupal::service('entity.autocomplete_matcher');",
+      "${1:\\$entity_autocomplete_matcher_service} = \\Drupal::service('entity.autocomplete_matcher');",
       ""
     ],
     "description": [
@@ -2194,7 +2194,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\Event\\BundleConfigImportValidate",
       " */",
-      "${1:{entity_bundle_config_import_validator_service} = \\Drupal::service('entity.bundle_config_import_validator');",
+      "${1:\\$entity_bundle_config_import_validator_service} = \\Drupal::service('entity.bundle_config_import_validator');",
       ""
     ],
     "description": [
@@ -2210,7 +2210,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityDefinitionUpdateManager",
       " */",
-      "${1:{entity_definition_update_manager_service} = \\Drupal::service('entity.definition_update_manager');",
+      "${1:\\$entity_definition_update_manager_service} = \\Drupal::service('entity.definition_update_manager');",
       ""
     ],
     "description": [
@@ -2226,7 +2226,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityFormBuilder",
       " */",
-      "${1:{entity_form_builder_service} = \\Drupal::service('entity.form_builder');",
+      "${1:\\$entity_form_builder_service} = \\Drupal::service('entity.form_builder');",
       ""
     ],
     "description": [
@@ -2242,7 +2242,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityLastInstalledSchemaRepository",
       " */",
-      "${1:{entity_last_installed_schema_repository_service} = \\Drupal::service('entity.last_installed_schema.repository');",
+      "${1:\\$entity_last_installed_schema_repository_service} = \\Drupal::service('entity.last_installed_schema.repository');",
       ""
     ],
     "description": [
@@ -2258,7 +2258,7 @@
       "/**",
       " * @var Drupal\\Core\\Cache\\MemoryCache\\MemoryCache",
       " */",
-      "${1:{entity_memory_cache_service} = \\Drupal::service('entity.memory_cache');",
+      "${1:\\$entity_memory_cache_service} = \\Drupal::service('entity.memory_cache');",
       ""
     ],
     "description": [
@@ -2278,7 +2278,7 @@
       "/**",
       " * @var Drupal\\Core\\Config\\Entity\\Query\\QueryFactory",
       " */",
-      "${1:{entity_query_config_service} = \\Drupal::service('entity.query.config');",
+      "${1:\\$entity_query_config_service} = \\Drupal::service('entity.query.config');",
       ""
     ],
     "description": [
@@ -2294,7 +2294,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\KeyValueStore\\Query\\QueryFactory",
       " */",
-      "${1:{entity_query_keyvalue_service} = \\Drupal::service('entity.query.keyvalue');",
+      "${1:\\$entity_query_keyvalue_service} = \\Drupal::service('entity.query.keyvalue');",
       ""
     ],
     "description": [
@@ -2310,7 +2310,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\Query\\Null\\QueryFactory",
       " */",
-      "${1:{entity_query_null_service} = \\Drupal::service('entity.query.null');",
+      "${1:\\$entity_query_null_service} = \\Drupal::service('entity.query.null');",
       ""
     ],
     "description": [
@@ -2326,7 +2326,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\Query\\Sql\\QueryFactory",
       " */",
-      "${1:{entity_query_sql_service} = \\Drupal::service('entity.query.sql');",
+      "${1:\\$entity_query_sql_service} = \\Drupal::service('entity.query.sql');",
       ""
     ],
     "description": [
@@ -2345,7 +2345,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityRepository",
       " */",
-      "${1:{entity_repository_service} = \\Drupal::service('entity.repository');",
+      "${1:\\$entity_repository_service} = \\Drupal::service('entity.repository');",
       ""
     ],
     "description": [
@@ -2361,7 +2361,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityBundleListener",
       " */",
-      "${1:{entity_bundle_listener_service} = \\Drupal::service('entity_bundle.listener');",
+      "${1:\\$entity_bundle_listener_service} = \\Drupal::service('entity_bundle.listener');",
       ""
     ],
     "description": [
@@ -2377,7 +2377,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityDisplayRepository",
       " */",
-      "${1:{entity_display_repository_service} = \\Drupal::service('entity_display.repository');",
+      "${1:\\$entity_display_repository_service} = \\Drupal::service('entity_display.repository');",
       ""
     ],
     "description": [
@@ -2393,7 +2393,7 @@
       "/**",
       " * @var Drupal\\Core\\Field\\DeletedFieldsRepository",
       " */",
-      "${1:{entity_field_deleted_fields_repository_service} = \\Drupal::service('entity_field.deleted_fields_repository');",
+      "${1:\\$entity_field_deleted_fields_repository_service} = \\Drupal::service('entity_field.deleted_fields_repository');",
       ""
     ],
     "description": [
@@ -2411,7 +2411,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityFieldManager",
       " */",
-      "${1:{entity_field_manager_service} = \\Drupal::service('entity_field.manager');",
+      "${1:\\$entity_field_manager_service} = \\Drupal::service('entity_field.manager');",
       ""
     ],
     "description": [
@@ -2430,7 +2430,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\EntityRouteProviderSubscriber",
       " */",
-      "${1:{entity_route_subscriber_service} = \\Drupal::service('entity_route_subscriber');",
+      "${1:\\$entity_route_subscriber_service} = \\Drupal::service('entity_route_subscriber');",
       ""
     ],
     "description": [
@@ -2446,7 +2446,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityTypeBundleInfo",
       " */",
-      "${1:{entity_type_bundle_info_service} = \\Drupal::service('entity_type.bundle.info');",
+      "${1:\\$entity_type_bundle_info_service} = \\Drupal::service('entity_type.bundle.info');",
       ""
     ],
     "description": [
@@ -2462,7 +2462,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityTypeListener",
       " */",
-      "${1:{entity_type_listener_service} = \\Drupal::service('entity_type.listener');",
+      "${1:\\$entity_type_listener_service} = \\Drupal::service('entity_type.listener');",
       ""
     ],
     "description": [
@@ -2480,7 +2480,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityTypeManager",
       " */",
-      "${1:{entity_type_manager_service} = \\Drupal::service('entity_type.manager');",
+      "${1:\\$entity_type_manager_service} = \\Drupal::service('entity_type.manager');",
       ""
     ],
     "description": [
@@ -2512,7 +2512,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityTypeRepository",
       " */",
-      "${1:{entity_type_repository_service} = \\Drupal::service('entity_type.repository');",
+      "${1:\\$entity_type_repository_service} = \\Drupal::service('entity_type.repository');",
       ""
     ],
     "description": [
@@ -2530,7 +2530,7 @@
       "/**",
       " * @var Drupal\\Component\\EventDispatcher\\ContainerAwareEventDispatcher",
       " */",
-      "${1:{event_dispatcher_service} = \\Drupal::service('event_dispatcher');",
+      "${1:\\$event_dispatcher_service} = \\Drupal::service('event_dispatcher');",
       ""
     ],
     "description": [
@@ -2567,7 +2567,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\CustomPageExceptionHtmlSubscriber",
       " */",
-      "${1:{exception_custom_page_html_service} = \\Drupal::service('exception.custom_page_html');",
+      "${1:\\$exception_custom_page_html_service} = \\Drupal::service('exception.custom_page_html');",
       ""
     ],
     "description": [
@@ -2583,7 +2583,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\DefaultExceptionHtmlSubscriber",
       " */",
-      "${1:{exception_default_html_service} = \\Drupal::service('exception.default_html');",
+      "${1:\\$exception_default_html_service} = \\Drupal::service('exception.default_html');",
       ""
     ],
     "description": [
@@ -2599,7 +2599,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ExceptionJsonSubscriber",
       " */",
-      "${1:{exception_default_json_service} = \\Drupal::service('exception.default_json');",
+      "${1:\\$exception_default_json_service} = \\Drupal::service('exception.default_json');",
       ""
     ],
     "description": [
@@ -2615,7 +2615,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\EnforcedFormResponseSubscriber",
       " */",
-      "${1:{exception_enforced_form_response_service} = \\Drupal::service('exception.enforced_form_response');",
+      "${1:\\$exception_enforced_form_response_service} = \\Drupal::service('exception.enforced_form_response');",
       ""
     ],
     "description": [
@@ -2631,7 +2631,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\Fast404ExceptionHtmlSubscriber",
       " */",
-      "${1:{exception_fast_404_html_service} = \\Drupal::service('exception.fast_404_html');",
+      "${1:\\$exception_fast_404_html_service} = \\Drupal::service('exception.fast_404_html');",
       ""
     ],
     "description": [
@@ -2663,7 +2663,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\FinalExceptionSubscriber",
       " */",
-      "${1:{exception_final_service} = \\Drupal::service('exception.final');",
+      "${1:\\$exception_final_service} = \\Drupal::service('exception.final');",
       ""
     ],
     "description": [
@@ -2695,7 +2695,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ExceptionLoggingSubscriber",
       " */",
-      "${1:{exception_logger_service} = \\Drupal::service('exception.logger');",
+      "${1:\\$exception_logger_service} = \\Drupal::service('exception.logger');",
       ""
     ],
     "description": [
@@ -2711,7 +2711,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ExceptionDetectNeedsInstallSubscriber",
       " */",
-      "${1:{exception_needs_installer_service} = \\Drupal::service('exception.needs_installer');",
+      "${1:\\$exception_needs_installer_service} = \\Drupal::service('exception.needs_installer');",
       ""
     ],
     "description": [
@@ -2727,7 +2727,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ModuleExtensionList",
       " */",
-      "${1:{extension_list_module_service} = \\Drupal::service('extension.list.module');",
+      "${1:\\$extension_list_module_service} = \\Drupal::service('extension.list.module');",
       ""
     ],
     "description": [
@@ -2749,7 +2749,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ProfileExtensionList",
       " */",
-      "${1:{extension_list_profile_service} = \\Drupal::service('extension.list.profile');",
+      "${1:\\$extension_list_profile_service} = \\Drupal::service('extension.list.profile');",
       ""
     ],
     "description": [
@@ -2771,7 +2771,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ThemeExtensionList",
       " */",
-      "${1:{extension_list_theme_service} = \\Drupal::service('extension.list.theme');",
+      "${1:\\$extension_list_theme_service} = \\Drupal::service('extension.list.theme');",
       ""
     ],
     "description": [
@@ -2793,7 +2793,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ThemeEngineExtensionList",
       " */",
-      "${1:{extension_list_theme_engine_service} = \\Drupal::service('extension.list.theme_engine');",
+      "${1:\\$extension_list_theme_engine_service} = \\Drupal::service('extension.list.theme_engine');",
       ""
     ],
     "description": [
@@ -2815,7 +2815,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ExtensionPathResolver",
       " */",
-      "${1:{extension_path_resolver_service} = \\Drupal::service('extension.path.resolver');",
+      "${1:\\$extension_path_resolver_service} = \\Drupal::service('extension.path.resolver');",
       ""
     ],
     "description": [
@@ -2831,7 +2831,7 @@
       "/**",
       " * @var Drupal\\Component\\Bridge\\ZfExtensionManagerSfContainer",
       " */",
-      "${1:{feed_bridge_reader_service} = \\Drupal::service('feed.bridge.reader');",
+      "${1:\\$feed_bridge_reader_service} = \\Drupal::service('feed.bridge.reader');",
       ""
     ],
     "description": [
@@ -2852,7 +2852,7 @@
       "/**",
       " * @var Drupal\\Component\\Bridge\\ZfExtensionManagerSfContainer",
       " */",
-      "${1:{feed_bridge_writer_service} = \\Drupal::service('feed.bridge.writer');",
+      "${1:\\$feed_bridge_writer_service} = \\Drupal::service('feed.bridge.writer');",
       ""
     ],
     "description": [
@@ -2873,7 +2873,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\Atom\\Entry",
       " */",
-      "${1:{feed_reader_atomentry_service} = \\Drupal::service('feed.reader.atomentry');",
+      "${1:\\$feed_reader_atomentry_service} = \\Drupal::service('feed.reader.atomentry');",
       ""
     ],
     "description": [],
@@ -2887,7 +2887,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\Atom\\Feed",
       " */",
-      "${1:{feed_reader_atomfeed_service} = \\Drupal::service('feed.reader.atomfeed');",
+      "${1:\\$feed_reader_atomfeed_service} = \\Drupal::service('feed.reader.atomfeed');",
       ""
     ],
     "description": [],
@@ -2901,7 +2901,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\Content\\Entry",
       " */",
-      "${1:{feed_reader_contententry_service} = \\Drupal::service('feed.reader.contententry');",
+      "${1:\\$feed_reader_contententry_service} = \\Drupal::service('feed.reader.contententry');",
       ""
     ],
     "description": [],
@@ -2915,7 +2915,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\DublinCore\\Entry",
       " */",
-      "${1:{feed_reader_dublincoreentry_service} = \\Drupal::service('feed.reader.dublincoreentry');",
+      "${1:\\$feed_reader_dublincoreentry_service} = \\Drupal::service('feed.reader.dublincoreentry');",
       ""
     ],
     "description": [],
@@ -2929,7 +2929,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\DublinCore\\Feed",
       " */",
-      "${1:{feed_reader_dublincorefeed_service} = \\Drupal::service('feed.reader.dublincorefeed');",
+      "${1:\\$feed_reader_dublincorefeed_service} = \\Drupal::service('feed.reader.dublincorefeed');",
       ""
     ],
     "description": [],
@@ -2943,7 +2943,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\Podcast\\Entry",
       " */",
-      "${1:{feed_reader_podcastentry_service} = \\Drupal::service('feed.reader.podcastentry');",
+      "${1:\\$feed_reader_podcastentry_service} = \\Drupal::service('feed.reader.podcastentry');",
       ""
     ],
     "description": [],
@@ -2957,7 +2957,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\Podcast\\Feed",
       " */",
-      "${1:{feed_reader_podcastfeed_service} = \\Drupal::service('feed.reader.podcastfeed');",
+      "${1:\\$feed_reader_podcastfeed_service} = \\Drupal::service('feed.reader.podcastfeed');",
       ""
     ],
     "description": [],
@@ -2971,7 +2971,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\Slash\\Entry",
       " */",
-      "${1:{feed_reader_slashentry_service} = \\Drupal::service('feed.reader.slashentry');",
+      "${1:\\$feed_reader_slashentry_service} = \\Drupal::service('feed.reader.slashentry');",
       ""
     ],
     "description": [],
@@ -2985,7 +2985,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\Thread\\Entry",
       " */",
-      "${1:{feed_reader_threadentry_service} = \\Drupal::service('feed.reader.threadentry');",
+      "${1:\\$feed_reader_threadentry_service} = \\Drupal::service('feed.reader.threadentry');",
       ""
     ],
     "description": [],
@@ -2999,7 +2999,7 @@
       "/**",
       " * @var Laminas\\Feed\\Reader\\Extension\\WellFormedWeb\\Entry",
       " */",
-      "${1:{feed_reader_wellformedwebentry_service} = \\Drupal::service('feed.reader.wellformedwebentry');",
+      "${1:\\$feed_reader_wellformedwebentry_service} = \\Drupal::service('feed.reader.wellformedwebentry');",
       ""
     ],
     "description": [],
@@ -3013,7 +3013,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\Atom\\Renderer\\Feed",
       " */",
-      "${1:{feed_writer_atomrendererfeed_service} = \\Drupal::service('feed.writer.atomrendererfeed');",
+      "${1:\\$feed_writer_atomrendererfeed_service} = \\Drupal::service('feed.writer.atomrendererfeed');",
       ""
     ],
     "description": [],
@@ -3027,7 +3027,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\Content\\Renderer\\Entry",
       " */",
-      "${1:{feed_writer_contentrendererentry_service} = \\Drupal::service('feed.writer.contentrendererentry');",
+      "${1:\\$feed_writer_contentrendererentry_service} = \\Drupal::service('feed.writer.contentrendererentry');",
       ""
     ],
     "description": [],
@@ -3041,7 +3041,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\DublinCore\\Renderer\\Entry",
       " */",
-      "${1:{feed_writer_dublincorerendererentry_service} = \\Drupal::service('feed.writer.dublincorerendererentry');",
+      "${1:\\$feed_writer_dublincorerendererentry_service} = \\Drupal::service('feed.writer.dublincorerendererentry');",
       ""
     ],
     "description": [],
@@ -3055,7 +3055,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\DublinCore\\Renderer\\Feed",
       " */",
-      "${1:{feed_writer_dublincorerendererfeed_service} = \\Drupal::service('feed.writer.dublincorerendererfeed');",
+      "${1:\\$feed_writer_dublincorerendererfeed_service} = \\Drupal::service('feed.writer.dublincorerendererfeed');",
       ""
     ],
     "description": [],
@@ -3069,7 +3069,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Entry",
       " */",
-      "${1:{feed_writer_itunesentry_service} = \\Drupal::service('feed.writer.itunesentry');",
+      "${1:\\$feed_writer_itunesentry_service} = \\Drupal::service('feed.writer.itunesentry');",
       ""
     ],
     "description": [],
@@ -3083,7 +3083,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Feed",
       " */",
-      "${1:{feed_writer_itunesfeed_service} = \\Drupal::service('feed.writer.itunesfeed');",
+      "${1:\\$feed_writer_itunesfeed_service} = \\Drupal::service('feed.writer.itunesfeed');",
       ""
     ],
     "description": [],
@@ -3097,7 +3097,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Renderer\\Entry",
       " */",
-      "${1:{feed_writer_itunesrendererentry_service} = \\Drupal::service('feed.writer.itunesrendererentry');",
+      "${1:\\$feed_writer_itunesrendererentry_service} = \\Drupal::service('feed.writer.itunesrendererentry');",
       ""
     ],
     "description": [],
@@ -3111,7 +3111,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Renderer\\Feed",
       " */",
-      "${1:{feed_writer_itunesrendererfeed_service} = \\Drupal::service('feed.writer.itunesrendererfeed');",
+      "${1:\\$feed_writer_itunesrendererfeed_service} = \\Drupal::service('feed.writer.itunesrendererfeed');",
       ""
     ],
     "description": [],
@@ -3125,7 +3125,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\Slash\\Renderer\\Entry",
       " */",
-      "${1:{feed_writer_slashrendererentry_service} = \\Drupal::service('feed.writer.slashrendererentry');",
+      "${1:\\$feed_writer_slashrendererentry_service} = \\Drupal::service('feed.writer.slashrendererentry');",
       ""
     ],
     "description": [],
@@ -3139,7 +3139,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\Threading\\Renderer\\Entry",
       " */",
-      "${1:{feed_writer_threadingrendererentry_service} = \\Drupal::service('feed.writer.threadingrendererentry');",
+      "${1:\\$feed_writer_threadingrendererentry_service} = \\Drupal::service('feed.writer.threadingrendererentry');",
       ""
     ],
     "description": [],
@@ -3153,7 +3153,7 @@
       "/**",
       " * @var Laminas\\Feed\\Writer\\Extension\\WellFormedWeb\\Renderer\\Entry",
       " */",
-      "${1:{feed_writer_wellformedwebrendererentry_service} = \\Drupal::service('feed.writer.wellformedwebrendererentry');",
+      "${1:\\$feed_writer_wellformedwebrendererentry_service} = \\Drupal::service('feed.writer.wellformedwebrendererentry');",
       ""
     ],
     "description": [],
@@ -3167,7 +3167,7 @@
       "/**",
       " * @var Drupal\\Core\\Field\\FieldDefinitionListener",
       " */",
-      "${1:{field_definition_listener_service} = \\Drupal::service('field_definition.listener');",
+      "${1:\\$field_definition_listener_service} = \\Drupal::service('field_definition.listener');",
       ""
     ],
     "description": [
@@ -3183,7 +3183,7 @@
       "/**",
       " * @var Drupal\\Core\\Field\\FieldStorageDefinitionListener",
       " */",
-      "${1:{field_storage_definition_listener_service} = \\Drupal::service('field_storage_definition.listener');",
+      "${1:\\$field_storage_definition_listener_service} = \\Drupal::service('field_storage_definition.listener');",
       ""
     ],
     "description": [
@@ -3201,7 +3201,7 @@
       "/**",
       " * @var Drupal\\Core\\File\\HtaccessWriter",
       " */",
-      "${1:{file_htaccess_writer_service} = \\Drupal::service('file.htaccess_writer');",
+      "${1:\\$file_htaccess_writer_service} = \\Drupal::service('file.htaccess_writer');",
       ""
     ],
     "description": [
@@ -3217,7 +3217,7 @@
       "/**",
       " * @var Drupal\\Core\\File\\MimeType\\MimeTypeGuesser",
       " */",
-      "${1:{file_mime_type_guesser_service} = \\Drupal::service('file.mime_type.guesser');",
+      "${1:\\$file_mime_type_guesser_service} = \\Drupal::service('file.mime_type.guesser');",
       ""
     ],
     "description": [
@@ -3233,7 +3233,7 @@
       "/**",
       " * @var Drupal\\Core\\File\\MimeType\\ExtensionMimeTypeGuesser",
       " */",
-      "${1:{file_mime_type_guesser_extension_service} = \\Drupal::service('file.mime_type.guesser.extension');",
+      "${1:\\$file_mime_type_guesser_extension_service} = \\Drupal::service('file.mime_type.guesser.extension');",
       ""
     ],
     "description": [
@@ -3249,7 +3249,7 @@
       "/**",
       " * @var Drupal\\Core\\File\\FileSystem",
       " */",
-      "${1:{file_system_service} = \\Drupal::service('file_system');",
+      "${1:\\$file_system_service} = \\Drupal::service('file_system');",
       ""
     ],
     "description": [
@@ -3265,7 +3265,7 @@
       "/**",
       " * @var Drupal\\Core\\File\\FileUrlGenerator",
       " */",
-      "${1:{file_url_generator_service} = \\Drupal::service('file_url_generator');",
+      "${1:\\$file_url_generator_service} = \\Drupal::service('file_url_generator');",
       ""
     ],
     "description": [
@@ -3281,7 +3281,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\FinishResponseSubscriber",
       " */",
-      "${1:{finish_response_subscriber_service} = \\Drupal::service('finish_response_subscriber');",
+      "${1:\\$finish_response_subscriber_service} = \\Drupal::service('finish_response_subscriber');",
       ""
     ],
     "description": [
@@ -3297,7 +3297,7 @@
       "/**",
       " * @var Drupal\\Core\\Flood\\DatabaseBackend",
       " */",
-      "${1:{flood_service} = \\Drupal::service('flood');",
+      "${1:\\$flood_service} = \\Drupal::service('flood');",
       ""
     ],
     "description": [
@@ -3313,7 +3313,7 @@
       "/**",
       " * @var Drupal\\Core\\Form\\FormAjaxResponseBuilder",
       " */",
-      "${1:{form_ajax_response_builder_service} = \\Drupal::service('form_ajax_response_builder');",
+      "${1:\\$form_ajax_response_builder_service} = \\Drupal::service('form_ajax_response_builder');",
       ""
     ],
     "description": [
@@ -3332,7 +3332,7 @@
       "/**",
       " * @var Drupal\\Core\\Form\\EventSubscriber\\FormAjaxSubscriber",
       " */",
-      "${1:{form_ajax_subscriber_service} = \\Drupal::service('form_ajax_subscriber');",
+      "${1:\\$form_ajax_subscriber_service} = \\Drupal::service('form_ajax_subscriber');",
       ""
     ],
     "description": [
@@ -3348,7 +3348,7 @@
       "/**",
       " * @var Drupal\\Core\\Form\\FormBuilder",
       " */",
-      "${1:{form_builder_service} = \\Drupal::service('form_builder');",
+      "${1:\\$form_builder_service} = \\Drupal::service('form_builder');",
       ""
     ],
     "description": [
@@ -3366,7 +3366,7 @@
       "/**",
       " * @var Drupal\\Core\\Form\\FormErrorHandler",
       " */",
-      "${1:{form_error_handler_service} = \\Drupal::service('form_error_handler');",
+      "${1:\\$form_error_handler_service} = \\Drupal::service('form_error_handler');",
       ""
     ],
     "description": [
@@ -3382,7 +3382,7 @@
       "/**",
       " * @var Drupal\\Core\\Form\\FormSubmitter",
       " */",
-      "${1:{form_submitter_service} = \\Drupal::service('form_submitter');",
+      "${1:\\$form_submitter_service} = \\Drupal::service('form_submitter');",
       ""
     ],
     "description": [
@@ -3398,7 +3398,7 @@
       "/**",
       " * @var Drupal\\Core\\Form\\FormValidator",
       " */",
-      "${1:{form_validator_service} = \\Drupal::service('form_validator');",
+      "${1:\\$form_validator_service} = \\Drupal::service('form_validator');",
       ""
     ],
     "description": [
@@ -3414,7 +3414,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\HtmlResponseAttachmentsProcessor",
       " */",
-      "${1:{html_response_attachments_processor_service} = \\Drupal::service('html_response.attachments_processor');",
+      "${1:\\$html_response_attachments_processor_service} = \\Drupal::service('html_response.attachments_processor');",
       ""
     ],
     "description": [
@@ -3444,7 +3444,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\HtmlResponsePlaceholderStrategySubscriber",
       " */",
-      "${1:{html_response_placeholder_strategy_subscriber_service} = \\Drupal::service('html_response.placeholder_strategy_subscriber');",
+      "${1:\\$html_response_placeholder_strategy_subscriber_service} = \\Drupal::service('html_response.placeholder_strategy_subscriber');",
       ""
     ],
     "description": [
@@ -3466,7 +3466,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\HtmlResponseSubscriber",
       " */",
-      "${1:{html_response_subscriber_service} = \\Drupal::service('html_response.subscriber');",
+      "${1:\\$html_response_subscriber_service} = \\Drupal::service('html_response.subscriber');",
       ""
     ],
     "description": [
@@ -3482,7 +3482,7 @@
       "/**",
       " * @var GuzzleHttp\\Client",
       " */",
-      "${1:{http_client_service} = \\Drupal::service('http_client');",
+      "${1:\\$http_client_service} = \\Drupal::service('http_client');",
       ""
     ],
     "description": [],
@@ -3496,7 +3496,7 @@
       "/**",
       " * @var Drupal\\Core\\Http\\ClientFactory",
       " */",
-      "${1:{http_client_factory_service} = \\Drupal::service('http_client_factory');",
+      "${1:\\$http_client_factory_service} = \\Drupal::service('http_client_factory');",
       ""
     ],
     "description": [
@@ -3512,7 +3512,7 @@
       "/**",
       " * @var Stack\\StackedHttpKernel",
       " */",
-      "${1:{http_kernel_service} = \\Drupal::service('http_kernel');",
+      "${1:\\$http_kernel_service} = \\Drupal::service('http_kernel');",
       ""
     ],
     "description": [],
@@ -3526,7 +3526,7 @@
       "/**",
       " * @var Symfony\\Component\\HttpKernel\\HttpKernel",
       " */",
-      "${1:{http_kernel_basic_service} = \\Drupal::service('http_kernel.basic');",
+      "${1:\\$http_kernel_basic_service} = \\Drupal::service('http_kernel.basic');",
       ""
     ],
     "description": [],
@@ -3540,7 +3540,7 @@
       "/**",
       " * @var Symfony\\Component\\HttpKernel\\Controller\\ArgumentResolver",
       " */",
-      "${1:{http_kernel_controller_argument_resolver_service} = \\Drupal::service('http_kernel.controller.argument_resolver');",
+      "${1:\\$http_kernel_controller_argument_resolver_service} = \\Drupal::service('http_kernel.controller.argument_resolver');",
       ""
     ],
     "description": [],
@@ -3554,7 +3554,7 @@
       "/**",
       " * @var Asm89\\Stack\\Cors",
       " */",
-      "${1:{http_middleware_cors_service} = \\Drupal::service('http_middleware.cors');",
+      "${1:\\$http_middleware_cors_service} = \\Drupal::service('http_middleware.cors');",
       ""
     ],
     "description": [],
@@ -3568,7 +3568,7 @@
       "/**",
       " * @var Drupal\\Core\\StackMiddleware\\KernelPreHandle",
       " */",
-      "${1:{http_middleware_kernel_pre_handle_service} = \\Drupal::service('http_middleware.kernel_pre_handle');",
+      "${1:\\$http_middleware_kernel_pre_handle_service} = \\Drupal::service('http_middleware.kernel_pre_handle');",
       ""
     ],
     "description": [
@@ -3584,7 +3584,7 @@
       "/**",
       " * @var Drupal\\Core\\StackMiddleware\\NegotiationMiddleware",
       " */",
-      "${1:{http_middleware_negotiation_service} = \\Drupal::service('http_middleware.negotiation');",
+      "${1:\\$http_middleware_negotiation_service} = \\Drupal::service('http_middleware.negotiation');",
       ""
     ],
     "description": [
@@ -3600,7 +3600,7 @@
       "/**",
       " * @var Drupal\\Core\\StackMiddleware\\ReverseProxyMiddleware",
       " */",
-      "${1:{http_middleware_reverse_proxy_service} = \\Drupal::service('http_middleware.reverse_proxy');",
+      "${1:\\$http_middleware_reverse_proxy_service} = \\Drupal::service('http_middleware.reverse_proxy');",
       ""
     ],
     "description": [
@@ -3616,7 +3616,7 @@
       "/**",
       " * @var Drupal\\Core\\StackMiddleware\\Session",
       " */",
-      "${1:{http_middleware_session_service} = \\Drupal::service('http_middleware.session');",
+      "${1:\\$http_middleware_session_service} = \\Drupal::service('http_middleware.session');",
       ""
     ],
     "description": [
@@ -3636,7 +3636,7 @@
       "/**",
       " * @var Drupal\\Core\\Image\\ImageFactory",
       " */",
-      "${1:{image_factory_service} = \\Drupal::service('image.factory');",
+      "${1:\\$image_factory_service} = \\Drupal::service('image.factory');",
       ""
     ],
     "description": [
@@ -3652,7 +3652,7 @@
       "/**",
       " * @var Drupal\\Core\\ImageToolkit\\ImageToolkitManager",
       " */",
-      "${1:{image_toolkit_manager_service} = \\Drupal::service('image.toolkit.manager');",
+      "${1:\\$image_toolkit_manager_service} = \\Drupal::service('image.toolkit.manager');",
       ""
     ],
     "description": [
@@ -3673,7 +3673,7 @@
       "/**",
       " * @var Drupal\\Core\\ImageToolkit\\ImageToolkitOperationManager",
       " */",
-      "${1:{image_toolkit_operation_manager_service} = \\Drupal::service('image.toolkit.operation.manager');",
+      "${1:\\$image_toolkit_operation_manager_service} = \\Drupal::service('image.toolkit.operation.manager');",
       ""
     ],
     "description": [
@@ -3694,7 +3694,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\InfoParser",
       " */",
-      "${1:{info_parser_service} = \\Drupal::service('info_parser');",
+      "${1:\\$info_parser_service} = \\Drupal::service('info_parser');",
       ""
     ],
     "description": [
@@ -3710,7 +3710,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\KernelDestructionSubscriber",
       " */",
-      "${1:{kernel_destruct_subscriber_service} = \\Drupal::service('kernel_destruct_subscriber');",
+      "${1:\\$kernel_destruct_subscriber_service} = \\Drupal::service('kernel_destruct_subscriber');",
       ""
     ],
     "description": [
@@ -3728,7 +3728,7 @@
       "/**",
       " * @var Drupal\\Core\\KeyValueStore\\KeyValueFactory",
       " */",
-      "${1:{keyvalue_service} = \\Drupal::service('keyvalue');",
+      "${1:\\$keyvalue_service} = \\Drupal::service('keyvalue');",
       ""
     ],
     "description": [
@@ -3744,7 +3744,7 @@
       "/**",
       " * @var Drupal\\Core\\KeyValueStore\\KeyValueDatabaseFactory",
       " */",
-      "${1:{keyvalue_database_service} = \\Drupal::service('keyvalue.database');",
+      "${1:\\$keyvalue_database_service} = \\Drupal::service('keyvalue.database');",
       ""
     ],
     "description": [
@@ -3760,7 +3760,7 @@
       "/**",
       " * @var Drupal\\Core\\KeyValueStore\\KeyValueExpirableFactory",
       " */",
-      "${1:{keyvalue_expirable_service} = \\Drupal::service('keyvalue.expirable');",
+      "${1:\\$keyvalue_expirable_service} = \\Drupal::service('keyvalue.expirable');",
       ""
     ],
     "description": [
@@ -3776,7 +3776,7 @@
       "/**",
       " * @var Drupal\\Core\\KeyValueStore\\KeyValueDatabaseExpirableFactory",
       " */",
-      "${1:{keyvalue_expirable_database_service} = \\Drupal::service('keyvalue.expirable.database');",
+      "${1:\\$keyvalue_expirable_database_service} = \\Drupal::service('keyvalue.expirable.database');",
       ""
     ],
     "description": [
@@ -3792,7 +3792,7 @@
       "/**",
       " * @var Drupal\\Core\\Language\\ContextProvider\\CurrentLanguageContext",
       " */",
-      "${1:{language_current_language_context_service} = \\Drupal::service('language.current_language_context');",
+      "${1:\\$language_current_language_context_service} = \\Drupal::service('language.current_language_context');",
       ""
     ],
     "description": [
@@ -3808,7 +3808,7 @@
       "/**",
       " * @var Drupal\\Core\\Language\\LanguageDefault",
       " */",
-      "${1:{language_default_service} = \\Drupal::service('language.default');",
+      "${1:\\$language_default_service} = \\Drupal::service('language.default');",
       ""
     ],
     "description": [
@@ -3831,7 +3831,7 @@
       "/**",
       " * @var Drupal\\Core\\Language\\LanguageManager",
       " */",
-      "${1:{language_manager_service} = \\Drupal::service('language_manager');",
+      "${1:\\$language_manager_service} = \\Drupal::service('language_manager');",
       ""
     ],
     "description": [
@@ -3847,7 +3847,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\LibraryDependencyResolver",
       " */",
-      "${1:{library_dependency_resolver_service} = \\Drupal::service('library.dependency_resolver');",
+      "${1:\\$library_dependency_resolver_service} = \\Drupal::service('library.dependency_resolver');",
       ""
     ],
     "description": [
@@ -3863,7 +3863,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\LibraryDiscovery",
       " */",
-      "${1:{library_discovery_service} = \\Drupal::service('library.discovery');",
+      "${1:\\$library_discovery_service} = \\Drupal::service('library.discovery');",
       ""
     ],
     "description": [
@@ -3879,7 +3879,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\LibraryDiscoveryCollector",
       " */",
-      "${1:{library_discovery_collector_service} = \\Drupal::service('library.discovery.collector');",
+      "${1:\\$library_discovery_collector_service} = \\Drupal::service('library.discovery.collector');",
       ""
     ],
     "description": [
@@ -3895,7 +3895,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\LibraryDiscoveryParser",
       " */",
-      "${1:{library_discovery_parser_service} = \\Drupal::service('library.discovery.parser');",
+      "${1:\\$library_discovery_parser_service} = \\Drupal::service('library.discovery.parser');",
       ""
     ],
     "description": [
@@ -3911,7 +3911,7 @@
       "/**",
       " * @var Drupal\\Core\\Asset\\LibrariesDirectoryFileFinder",
       " */",
-      "${1:{library_libraries_directory_file_finder_service} = \\Drupal::service('library.libraries_directory_file_finder');",
+      "${1:\\$library_libraries_directory_file_finder_service} = \\Drupal::service('library.libraries_directory_file_finder');",
       ""
     ],
     "description": [
@@ -3927,7 +3927,7 @@
       "/**",
       " * @var Drupal\\Core\\Utility\\LinkGenerator",
       " */",
-      "${1:{link_generator_service} = \\Drupal::service('link_generator');",
+      "${1:\\$link_generator_service} = \\Drupal::service('link_generator');",
       ""
     ],
     "description": [
@@ -3943,7 +3943,7 @@
       "/**",
       " * @var Drupal\\Core\\Lock\\DatabaseLockBackend",
       " */",
-      "${1:{lock_service} = \\Drupal::service('lock');",
+      "${1:\\$lock_service} = \\Drupal::service('lock');",
       ""
     ],
     "description": [
@@ -3961,7 +3961,7 @@
       "/**",
       " * @var Drupal\\Core\\Lock\\PersistentDatabaseLockBackend",
       " */",
-      "${1:{lock_persistent_service} = \\Drupal::service('lock.persistent');",
+      "${1:\\$lock_persistent_service} = \\Drupal::service('lock.persistent');",
       ""
     ],
     "description": [
@@ -3981,7 +3981,7 @@
       "/**",
       " * @var Drupal\\Core\\Logger\\LoggerChannel",
       " */",
-      "${1:{logger_channel_file_service} = \\Drupal::service('logger.channel.file');",
+      "${1:\\$logger_channel_file_service} = \\Drupal::service('logger.channel.file');",
       ""
     ],
     "description": [
@@ -3997,7 +3997,7 @@
       "/**",
       " * @var Drupal\\Core\\Logger\\LoggerChannel",
       " */",
-      "${1:{logger_channel_base_service} = \\Drupal::service('logger.channel_base');",
+      "${1:\\$logger_channel_base_service} = \\Drupal::service('logger.channel_base');",
       ""
     ],
     "description": [
@@ -4013,7 +4013,7 @@
       "/**",
       " * @var Drupal\\Core\\Logger\\LoggerChannelFactory",
       " */",
-      "${1:{logger_factory_service} = \\Drupal::service('logger.factory');",
+      "${1:\\$logger_factory_service} = \\Drupal::service('logger.factory');",
       ""
     ],
     "description": [
@@ -4029,7 +4029,7 @@
       "/**",
       " * @var Drupal\\Core\\Logger\\LogMessageParser",
       " */",
-      "${1:{logger_log_message_parser_service} = \\Drupal::service('logger.log_message_parser');",
+      "${1:\\$logger_log_message_parser_service} = \\Drupal::service('logger.log_message_parser');",
       ""
     ],
     "description": [
@@ -4045,7 +4045,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\MainContent\\AjaxRenderer",
       " */",
-      "${1:{main_content_renderer_ajax_service} = \\Drupal::service('main_content_renderer.ajax');",
+      "${1:\\$main_content_renderer_ajax_service} = \\Drupal::service('main_content_renderer.ajax');",
       ""
     ],
     "description": [
@@ -4061,7 +4061,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\MainContent\\DialogRenderer",
       " */",
-      "${1:{main_content_renderer_dialog_service} = \\Drupal::service('main_content_renderer.dialog');",
+      "${1:\\$main_content_renderer_dialog_service} = \\Drupal::service('main_content_renderer.dialog');",
       ""
     ],
     "description": [
@@ -4077,7 +4077,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\MainContent\\HtmlRenderer",
       " */",
-      "${1:{main_content_renderer_html_service} = \\Drupal::service('main_content_renderer.html');",
+      "${1:\\$main_content_renderer_html_service} = \\Drupal::service('main_content_renderer.html');",
       ""
     ],
     "description": [
@@ -4100,7 +4100,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\MainContent\\ModalRenderer",
       " */",
-      "${1:{main_content_renderer_modal_service} = \\Drupal::service('main_content_renderer.modal');",
+      "${1:\\$main_content_renderer_modal_service} = \\Drupal::service('main_content_renderer.modal');",
       ""
     ],
     "description": [
@@ -4116,7 +4116,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\MainContent\\OffCanvasRenderer",
       " */",
-      "${1:{main_content_renderer_off_canvas_service} = \\Drupal::service('main_content_renderer.off_canvas');",
+      "${1:\\$main_content_renderer_off_canvas_service} = \\Drupal::service('main_content_renderer.off_canvas');",
       ""
     ],
     "description": [
@@ -4134,7 +4134,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\MainContent\\OffCanvasRenderer",
       " */",
-      "${1:{main_content_renderer_off_canvas_top_service} = \\Drupal::service('main_content_renderer.off_canvas_top');",
+      "${1:\\$main_content_renderer_off_canvas_top_service} = \\Drupal::service('main_content_renderer.off_canvas_top');",
       ""
     ],
     "description": [
@@ -4152,7 +4152,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\MainContentViewSubscriber",
       " */",
-      "${1:{main_content_view_subscriber_service} = \\Drupal::service('main_content_view_subscriber');",
+      "${1:\\$main_content_view_subscriber_service} = \\Drupal::service('main_content_view_subscriber');",
       ""
     ],
     "description": [
@@ -4177,7 +4177,7 @@
       "/**",
       " * @var Drupal\\Core\\Site\\MaintenanceMode",
       " */",
-      "${1:{maintenance_mode_service} = \\Drupal::service('maintenance_mode');",
+      "${1:\\$maintenance_mode_service} = \\Drupal::service('maintenance_mode');",
       ""
     ],
     "description": [
@@ -4193,7 +4193,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\MaintenanceModeSubscriber",
       " */",
-      "${1:{maintenance_mode_subscriber_service} = \\Drupal::service('maintenance_mode_subscriber');",
+      "${1:\\$maintenance_mode_subscriber_service} = \\Drupal::service('maintenance_mode_subscriber');",
       ""
     ],
     "description": [
@@ -4209,7 +4209,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\MenuActiveTrail",
       " */",
-      "${1:{menu_active_trail_service} = \\Drupal::service('menu.active_trail');",
+      "${1:\\$menu_active_trail_service} = \\Drupal::service('menu.active_trail');",
       ""
     ],
     "description": [
@@ -4228,7 +4228,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\DefaultMenuLinkTreeManipulators",
       " */",
-      "${1:{menu_default_tree_manipulators_service} = \\Drupal::service('menu.default_tree_manipulators');",
+      "${1:\\$menu_default_tree_manipulators_service} = \\Drupal::service('menu.default_tree_manipulators');",
       ""
     ],
     "description": [
@@ -4250,7 +4250,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\MenuLinkTree",
       " */",
-      "${1:{menu_link_tree_service} = \\Drupal::service('menu.link_tree');",
+      "${1:\\$menu_link_tree_service} = \\Drupal::service('menu.link_tree');",
       ""
     ],
     "description": [
@@ -4266,7 +4266,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\MenuParentFormSelector",
       " */",
-      "${1:{menu_parent_form_selector_service} = \\Drupal::service('menu.parent_form_selector');",
+      "${1:\\$menu_parent_form_selector_service} = \\Drupal::service('menu.parent_form_selector');",
       ""
     ],
     "description": [
@@ -4284,7 +4284,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\MenuRouterRebuildSubscriber",
       " */",
-      "${1:{menu_rebuild_subscriber_service} = \\Drupal::service('menu.rebuild_subscriber');",
+      "${1:\\$menu_rebuild_subscriber_service} = \\Drupal::service('menu.rebuild_subscriber');",
       ""
     ],
     "description": [
@@ -4300,7 +4300,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\StaticMenuLinkOverrides",
       " */",
-      "${1:{menu_link_static_overrides_service} = \\Drupal::service('menu_link.static.overrides');",
+      "${1:\\$menu_link_static_overrides_service} = \\Drupal::service('menu_link.static.overrides');",
       ""
     ],
     "description": [
@@ -4316,7 +4316,7 @@
       "/**",
       " * @var Drupal\\Core\\Messenger\\Messenger",
       " */",
-      "${1:{messenger_service} = \\Drupal::service('messenger');",
+      "${1:\\$messenger_service} = \\Drupal::service('messenger');",
       ""
     ],
     "description": [
@@ -4332,7 +4332,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\MethodFilter",
       " */",
-      "${1:{method_filter_service} = \\Drupal::service('method_filter');",
+      "${1:\\$method_filter_service} = \\Drupal::service('method_filter');",
       ""
     ],
     "description": [
@@ -4348,7 +4348,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ModuleHandler",
       " */",
-      "${1:{module_handler_service} = \\Drupal::service('module_handler');",
+      "${1:\\$module_handler_service} = \\Drupal::service('module_handler');",
       ""
     ],
     "description": [
@@ -4364,7 +4364,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ModuleInstaller",
       " */",
-      "${1:{module_installer_service} = \\Drupal::service('module_installer');",
+      "${1:\\$module_installer_service} = \\Drupal::service('module_installer');",
       ""
     ],
     "description": [
@@ -4388,7 +4388,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ModuleRequiredByThemesUninstallValidator",
       " */",
-      "${1:{module_required_by_themes_uninstall_validator_service} = \\Drupal::service('module_required_by_themes_uninstall_validator');",
+      "${1:\\$module_required_by_themes_uninstall_validator_service} = \\Drupal::service('module_required_by_themes_uninstall_validator');",
       ""
     ],
     "description": [
@@ -4404,7 +4404,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\OptionsRequestSubscriber",
       " */",
-      "${1:{options_request_listener_service} = \\Drupal::service('options_request_listener');",
+      "${1:\\$options_request_listener_service} = \\Drupal::service('options_request_listener');",
       ""
     ],
     "description": [
@@ -4423,7 +4423,7 @@
       "/**",
       " * @var Drupal\\Core\\PageCache\\ResponsePolicy\\KillSwitch",
       " */",
-      "${1:{page_cache_kill_switch_service} = \\Drupal::service('page_cache_kill_switch');",
+      "${1:\\$page_cache_kill_switch_service} = \\Drupal::service('page_cache_kill_switch');",
       ""
     ],
     "description": [
@@ -4439,7 +4439,7 @@
       "/**",
       " * @var Drupal\\Core\\PageCache\\DefaultRequestPolicy",
       " */",
-      "${1:{page_cache_request_policy_service} = \\Drupal::service('page_cache_request_policy');",
+      "${1:\\$page_cache_request_policy_service} = \\Drupal::service('page_cache_request_policy');",
       ""
     ],
     "description": [
@@ -4459,7 +4459,7 @@
       "/**",
       " * @var Drupal\\Core\\PageCache\\ChainResponsePolicy",
       " */",
-      "${1:{page_cache_response_policy_service} = \\Drupal::service('page_cache_response_policy');",
+      "${1:\\$page_cache_response_policy_service} = \\Drupal::service('page_cache_response_policy');",
       ""
     ],
     "description": [
@@ -4484,7 +4484,7 @@
       "/**",
       " * @var Drupal\\Core\\Pager\\PagerManager",
       " */",
-      "${1:{pager_manager_service} = \\Drupal::service('pager.manager');",
+      "${1:\\$pager_manager_service} = \\Drupal::service('pager.manager');",
       ""
     ],
     "description": [
@@ -4502,7 +4502,7 @@
       "/**",
       " * @var Drupal\\Core\\Pager\\PagerParameters",
       " */",
-      "${1:{pager_parameters_service} = \\Drupal::service('pager.parameters');",
+      "${1:\\$pager_parameters_service} = \\Drupal::service('pager.parameters');",
       ""
     ],
     "description": [
@@ -4520,7 +4520,7 @@
       "/**",
       " * @var Drupal\\Core\\ParamConverter\\AdminPathConfigEntityConverter",
       " */",
-      "${1:{paramconverter_configentity_admin_service} = \\Drupal::service('paramconverter.configentity_admin');",
+      "${1:\\$paramconverter_configentity_admin_service} = \\Drupal::service('paramconverter.configentity_admin');",
       ""
     ],
     "description": [
@@ -4548,7 +4548,7 @@
       "/**",
       " * @var Drupal\\Core\\ParamConverter\\EntityConverter",
       " */",
-      "${1:{paramconverter_entity_service} = \\Drupal::service('paramconverter.entity');",
+      "${1:\\$paramconverter_entity_service} = \\Drupal::service('paramconverter.entity');",
       ""
     ],
     "description": [
@@ -4630,7 +4630,7 @@
       "/**",
       " * @var Drupal\\Core\\ParamConverter\\EntityRevisionParamConverter",
       " */",
-      "${1:{paramconverter_entity_revision_service} = \\Drupal::service('paramconverter.entity_revision');",
+      "${1:\\$paramconverter_entity_revision_service} = \\Drupal::service('paramconverter.entity_revision');",
       ""
     ],
     "description": [
@@ -4660,7 +4660,7 @@
       "/**",
       " * @var Drupal\\Core\\ParamConverter\\MenuLinkPluginConverter",
       " */",
-      "${1:{paramconverter_menu_link_service} = \\Drupal::service('paramconverter.menu_link');",
+      "${1:\\$paramconverter_menu_link_service} = \\Drupal::service('paramconverter.menu_link');",
       ""
     ],
     "description": [
@@ -4676,7 +4676,7 @@
       "/**",
       " * @var Drupal\\Core\\ParamConverter\\ParamConverterManager",
       " */",
-      "${1:{paramconverter_manager_service} = \\Drupal::service('paramconverter_manager');",
+      "${1:\\$paramconverter_manager_service} = \\Drupal::service('paramconverter_manager');",
       ""
     ],
     "description": [
@@ -4695,7 +4695,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ParamConverterSubscriber",
       " */",
-      "${1:{paramconverter_subscriber_service} = \\Drupal::service('paramconverter_subscriber');",
+      "${1:\\$paramconverter_subscriber_service} = \\Drupal::service('paramconverter_subscriber');",
       ""
     ],
     "description": [
@@ -4711,7 +4711,7 @@
       "/**",
       " * @var Drupal\\Core\\Password\\PhpassHashedPassword",
       " */",
-      "${1:{password_service} = \\Drupal::service('password');",
+      "${1:\\$password_service} = \\Drupal::service('password');",
       ""
     ],
     "description": [
@@ -4729,7 +4729,7 @@
       "/**",
       " * @var Drupal\\Core\\Password\\DefaultPasswordGenerator",
       " */",
-      "${1:{password_generator_service} = \\Drupal::service('password_generator');",
+      "${1:\\$password_generator_service} = \\Drupal::service('password_generator');",
       ""
     ],
     "description": [
@@ -4745,7 +4745,7 @@
       "/**",
       " * @var Drupal\\Core\\Path\\CurrentPathStack",
       " */",
-      "${1:{path_current_service} = \\Drupal::service('path.current');",
+      "${1:\\$path_current_service} = \\Drupal::service('path.current');",
       ""
     ],
     "description": [
@@ -4765,7 +4765,7 @@
       "/**",
       " * @var Drupal\\Core\\Path\\PathMatcher",
       " */",
-      "${1:{path_matcher_service} = \\Drupal::service('path.matcher');",
+      "${1:\\$path_matcher_service} = \\Drupal::service('path.matcher');",
       ""
     ],
     "description": [
@@ -4781,7 +4781,7 @@
       "/**",
       " * @var Drupal\\Core\\Path\\PathValidator",
       " */",
-      "${1:{path_validator_service} = \\Drupal::service('path.validator');",
+      "${1:\\$path_validator_service} = \\Drupal::service('path.validator');",
       ""
     ],
     "description": [
@@ -4797,7 +4797,7 @@
       "/**",
       " * @var Drupal\\Core\\PathProcessor\\PathProcessorDecode",
       " */",
-      "${1:{path_processor_decode_service} = \\Drupal::service('path_processor_decode');",
+      "${1:\\$path_processor_decode_service} = \\Drupal::service('path_processor_decode');",
       ""
     ],
     "description": [
@@ -4823,7 +4823,7 @@
       "/**",
       " * @var Drupal\\Core\\PathProcessor\\PathProcessorFront",
       " */",
-      "${1:{path_processor_front_service} = \\Drupal::service('path_processor_front');",
+      "${1:\\$path_processor_front_service} = \\Drupal::service('path_processor_front');",
       ""
     ],
     "description": [
@@ -4839,7 +4839,7 @@
       "/**",
       " * @var Drupal\\Core\\PathProcessor\\PathProcessorManager",
       " */",
-      "${1:{path_processor_manager_service} = \\Drupal::service('path_processor_manager');",
+      "${1:\\$path_processor_manager_service} = \\Drupal::service('path_processor_manager');",
       ""
     ],
     "description": [
@@ -4858,7 +4858,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\Query\\Sql\\pgsql\\QueryFactory",
       " */",
-      "${1:{pgsql_entity_query_sql_service} = \\Drupal::service('pgsql.entity.query.sql');",
+      "${1:\\$pgsql_entity_query_sql_service} = \\Drupal::service('pgsql.entity.query.sql');",
       ""
     ],
     "description": [
@@ -4886,7 +4886,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\Placeholder\\ChainedPlaceholderStrategy",
       " */",
-      "${1:{placeholder_strategy_service} = \\Drupal::service('placeholder_strategy');",
+      "${1:\\$placeholder_strategy_service} = \\Drupal::service('placeholder_strategy');",
       ""
     ],
     "description": [
@@ -4902,7 +4902,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\Placeholder\\SingleFlushStrategy",
       " */",
-      "${1:{placeholder_strategy_single_flush_service} = \\Drupal::service('placeholder_strategy.single_flush');",
+      "${1:\\$placeholder_strategy_single_flush_service} = \\Drupal::service('placeholder_strategy.single_flush');",
       ""
     ],
     "description": [
@@ -4922,7 +4922,7 @@
       "/**",
       " * @var Drupal\\Core\\Plugin\\CachedDiscoveryClearer",
       " */",
-      "${1:{plugin_cache_clearer_service} = \\Drupal::service('plugin.cache_clearer');",
+      "${1:\\$plugin_cache_clearer_service} = \\Drupal::service('plugin.cache_clearer');",
       ""
     ],
     "description": [
@@ -4938,7 +4938,7 @@
       "/**",
       " * @var Drupal\\Core\\Action\\ActionManager",
       " */",
-      "${1:{plugin_manager_action_service} = \\Drupal::service('plugin.manager.action');",
+      "${1:\\$plugin_manager_action_service} = \\Drupal::service('plugin.manager.action');",
       ""
     ],
     "description": [
@@ -4959,7 +4959,7 @@
       "/**",
       " * @var Drupal\\Core\\Archiver\\ArchiverManager",
       " */",
-      "${1:{plugin_manager_archiver_service} = \\Drupal::service('plugin.manager.archiver');",
+      "${1:\\$plugin_manager_archiver_service} = \\Drupal::service('plugin.manager.archiver');",
       ""
     ],
     "description": [
@@ -4979,7 +4979,7 @@
       "/**",
       " * @var Drupal\\Core\\Block\\BlockManager",
       " */",
-      "${1:{plugin_manager_block_service} = \\Drupal::service('plugin.manager.block');",
+      "${1:\\$plugin_manager_block_service} = \\Drupal::service('plugin.manager.block');",
       ""
     ],
     "description": [
@@ -4999,7 +4999,7 @@
       "/**",
       " * @var Drupal\\Core\\Condition\\ConditionManager",
       " */",
-      "${1:{plugin_manager_condition_service} = \\Drupal::service('plugin.manager.condition');",
+      "${1:\\$plugin_manager_condition_service} = \\Drupal::service('plugin.manager.condition');",
       ""
     ],
     "description": [
@@ -5021,7 +5021,7 @@
       "/**",
       " * @var Drupal\\Core\\Display\\VariantManager",
       " */",
-      "${1:{plugin_manager_display_variant_service} = \\Drupal::service('plugin.manager.display_variant');",
+      "${1:\\$plugin_manager_display_variant_service} = \\Drupal::service('plugin.manager.display_variant');",
       ""
     ],
     "description": [
@@ -5042,7 +5042,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\ElementInfoManager",
       " */",
-      "${1:{plugin_manager_element_info_service} = \\Drupal::service('plugin.manager.element_info');",
+      "${1:\\$plugin_manager_element_info_service} = \\Drupal::service('plugin.manager.element_info');",
       ""
     ],
     "description": [
@@ -5066,7 +5066,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityReferenceSelection\\SelectionPluginManager",
       " */",
-      "${1:{plugin_manager_entity_reference_selection_service} = \\Drupal::service('plugin.manager.entity_reference_selection');",
+      "${1:\\$plugin_manager_entity_reference_selection_service} = \\Drupal::service('plugin.manager.entity_reference_selection');",
       ""
     ],
     "description": [
@@ -5086,7 +5086,7 @@
       "/**",
       " * @var Drupal\\Core\\Field\\FieldTypePluginManager",
       " */",
-      "${1:{plugin_manager_field_field_type_service} = \\Drupal::service('plugin.manager.field.field_type');",
+      "${1:\\$plugin_manager_field_field_type_service} = \\Drupal::service('plugin.manager.field.field_type');",
       ""
     ],
     "description": [
@@ -5104,7 +5104,7 @@
       "/**",
       " * @var Drupal\\Core\\Field\\FormatterPluginManager",
       " */",
-      "${1:{plugin_manager_field_formatter_service} = \\Drupal::service('plugin.manager.field.formatter');",
+      "${1:\\$plugin_manager_field_formatter_service} = \\Drupal::service('plugin.manager.field.formatter');",
       ""
     ],
     "description": [
@@ -5122,7 +5122,7 @@
       "/**",
       " * @var Drupal\\Core\\Field\\WidgetPluginManager",
       " */",
-      "${1:{plugin_manager_field_widget_service} = \\Drupal::service('plugin.manager.field.widget');",
+      "${1:\\$plugin_manager_field_widget_service} = \\Drupal::service('plugin.manager.field.widget');",
       ""
     ],
     "description": [
@@ -5140,7 +5140,7 @@
       "/**",
       " * @var \\Drupal\\Core\\Http\\LinkRelationTypeManager",
       " */",
-      "${1:{plugin_manager_link_relation_type_service} = \\Drupal::service('plugin.manager.link_relation_type');",
+      "${1:\\$plugin_manager_link_relation_type_service} = \\Drupal::service('plugin.manager.link_relation_type');",
       ""
     ],
     "description": [],
@@ -5154,7 +5154,7 @@
       "/**",
       " * @var Drupal\\Core\\Mail\\MailManager",
       " */",
-      "${1:{plugin_manager_mail_service} = \\Drupal::service('plugin.manager.mail');",
+      "${1:\\$plugin_manager_mail_service} = \\Drupal::service('plugin.manager.mail');",
       ""
     ],
     "description": [
@@ -5174,7 +5174,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\ContextualLinkManager",
       " */",
-      "${1:{plugin_manager_menu_contextual_link_service} = \\Drupal::service('plugin.manager.menu.contextual_link');",
+      "${1:\\$plugin_manager_menu_contextual_link_service} = \\Drupal::service('plugin.manager.menu.contextual_link');",
       ""
     ],
     "description": [
@@ -5192,7 +5192,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\MenuLinkManager",
       " */",
-      "${1:{plugin_manager_menu_link_service} = \\Drupal::service('plugin.manager.menu.link');",
+      "${1:\\$plugin_manager_menu_link_service} = \\Drupal::service('plugin.manager.menu.link');",
       ""
     ],
     "description": [
@@ -5210,7 +5210,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\LocalActionManager",
       " */",
-      "${1:{plugin_manager_menu_local_action_service} = \\Drupal::service('plugin.manager.menu.local_action');",
+      "${1:\\$plugin_manager_menu_local_action_service} = \\Drupal::service('plugin.manager.menu.local_action');",
       ""
     ],
     "description": [
@@ -5226,7 +5226,7 @@
       "/**",
       " * @var Drupal\\Core\\Menu\\LocalTaskManager",
       " */",
-      "${1:{plugin_manager_menu_local_task_service} = \\Drupal::service('plugin.manager.menu.local_task');",
+      "${1:\\$plugin_manager_menu_local_task_service} = \\Drupal::service('plugin.manager.menu.local_task');",
       ""
     ],
     "description": [
@@ -5242,7 +5242,7 @@
       "/**",
       " * @var Drupal\\Core\\Queue\\QueueWorkerManager",
       " */",
-      "${1:{plugin_manager_queue_worker_service} = \\Drupal::service('plugin.manager.queue_worker');",
+      "${1:\\$plugin_manager_queue_worker_service} = \\Drupal::service('plugin.manager.queue_worker');",
       ""
     ],
     "description": [
@@ -5263,7 +5263,7 @@
       "/**",
       " * @var Drupal\\Core\\Plugin\\PluginFormFactory",
       " */",
-      "${1:{plugin_form_factory_service} = \\Drupal::service('plugin_form.factory');",
+      "${1:\\$plugin_form_factory_service} = \\Drupal::service('plugin_form.factory');",
       ""
     ],
     "description": [
@@ -5279,7 +5279,7 @@
       "/**",
       " * @var Drupal\\Core\\PrivateKey",
       " */",
-      "${1:{private_key_service} = \\Drupal::service('private_key');",
+      "${1:\\$private_key_service} = \\Drupal::service('private_key');",
       ""
     ],
     "description": [
@@ -5295,7 +5295,7 @@
       "/**",
       " * @var Symfony\\Bridge\\PsrHttpMessage\\Factory\\HttpFoundationFactory",
       " */",
-      "${1:{psr7_http_foundation_factory_service} = \\Drupal::service('psr7.http_foundation_factory');",
+      "${1:\\$psr7_http_foundation_factory_service} = \\Drupal::service('psr7.http_foundation_factory');",
       ""
     ],
     "description": [],
@@ -5309,7 +5309,7 @@
       "/**",
       " * @var Symfony\\Bridge\\PsrHttpMessage\\Factory\\PsrHttpFactory",
       " */",
-      "${1:{psr7_http_message_factory_service} = \\Drupal::service('psr7.http_message_factory');",
+      "${1:\\$psr7_http_message_factory_service} = \\Drupal::service('psr7.http_message_factory');",
       ""
     ],
     "description": [],
@@ -5323,7 +5323,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\PsrResponseSubscriber",
       " */",
-      "${1:{psr_response_view_subscriber_service} = \\Drupal::service('psr_response_view_subscriber');",
+      "${1:\\$psr_response_view_subscriber_service} = \\Drupal::service('psr_response_view_subscriber');",
       ""
     ],
     "description": [
@@ -5339,7 +5339,7 @@
       "/**",
       " * @var Drupal\\Core\\Queue\\QueueFactory",
       " */",
-      "${1:{queue_service} = \\Drupal::service('queue');",
+      "${1:\\$queue_service} = \\Drupal::service('queue');",
       ""
     ],
     "description": [
@@ -5355,7 +5355,7 @@
       "/**",
       " * @var Drupal\\Core\\Queue\\QueueDatabaseFactory",
       " */",
-      "${1:{queue_database_service} = \\Drupal::service('queue.database');",
+      "${1:\\$queue_database_service} = \\Drupal::service('queue.database');",
       ""
     ],
     "description": [
@@ -5371,7 +5371,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\RedirectDestination",
       " */",
-      "${1:{redirect_destination_service} = \\Drupal::service('redirect.destination');",
+      "${1:\\$redirect_destination_service} = \\Drupal::service('redirect.destination');",
       ""
     ],
     "description": [
@@ -5387,7 +5387,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\RedirectLeadingSlashesSubscriber",
       " */",
-      "${1:{redirect_leading_slashes_subscriber_service} = \\Drupal::service('redirect_leading_slashes_subscriber');",
+      "${1:\\$redirect_leading_slashes_subscriber_service} = \\Drupal::service('redirect_leading_slashes_subscriber');",
       ""
     ],
     "description": [
@@ -5403,7 +5403,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\RedirectResponseSubscriber",
       " */",
-      "${1:{redirect_response_subscriber_service} = \\Drupal::service('redirect_response_subscriber');",
+      "${1:\\$redirect_response_subscriber_service} = \\Drupal::service('redirect_response_subscriber');",
       ""
     ],
     "description": [
@@ -5419,7 +5419,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\PlaceholderingRenderCache",
       " */",
-      "${1:{render_cache_service} = \\Drupal::service('render_cache');",
+      "${1:\\$render_cache_service} = \\Drupal::service('render_cache');",
       ""
     ],
     "description": [
@@ -5463,7 +5463,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\PlaceholderGenerator",
       " */",
-      "${1:{render_placeholder_generator_service} = \\Drupal::service('render_placeholder_generator');",
+      "${1:\\$render_placeholder_generator_service} = \\Drupal::service('render_placeholder_generator');",
       ""
     ],
     "description": [
@@ -5479,7 +5479,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\Renderer",
       " */",
-      "${1:{renderer_service} = \\Drupal::service('renderer');",
+      "${1:\\$renderer_service} = \\Drupal::service('renderer');",
       ""
     ],
     "description": [
@@ -5495,7 +5495,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\RenderArrayNonHtmlSubscriber",
       " */",
-      "${1:{renderer_non_html_service} = \\Drupal::service('renderer_non_html');",
+      "${1:\\$renderer_non_html_service} = \\Drupal::service('renderer_non_html');",
       ""
     ],
     "description": [
@@ -5511,7 +5511,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\RequestCloseSubscriber",
       " */",
-      "${1:{request_close_subscriber_service} = \\Drupal::service('request_close_subscriber');",
+      "${1:\\$request_close_subscriber_service} = \\Drupal::service('request_close_subscriber');",
       ""
     ],
     "description": [
@@ -5527,7 +5527,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\RequestFormatRouteFilter",
       " */",
-      "${1:{request_format_route_filter_service} = \\Drupal::service('request_format_route_filter');",
+      "${1:\\$request_format_route_filter_service} = \\Drupal::service('request_format_route_filter');",
       ""
     ],
     "description": [
@@ -5543,7 +5543,7 @@
       "/**",
       " * @var Drupal\\Core\\Http\\RequestStack",
       " */",
-      "${1:{request_stack_service} = \\Drupal::service('request_stack');",
+      "${1:\\$request_stack_service} = \\Drupal::service('request_stack');",
       ""
     ],
     "description": [
@@ -5561,7 +5561,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\RequiredModuleUninstallValidator",
       " */",
-      "${1:{required_module_uninstall_validator_service} = \\Drupal::service('required_module_uninstall_validator');",
+      "${1:\\$required_module_uninstall_validator_service} = \\Drupal::service('required_module_uninstall_validator');",
       ""
     ],
     "description": [
@@ -5577,7 +5577,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\EntityResolverManager",
       " */",
-      "${1:{resolver_manager_entity_service} = \\Drupal::service('resolver_manager.entity');",
+      "${1:\\$resolver_manager_entity_service} = \\Drupal::service('resolver_manager.entity');",
       ""
     ],
     "description": [
@@ -5596,7 +5596,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ActiveLinkResponseFilter",
       " */",
-      "${1:{response_filter_active_link_service} = \\Drupal::service('response_filter.active_link');",
+      "${1:\\$response_filter_active_link_service} = \\Drupal::service('response_filter.active_link');",
       ""
     ],
     "description": [
@@ -5617,7 +5617,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\RssResponseRelativeUrlFilter",
       " */",
-      "${1:{response_filter_rss_relative_url_service} = \\Drupal::service('response_filter.rss.relative_url');",
+      "${1:\\$response_filter_rss_relative_url_service} = \\Drupal::service('response_filter.rss.relative_url');",
       ""
     ],
     "description": [
@@ -5633,7 +5633,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ResponseGeneratorSubscriber",
       " */",
-      "${1:{response_generator_subscriber_service} = \\Drupal::service('response_generator_subscriber');",
+      "${1:\\$response_generator_subscriber_service} = \\Drupal::service('response_generator_subscriber');",
       ""
     ],
     "description": [
@@ -5649,7 +5649,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\RouteAccessResponseSubscriber",
       " */",
-      "${1:{route_access_response_subscriber_service} = \\Drupal::service('route_access_response_subscriber');",
+      "${1:\\$route_access_response_subscriber_service} = \\Drupal::service('route_access_response_subscriber');",
       ""
     ],
     "description": [
@@ -5675,7 +5675,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\Enhancer\\EntityRouteEnhancer",
       " */",
-      "${1:{route_enhancer_entity_service} = \\Drupal::service('route_enhancer.entity');",
+      "${1:\\$route_enhancer_entity_service} = \\Drupal::service('route_enhancer.entity');",
       ""
     ],
     "description": [
@@ -5691,7 +5691,7 @@
       "/**",
       " * @var Drupal\\Core\\Entity\\Enhancer\\EntityBundleRouteEnhancer",
       " */",
-      "${1:{route_enhancer_entity_bundle_service} = \\Drupal::service('route_enhancer.entity_bundle');",
+      "${1:\\$route_enhancer_entity_bundle_service} = \\Drupal::service('route_enhancer.entity_bundle');",
       ""
     ],
     "description": [
@@ -5707,7 +5707,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\Enhancer\\EntityRevisionRouteEnhancer",
       " */",
-      "${1:{route_enhancer_entity_revision_service} = \\Drupal::service('route_enhancer.entity_revision');",
+      "${1:\\$route_enhancer_entity_revision_service} = \\Drupal::service('route_enhancer.entity_revision');",
       ""
     ],
     "description": [
@@ -5723,7 +5723,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\Enhancer\\FormRouteEnhancer",
       " */",
-      "${1:{route_enhancer_form_service} = \\Drupal::service('route_enhancer.form');",
+      "${1:\\$route_enhancer_form_service} = \\Drupal::service('route_enhancer.form');",
       ""
     ],
     "description": [
@@ -5739,7 +5739,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\Enhancer\\ParamConversionEnhancer",
       " */",
-      "${1:{route_enhancer_param_conversion_service} = \\Drupal::service('route_enhancer.param_conversion');",
+      "${1:\\$route_enhancer_param_conversion_service} = \\Drupal::service('route_enhancer.param_conversion');",
       ""
     ],
     "description": [
@@ -5755,7 +5755,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\RouteMethodSubscriber",
       " */",
-      "${1:{route_http_method_subscriber_service} = \\Drupal::service('route_http_method_subscriber');",
+      "${1:\\$route_http_method_subscriber_service} = \\Drupal::service('route_http_method_subscriber');",
       ""
     ],
     "description": [
@@ -5777,7 +5777,7 @@
       "/**",
       " * @var Drupal\\Core\\Access\\RouteProcessorCsrf",
       " */",
-      "${1:{route_processor_csrf_service} = \\Drupal::service('route_processor_csrf');",
+      "${1:\\$route_processor_csrf_service} = \\Drupal::service('route_processor_csrf');",
       ""
     ],
     "description": [
@@ -5793,7 +5793,7 @@
       "/**",
       " * @var Drupal\\Core\\RouteProcessor\\RouteProcessorCurrent",
       " */",
-      "${1:{route_processor_current_service} = \\Drupal::service('route_processor_current');",
+      "${1:\\$route_processor_current_service} = \\Drupal::service('route_processor_current');",
       ""
     ],
     "description": [
@@ -5809,7 +5809,7 @@
       "/**",
       " * @var Drupal\\Core\\RouteProcessor\\RouteProcessorManager",
       " */",
-      "${1:{route_processor_manager_service} = \\Drupal::service('route_processor_manager');",
+      "${1:\\$route_processor_manager_service} = \\Drupal::service('route_processor_manager');",
       ""
     ],
     "description": [
@@ -5828,7 +5828,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\SpecialAttributesRouteSubscriber",
       " */",
-      "${1:{route_special_attributes_subscriber_service} = \\Drupal::service('route_special_attributes_subscriber');",
+      "${1:\\$route_special_attributes_subscriber_service} = \\Drupal::service('route_special_attributes_subscriber');",
       ""
     ],
     "description": [
@@ -5844,7 +5844,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\EntityRouteAlterSubscriber",
       " */",
-      "${1:{route_subscriber_entity_service} = \\Drupal::service('route_subscriber.entity');",
+      "${1:\\$route_subscriber_entity_service} = \\Drupal::service('route_subscriber.entity');",
       ""
     ],
     "description": [
@@ -5868,7 +5868,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\ModuleRouteSubscriber",
       " */",
-      "${1:{route_subscriber_module_service} = \\Drupal::service('route_subscriber.module');",
+      "${1:\\$route_subscriber_module_service} = \\Drupal::service('route_subscriber.module');",
       ""
     ],
     "description": [
@@ -5884,7 +5884,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\AccessAwareRouter",
       " */",
-      "${1:{router_service} = \\Drupal::service('router');",
+      "${1:\\$router_service} = \\Drupal::service('router');",
       ""
     ],
     "description": [
@@ -5900,7 +5900,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\AdminContext",
       " */",
-      "${1:{router_admin_context_service} = \\Drupal::service('router.admin_context');",
+      "${1:\\$router_admin_context_service} = \\Drupal::service('router.admin_context');",
       ""
     ],
     "description": [
@@ -5916,7 +5916,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\RouteBuilder",
       " */",
-      "${1:{router_builder_service} = \\Drupal::service('router.builder');",
+      "${1:\\$router_builder_service} = \\Drupal::service('router.builder');",
       ""
     ],
     "description": [
@@ -5932,7 +5932,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\MatcherDumper",
       " */",
-      "${1:{router_dumper_service} = \\Drupal::service('router.dumper');",
+      "${1:\\$router_dumper_service} = \\Drupal::service('router.dumper');",
       ""
     ],
     "description": [
@@ -5950,7 +5950,7 @@
       "/**",
       " * @var \\Drupal\\Core\\Routing\\Router",
       " */",
-      "${1:{router_no_access_checks_service} = \\Drupal::service('router.no_access_checks');",
+      "${1:\\$router_no_access_checks_service} = \\Drupal::service('router.no_access_checks');",
       ""
     ],
     "description": [],
@@ -5964,7 +5964,7 @@
       "/**",
       " * @var Drupal\\Core\\EventSubscriber\\PathRootsSubscriber",
       " */",
-      "${1:{router_path_roots_subscriber_service} = \\Drupal::service('router.path_roots_subscriber');",
+      "${1:\\$router_path_roots_subscriber_service} = \\Drupal::service('router.path_roots_subscriber');",
       ""
     ],
     "description": [
@@ -5980,7 +5980,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\RequestContext",
       " */",
-      "${1:{router_request_context_service} = \\Drupal::service('router.request_context');",
+      "${1:\\$router_request_context_service} = \\Drupal::service('router.request_context');",
       ""
     ],
     "description": [
@@ -5996,7 +5996,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\RoutePreloader",
       " */",
-      "${1:{router_route_preloader_service} = \\Drupal::service('router.route_preloader');",
+      "${1:\\$router_route_preloader_service} = \\Drupal::service('router.route_preloader');",
       ""
     ],
     "description": [
@@ -6016,7 +6016,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\RouteProvider",
       " */",
-      "${1:{router_route_provider_service} = \\Drupal::service('router.route_provider');",
+      "${1:\\$router_route_provider_service} = \\Drupal::service('router.route_provider');",
       ""
     ],
     "description": [
@@ -6032,7 +6032,7 @@
       "/**",
       " * @var Drupal\\Core\\Routing\\RouteProviderLazyBuilder",
       " */",
-      "${1:{router_route_provider_lazy_builder_service} = \\Drupal::service('router.route_provider.lazy_builder');",
+      "${1:\\$router_route_provider_lazy_builder_service} = \\Drupal::service('router.route_provider.lazy_builder');",
       ""
     ],
     "description": [
@@ -6048,7 +6048,7 @@
       "/**",
       " * @var Symfony\\Component\\HttpKernel\\EventListener\\RouterListener",
       " */",
-      "${1:{router_listener_service} = \\Drupal::service('router_listener');",
+      "${1:\\$router_listener_service} = \\Drupal::service('router_listener');",
       ""
     ],
     "description": [],
@@ -6062,7 +6062,7 @@
       "/**",
       " * @var Drupal\\Component\\Serialization\\Json",
       " */",
-      "${1:{serialization_json_service} = \\Drupal::service('serialization.json');",
+      "${1:\\$serialization_json_service} = \\Drupal::service('serialization.json');",
       ""
     ],
     "description": [
@@ -6080,7 +6080,7 @@
       "/**",
       " * @var Drupal\\Component\\Serialization\\PhpSerialize",
       " */",
-      "${1:{serialization_phpserialize_service} = \\Drupal::service('serialization.phpserialize');",
+      "${1:\\$serialization_phpserialize_service} = \\Drupal::service('serialization.phpserialize');",
       ""
     ],
     "description": [
@@ -6096,7 +6096,7 @@
       "/**",
       " * @var Drupal\\Component\\Serialization\\Yaml",
       " */",
-      "${1:{serialization_yaml_service} = \\Drupal::service('serialization.yaml');",
+      "${1:\\$serialization_yaml_service} = \\Drupal::service('serialization.yaml');",
       ""
     ],
     "description": [
@@ -6114,7 +6114,7 @@
       "/**",
       " * @var Symfony\\Component\\HttpFoundation\\Session\\Session",
       " */",
-      "${1:{session_service} = \\Drupal::service('session');",
+      "${1:\\$session_service} = \\Drupal::service('session');",
       ""
     ],
     "description": [],
@@ -6128,7 +6128,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\SessionConfiguration",
       " */",
-      "${1:{session_configuration_service} = \\Drupal::service('session_configuration');",
+      "${1:\\$session_configuration_service} = \\Drupal::service('session_configuration');",
       ""
     ],
     "description": [
@@ -6144,7 +6144,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\SessionHandler",
       " */",
-      "${1:{session_handler_storage_service} = \\Drupal::service('session_handler.storage');",
+      "${1:\\$session_handler_storage_service} = \\Drupal::service('session_handler.storage');",
       ""
     ],
     "description": [
@@ -6160,7 +6160,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\WriteSafeSessionHandler",
       " */",
-      "${1:{session_handler_write_safe_service} = \\Drupal::service('session_handler.write_safe');",
+      "${1:\\$session_handler_write_safe_service} = \\Drupal::service('session_handler.write_safe');",
       ""
     ],
     "description": [
@@ -6176,7 +6176,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\SessionManager",
       " */",
-      "${1:{session_manager_service} = \\Drupal::service('session_manager');",
+      "${1:\\$session_manager_service} = \\Drupal::service('session_manager');",
       ""
     ],
     "description": [
@@ -6206,7 +6206,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\MetadataBag",
       " */",
-      "${1:{session_manager_metadata_bag_service} = \\Drupal::service('session_manager.metadata_bag');",
+      "${1:\\$session_manager_metadata_bag_service} = \\Drupal::service('session_manager.metadata_bag');",
       ""
     ],
     "description": [
@@ -6222,7 +6222,7 @@
       "/**",
       " * @var Drupal\\Core\\Site\\Settings",
       " */",
-      "${1:{settings_service} = \\Drupal::service('settings');",
+      "${1:\\$settings_service} = \\Drupal::service('settings');",
       ""
     ],
     "description": [
@@ -6240,7 +6240,7 @@
       "/**",
       " * @var \\SplString",
       " */",
-      "${1:{site_path_service} = \\Drupal::service('site.path');",
+      "${1:\\$site_path_service} = \\Drupal::service('site.path');",
       ""
     ],
     "description": [],
@@ -6254,7 +6254,7 @@
       "/**",
       " * @var Drupal\\Core\\State\\State",
       " */",
-      "${1:{state_service} = \\Drupal::service('state');",
+      "${1:\\$state_service} = \\Drupal::service('state');",
       ""
     ],
     "description": [
@@ -6270,7 +6270,7 @@
       "/**",
       " * @var Drupal\\Core\\StreamWrapper\\PublicStream",
       " */",
-      "${1:{stream_wrapper_public_service} = \\Drupal::service('stream_wrapper.public');",
+      "${1:\\$stream_wrapper_public_service} = \\Drupal::service('stream_wrapper.public');",
       ""
     ],
     "description": [
@@ -6289,7 +6289,7 @@
       "/**",
       " * @var Drupal\\Core\\StreamWrapper\\TemporaryStream",
       " */",
-      "${1:{stream_wrapper_temporary_service} = \\Drupal::service('stream_wrapper.temporary');",
+      "${1:\\$stream_wrapper_temporary_service} = \\Drupal::service('stream_wrapper.temporary');",
       ""
     ],
     "description": [
@@ -6308,7 +6308,7 @@
       "/**",
       " * @var Drupal\\Core\\StreamWrapper\\StreamWrapperManager",
       " */",
-      "${1:{stream_wrapper_manager_service} = \\Drupal::service('stream_wrapper_manager');",
+      "${1:\\$stream_wrapper_manager_service} = \\Drupal::service('stream_wrapper_manager');",
       ""
     ],
     "description": [
@@ -6326,7 +6326,7 @@
       "/**",
       " * @var Drupal\\Core\\StringTranslation\\TranslationManager",
       " */",
-      "${1:{string_translation_service} = \\Drupal::service('string_translation');",
+      "${1:\\$string_translation_service} = \\Drupal::service('string_translation');",
       ""
     ],
     "description": [
@@ -6342,7 +6342,7 @@
       "/**",
       " * @var Drupal\\Core\\StringTranslation\\Translator\\CustomStrings",
       " */",
-      "${1:{string_translator_custom_strings_service} = \\Drupal::service('string_translator.custom_strings');",
+      "${1:\\$string_translator_custom_strings_service} = \\Drupal::service('string_translator.custom_strings');",
       ""
     ],
     "description": [
@@ -6361,7 +6361,7 @@
       "/**",
       " * @var Drupal\\Core\\TempStore\\PrivateTempStoreFactory",
       " */",
-      "${1:{tempstore_private_service} = \\Drupal::service('tempstore.private');",
+      "${1:\\$tempstore_private_service} = \\Drupal::service('tempstore.private');",
       ""
     ],
     "description": [
@@ -6377,7 +6377,7 @@
       "/**",
       " * @var Drupal\\Core\\TempStore\\SharedTempStoreFactory",
       " */",
-      "${1:{tempstore_shared_service} = \\Drupal::service('tempstore.shared');",
+      "${1:\\$tempstore_shared_service} = \\Drupal::service('tempstore.shared');",
       ""
     ],
     "description": [
@@ -6393,7 +6393,7 @@
       "/**",
       " * @var Drupal\\Core\\Theme\\ThemeInitialization",
       " */",
-      "${1:{theme_initialization_service} = \\Drupal::service('theme.initialization');",
+      "${1:\\$theme_initialization_service} = \\Drupal::service('theme.initialization');",
       ""
     ],
     "description": [
@@ -6409,7 +6409,7 @@
       "/**",
       " * @var Drupal\\Core\\Theme\\ThemeManager",
       " */",
-      "${1:{theme_manager_service} = \\Drupal::service('theme.manager');",
+      "${1:\\$theme_manager_service} = \\Drupal::service('theme.manager');",
       ""
     ],
     "description": [
@@ -6425,7 +6425,7 @@
       "/**",
       " * @var Drupal\\Core\\Theme\\ThemeNegotiator",
       " */",
-      "${1:{theme_negotiator_service} = \\Drupal::service('theme.negotiator');",
+      "${1:\\$theme_negotiator_service} = \\Drupal::service('theme.negotiator');",
       ""
     ],
     "description": [
@@ -6444,7 +6444,7 @@
       "/**",
       " * @var Drupal\\Core\\Theme\\AjaxBasePageNegotiator",
       " */",
-      "${1:{theme_negotiator_ajax_base_page_service} = \\Drupal::service('theme.negotiator.ajax_base_page');",
+      "${1:\\$theme_negotiator_ajax_base_page_service} = \\Drupal::service('theme.negotiator.ajax_base_page');",
       ""
     ],
     "description": [
@@ -6472,7 +6472,7 @@
       "/**",
       " * @var Drupal\\Core\\Theme\\DefaultNegotiator",
       " */",
-      "${1:{theme_negotiator_default_service} = \\Drupal::service('theme.negotiator.default');",
+      "${1:\\$theme_negotiator_default_service} = \\Drupal::service('theme.negotiator.default');",
       ""
     ],
     "description": [
@@ -6488,7 +6488,7 @@
       "/**",
       " * @var Drupal\\Core\\Theme\\Registry",
       " */",
-      "${1:{theme_registry_service} = \\Drupal::service('theme.registry');",
+      "${1:\\$theme_registry_service} = \\Drupal::service('theme.registry');",
       ""
     ],
     "description": [
@@ -6513,7 +6513,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ThemeHandler",
       " */",
-      "${1:{theme_handler_service} = \\Drupal::service('theme_handler');",
+      "${1:\\$theme_handler_service} = \\Drupal::service('theme_handler');",
       ""
     ],
     "description": [
@@ -6529,7 +6529,7 @@
       "/**",
       " * @var Drupal\\Core\\Extension\\ThemeInstaller",
       " */",
-      "${1:{theme_installer_service} = \\Drupal::service('theme_installer');",
+      "${1:\\$theme_installer_service} = \\Drupal::service('theme_installer');",
       ""
     ],
     "description": [
@@ -6545,7 +6545,7 @@
       "/**",
       " * @var Drupal\\Core\\Controller\\TitleResolver",
       " */",
-      "${1:{title_resolver_service} = \\Drupal::service('title_resolver');",
+      "${1:\\$title_resolver_service} = \\Drupal::service('title_resolver');",
       ""
     ],
     "description": [
@@ -6561,7 +6561,7 @@
       "/**",
       " * @var Drupal\\Core\\Utility\\Token",
       " */",
-      "${1:{token_service} = \\Drupal::service('token');",
+      "${1:\\$token_service} = \\Drupal::service('token');",
       ""
     ],
     "description": [
@@ -6617,7 +6617,7 @@
       "/**",
       " * @var Drupal\\Core\\Transliteration\\PhpTransliteration",
       " */",
-      "${1:{transliteration_service} = \\Drupal::service('transliteration');",
+      "${1:\\$transliteration_service} = \\Drupal::service('transliteration');",
       ""
     ],
     "description": [
@@ -6636,7 +6636,7 @@
       "/**",
       " * @var Drupal\\Core\\Template\\TwigEnvironment",
       " */",
-      "${1:{twig_service} = \\Drupal::service('twig');",
+      "${1:\\$twig_service} = \\Drupal::service('twig');",
       ""
     ],
     "description": [
@@ -6655,7 +6655,7 @@
       "/**",
       " * @var Drupal\\Core\\Template\\TwigExtension",
       " */",
-      "${1:{twig_extension_service} = \\Drupal::service('twig.extension');",
+      "${1:\\$twig_extension_service} = \\Drupal::service('twig.extension');",
       ""
     ],
     "description": [
@@ -6676,7 +6676,7 @@
       "/**",
       " * @var Twig\\Extension\\DebugExtension",
       " */",
-      "${1:{twig_extension_debug_service} = \\Drupal::service('twig.extension.debug');",
+      "${1:\\$twig_extension_debug_service} = \\Drupal::service('twig.extension.debug');",
       ""
     ],
     "description": [],
@@ -6690,7 +6690,7 @@
       "/**",
       " * @var Drupal\\Core\\Template\\DebugExtension",
       " */",
-      "${1:{twig_extension_varDumper_service} = \\Drupal::service('twig.extension.varDumper');",
+      "${1:\\$twig_extension_varDumper_service} = \\Drupal::service('twig.extension.varDumper');",
       ""
     ],
     "description": [
@@ -6706,7 +6706,7 @@
       "/**",
       " * @var Drupal\\Core\\Template\\Loader\\FilesystemLoader",
       " */",
-      "${1:{twig_loader_filesystem_service} = \\Drupal::service('twig.loader.filesystem');",
+      "${1:\\$twig_loader_filesystem_service} = \\Drupal::service('twig.loader.filesystem');",
       ""
     ],
     "description": [
@@ -6726,7 +6726,7 @@
       "/**",
       " * @var Drupal\\Core\\Template\\Loader\\StringLoader",
       " */",
-      "${1:{twig_loader_string_service} = \\Drupal::service('twig.loader.string');",
+      "${1:\\$twig_loader_string_service} = \\Drupal::service('twig.loader.string');",
       ""
     ],
     "description": [
@@ -6757,7 +6757,7 @@
       "/**",
       " * @var Drupal\\Core\\Template\\Loader\\ThemeRegistryLoader",
       " */",
-      "${1:{twig_loader_theme_registry_service} = \\Drupal::service('twig.loader.theme_registry');",
+      "${1:\\$twig_loader_theme_registry_service} = \\Drupal::service('twig.loader.theme_registry');",
       ""
     ],
     "description": [
@@ -6775,7 +6775,7 @@
       "/**",
       " * @var Drupal\\Core\\TypedData\\TypedDataManager",
       " */",
-      "${1:{typed_data_manager_service} = \\Drupal::service('typed_data_manager');",
+      "${1:\\$typed_data_manager_service} = \\Drupal::service('typed_data_manager');",
       ""
     ],
     "description": [
@@ -6791,7 +6791,7 @@
       "/**",
       " * @var Drupal\\Core\\Utility\\UnroutedUrlAssembler",
       " */",
-      "${1:{unrouted_url_assembler_service} = \\Drupal::service('unrouted_url_assembler');",
+      "${1:\\$unrouted_url_assembler_service} = \\Drupal::service('unrouted_url_assembler');",
       ""
     ],
     "description": [
@@ -6809,7 +6809,7 @@
       "/**",
       " * @var Drupal\\Core\\Update\\UpdateRegistry",
       " */",
-      "${1:{update_post_update_registry_service} = \\Drupal::service('update.post_update_registry');",
+      "${1:\\$update_post_update_registry_service} = \\Drupal::service('update.post_update_registry');",
       ""
     ],
     "description": [
@@ -6831,7 +6831,7 @@
       "/**",
       " * @var Drupal\\Core\\Update\\UpdateRegistryFactory",
       " */",
-      "${1:{update_post_update_registry_factory_service} = \\Drupal::service('update.post_update_registry_factory');",
+      "${1:\\$update_post_update_registry_factory_service} = \\Drupal::service('update.post_update_registry_factory');",
       ""
     ],
     "description": [
@@ -6847,7 +6847,7 @@
       "/**",
       " * @var Drupal\\Core\\Update\\UpdateHookRegistry",
       " */",
-      "${1:{update_update_hook_registry_service} = \\Drupal::service('update.update_hook_registry');",
+      "${1:\\$update_update_hook_registry_service} = \\Drupal::service('update.update_hook_registry');",
       ""
     ],
     "description": [
@@ -6863,7 +6863,7 @@
       "/**",
       " * @var Drupal\\Core\\Update\\UpdateHookRegistryFactory",
       " */",
-      "${1:{update_update_hook_registry_factory_service} = \\Drupal::service('update.update_hook_registry_factory');",
+      "${1:\\$update_update_hook_registry_factory_service} = \\Drupal::service('update.update_hook_registry_factory');",
       ""
     ],
     "description": [
@@ -6879,7 +6879,7 @@
       "/**",
       " * @var Drupal\\Core\\Render\\MetadataBubblingUrlGenerator",
       " */",
-      "${1:{url_generator_service} = \\Drupal::service('url_generator');",
+      "${1:\\$url_generator_service} = \\Drupal::service('url_generator');",
       ""
     ],
     "description": [
@@ -6904,7 +6904,7 @@
       "/**",
       " * @var Drupal\\Core\\Session\\PermissionsHashGenerator",
       " */",
-      "${1:{user_permissions_hash_generator_service} = \\Drupal::service('user_permissions_hash_generator');",
+      "${1:\\$user_permissions_hash_generator_service} = \\Drupal::service('user_permissions_hash_generator');",
       ""
     ],
     "description": [
@@ -6920,7 +6920,7 @@
       "/**",
       " * @var Drupal\\Component\\Uuid\\Php",
       " */",
-      "${1:{uuid_service} = \\Drupal::service('uuid');",
+      "${1:\\$uuid_service} = \\Drupal::service('uuid');",
       ""
     ],
     "description": [
@@ -6939,7 +6939,7 @@
       "/**",
       " * @var Drupal\\Core\\Validation\\ConstraintManager",
       " */",
-      "${1:{validation_constraint_service} = \\Drupal::service('validation.constraint');",
+      "${1:\\$validation_constraint_service} = \\Drupal::service('validation.constraint');",
       ""
     ],
     "description": [
