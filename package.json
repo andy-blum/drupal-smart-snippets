@@ -36,6 +36,10 @@
             {
                 "language": "php",
                 "path": "./snippets/elements.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/services.json"
             }
         ],
         "languages": [
