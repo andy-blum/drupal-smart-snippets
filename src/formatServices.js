@@ -36,7 +36,12 @@ export async function formatServices(rawServices, version) {
       if (classNamespace && value.public !== false) {
         const classFile = classNamespace.split('\\').join('/');
 
+        const deprecationWarning = value.deprecated
+          ?.replaceAll('%alias_id%', name)
+          ?.replaceAll('%service_id%', name);
+
         let description = [];
+
         if (classFile.startsWith('Drupal')) {
           const classFileContents = await readFile(`tmp/drupal-${version}/core/lib/${classFile}.php`, {
             encoding: 'utf-8',
@@ -74,6 +79,11 @@ export async function formatServices(rawServices, version) {
           description,
           scope: "php",
         };
+
+        if (deprecationWarning) {
+          snippet.description.splice(0, 0, 'DEPRECATED');
+          snippet.body.splice(2, 0, ` * @deprecated ${deprecationWarning}`);
+        }
 
         services.push([name, snippet]);
       }
