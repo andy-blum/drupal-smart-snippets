@@ -24,11 +24,13 @@ export async function formatServices(rawServices, version) {
       let { class: classNamespace } = value;
 
       if (!classNamespace && value.parent) {
-        classNamespace = rawServices[`${value.parent}`]?.class;
+        const parentService = rawServices.find(service => service[0] === value.parent);
+        classNamespace = parentService[1].class;
       }
 
       if (!classNamespace && value.alias) {
-        classNamespace = rawServices[`${value.alias}`]?.class;
+        const aliasedService = rawServices.find(service => service[0] === value.alias);
+        classNamespace = aliasedService[1].class;
       }
 
       if (classNamespace && value.public !== false) {
