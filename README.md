@@ -42,6 +42,9 @@ While services with global methods allow IDEs to suggest methods and properties,
 ### Services with datatyping
 ![Gif showing intellisense results to typed variables](images/services_with_snippets.gif)
 
+### Deprecated services
+![Gif showing deprecation of a service](images/services_deprecated.gif)
+
 ## Tab Stops
 Snippets are formatted to have tab stops on values that need replaced like `HOOK`,
 `ENTITY_TYPE`, `BASE_FORM_ID`, etc.
