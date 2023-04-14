@@ -30,8 +30,18 @@ FormElement will have `#title`, `#title_display`, `#description` and `#required`
 ### @Element
 ![Gif showing usage of form/render element snippet](images/element_prefix.gif)
 
+
 ### Typing [type_name]
 ![Gif showing usage of element type snippet](images/element_type.gif)
+
+## Smart service snippet
+While services with global methods allow IDEs to suggest methods and properties, those retrieved using the \Drupal::service() method do not. Service snippets provide a easy access to all core services in a datatyped variable allowing intellisense suggestions.
+
+### Services without datatyping
+![Gif showing intellisense results to un-typed variables](images/services_without_snippets.gif)
+
+### Services with datatyping
+![Gif showing intellisense results to typed variables](images/services_with_snippets.gif)
 
 ## Tab Stops
 Snippets are formatted to have tab stops on values that need replaced like `HOOK`,
@@ -43,6 +53,9 @@ Snippets are formatted to have tab stops on values that need replaced like `HOOK
 ### Element Replacement
 FormElement have `#title`, `#title_display` ([providing default options](https://www.drupal.org/docs/drupal-apis/form-api/form-render-elements)), `#description`, `#required` (*TRUE* or *FALSE*) and final ending option of comma `','` or semi-colon `';'` as deafult tab stops.
 ![Gif showing usage of element snippet tab stops](images/element_tabstop_options.gif)
+
+### Services
+Services snippets provide a snake-cased, tab-stopped variable matching the service's name. On snippet insertion, the variable can be overwritten easily.
 
 # Installation
 
