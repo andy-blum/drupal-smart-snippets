@@ -94,3 +94,35 @@ at this time.
 ## [1.0.1]
 ### Changed
 - Updated README to reflect changes in 1.0.0
+
+## [1.0.2]
+### Added
+- Add MIT license
+
+## [1.1.0]
+### Changed
+- Update scraper from 9.3.0 to 9.4.0
+
+## [1.2.0]
+### Added
+- Added Form/Render Element snippets
+- Added tags for marketplace visibility
+
+### Changed
+- Update node version
+- Refactor script into smaller files
+- Hooks snippets now sorted alphabetically
+
+## [1.2.1]
+### Changed
+- Fixed broken '#required' boolean values
+
+## [1.2.2]
+- No changes, error in deployment process
+
+## [1.3.0]
+### Added
+- Added Services snippets
+
+### Changed
+- Changelog up to date
