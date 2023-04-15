@@ -36,6 +36,10 @@
             {
                 "language": "php",
                 "path": "./snippets/elements.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/services.json"
             }
         ],
         "languages": [
@@ -65,7 +69,8 @@
         "he": "^1.2.0",
         "php-parser": "^3.1.4",
         "tar": "^6.1.11",
-        "write-json-file": "^4.3.0"
+        "write-json-file": "^4.3.0",
+        "yaml": "^2.2.1"
     },
     "scripts": {
         "start": "node index.js",

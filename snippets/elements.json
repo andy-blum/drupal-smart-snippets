@@ -1025,26 +1025,6 @@
     ],
     "scope": "php"
   },
-  "@Element (\"pagetitle\")": {
-    "prefix": [
-      "@RenderElement (\"pagetitle\")",
-      "@Element (\"pagetitle\")",
-      "pagetitle"
-    ],
-    "body": [
-      "[",
-      "  '#type' => 'pagetitle',",
-      "]${5|\\,,;|}"
-    ],
-    "description": [
-      "Provides a render element for the title of an HTML page.",
-      "",
-      "This represents the title of the HTML page's body.",
-      "",
-      "@RenderElement(\"page_title\")"
-    ],
-    "scope": "php"
-  },
   "@Element (\"pager\")": {
     "prefix": [
       "@RenderElement (\"pager\")",
@@ -1088,6 +1068,26 @@
       "@endcode",
       "",
       "@RenderElement(\"pager\")"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"pagetitle\")": {
+    "prefix": [
+      "@RenderElement (\"pagetitle\")",
+      "@Element (\"pagetitle\")",
+      "pagetitle"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'pagetitle',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a render element for the title of an HTML page.",
+      "",
+      "This represents the title of the HTML page's body.",
+      "",
+      "@RenderElement(\"page_title\")"
     ],
     "scope": "php"
   },
