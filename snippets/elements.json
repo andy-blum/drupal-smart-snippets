@@ -61,9 +61,9 @@
     "body": [
       "[",
       "  '#type' => 'button',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#limit_validation_errors' => '',",
       "  '#value' => '',",
@@ -105,9 +105,9 @@
     "body": [
       "[",
       "  '#type' => 'checkbox',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#return_value' => '',",
       "]${5|\\,,;|}"
@@ -141,9 +141,9 @@
     "body": [
       "[",
       "  '#type' => 'checkboxes',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#options' => '',",
       "]${5|\\,,;|}"
@@ -189,9 +189,9 @@
     "body": [
       "[",
       "  '#type' => 'color',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#default_value' => '',",
       "]${5|\\,,;|}"
@@ -275,9 +275,9 @@
     "body": [
       "[",
       "  '#type' => 'date',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#default_value' => '',",
       "  '#size' => '',",
@@ -413,9 +413,9 @@
     "body": [
       "[",
       "  '#type' => 'email',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#default_value' => '',",
       "  '#size' => '',",
@@ -515,9 +515,9 @@
     "body": [
       "[",
       "  '#type' => 'file',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -566,9 +566,9 @@
     "body": [
       "[",
       "  '#type' => 'hidden',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#default_value' => '',",
       "  '#value' => '',",
@@ -663,9 +663,9 @@
     "body": [
       "[",
       "  '#type' => 'imagebutton',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -721,9 +721,9 @@
     "body": [
       "[",
       "  '#type' => 'item',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -769,9 +769,9 @@
     "body": [
       "[",
       "  '#type' => 'languageselect',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -830,9 +830,9 @@
     "body": [
       "[",
       "  '#type' => 'machinename',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#machine_name' => '',",
       "  '#maxlength' => '',",
@@ -945,9 +945,9 @@
     "body": [
       "[",
       "  '#type' => 'number',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#default_value' => '',",
       "  '#min' => '',",
@@ -1100,9 +1100,9 @@
     "body": [
       "[",
       "  '#type' => 'password',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#size' => '',",
       "  '#pattern' => '',",
@@ -1141,9 +1141,9 @@
     "body": [
       "[",
       "  '#type' => 'passwordconfirm',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#size' => '',",
       "]${5|\\,,;|}"
@@ -1181,9 +1181,9 @@
     "body": [
       "[",
       "  '#type' => 'pathelement',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -1207,9 +1207,9 @@
     "body": [
       "[",
       "  '#type' => 'radio',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -1235,9 +1235,9 @@
     "body": [
       "[",
       "  '#type' => 'radios',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#options' => '',",
       "]${5|\\,,;|}"
@@ -1282,9 +1282,9 @@
     "body": [
       "[",
       "  '#type' => 'range',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#min' => '',",
       "  '#max' => '',",
@@ -1323,9 +1323,9 @@
     "body": [
       "[",
       "  '#type' => 'search',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -1355,9 +1355,9 @@
     "body": [
       "[",
       "  '#type' => 'select',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#options' => '',",
       "  '#sort_options' => '',",
@@ -1499,9 +1499,9 @@
     "body": [
       "[",
       "  '#type' => 'submit',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#submit' => '',",
       "  '#value' => '',",
@@ -1567,9 +1567,9 @@
     "body": [
       "[",
       "  '#type' => 'table',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#header' => '',",
       "  '#rows' => '',",
@@ -1640,9 +1640,9 @@
     "body": [
       "[",
       "  '#type' => 'tableselect',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#header' => '',",
       "  '#options' => '',",
@@ -1707,9 +1707,9 @@
     "body": [
       "[",
       "  '#type' => 'tel',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#size' => '',",
       "  '#pattern' => '',",
@@ -1749,9 +1749,9 @@
     "body": [
       "[",
       "  '#type' => 'textarea',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#rows' => '',",
       "  '#cols' => '',",
@@ -1793,9 +1793,9 @@
     "body": [
       "[",
       "  '#type' => 'textfield',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#maxlength' => '',",
       "  '#size' => '',",
@@ -1852,9 +1852,9 @@
     "body": [
       "[",
       "  '#type' => 'token',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
@@ -1879,9 +1879,9 @@
     "body": [
       "[",
       "  '#type' => 'url',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#default_value' => '',",
       "  '#size' => '',",
@@ -1922,9 +1922,9 @@
     "body": [
       "[",
       "  '#type' => 'value',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#value' => '',",
       "]${5|\\,,;|}"
@@ -1957,9 +1957,9 @@
     "body": [
       "[",
       "  '#type' => 'verticaltabs',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#default_tab' => '',",
       "]${5|\\,,;|}"
@@ -2017,9 +2017,9 @@
     "body": [
       "[",
       "  '#type' => 'weight',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title' => ${1|$this->t(''),t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#description' => ${3|$this->t(''),t('')|},",
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#delta' => '',",
       "]${5|\\,,;|}"

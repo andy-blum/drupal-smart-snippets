@@ -31,9 +31,9 @@ export function formatElements(rawElements) {
 
       if (type == 'FormElement') {
         // tab stops for FormElement
-        const titleInput = "${1|t(''),$this->t('')|}";
+        const titleInput = "${1|$this->t(''),t('')|}";
         const titleDisplayOption = '${2|before,after,invisible,attribute|}';
-        const descriptionInput = "${3|t(''),$this->t('')|}";
+        const descriptionInput = "${3|$this->t(''),t('')|}";
         const boolOption = '${4|TRUE,FALSE|}';
 
         const defaultSettings = [
@@ -52,7 +52,7 @@ export function formatElements(rawElements) {
       const propertiesMatch = docs.value.match(propertiesRegex);
       const propertiesString = propertiesMatch ? propertiesMatch[1] : '';
       const properties = propertiesString.match(/(#\w+):{1}/g) || [];
-      
+
       // Push property found in description
       if (properties.length > 0) {
         properties.forEach(element => {
@@ -74,10 +74,10 @@ export function formatElements(rawElements) {
           elementObj.body.push(newPropertyArray)
         });
       }
-      
+
       // Close body
       elementObj.body.push(']${5|\\,,;|}');
-      
+
 
       return elementObj;
     });
