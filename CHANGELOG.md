@@ -126,3 +126,7 @@ at this time.
 
 ### Changed
 - Changelog up to date
+
+## [1.4.0]
+### Changed
+- Updated core source versions to 10.1.0 and 9.5.9
