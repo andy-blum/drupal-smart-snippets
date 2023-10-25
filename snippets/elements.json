@@ -48,7 +48,12 @@
       "",
       "@ingroup ajax",
       "",
-      "@RenderElement(\"ajax\")"
+      "@RenderElement(\"ajax\")",
+      "",
+      "@deprecated in drupal:10.1.0 and is removed from drupal:11.0.0. Return an",
+      "  \\Drupal\\Core\\Ajax\\AjaxResponse instead.",
+      "",
+      "@see https://www.drupal.org/node/3068104"
     ],
     "scope": "php"
   },

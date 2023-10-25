@@ -98,28 +98,6 @@
     ],
     "scope": "php"
   },
-  "access_check.entity_bundles": {
-    "prefix": [
-      "@Service (\"access_check.entity_bundles\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Drupal\\Core\\Entity\\EntityBundleAccessCheck",
-      " */",
-      "${1:\\$access_check_entity_bundles_service} = \\Drupal::service('access_check.entity_bundles');",
-      ""
-    ],
-    "description": [
-      "Provides an entity bundle checker for the _entity_bundles route requirement.",
-      "",
-      "@todo Deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Specify",
-      "  the list of bundles in the entity parameter, under \"bundle\" key, as a",
-      "  sequence, instead.",
-      "",
-      "@see https://www.drupal.org/node/3155569"
-    ],
-    "scope": "php"
-  },
   "access_check.entity_create": {
     "prefix": [
       "@Service (\"access_check.entity_create\")"
@@ -289,23 +267,6 @@
     ],
     "scope": "php"
   },
-  "app.root": {
-    "prefix": [
-      "@Service (\"app.root\")"
-    ],
-    "body": [
-      "/**",
-      " * @var \\SplString",
-      " * @deprecated The \"app.root\" service is deprecated in drupal:9.0.0 and is removed from drupal:10.0.0. Use the app.root parameter instead. See https://www.drupal.org/node/3080612",
-      " */",
-      "${1:\\$app_root_service} = \\Drupal::service('app.root');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
   "asset.css.collection_grouper": {
     "prefix": [
       "@Service (\"asset.css.collection_grouper\")"
@@ -328,7 +289,7 @@
     ],
     "body": [
       "/**",
-      " * @var Drupal\\Core\\Asset\\CssCollectionOptimizer",
+      " * @var Drupal\\Core\\Asset\\CssCollectionOptimizerLazy",
       " */",
       "${1:\\$asset_css_collection_optimizer_service} = \\Drupal::service('asset.css.collection_optimizer');",
       ""
@@ -408,7 +369,7 @@
     ],
     "body": [
       "/**",
-      " * @var Drupal\\Core\\Asset\\JsCollectionOptimizer",
+      " * @var Drupal\\Core\\Asset\\JsCollectionOptimizerLazy",
       " */",
       "${1:\\$asset_js_collection_optimizer_service} = \\Drupal::service('asset.js.collection_optimizer');",
       ""
@@ -1678,24 +1639,6 @@
     ],
     "scope": "php"
   },
-  "config.storage.staging": {
-    "prefix": [
-      "@Service (\"config.storage.staging\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Drupal\\Core\\Config\\FileStorage",
-      " * @deprecated The \"config.storage.staging\" service is deprecated in drupal:8.0.0 and is removed from drupal:10.0.0. Use the \"config.storage.sync\" service instead. See https://www.drupal.org/node/2574957",
-      " */",
-      "${1:\\$config_storage_staging_service} = \\Drupal::service('config.storage.staging');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED",
-      "Defines the file storage."
-    ],
-    "scope": "php"
-  },
   "config.storage.sync": {
     "prefix": [
       "@Service (\"config.storage.sync\")"
@@ -2876,409 +2819,6 @@
     ],
     "scope": "php"
   },
-  "feed.bridge.reader": {
-    "prefix": [
-      "@Service (\"feed.bridge.reader\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Drupal\\Component\\Bridge\\ZfExtensionManagerSfContainer",
-      " * @deprecated The \"feed.bridge.reader\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. Use \\Laminas\\Feed\\Reader\\StandaloneExtensionManager or create your own service. See https://www.drupal.org/node/3258656",
-      " */",
-      "${1:\\$feed_bridge_reader_service} = \\Drupal::service('feed.bridge.reader');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED",
-      "Defines a bridge between the Laminas service manager to Symfony container.",
-      "",
-      "@deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. The class has",
-      "  moved to \\Drupal\\aggregator\\ZfExtensionManagerSfContainer.",
-      "",
-      "@see https://www.drupal.org/node/3258656"
-    ],
-    "scope": "php"
-  },
-  "feed.bridge.writer": {
-    "prefix": [
-      "@Service (\"feed.bridge.writer\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Drupal\\Component\\Bridge\\ZfExtensionManagerSfContainer",
-      " * @deprecated The \"feed.bridge.writer\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. Use \\Laminas\\Feed\\Writer\\StandaloneExtensionManager or create your own service. See https://www.drupal.org/node/3258440",
-      " */",
-      "${1:\\$feed_bridge_writer_service} = \\Drupal::service('feed.bridge.writer');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED",
-      "Defines a bridge between the Laminas service manager to Symfony container.",
-      "",
-      "@deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. The class has",
-      "  moved to \\Drupal\\aggregator\\ZfExtensionManagerSfContainer.",
-      "",
-      "@see https://www.drupal.org/node/3258656"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.atomentry": {
-    "prefix": [
-      "@Service (\"feed.reader.atomentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\Atom\\Entry",
-      " * @deprecated The \"feed.reader.atomentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('Atom\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_atomentry_service} = \\Drupal::service('feed.reader.atomentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.atomfeed": {
-    "prefix": [
-      "@Service (\"feed.reader.atomfeed\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\Atom\\Feed",
-      " * @deprecated The \"feed.reader.atomfeed\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('Atom\\Feed') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_atomfeed_service} = \\Drupal::service('feed.reader.atomfeed');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.contententry": {
-    "prefix": [
-      "@Service (\"feed.reader.contententry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\Content\\Entry",
-      " * @deprecated The \"feed.reader.contententry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('Content\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_contententry_service} = \\Drupal::service('feed.reader.contententry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.dublincoreentry": {
-    "prefix": [
-      "@Service (\"feed.reader.dublincoreentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\DublinCore\\Entry",
-      " * @deprecated The \"feed.reader.dublincoreentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('DublinCore\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_dublincoreentry_service} = \\Drupal::service('feed.reader.dublincoreentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.dublincorefeed": {
-    "prefix": [
-      "@Service (\"feed.reader.dublincorefeed\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\DublinCore\\Feed",
-      " * @deprecated The \"feed.reader.dublincorefeed\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('DublinCore\\Feed') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_dublincorefeed_service} = \\Drupal::service('feed.reader.dublincorefeed');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.podcastentry": {
-    "prefix": [
-      "@Service (\"feed.reader.podcastentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\Podcast\\Entry",
-      " * @deprecated The \"feed.reader.podcastentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('Podcast\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_podcastentry_service} = \\Drupal::service('feed.reader.podcastentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.podcastfeed": {
-    "prefix": [
-      "@Service (\"feed.reader.podcastfeed\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\Podcast\\Feed",
-      " * @deprecated The \"feed.reader.podcastfeed\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('Podcast\\Feed') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_podcastfeed_service} = \\Drupal::service('feed.reader.podcastfeed');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.slashentry": {
-    "prefix": [
-      "@Service (\"feed.reader.slashentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\Slash\\Entry",
-      " * @deprecated The \"feed.reader.slashentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('Slash\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_slashentry_service} = \\Drupal::service('feed.reader.slashentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.threadentry": {
-    "prefix": [
-      "@Service (\"feed.reader.threadentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\Thread\\Entry",
-      " * @deprecated The \"feed.reader.threadentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('Thread\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_threadentry_service} = \\Drupal::service('feed.reader.threadentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.reader.wellformedwebentry": {
-    "prefix": [
-      "@Service (\"feed.reader.wellformedwebentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Reader\\Extension\\WellFormedWeb\\Entry",
-      " * @deprecated The \"feed.reader.wellformedwebentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.reader')->get('WellFormedWeb\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_reader_wellformedwebentry_service} = \\Drupal::service('feed.reader.wellformedwebentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.atomrendererfeed": {
-    "prefix": [
-      "@Service (\"feed.writer.atomrendererfeed\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\Atom\\Renderer\\Feed",
-      " * @deprecated The \"feed.writer.atomrendererfeed\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('Atom\\Renderer\\Feed') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_atomrendererfeed_service} = \\Drupal::service('feed.writer.atomrendererfeed');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.contentrendererentry": {
-    "prefix": [
-      "@Service (\"feed.writer.contentrendererentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\Content\\Renderer\\Entry",
-      " * @deprecated The \"feed.writer.contentrendererentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('Content\\Renderer\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_contentrendererentry_service} = \\Drupal::service('feed.writer.contentrendererentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.dublincorerendererentry": {
-    "prefix": [
-      "@Service (\"feed.writer.dublincorerendererentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\DublinCore\\Renderer\\Entry",
-      " * @deprecated The \"feed.writer.dublincorerendererentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('DublinCore\\Renderer\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_dublincorerendererentry_service} = \\Drupal::service('feed.writer.dublincorerendererentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.dublincorerendererfeed": {
-    "prefix": [
-      "@Service (\"feed.writer.dublincorerendererfeed\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\DublinCore\\Renderer\\Feed",
-      " * @deprecated The \"feed.writer.dublincorerendererfeed\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('DublinCore\\Renderer\\Feed') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_dublincorerendererfeed_service} = \\Drupal::service('feed.writer.dublincorerendererfeed');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.itunesentry": {
-    "prefix": [
-      "@Service (\"feed.writer.itunesentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Entry",
-      " * @deprecated The \"feed.writer.itunesentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('ITunes\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_itunesentry_service} = \\Drupal::service('feed.writer.itunesentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.itunesfeed": {
-    "prefix": [
-      "@Service (\"feed.writer.itunesfeed\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Feed",
-      " * @deprecated The \"feed.writer.itunesfeed\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('ITunes\\Feed') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_itunesfeed_service} = \\Drupal::service('feed.writer.itunesfeed');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.itunesrendererentry": {
-    "prefix": [
-      "@Service (\"feed.writer.itunesrendererentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Renderer\\Entry",
-      " * @deprecated The \"feed.writer.itunesrendererentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('ITunes\\Renderer\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_itunesrendererentry_service} = \\Drupal::service('feed.writer.itunesrendererentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.itunesrendererfeed": {
-    "prefix": [
-      "@Service (\"feed.writer.itunesrendererfeed\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\ITunes\\Renderer\\Feed",
-      " * @deprecated The \"feed.writer.itunesrendererfeed\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('ITunes\\Renderer\\Feed') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_itunesrendererfeed_service} = \\Drupal::service('feed.writer.itunesrendererfeed');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.slashrendererentry": {
-    "prefix": [
-      "@Service (\"feed.writer.slashrendererentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\Slash\\Renderer\\Entry",
-      " * @deprecated The \"feed.writer.slashrendererentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('Slash\\Renderer\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_slashrendererentry_service} = \\Drupal::service('feed.writer.slashrendererentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.threadingrendererentry": {
-    "prefix": [
-      "@Service (\"feed.writer.threadingrendererentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\Threading\\Renderer\\Entry",
-      " * @deprecated The \"feed.writer.threadingrendererentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('Threading\\Renderer\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_threadingrendererentry_service} = \\Drupal::service('feed.writer.threadingrendererentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
-  "feed.writer.wellformedwebrendererentry": {
-    "prefix": [
-      "@Service (\"feed.writer.wellformedwebrendererentry\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Laminas\\Feed\\Writer\\Extension\\WellFormedWeb\\Renderer\\Entry",
-      " * @deprecated The \"feed.writer.wellformedwebrendererentry\" service is deprecated in drupal:9.4.0 and is removed from drupal:10.0.0. You should use \\Drupal::service('feed.bridge.writer')->get('WellFormedWeb\\Renderer\\Entry') instead. See https://www.drupal.org/node/2979042",
-      " */",
-      "${1:\\$feed_writer_wellformedwebrendererentry_service} = \\Drupal::service('feed.writer.wellformedwebrendererentry');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
   "field_definition.listener": {
     "prefix": [
       "@Service (\"field_definition.listener\")"
@@ -3630,12 +3170,19 @@
     ],
     "body": [
       "/**",
-      " * @var Stack\\StackedHttpKernel",
+      " * @var Drupal\\Core\\StackMiddleware\\StackedHttpKernel",
       " */",
       "${1:\\$http_kernel_service} = \\Drupal::service('http_kernel');",
       ""
     ],
-    "description": [],
+    "description": [
+      "Provides a stacked HTTP kernel.",
+      "",
+      "Copied from https://github.com/stackphp/builder/ with added compatibility",
+      "for Symfony 6.",
+      "",
+      "@see \\Drupal\\Core\\DependencyInjection\\Compiler\\StackedKernelPass"
+    ],
     "scope": "php"
   },
   "http_kernel.basic": {
@@ -4957,15 +4504,15 @@
     ],
     "body": [
       "/**",
-      " * @var Drupal\\Core\\Password\\PhpassHashedPassword",
+      " * @var Drupal\\Core\\Password\\PhpPassword",
       " */",
       "${1:\\$password_service} = \\Drupal::service('password');",
       ""
     ],
     "description": [
-      "Secure hashing functions based on Portable PHP password hashing framework.",
+      "Secure PHP password hashing functions.",
       "",
-      "@see http://www.openwall.com/phpass/"
+      "@see https://www.php.net/manual/en/book.password.php"
     ],
     "scope": "php"
   },
@@ -5789,16 +5336,12 @@
     ],
     "body": [
       "/**",
-      " * @var Drupal\\Core\\Http\\RequestStack",
+      " * @var Symfony\\Component\\HttpFoundation\\RequestStack",
       " */",
       "${1:\\$request_stack_service} = \\Drupal::service('request_stack');",
       ""
     ],
-    "description": [
-      "Forward-compatibility shim for Symfony's RequestStack.",
-      "",
-      "@todo https://www.drupal.org/node/3265121 Remove in Drupal 10.0.x."
-    ],
+    "description": [],
     "scope": "php"
   },
   "required_module_uninstall_validator": {
@@ -6496,23 +6039,6 @@
     ],
     "scope": "php"
   },
-  "site.path": {
-    "prefix": [
-      "@Service (\"site.path\")"
-    ],
-    "body": [
-      "/**",
-      " * @var \\SplString",
-      " * @deprecated The \"site.path\" service is deprecated in drupal:9.0.0 and is removed from drupal:10.0.0. Use the site.path parameter instead. See https://www.drupal.org/node/3080612",
-      " */",
-      "${1:\\$site_path_service} = \\Drupal::service('site.path');",
-      ""
-    ],
-    "description": [
-      "DEPRECATED"
-    ],
-    "scope": "php"
-  },
   "state": {
     "prefix": [
       "@Service (\"state\")"
@@ -6741,7 +6267,7 @@
       "theme as the base page, because most themes are built with the assumption",
       "that they control the entire page, so if the CSS for two themes are both",
       "loaded for a given page, they may conflict with each other. For example,",
-      "Bartik is Drupal's default theme, and Seven is Drupal's default",
+      "Olivero is Drupal's default theme, and Claro is Drupal's default",
       "administration theme. Depending on whether the \"Use the administration theme",
       "when editing or creating content\" checkbox is checked, the node edit form may",
       "be displayed in either theme, but the Ajax response to the Field module's",
