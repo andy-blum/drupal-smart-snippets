@@ -1,10 +1,10 @@
 import { readFile } from "fs/promises";
 import { parse } from 'yaml';
 
-export async function getServices(version) {
+export async function getServices() {
   return new Promise(async (res) => {
 
-		const serviceYmlContents = await readFile(`tmp/drupal-${version}/core/core.services.yml`, {
+		const serviceYmlContents = await readFile(`tmp/drupal/core/core.services.yml`, {
       encoding: 'utf-8',
     });
 
