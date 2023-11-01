@@ -13,7 +13,6 @@ import { formatServices } from "./src/formatServices.js";
 
 const SUPPORTED_VERSIONS = [
   '10.1.0',
-  '9.5.9',
 ];
 
 // 1. Set up final snippets files.
