@@ -130,3 +130,51 @@ at this time.
 ## [1.4.0]
 ### Changed
 - Updated core source versions to 10.1.0 and 9.5.9
+
+## [2.0.0]
+### Changed
+- Deprecated ajax element ([change record](https://www.drupal.org/node/3068104))
+### Removed
+- Removed support for Drupal 9 ([psa-2023-11-01](https://www.drupal.org/psa-2023-11-01))
+  - Removed deprecated hooks
+    - hook_aggregator_fetcher_info_alter ([change record](https://www.drupal.org/node/3304999))
+    - hook_aggregator_parser_info_alter ([change record](https://www.drupal.org/node/3304999))
+    - hook_aggregator_processor_info_alter ([change record](https://www.drupal.org/node/3304999))
+    - hook_ckeditor_css_alter ([change record](https://www.drupal.org/node/3304481))
+    - hook_ckeditor_plugin_info_alter ([change record](https://www.drupal.org/node/3304481))
+    - hook_field_widget_form_alter ([change record](https://www.drupal.org/node/3180429))
+    - hook_field_widget_multivalue_form_alter ([change record](https://www.drupal.org/node/3180429))
+    - hook_field_widget_multivalue_WIDGET_TYPE_form_alter ([change record](https://www.drupal.org/node/3180429))
+    - hook_field_widget_WIDGET_TYPE_form_alter ([change record](https://www.drupal.org/node/3180429))
+    - hook_hal_relation_uri_alter ([change record](https://www.drupal.org/node/3266403))
+    - hook_hal_type_uri_alter ([change record](https://www.drupal.org/node/3266403))
+    - hook_quickedit_editor_alter ([change record](https://www.drupal.org/node/3252839))
+    - hook_quickedit_render_field ([change record](https://www.drupal.org/node/3252839))
+    - hook_rdf_namespaces ([change record](https://www.drupal.org/node/3304899))
+  - Removed deprecated services
+    - access_check.entity_bundles ([change record](https://www.drupal.org/node/3155569))
+    - app.root ([change record](https://www.drupal.org/node/3080612))
+    - config.storage.staging ([change record](https://www.drupal.org/node/2574957))
+    - feed.bridge.reader ([change record](https://www.drupal.org/node/3258656))
+    - feed.reader.atomentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.atomfeed ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.contententry ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.dublincoreentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.dublincorefeed ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.podcastentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.podcastfeed ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.slashentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.threadentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.reader.wellformedwebentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.atomrendererfeed ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.contentrendererentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.dublincorerendererentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.dublincorerendererfeed ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.itunesentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.itunesfeed ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.itunesrendererentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.itunesrendererfeed ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.slashrendererentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.threadingrendererentry ([change record](https://www.drupal.org/node/2979042))
+    - feed.writer.wellformedwebrendererentry ([change record](https://www.drupal.org/node/2979042))
+    - site.path ([change record](https://www.drupal.org/node/3080612))
