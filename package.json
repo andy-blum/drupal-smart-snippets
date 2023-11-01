@@ -63,14 +63,11 @@
         ]
     },
     "dependencies": {
-        "del": "^6.1.1",
-        "download": "^8.0.0",
         "find": "^0.3.0",
         "he": "^1.2.0",
         "php-parser": "^3.1.4",
-        "tar": "^6.1.11",
-        "write-json-file": "^4.3.0",
-        "yaml": "^2.2.1"
+        "simple-git": "^3.20.0",
+        "yaml": "^2.3.3"
     },
     "scripts": {
         "start": "node index.js",

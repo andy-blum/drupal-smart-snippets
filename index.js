@@ -1,7 +1,7 @@
-import { rm, readdir, writeFile } from "node:fs/promises";
+import { rm, writeFile, mkdir } from "node:fs/promises";
 import he from "he";
+import { simpleGit } from "simple-git";
 import { getApiFiles } from "./src/getApiFiles.js";
-import { getCoreVersion } from "./src/getCoreVersion.js";
 import { getRawHooks } from "./src/getRawHooks.js";
 import { formatHooks } from "./src/formatHooks.js";
 import { getElementFiles } from "./src/getElementFiles.js";
@@ -21,29 +21,40 @@ let allElements = {};
 let allServices = {};
 
 // 2. Clean tmp directory.
-try {
-  const contents = await readdir('./tmp');
-  for (const item of contents) {
-    await rm(`./tmp/${item}`, {
-      force: true,
-      recursive: true
-    });
-  }
-} catch (error) {}
+await rm(`./tmp`, {
+  force: true,
+  recursive: true
+});
+await mkdir('./tmp/drupal', { recursive: true });
+
+// 3a. Clone core repo
+const DRUPAL_REPO = 'https://git.drupalcode.org/project/drupal.git';
+const git = simpleGit();
+await git
+  .clone(DRUPAL_REPO, 'tmp/drupal')
+  .cwd('tmp/drupal')
+  .tags((_err, tags) => {
+    console.log(`  - Cloned ${DRUPAL_REPO}`);
+  });
 
 for (const version of SUPPORTED_VERSIONS) {
   console.log(`Drupal ${version}`);
 
-  // 3. Download & un-archive tarball.
-  await getCoreVersion(version);
-  console.log(`  - Downloaded`);
+  // 3b.Checkout the right version to scrape.
+  await git
+    .cwd('tmp/drupal')
+    .tags()
+    .checkout(`${version}`, ['-d'])
+
+  console.log(`  - Checked out v${version}`);
+
 
   /*******************************
    * Hooks
    *******************************/
 
   // 4. Find all *.api.php files.
-  const apiFiles = await getApiFiles(version);
+  const apiFiles = await getApiFiles();
   console.log(`  - Found ${apiFiles.length} files matching *.api.php`);
 
   // 5. Find all hook docblocks.
@@ -63,7 +74,7 @@ for (const version of SUPPORTED_VERSIONS) {
    *******************************/
 
   // 8. Find all .php files for element.
-  const elementFiles = await getElementFiles(version);
+  const elementFiles = await getElementFiles();
   console.log(`  - Found ${elementFiles.length} files under core/lib/Drupal/Core/Render/Element`);
 
   // 9. Find all Element docblocks.
@@ -83,7 +94,7 @@ for (const version of SUPPORTED_VERSIONS) {
    *******************************/
 
   // 12. Get all services.
-  const rawServices = await getServices(version);
+  const rawServices = await getServices();
   console.log(`  - Found ${rawServices.length} defined Services`);
 
   // 13. Format services snippets.

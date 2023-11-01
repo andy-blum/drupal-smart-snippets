@@ -1,7 +1,7 @@
 import engine from "php-parser";
 import { readFile } from "fs/promises";
 
-export async function formatServices(rawServices, version) {
+export async function formatServices(rawServices) {
     // Prepare to receive formatted hooks.
     const services = [];
 
@@ -43,7 +43,7 @@ export async function formatServices(rawServices, version) {
         let description = [];
 
         if (classFile.startsWith('Drupal')) {
-          const classFileContents = await readFile(`tmp/drupal-${version}/core/lib/${classFile}.php`, {
+          const classFileContents = await readFile(`tmp/drupal/core/lib/${classFile}.php`, {
             encoding: 'utf-8',
           });
 
