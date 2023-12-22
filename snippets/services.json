@@ -427,6 +427,25 @@
     ],
     "scope": "php"
   },
+  "asset.query_string": {
+    "prefix": [
+      "@Service (\"asset.query_string\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Asset\\AssetQueryString",
+      " */",
+      "${1:\\$asset_query_string_service} = \\Drupal::service('asset.query_string');",
+      ""
+    ],
+    "description": [
+      "Stores a cache busting query string service for asset URLs.",
+      "",
+      "The string changes on every update or full cache flush, forcing browsers to",
+      "load a new copy of the files, as the URL changed."
+    ],
+    "scope": "php"
+  },
   "asset.resolver": {
     "prefix": [
       "@Service (\"asset.resolver\")"
@@ -1009,10 +1028,7 @@
       ""
     ],
     "description": [
-      "Defines the MenuActiveTrailsCacheContext service.",
-      "",
-      "This class is container-aware to avoid initializing the 'menu.active_trails'",
-      "service (and its dependencies) when it is not necessary."
+      "Defines the MenuActiveTrailsCacheContext service."
     ],
     "scope": "php"
   },
@@ -1420,6 +1436,49 @@
     ],
     "description": [
       "Cache tags invalidations checksum implementation that uses the database."
+    ],
+    "scope": "php"
+  },
+  "callable_resolver": {
+    "prefix": [
+      "@Service (\"callable_resolver\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Utility\\CallableResolver",
+      " */",
+      "${1:\\$callable_resolver_service} = \\Drupal::service('callable_resolver');",
+      ""
+    ],
+    "description": [
+      "Resolves PHP callables.",
+      "",
+      "The callable resolver service aims to provide a standardized approach to how",
+      "callables are resolved and invoked from various subsystems. The callable",
+      "resolver will return or invoke a callable defined in any of the following",
+      "definition formats:",
+      "",
+      "- Service notation:",
+      "@code",
+      "'some.service:method'",
+      "@endcode",
+      "- Static methods:",
+      "@code",
+      "'\\FooClass::staticMethod'",
+      "@endcode",
+      "- Non-static methods, instantiated with the class resolver:",
+      "@code",
+      "'\\DependencyInjectedClass::method'",
+      "@endcode",
+      "- Object calls:",
+      "@code",
+      "[$object, 'method']",
+      "@endcode",
+      "- Classes with an __invoke method:",
+      "@code",
+      "'\\ClassWithInvoke'",
+      "@endcode",
+      "- Closures."
     ],
     "scope": "php"
   },
@@ -2055,7 +2114,13 @@
       ""
     ],
     "description": [
-      "Provides a class for obtaining system time."
+      "Provides a class for obtaining system time.",
+      "",
+      "While the normal use case of this class expects that a Request object is",
+      "available from the RequestStack, it is still possible to use it without, for",
+      "example for early bootstrap containers or for unit tests. In those cases,",
+      "the class will access global variables or set a proxy request time in order",
+      "to return the request time."
     ],
     "scope": "php"
   },
@@ -2071,7 +2136,8 @@
       ""
     ],
     "description": [
-      "Diff formatter which uses returns output that can be rendered to a table."
+      "// cspell:ignore xbeg, xlen, ybeg, ylen",
+      ""
     ],
     "scope": "php"
   },
@@ -2539,7 +2605,7 @@
       "  Faster instantiation of the event dispatcher service",
       "  ",
       "    Instead of calling addSubscriberService once for each",
-      "    subscriber, a precompiled array of listener definitions is passed",
+      "    subscriber, a pre-compiled array of listener definitions is passed",
       "    directly to the constructor. This is faster by roughly an order of",
       "    magnitude. The listeners are collected and prepared using a compiler",
       "    pass.",
@@ -2712,6 +2778,28 @@
     ],
     "description": [
       "Exception handler to determine if an exception indicates an uninstalled site."
+    ],
+    "scope": "php"
+  },
+  "extension.list.database_driver": {
+    "prefix": [
+      "@Service (\"extension.list.database_driver\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Extension\\DatabaseDriverList",
+      " */",
+      "${1:\\$extension_list_database_driver_service} = \\Drupal::service('extension.list.database_driver');",
+      ""
+    ],
+    "description": [
+      "Provides a list of available database drivers.",
+      "",
+      "@internal",
+      "  This class is not yet stable and therefore there are no guarantees that the",
+      "  internal implementations including constructor signature and protected",
+      "  properties / methods will not change over time. This will be reviewed after",
+      "  https://www.drupal.org/project/drupal/issues/2940481"
     ],
     "scope": "php"
   },
@@ -3211,6 +3299,22 @@
       ""
     ],
     "description": [],
+    "scope": "php"
+  },
+  "http_middleware.ajax_page_state": {
+    "prefix": [
+      "@Service (\"http_middleware.ajax_page_state\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\StackMiddleware\\AjaxPageState",
+      " */",
+      "${1:\\$http_middleware_ajax_page_state_service} = \\Drupal::service('http_middleware.ajax_page_state');",
+      ""
+    ],
+    "description": [
+      "Expands the compressed ajax_page_state query parameter into an array."
+    ],
     "scope": "php"
   },
   "http_middleware.cors": {
@@ -3713,6 +3817,22 @@
       " * @var Drupal\\Core\\Logger\\LoggerChannel",
       " */",
       "${1:\\$logger_channel_image_service} = \\Drupal::service('logger.channel.image');",
+      ""
+    ],
+    "description": [
+      "Defines a logger channel that most implementations will use."
+    ],
+    "scope": "php"
+  },
+  "logger.channel.mail": {
+    "prefix": [
+      "@Service (\"logger.channel.mail\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Logger\\LoggerChannel",
+      " */",
+      "${1:\\$logger_channel_mail_service} = \\Drupal::service('logger.channel.mail');",
       ""
     ],
     "description": [
@@ -4596,7 +4716,7 @@
       ""
     ],
     "description": [
-      "Processes the inbound path by urldecoding it.",
+      "Processes the inbound path by decoding the URL.",
       "",
       "Parameters in the URL sometimes represent code-meaningful strings. It is",
       "therefore useful to always urldecode() those values so that individual",
@@ -4642,6 +4762,22 @@
       "",
       "Holds an array of path processor objects and uses them to sequentially process",
       "a path, in order of processor priority."
+    ],
+    "scope": "php"
+  },
+  "permission_checker": {
+    "prefix": [
+      "@Service (\"permission_checker\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Session\\PermissionChecker",
+      " */",
+      "${1:\\$permission_checker_service} = \\Drupal::service('permission_checker');",
+      ""
+    ],
+    "description": [
+      "Checks permissions for an account."
     ],
     "scope": "php"
   },
@@ -4889,6 +5025,20 @@
       "",
       "@ingroup field_types"
     ],
+    "scope": "php"
+  },
+  "plugin.manager.field.field_type_category": {
+    "prefix": [
+      "@Service (\"plugin.manager.field.field_type_category\")"
+    ],
+    "body": [
+      "/**",
+      " * @var \\Drupal\\Core\\Field\\FieldTypeCategoryManager",
+      " */",
+      "${1:\\$plugin_manager_field_field_type_category_service} = \\Drupal::service('plugin.manager.field.field_type_category');",
+      ""
+    ],
+    "description": [],
     "scope": "php"
   },
   "plugin.manager.field.formatter": {
@@ -5391,12 +5541,8 @@
       ""
     ],
     "description": [
-      "Subscribes to filter HTML responses, to set the 'is-active' class on links.",
-      "",
-      "Only for anonymous users; for authenticated users, the active-link asset",
-      "library is loaded.",
-      "",
-      "@see system_page_attachments()"
+      "// cspell:ignore noemptytag",
+      ""
     ],
     "scope": "php"
   },
@@ -5791,7 +5937,7 @@
       ""
     ],
     "description": [
-      "Defines a class which preloads non-admin routes.",
+      "Defines a class that can pre-load non-admin routes.",
       "",
       "On an actual site we want to avoid too many database queries so we build a",
       "list of all routes which most likely appear on the actual site, which are all",
@@ -6773,6 +6919,24 @@
       "\\Drupal\\Core\\Validation\\Annotation\\Constraint for details.",
       "",
       "@see \\Drupal\\Core\\Validation\\Annotation\\Constraint"
+    ],
+    "scope": "php"
+  },
+  "variation_cache_factory": {
+    "prefix": [
+      "@Service (\"variation_cache_factory\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\VariationCacheFactory",
+      " */",
+      "${1:\\$variation_cache_factory_service} = \\Drupal::service('variation_cache_factory');",
+      ""
+    ],
+    "description": [
+      "Defines the variation cache factory.",
+      "",
+      "@ingroup cache"
     ],
     "scope": "php"
   }

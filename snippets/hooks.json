@@ -604,10 +604,11 @@
     "description": [
       "Alter a contextual links element before it is rendered.",
       "",
-      "This hook is invoked by contextual_pre_render_links(). The renderable array",
-      "of #type 'contextual_links', containing the entire contextual links data that",
-      "is passed in by reference. Further links may be added or existing links can",
-      "be altered.",
+      "This hook is invoked by",
+      "\\Drupal\\contextual\\Element\\ContextualLinks::preRenderLinks(). The renderable",
+      "array of #type 'contextual_links', containing the entire contextual links",
+      "data that is passed in by reference. Further links may be added or existing",
+      "links can be altered.",
       "",
       "@param $element",
       "  A renderable array representing the contextual links.",
@@ -619,7 +620,7 @@
       "",
       "@see hook_contextual_links_alter()",
       "@see hook_contextual_links_plugins_alter()",
-      "@see contextual_pre_render_links()"
+      "@see \\Drupal\\contextual\\Element\\ContextualLinks::preRenderLinks()"
     ],
     "scope": "php"
   },
@@ -2792,6 +2793,30 @@
     ],
     "scope": "php"
   },
+  "hook_field_info_entity_type_ui_definitions_alter": {
+    "prefix": "hook_field_info_entity_type_ui_definitions_alter",
+    "body": [
+      "/**",
+      " * Implements hook_field_info_entity_type_ui_definitions_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_info_entity_type_ui_definitions_alter(array &\\$ui_definitions, string \\$entity_type_id) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Alters the UI field definitions.",
+      "",
+      "This hook can be used for altering field definitions available in the UI",
+      "dynamically per entity type. For example, it can be used to hide field types",
+      "that are incompatible with an entity type.",
+      "",
+      "@param array $ui_definitions",
+      "  Definition of all field types that can be added via UI.",
+      "@param string $entity_type_id",
+      "  The entity type id."
+    ],
+    "scope": "php"
+  },
   "hook_field_info_max_weight": {
     "prefix": "hook_field_info_max_weight",
     "body": [
@@ -2901,6 +2926,33 @@
       "  The field storage as it is pre-update.",
       "",
       "@see entity_crud"
+    ],
+    "scope": "php"
+  },
+  "hook_field_type_category_info_alter": {
+    "prefix": "hook_field_type_category_info_alter",
+    "body": [
+      "/**",
+      " * Implements hook_field_type_category_info_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_field_type_category_info_alter(array &\\$categories) {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Allows modules to alter the field type category information.",
+      "",
+      "This hook provides a way for modules to modify or add to the existing",
+      "category information. Modules can use this hook to modify the properties of",
+      "existing categories. It can also be used to define custom field type",
+      "categories although the use of YAML-based plugins should be preferred over",
+      "the hook.",
+      "",
+      "@param array &$categories",
+      "  An associative array of field type categories, keyed by category machine",
+      "   name.",
+      "",
+      "@see \\Drupal\\Core\\Field\\FieldTypeCategoryManager"
     ],
     "scope": "php"
   },
@@ -3753,7 +3805,7 @@
       "- Module overview help, see content_translation_help(). Module overview",
       "  help should follow",
       "  @link https://www.drupal.org/node/632280 the standard help template. @endlink",
-      "- Page-specific help using only routes, see book_help().",
+      "- Page-specific help using only routes, see node_help().",
       "- Page-specific help using routes and $request, see block_help().",
       "",
       "@param string $route_name",
@@ -3810,12 +3862,7 @@
       "Perform alterations on help topic definitions.",
       "",
       "@param array $info",
-      "  Array of help topic plugin definitions keyed by their plugin ID.",
-      "",
-      "@internal",
-      "  Help Topics is currently experimental and should only be leveraged by",
-      "  experimental modules and development releases of contributed modules.",
-      "  See https://www.drupal.org/core/experimental for more information."
+      "  Array of help topic plugin definitions keyed by their plugin ID."
     ],
     "scope": "php"
   },
@@ -3877,7 +3924,7 @@
       "/**",
       " * Implements hook_image_style_flush().",
       " */",
-      "function ${1:${TM_FILENAME_BASE:hook}}_image_style_flush(\\$style) {",
+      "function ${1:${TM_FILENAME_BASE:hook}}_image_style_flush(\\$style, \\$path = NULL) {",
       "  $0",
       "}"
     ],
@@ -3891,7 +3938,10 @@
       "deleted, or any effect associated with the style is update or deleted.",
       "",
       "@param \\Drupal\\image\\ImageStyleInterface $style",
-      "  The image style object that is being flushed."
+      "  The image style object that is being flushed.",
+      "@param string|null $path",
+      "  (optional) The original image path or URI. If it's supplied, only this",
+      "  image derivative will be flushed."
     ],
     "scope": "php"
   },
@@ -3932,8 +3982,8 @@
       "available when this hook is called. Use cases could be displaying a user",
       "message, or calling a module function necessary for initial setup, etc.",
       "",
-      "Please be sure that anything added or modified in this function that can",
-      "be removed during uninstall should be removed with hook_uninstall().",
+      "Ensure that anything added or modified in this function that can be removed",
+      "during uninstall should be removed with hook_uninstall().",
       "",
       "@param bool $is_syncing",
       "  TRUE if the module is being installed as part of a configuration import. In",
@@ -4499,8 +4549,14 @@
       "and themes that may be using the library.",
       "",
       "@param array $libraries",
-      "  An associative array of libraries registered by $extension. Keyed by",
-      "  internal library name and passed by reference.",
+      "  An associative array of libraries, passed by reference. The array key",
+      "  for any particular library will be the name registered in *.libraries.yml.",
+      "  In the example below, the array key would be $libraries['foo'].",
+      "  @code",
+      "  foo:",
+      "    js:",
+      "      .......",
+      "  @endcode",
       "@param string $extension",
       "  Can either be 'core' or the machine name of the extension that registered",
       "  the libraries.",
@@ -4807,11 +4863,8 @@
     "description": [
       "Alters all the menu links discovered by the menu link plugin manager.",
       "",
-      "@param array $links",
-      "  The link definitions to be altered.",
-      "",
-      "@return array",
-      "  An array of discovered menu links. Each link has a key that is the machine",
+      "@param array &$links",
+      "  The link definitions to be altered. Each link has a key that is the machine",
       "  name, which must be unique. By default, use the route name as the",
       "  machine name. In cases where multiple links use the same route name, such",
       "  as two links to the same page in different menus, or two links using the",
@@ -6494,13 +6547,15 @@
       "    the standard preprocess functions to run. This can be used to give a",
       "    theme FULL control over how variables are set. For example, if a theme",
       "    wants total control over how certain variables in the page.html.twig are",
-      "    set, this can be set to true. Please keep in mind that when this is used",
-      "    by a theme, that theme becomes responsible for making sure necessary",
-      "    variables are set.",
+      "    set, this can be set to true. Keep in mind that when this is used by a",
+      "    theme, that theme becomes responsible for making sure necessary variables",
+      "    are set.",
       "  - type: (automatically derived) Where the theme hook is defined:",
       "    'module', 'theme_engine', or 'theme'.",
       "  - theme path: The directory path of the theme or module. If not defined,",
       "    it is determined during the registry process.",
+      "  - deprecated: The deprecated key marks a twig template as deprecated with",
+      "    a custom message.",
       "",
       "@see themeable",
       "@see hook_theme_registry_alter()"
@@ -6591,6 +6646,7 @@
       "",
       "In the following example, we provide an alternative template suggestion to",
       "node and taxonomy term templates based on the user being logged in.",
+      "",
       "@code",
       "function MYMODULE_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {",
       "  if (\\Drupal::currentUser()->isAuthenticated() && in_array($hook, array('node', 'taxonomy_term'))) {",
@@ -6600,8 +6656,9 @@
       "",
       "@endcode",
       "",
-      "@param array $suggestions",
-      "  An array of alternate, more specific names for template files.",
+      "@param array &$suggestions",
+      "  An array of alternate, more specific names for template files, passed by",
+      "  reference.",
       "@param array $variables",
       "  An array of variables passed to the theme hook. Note that this hook is",
       "  invoked before any variable preprocessing.",
@@ -6610,9 +6667,6 @@
       "  then $hook will be 'node', not 'node__article'. The specific hook called",
       "  (in this case 'node__article') is available in",
       "  $variables['theme_hook_original'].",
-      "",
-      "@return array",
-      "  An array of theme suggestions.",
       "",
       "@see hook_theme_suggestions_HOOK_alter()"
     ],
