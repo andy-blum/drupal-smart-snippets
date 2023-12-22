@@ -2,7 +2,7 @@
     "name": "drupal-smart-snippets",
     "displayName": "Drupal Smart Snippets",
     "description": "Context-aware snippets for Drupal development",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "publisher": "andrewdavidblum",
     "type": "module",
     "repository": {
