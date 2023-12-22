@@ -18,22 +18,21 @@ export async function formatServices(rawServices, version) {
 
     // Iterate over each service.
     for (const service of rawServices) {
-
       const [name, value] = service;
 
-      let { class: classNamespace } = value;
+      let { class: classNamespace } = value ?? {};
 
-      if (!classNamespace && value.parent) {
+      if (!classNamespace && value?.parent) {
         const parentService = rawServices.find(service => service[0] === value.parent);
         classNamespace = parentService[1].class;
       }
 
-      if (!classNamespace && value.alias) {
+      if (!classNamespace && value?.alias) {
         const aliasedService = rawServices.find(service => service[0] === value.alias);
         classNamespace = aliasedService[1].class;
       }
 
-      if (classNamespace && value.public !== false) {
+      if (classNamespace && value?.public !== false) {
         const classFile = classNamespace.split('\\').join('/');
 
         const deprecationWarning = value.deprecated
