@@ -45,9 +45,6 @@ export async function getRawElements(elementFiles) {
         const name = classElement ? classElement.name.name.toLowerCase(): undefined;
         const type = element.loc.source.includes('@RenderElement') ? 'RenderElement' : 'FormElement';
 
-        if (!(docs && name && type)) {
-          debugger;
-        }
         rawElements.push({name, type, docs});
       });
   }
