@@ -354,6 +354,46 @@
     ],
     "scope": "php"
   },
+  "@Element (\"contextuallinks\")": {
+    "prefix": [
+      "@FormElement (\"contextuallinks\")",
+      "@Element (\"contextuallinks\")",
+      "contextuallinks"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'contextuallinks',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a contextual_links element."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"contextuallinksplaceholder\")": {
+    "prefix": [
+      "@FormElement (\"contextuallinksplaceholder\")",
+      "@Element (\"contextuallinksplaceholder\")",
+      "contextuallinksplaceholder"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'contextuallinksplaceholder',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a contextual_links_placeholder element."
+    ],
+    "scope": "php"
+  },
   "@Element (\"date\")": {
     "prefix": [
       "@FormElement (\"date\")",
@@ -425,6 +465,70 @@
     ],
     "description": [
       "Provides a datetime element."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"deprecated\")": {
+    "prefix": [
+      "@FormElement (\"deprecated\")",
+      "@Element (\"deprecated\")",
+      "deprecated"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'deprecated',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides deprecated render element for testing."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"deprecatedextendsformelement\")": {
+    "prefix": [
+      "@FormElement (\"deprecatedextendsformelement\")",
+      "@Element (\"deprecatedextendsformelement\")",
+      "deprecatedextendsformelement"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'deprecatedextendsformelement',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides render element that extends deprecated FormElement for testing.",
+      "",
+      "@phpstan-ignore-next-line"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"deprecatedextendsrenderelement\")": {
+    "prefix": [
+      "@FormElement (\"deprecatedextendsrenderelement\")",
+      "@Element (\"deprecatedextendsrenderelement\")",
+      "deprecatedextendsrenderelement"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'deprecatedextendsrenderelement',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides render element that extends deprecated RenderElement for testing.",
+      "",
+      "@phpstan-ignore-next-line"
     ],
     "scope": "php"
   },
@@ -715,6 +819,26 @@
     ],
     "scope": "php"
   },
+  "@Element (\"fielduitable\")": {
+    "prefix": [
+      "@FormElement (\"fielduitable\")",
+      "@Element (\"fielduitable\")",
+      "fielduitable"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'fielduitable',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a field_ui table element."
+    ],
+    "scope": "php"
+  },
   "@Element (\"file\")": {
     "prefix": [
       "@FormElement (\"file\")",
@@ -971,6 +1095,26 @@
     ],
     "scope": "php"
   },
+  "@Element (\"languageconfiguration\")": {
+    "prefix": [
+      "@FormElement (\"languageconfiguration\")",
+      "@Element (\"languageconfiguration\")",
+      "languageconfiguration"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'languageconfiguration',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Defines an element for language configuration for a single field."
+    ],
+    "scope": "php"
+  },
   "@Element (\"languageselect\")": {
     "prefix": [
       "@FormElement (\"languageselect\")",
@@ -994,6 +1138,29 @@
       "language_element_info_alter() to provide a proper language selector.",
       "",
       "@see language_element_info_alter()"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"layoutbuilder\")": {
+    "prefix": [
+      "@FormElement (\"layoutbuilder\")",
+      "@Element (\"layoutbuilder\")",
+      "layoutbuilder"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'layoutbuilder',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Defines a render element for building the Layout Builder UI.",
+      "",
+      "@internal",
+      "  Plugin classes are internal."
     ],
     "scope": "php"
   },
@@ -1111,6 +1278,26 @@
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Textfield"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"managedfile\")": {
+    "prefix": [
+      "@FormElement (\"managedfile\")",
+      "@Element (\"managedfile\")",
+      "managedfile"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'managedfile',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides an AJAX/progress aware widget for uploading and saving a file."
     ],
     "scope": "php"
   },
@@ -1412,6 +1599,26 @@
     ],
     "scope": "php"
   },
+  "@Element (\"processedtext\")": {
+    "prefix": [
+      "@FormElement (\"processedtext\")",
+      "@Element (\"processedtext\")",
+      "processedtext"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'processedtext',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a processed text render element."
+    ],
+    "scope": "php"
+  },
   "@Element (\"radio\")": {
     "prefix": [
       "@FormElement (\"radio\")",
@@ -1519,6 +1726,26 @@
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Number"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"responsiveimage\")": {
+    "prefix": [
+      "@FormElement (\"responsiveimage\")",
+      "@Element (\"responsiveimage\")",
+      "responsiveimage"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'responsiveimage',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a responsive image element."
     ],
     "scope": "php"
   },
@@ -1687,6 +1914,26 @@
     "body": [
       "[",
       "  '#type' => 'statusreport',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Creates status report page element."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"statusreportpage\")": {
+    "prefix": [
+      "@FormElement (\"statusreportpage\")",
+      "@Element (\"statusreportpage\")",
+      "statusreportpage"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'statusreportpage',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -2095,6 +2342,50 @@
     ],
     "scope": "php"
   },
+  "@Element (\"textformat\")": {
+    "prefix": [
+      "@FormElement (\"textformat\")",
+      "@Element (\"textformat\")",
+      "textformat"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'textformat',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#base_type' => '',",
+      "  '#format' => '',",
+      "  '#allowed_formats' => '',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a text format render element.",
+      "",
+      "Properties:",
+      "- #base_type: The form element #type to use for the 'value' element.",
+      "  'textarea' by default.",
+      "- #format: (optional) The text format ID to preselect. If omitted, the",
+      "  default format for the current user will be used.",
+      "- #allowed_formats: (optional) An array of text format IDs that are available",
+      "  for this element. If omitted, all text formats that the current user has",
+      "  access to will be allowed.",
+      "",
+      "Usage Example:",
+      "@code",
+      "$form['body'] = [",
+      "  '#type' => 'text_format',",
+      "  '#title' => 'Body',",
+      "  '#format' => 'full_html',",
+      "  '#default_value' => 'The quick brown fox jumped over the lazy dog.',",
+      "];",
+      "@endcode",
+      "",
+      "@see \\Drupal\\Core\\Render\\Element\\Textarea"
+    ],
+    "scope": "php"
+  },
   "@Element (\"token\")": {
     "prefix": [
       "@FormElement (\"token\")",
@@ -2117,6 +2408,48 @@
       "element is automatically added to each Drupal form by an implementation of",
       "\\Drupal\\Core\\Form\\FormBuilderInterface::prepareForm() so you don't generally",
       "have to add one yourself."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"toolbar\")": {
+    "prefix": [
+      "@FormElement (\"toolbar\")",
+      "@Element (\"toolbar\")",
+      "toolbar"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'toolbar',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a render element for the default Drupal toolbar."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"toolbaritem\")": {
+    "prefix": [
+      "@FormElement (\"toolbaritem\")",
+      "@Element (\"toolbaritem\")",
+      "toolbaritem"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'toolbaritem',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a toolbar item that is wrapped in markup for common styling.",
+      "",
+      "The 'tray' property contains a renderable array."
     ],
     "scope": "php"
   },
@@ -2249,6 +2582,26 @@
       "  '#title' => $this->t('Publisher'),",
       "];",
       "@endcode"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"view\")": {
+    "prefix": [
+      "@FormElement (\"view\")",
+      "@Element (\"view\")",
+      "view"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'view',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a render element to display a view."
     ],
     "scope": "php"
   },
