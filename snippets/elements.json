@@ -1,13 +1,17 @@
 {
   "@Element (\"actions\")": {
     "prefix": [
-      "@RenderElement (\"actions\")",
+      "@FormElement (\"actions\")",
       "@Element (\"actions\")",
       "actions"
     ],
     "body": [
       "[",
       "  '#type' => 'actions',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -19,26 +23,28 @@
       "",
       "Usage example:",
       "@code",
-      "$form['actions'] = array('#type' => 'actions');",
-      "$form['actions']['submit'] = array(",
+      "$form['actions'] = ['#type' => 'actions'];",
+      "$form['actions']['submit'] = [",
       "  '#type' => 'submit',",
       "  '#value' => $this->t('Save'),",
-      ");",
-      "@endcode",
-      "",
-      "@RenderElement(\"actions\")"
+      "];",
+      "@endcode"
     ],
     "scope": "php"
   },
   "@Element (\"ajax\")": {
     "prefix": [
-      "@RenderElement (\"ajax\")",
+      "@FormElement (\"ajax\")",
       "@Element (\"ajax\")",
       "ajax"
     ],
     "body": [
       "[",
       "  '#type' => 'ajax',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -48,12 +54,48 @@
       "",
       "@ingroup ajax",
       "",
-      "@RenderElement(\"ajax\")",
-      "",
       "@deprecated in drupal:10.1.0 and is removed from drupal:11.0.0. Return an",
       "  \\Drupal\\Core\\Ajax\\AjaxResponse instead.",
       "",
       "@see https://www.drupal.org/node/3068104"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"breaklocklink\")": {
+    "prefix": [
+      "@FormElement (\"breaklocklink\")",
+      "@Element (\"breaklocklink\")",
+      "breaklocklink"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'breaklocklink',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#label' => '',",
+      "  '#lock' => '',",
+      "  '#url' => '',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a link to break a tempstore lock.",
+      "",
+      "Properties:",
+      "- #label: The label of the object that is locked.",
+      "- #lock: \\Drupal\\Core\\TempStore\\Lock object.",
+      "- #url: \\Drupal\\Core\\Url object pointing to the break lock form.",
+      "",
+      "Usage example:",
+      "@code",
+      "$build['examples_lock'] = [",
+      "  '#type' => 'break_lock_link',",
+      "  '#label' => $this->t('example item'),",
+      "  '#lock' => $tempstore->getMetadata('example_key'),",
+      "  '#url' => \\Drupal\\Core\\Url::fromRoute('examples.break_lock_form'),",
+      "];",
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -89,15 +131,13 @@
       "",
       "Usage Example:",
       "@code",
-      "$form['actions']['preview'] = array(",
+      "$form['actions']['preview'] = [",
       "  '#type' => 'button',",
       "  '#value' => $this->t('Preview'),",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Submit",
-      "",
-      "@FormElement(\"button\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Submit"
     ],
     "scope": "php"
   },
@@ -125,15 +165,13 @@
       "",
       "Usage example:",
       "@code",
-      "$form['copy'] = array(",
+      "$form['copy'] = [",
       "  '#type' => 'checkbox',",
       "  '#title' => $this->t('Send me a copy'),",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Checkboxes",
-      "",
-      "@FormElement(\"checkbox\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Checkboxes"
     ],
     "scope": "php"
   },
@@ -164,12 +202,12 @@
       "",
       "Usage example:",
       "@code",
-      "$form['favorites']['colors'] = array(",
+      "$form['favorites']['colors'] = [",
       "  '#type' => 'checkboxes',",
-      "  '#options' => array('blue' => $this->t('Blue'), 'red' => $this->t('Red')),",
+      "  '#options' => ['blue' => $this->t('Blue'), 'red' => $this->t('Red')],",
       "  '#title' => $this->t('Which colors do you like?'),",
       "  ...",
-      ");",
+      "];",
       "@endcode",
       "",
       "Element properties may be set on single option items as follows.",
@@ -179,9 +217,7 @@
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Radios",
-      "@see \\Drupal\\Core\\Render\\Element\\Checkbox",
-      "",
-      "@FormElement(\"checkboxes\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Checkbox"
     ],
     "scope": "php"
   },
@@ -209,26 +245,75 @@
       "",
       "Example usage:",
       "@code",
-      "$form['color'] = array(",
+      "$form['color'] = [",
       "  '#type' => 'color',",
       "  '#title' => $this->t('Color'),",
       "  '#default_value' => '#ffffff',",
-      ");",
+      "];",
+      "@endcode"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"componentelement\")": {
+    "prefix": [
+      "@FormElement (\"componentelement\")",
+      "@Element (\"componentelement\")",
+      "componentelement"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'componentelement',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#component' => '',",
+      "  '#props' => '',",
+      "  '#slots' => '',",
+      "  '#propsAlter' => '',",
+      "  '#slotsAlter' => '',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a Single Directory Component render element.",
+      "",
+      "Properties:",
+      "- #component: The machine name of the component.",
+      "- #props: an associative array where the keys are the names of the",
+      "  component props, and the values are the prop values.",
+      "- #slots: an associative array where the keys are the slot names, and the",
+      "  values are the slot values. Expected slot values are renderable arrays.",
+      "- #propsAlter: an array of trusted callbacks. These are used to prepare the",
+      "  context. Typical uses include replacing tokens in props.",
+      "- #slotsAlter: an array of trusted callbacks to alter the render array in",
+      "  #slots.",
+      "",
+      "Usage Example:",
+      "",
+      "@code",
+      "$build['component'] = [",
+      "  '#type' => 'component',",
+      "  '#component' => 'olivero:button',",
+      "];",
       "@endcode",
       "",
-      "@FormElement(\"color\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Textarea"
     ],
     "scope": "php"
   },
   "@Element (\"container\")": {
     "prefix": [
-      "@RenderElement (\"container\")",
+      "@FormElement (\"container\")",
       "@Element (\"container\")",
       "container"
     ],
     "body": [
       "[",
       "  '#type' => 'container',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#optional' => '',",
       "]${5|\\,,;|}"
     ],
@@ -265,9 +350,7 @@
       "  '#type' => 'textfield',",
       "  '#title' => $this->t('Dietary Restrictions'),",
       "];",
-      "@endcode",
-      "",
-      "@RenderElement(\"container\")"
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -301,21 +384,63 @@
       "  '#title' => $this->t('Content expiration'),",
       "  '#default_value' => '2020-02-05',",
       "];",
-      "@endcode",
-      "",
-      "@FormElement(\"date\")"
+      "@endcode"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"datelist\")": {
+    "prefix": [
+      "@FormElement (\"datelist\")",
+      "@Element (\"datelist\")",
+      "datelist"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'datelist',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a datelist element."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"datetime\")": {
+    "prefix": [
+      "@FormElement (\"datetime\")",
+      "@Element (\"datetime\")",
+      "datetime"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'datetime',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a datetime element."
     ],
     "scope": "php"
   },
   "@Element (\"details\")": {
     "prefix": [
-      "@RenderElement (\"details\")",
+      "@FormElement (\"details\")",
       "@Element (\"details\")",
       "details"
     ],
     "body": [
       "[",
       "  '#type' => 'details',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#open' => '',",
       "  '#summary_attributes' => '',",
       "]${5|\\,,;|}"
@@ -336,33 +461,35 @@
       "",
       "Usage example:",
       "@code",
-      "$form['author'] = array(",
+      "$form['author'] = [",
       "  '#type' => 'details',",
       "  '#title' => $this->t('Author'),",
-      ");",
+      "];",
       "",
-      "$form['author']['name'] = array(",
+      "$form['author']['name'] = [",
       "  '#type' => 'textfield',",
       "  '#title' => $this->t('Name'),",
-      ");",
+      "];",
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Fieldset",
-      "@see \\Drupal]Core\\Render\\Element\\VerticalTabs",
-      "",
-      "@RenderElement(\"details\")"
+      "@see \\Drupal]Core\\Render\\Element\\VerticalTabs"
     ],
     "scope": "php"
   },
   "@Element (\"dropbutton\")": {
     "prefix": [
-      "@RenderElement (\"dropbutton\")",
+      "@FormElement (\"dropbutton\")",
       "@Element (\"dropbutton\")",
       "dropbutton"
     ],
     "body": [
       "[",
       "  '#type' => 'dropbutton',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#links' => '',",
       "  '#dropbutton_type' => '',",
       "]${5|\\,,;|}"
@@ -387,25 +514,23 @@
       "",
       "Usage Example:",
       "@code",
-      "$form['actions']['extra_actions'] = array(",
+      "$form['actions']['extra_actions'] = [",
       "  '#type' => 'dropbutton',",
       "  '#dropbutton_type' => 'small',",
-      "  '#links' => array(",
-      "    'simple_form' => array(",
+      "  '#links' => [",
+      "    'simple_form' => [",
       "      'title' => $this->t('Simple Form'),",
       "      'url' => Url::fromRoute('fapi_example.simple_form'),",
-      "    ),",
-      "    'demo' => array(",
+      "    ],",
+      "    'demo' => [",
       "      'title' => $this->t('Build Demo'),",
       "      'url' => Url::fromRoute('fapi_example.build_demo'),",
-      "    ),",
-      "  ),",
-      ");",
+      "    ],",
+      "  ],",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Operations",
-      "",
-      "@RenderElement(\"dropbutton\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Operations"
     ],
     "scope": "php"
   },
@@ -444,21 +569,100 @@
       "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Textfield",
+      "@see \\Drupal\\Core\\Render\\Element\\Textfield"
+    ],
+    "scope": "php"
+  },
+  "@Element (\"entityautocomplete\")": {
+    "prefix": [
+      "@FormElement (\"entityautocomplete\")",
+      "@Element (\"entityautocomplete\")",
+      "entityautocomplete"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'entityautocomplete',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#target_type' => '',",
+      "  '#tags' => '',",
+      "  '#default_value' => '',",
+      "  '#selection_handler' => '',",
+      "  '#selection_settings' => '',",
+      "  '#autocreate' => '',",
+      "  '#process_default_value' => '',",
+      "  '#validate_reference' => '',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides an entity autocomplete form element.",
       "",
-      "@FormElement(\"email\")"
+      "The autocomplete form element allows users to select one or multiple",
+      "entities, which can come from all or specific bundles of an entity type.",
+      "",
+      "Properties:",
+      "- #target_type: (required) The ID of the target entity type.",
+      "- #tags: (optional) TRUE if the element allows multiple selection. Defaults",
+      "  to FALSE.",
+      "- #default_value: (optional) The default entity or an array of default",
+      "  entities, depending on the value of #tags.",
+      "- #selection_handler: (optional) The plugin ID of the entity reference",
+      "  selection handler (a plugin of type EntityReferenceSelection). The default",
+      "  value is the lowest-weighted plugin that is compatible with #target_type.",
+      "- #selection_settings: (optional) An array of settings for the selection",
+      "  handler. Settings for the default selection handler",
+      "  \\Drupal\\Core\\Entity\\Plugin\\EntityReferenceSelection\\DefaultSelection are:",
+      "  - target_bundles: Array of bundles to allow (omit to allow all bundles).",
+      "  - sort: Array with 'field' and 'direction' keys, determining how results",
+      "    will be sorted. Defaults to unsorted.",
+      "- #autocreate: (optional) Array of settings used to auto-create entities",
+      "  that do not exist (omit to not auto-create entities). Elements:",
+      "  - bundle: (required) Bundle to use for auto-created entities.",
+      "  - uid: User ID to use as the author of auto-created entities. Defaults to",
+      "    the current user.",
+      "- #process_default_value: (optional) Set to FALSE if the #default_value",
+      "  property is processed and access checked elsewhere (such as by a Field API",
+      "  widget). Defaults to TRUE.",
+      "- #validate_reference: (optional) Set to FALSE if validation of the selected",
+      "  entities is performed elsewhere. Defaults to TRUE.",
+      "",
+      "Usage example:",
+      "@code",
+      "$form['my_element'] = [",
+      " '#type' => 'entity_autocomplete',",
+      " '#target_type' => 'node',",
+      " '#tags' => TRUE,",
+      " '#default_value' => $node,",
+      " '#selection_handler' => 'default',",
+      " '#selection_settings' => [",
+      "   'target_bundles' => ['article', 'page'],",
+      "  ],",
+      " '#autocreate' => [",
+      "   'bundle' => 'article',",
+      "   'uid' => ,",
+      "  ],",
+      "];",
+      "@endcode",
+      "",
+      "@see \\Drupal\\Core\\Entity\\Plugin\\EntityReferenceSelection\\DefaultSelection"
     ],
     "scope": "php"
   },
   "@Element (\"fieldgroup\")": {
     "prefix": [
-      "@RenderElement (\"fieldgroup\")",
+      "@FormElement (\"fieldgroup\")",
       "@Element (\"fieldgroup\")",
       "fieldgroup"
     ],
     "body": [
       "[",
       "  '#type' => 'fieldgroup',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -471,21 +675,23 @@
       "@see \\Drupal\\Core\\Render\\Element\\Fieldset for documentation and usage.",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Fieldset",
-      "@see \\Drupal\\Core\\Render\\Element\\Details",
-      "",
-      "@RenderElement(\"fieldgroup\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Details"
     ],
     "scope": "php"
   },
   "@Element (\"fieldset\")": {
     "prefix": [
-      "@RenderElement (\"fieldset\")",
+      "@FormElement (\"fieldset\")",
       "@Element (\"fieldset\")",
       "fieldset"
     ],
     "body": [
       "[",
       "  '#type' => 'fieldset',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -493,21 +699,19 @@
       "",
       "Usage example:",
       "@code",
-      "$form['author'] = array(",
+      "$form['author'] = [",
       "  '#type' => 'fieldset',",
       "  '#title' => $this->t('Author'),",
-      ");",
+      "];",
       "",
-      "$form['author']['name'] = array(",
+      "$form['author']['name'] = [",
       "  '#type' => 'textfield',",
       "  '#title' => $this->t('Name'),",
-      ");",
+      "];",
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Fieldgroup",
-      "@see \\Drupal\\Core\\Render\\Element\\Details",
-      "",
-      "@RenderElement(\"fieldset\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Details"
     ],
     "scope": "php"
   },
@@ -538,27 +742,27 @@
       "",
       "The value of this form element will always be an array of",
       "\\Symfony\\Component\\HttpFoundation\\File\\UploadedFile objects, regardless of",
-      "whether #multiple is TRUE or FALSE",
-      "",
-      "@FormElement(\"file\")"
+      "whether #multiple is TRUE or FALSE"
     ],
     "scope": "php"
   },
   "@Element (\"form\")": {
     "prefix": [
-      "@RenderElement (\"form\")",
+      "@FormElement (\"form\")",
       "@Element (\"form\")",
       "form"
     ],
     "body": [
       "[",
       "  '#type' => 'form',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
-      "Provides a render element for a form.",
-      "",
-      "@RenderElement(\"form\")"
+      "Provides a render element for a form."
     ],
     "scope": "php"
   },
@@ -592,42 +796,46 @@
       "",
       "Usage example:",
       "@code",
-      "$form['entity_id'] = array('#type' => 'hidden', '#value' => $entity_id);",
+      "$form['entity_id'] = ['#type' => 'hidden', '#value' => $entity_id];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Value",
-      "",
-      "@FormElement(\"hidden\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Value"
     ],
     "scope": "php"
   },
   "@Element (\"html\")": {
     "prefix": [
-      "@RenderElement (\"html\")",
+      "@FormElement (\"html\")",
       "@Element (\"html\")",
       "html"
     ],
     "body": [
       "[",
       "  '#type' => 'html',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
-      "Provides a render element for an entire HTML page:  plus its children.",
-      "",
-      "@RenderElement(\"html\")"
+      "Provides a render element for an entire HTML page:  plus its children."
     ],
     "scope": "php"
   },
   "@Element (\"htmltag\")": {
     "prefix": [
-      "@RenderElement (\"htmltag\")",
+      "@FormElement (\"htmltag\")",
       "@Element (\"htmltag\")",
       "htmltag"
     ],
     "body": [
       "[",
       "  '#type' => 'htmltag',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#tag' => '',",
       "  '#attributes' => '',",
       "  '#value' => '',",
@@ -653,9 +861,7 @@
       "  '#tag' => 'p',",
       "  '#value' => $this->t('Hello World'),",
       "];",
-      "@endcode",
-      "",
-      "@RenderElement(\"html_tag\")"
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -675,21 +881,23 @@
       "]${5|\\,,;|}"
     ],
     "description": [
-      "Provides a form element for a submit button with an image.",
-      "",
-      "@FormElement(\"image_button\")"
+      "Provides a form element for a submit button with an image."
     ],
     "scope": "php"
   },
   "@Element (\"inlinetemplate\")": {
     "prefix": [
-      "@RenderElement (\"inlinetemplate\")",
+      "@FormElement (\"inlinetemplate\")",
       "@Element (\"inlinetemplate\")",
       "inlinetemplate"
     ],
     "body": [
       "[",
       "  '#type' => 'inlinetemplate',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#template' => '',",
       "  '#context' => '',",
       "]${5|\\,,;|}"
@@ -711,9 +919,7 @@
       "    'name' => $name,",
       "  ]",
       "];",
-      "@endcode",
-      "",
-      "@RenderElement(\"inline_template\")"
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -737,21 +943,23 @@
       "",
       "Note: since this is a read-only field, setting the #required property will do",
       "nothing except theme the form element to look as if it were actually required",
-      "(i.e. by placing a red star next to the #title).",
-      "",
-      "@FormElement(\"item\")"
+      "(i.e. by placing a red star next to the #title)."
     ],
     "scope": "php"
   },
   "@Element (\"label\")": {
     "prefix": [
-      "@RenderElement (\"label\")",
+      "@FormElement (\"label\")",
       "@Element (\"label\")",
       "label"
     ],
     "body": [
       "[",
       "  '#type' => 'label',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -759,9 +967,7 @@
       "",
       "Labels are generated automatically from element properties during processing",
       "of most form elements. This element is used internally by the form system",
-      "to render labels for form elements.",
-      "",
-      "@RenderElement(\"label\")"
+      "to render labels for form elements."
     ],
     "scope": "php"
   },
@@ -787,21 +993,23 @@
       "the default language. It is then extended by Language module via",
       "language_element_info_alter() to provide a proper language selector.",
       "",
-      "@see language_element_info_alter()",
-      "",
-      "@FormElement(\"language_select\")"
+      "@see language_element_info_alter()"
     ],
     "scope": "php"
   },
   "@Element (\"link\")": {
     "prefix": [
-      "@RenderElement (\"link\")",
+      "@FormElement (\"link\")",
       "@Element (\"link\")",
       "link"
     ],
     "body": [
       "[",
       "  '#type' => 'link',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#url' => '',",
       "]${5|\\,,;|}"
     ],
@@ -820,9 +1028,7 @@
       "  '#type' => 'link',",
       "  '#url' => \\Drupal\\Core\\Url::fromRoute('examples.description')",
       "];",
-      "@endcode",
-      "",
-      "@RenderElement(\"link\")"
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -870,7 +1076,7 @@
       "    stored in form state so AJAX forms can be reliably validated.",
       "  - source: (optional) The #array_parents of the form element containing the",
       "    human-readable name (i.e., as contained in the $form structure) to use as",
-      "    source for the machine name. Defaults to array('label').",
+      "    source for the machine name. Defaults to ['label'].",
       "  - label: (optional) Text to display as label for the machine name value",
       "    after the human-readable name form element. Defaults to t('Machine name').",
       "  - replace_pattern: (optional) A regular expression (without delimiters)",
@@ -892,33 +1098,35 @@
       "",
       "Usage example:",
       "@code",
-      "$form['id'] = array(",
+      "$form['id'] = [",
       "  '#type' => 'machine_name',",
       "  '#default_value' => $this->entity->id(),",
       "  '#disabled' => !$this->entity->isNew(),",
       "  '#maxlength' => 64,",
       "  '#description' => $this->t('A unique name for this item. It must only contain lowercase letters, numbers, and underscores.'),",
-      "  '#machine_name' => array(",
-      "    'exists' => array($this, 'exists'),",
-      "  ),",
-      ");",
+      "  '#machine_name' => [",
+      "    'exists' => [$this, 'exists'],",
+      "  ],",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Textfield",
-      "",
-      "@FormElement(\"machine_name\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Textfield"
     ],
     "scope": "php"
   },
   "@Element (\"morelink\")": {
     "prefix": [
-      "@RenderElement (\"morelink\")",
+      "@FormElement (\"morelink\")",
       "@Element (\"morelink\")",
       "morelink"
     ],
     "body": [
       "[",
       "  '#type' => 'morelink',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -935,9 +1143,7 @@
       "  '#type' => 'more_link',",
       "  '#url' => Url::fromRoute('examples.more_examples')",
       "]",
-      "@endcode",
-      "",
-      "@RenderElement(\"more_link\")"
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -973,28 +1179,30 @@
       "",
       "Usage example:",
       "@code",
-      "$form['quantity'] = array(",
+      "$form['quantity'] = [",
       "  '#type' => 'number',",
       "  '#title' => $this->t('Quantity'),",
-      ");",
+      "];",
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Range",
-      "@see \\Drupal\\Core\\Render\\Element\\Textfield",
-      "",
-      "@FormElement(\"number\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Textfield"
     ],
     "scope": "php"
   },
   "@Element (\"operations\")": {
     "prefix": [
-      "@RenderElement (\"operations\")",
+      "@FormElement (\"operations\")",
       "@Element (\"operations\")",
       "operations"
     ],
     "body": [
       "[",
       "  '#type' => 'operations',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1004,42 +1212,48 @@
       "difference is that it offers themes the possibility to render it differently",
       "through a theme suggestion.",
       "",
-      "@see \\Drupal|Core\\Render\\Element\\DropButton",
-      "",
-      "@RenderElement(\"operations\")"
+      "@see \\Drupal|Core\\Render\\Element\\DropButton"
     ],
     "scope": "php"
   },
   "@Element (\"page\")": {
     "prefix": [
-      "@RenderElement (\"page\")",
+      "@FormElement (\"page\")",
       "@Element (\"page\")",
       "page"
     ],
     "body": [
       "[",
       "  '#type' => 'page',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for the content of an HTML page.",
       "",
       "This represents the \"main part\" of the HTML page's body; see html.html.twig.",
-      "",
-      "@RenderElement(\"page\")"
+      "  */"
     ],
     "scope": "php"
   },
   "@Element (\"pager\")": {
     "prefix": [
-      "@RenderElement (\"pager\")",
+      "@FormElement (\"pager\")",
       "@Element (\"pager\")",
       "pager"
     ],
     "body": [
       "[",
       "  '#type' => 'pager',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#element' => '',",
+      "  '#pagination_heading_level' => '',",
       "  '#parameters' => '',",
       "  '#quantity' => '',",
       "  '#tags' => '',",
@@ -1057,6 +1271,7 @@
       "Properties:",
       "- #element: (optional, int) The pager ID, to distinguish between multiple",
       "  pagers on the same page (defaults to 0).",
+      "- #pagination_heading_level: (optional) A heading level for the pager.",
       "- #parameters: (optional) An associative array of query string parameters to",
       "  append to the pager.",
       "- #quantity: The maximum number of numbered page links to create (defaults",
@@ -1070,29 +1285,29 @@
       "$build['pager'] = [",
       "  '#type' => 'pager',",
       "];",
-      "@endcode",
-      "",
-      "@RenderElement(\"pager\")"
+      "@endcode"
     ],
     "scope": "php"
   },
   "@Element (\"pagetitle\")": {
     "prefix": [
-      "@RenderElement (\"pagetitle\")",
+      "@FormElement (\"pagetitle\")",
       "@Element (\"pagetitle\")",
       "pagetitle"
     ],
     "body": [
       "[",
       "  '#type' => 'pagetitle',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for the title of an HTML page.",
       "",
-      "This represents the title of the HTML page's body.",
-      "",
-      "@RenderElement(\"page_title\")"
+      "This represents the title of the HTML page's body."
     ],
     "scope": "php"
   },
@@ -1122,18 +1337,16 @@
       "",
       "Usage example:",
       "@code",
-      "$form['pass'] = array(",
+      "$form['pass'] = [",
       "  '#type' => 'password',",
       "  '#title' => $this->t('Password'),",
       "  '#size' => 25,",
       "  '#pattern' => '[01]+',",
-      ");",
+      "];",
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\PasswordConfirm",
-      "@see \\Drupal\\Core\\Render\\Element\\Textfield",
-      "",
-      "@FormElement(\"password\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Textfield"
     ],
     "scope": "php"
   },
@@ -1164,16 +1377,14 @@
       "",
       "Usage example:",
       "@code",
-      "$form['pass'] = array(",
+      "$form['pass'] = [",
       "  '#type' => 'password_confirm',",
       "  '#title' => $this->t('Password'),",
       "  '#size' => 25,",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Password",
-      "",
-      "@FormElement(\"password_confirm\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Password"
     ],
     "scope": "php"
   },
@@ -1197,9 +1408,7 @@
       "",
       "Provides a form element to enter a path which can be optionally validated and",
       "stored as either a \\Drupal\\Core\\Url value object or an array containing a",
-      "route name and route parameters pair.",
-      "",
-      "@FormElement(\"path\")"
+      "route name and route parameters pair."
     ],
     "scope": "php"
   },
@@ -1225,9 +1434,7 @@
       "element. Refer to \\Drupal\\Core\\Render\\Element\\Radios for more documentation.",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Radios",
-      "@see \\Drupal\\Core\\Render\\Element\\Checkbox",
-      "",
-      "@FormElement(\"radio\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Checkbox"
     ],
     "scope": "php"
   },
@@ -1256,12 +1463,12 @@
       "",
       "Usage example:",
       "@code",
-      "$form['settings']['active'] = array(",
+      "$form['settings']['active'] = [",
       "  '#type' => 'radios',",
       "  '#title' => $this->t('Poll status'),",
       "  '#default_value' => 1,",
-      "  '#options' => array(0 => $this->t('Closed'), 1 => $this->t('Active')),",
-      ");",
+      "  '#options' => [0 => $this->t('Closed'), 1 => $this->t('Active')],",
+      "];",
       "@endcode",
       "",
       "Element properties may be set on single option items as follows.",
@@ -1272,9 +1479,7 @@
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Checkboxes",
       "@see \\Drupal\\Core\\Render\\Element\\Radio",
-      "@see \\Drupal\\Core\\Render\\Element\\Select",
-      "",
-      "@FormElement(\"radios\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Select"
     ],
     "scope": "php"
   },
@@ -1307,15 +1512,13 @@
       "",
       "Usage example:",
       "@code",
-      "$form['quantity'] = array(",
+      "$form['quantity'] = [",
       "  '#type' => 'range',",
       "  '#title' => $this->t('Quantity'),",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Number",
-      "",
-      "@FormElement(\"range\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Number"
     ],
     "scope": "php"
   },
@@ -1339,15 +1542,13 @@
       "",
       "Usage example:",
       "@code",
-      "$form['search'] = array(",
+      "$form['search'] = [",
       "  '#type' => 'search',",
       "  '#title' => $this->t('Search'),",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Textfield",
-      "",
-      "@FormElement(\"search\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Textfield"
     ],
     "scope": "php"
   },
@@ -1444,21 +1645,23 @@
       "    '3' => $this->t('Three'),",
       "  ],",
       "];",
-      "@endcode",
-      "",
-      "@FormElement(\"select\")"
+      "@endcode"
     ],
     "scope": "php"
   },
   "@Element (\"statusmessages\")": {
     "prefix": [
-      "@RenderElement (\"statusmessages\")",
+      "@FormElement (\"statusmessages\")",
       "@Element (\"statusmessages\")",
       "statusmessages"
     ],
     "body": [
       "[",
       "  '#type' => 'statusmessages',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1471,27 +1674,27 @@
       "$build['status_messages'] = [",
       "  '#type' => 'status_messages',",
       "];",
-      "@endcode",
-      "",
-      "@RenderElement(\"status_messages\")"
+      "@endcode"
     ],
     "scope": "php"
   },
   "@Element (\"statusreport\")": {
     "prefix": [
-      "@RenderElement (\"statusreport\")",
+      "@FormElement (\"statusreport\")",
       "@Element (\"statusreport\")",
       "statusreport"
     ],
     "body": [
       "[",
       "  '#type' => 'statusreport',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
-      "Creates status report page element.",
-      "",
-      "@RenderElement(\"status_report\")"
+      "Creates status report page element."
     ],
     "scope": "php"
   },
@@ -1526,27 +1729,29 @@
       "",
       "Usage Example:",
       "@code",
-      "$form['actions']['submit'] = array(",
+      "$form['actions']['submit'] = [",
       "  '#type' => 'submit',",
       "  '#value' => $this->t('Save'),",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Button",
-      "",
-      "@FormElement(\"submit\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Button"
     ],
     "scope": "php"
   },
   "@Element (\"systemcompactlink\")": {
     "prefix": [
-      "@RenderElement (\"systemcompactlink\")",
+      "@FormElement (\"systemcompactlink\")",
       "@Element (\"systemcompactlink\")",
       "systemcompactlink"
     ],
     "body": [
       "[",
       "  '#type' => 'systemcompactlink',",
+      "  '#title' => ${1|t(''),$this->t('')|},",
+      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
+      "  '#description' => ${3|t(''),$this->t('')|},",
+      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1557,9 +1762,7 @@
       "$form['system_compact_link'] = [",
       "  '#type' => 'system_compact_link',",
       "];",
-      "@endcode",
-      "",
-      "@RenderElement(\"system_compact_link\")"
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -1581,12 +1784,14 @@
       "  '#empty' => '',",
       "  '#responsive' => '',",
       "  '#sticky' => '',",
+      "  '#footer' => '',",
+      "  '#caption' => '',",
       "]${5|\\,,;|}"
     ],
     "description": [
       "Provides a render element for a table.",
       "",
-      "Note: Although this extends FormElement, it can be used outside the",
+      "Note: Although this extends FormElementBase, it can be used outside the",
       "context of a form.",
       "",
       "Properties:",
@@ -1599,40 +1804,90 @@
       "- #empty: Text to display when no rows are present.",
       "- #responsive: Indicates whether to add the drupal.tableresponsive library",
       "  providing responsive tables.  Defaults to TRUE.",
-      "- #sticky: Indicates whether to add the drupal.tableheader library that makes",
-      "  table headers always visible at the top of the page. Defaults to FALSE.",
+      "- #sticky: Indicates whether to make the table headers sticky at",
+      "  the top of the page. Defaults to FALSE.",
+      "- #footer: Table footer rows, in the same format as the #rows property.",
+      "- #caption: A localized string for the  tag.",
       "",
-      "Usage example:",
+      "Usage example 1: A simple form with an additional information table which",
+      "doesn't include any other form field.",
       "@code",
-      "$form['contacts'] = array(",
+      "// Table header.",
+      "$header = [",
+      "  'name' => $this->t('Name'),",
+      "  'age' => $this->t('Age'),",
+      "  'email' => $this->t('Email'),",
+      "];",
+      "",
+      "// Default data rows (these can be fetched from the database or any other",
+      "// source).",
+      "$default_rows = [",
+      "  ['name' => 'John', 'age' => 28, 'email' => 'john@example.com'],",
+      "  ['name' => 'Jane', 'age' => 25, 'email' => 'jane@example.com'],",
+      "];",
+      "",
+      "// Prepare rows for the table element. We just display the information with",
+      "// #markup.",
+      "$rows = [];",
+      "foreach ($default_rows as $default_row) {",
+      "  $rows[] = [",
+      "    'name' => ['data' => ['#markup' => $default_row['name']]],",
+      "    'age' => ['data' => ['#markup' => $default_row['age']]],",
+      "    'email' => ['data' => ['#markup' => $default_row['email']]],",
+      "  ];",
+      "}",
+      "",
+      "// Now set the table element.",
+      "$form['information'] = [",
+      "  '#type' => 'table',",
+      "  '#header' => $header,",
+      "  '#rows' => $rows,  // Add the prepared rows here.",
+      "  '#empty' => $this->t('No entries available.'),",
+      "];",
+      "@endcode",
+      "",
+      "Usage example 2: A table of form fields without the #rows property defined.",
+      "@code",
+      "// Set the contact element as a table render element with no #rows property.",
+      "// Next add five rows as sub-elements (or children) that will populate",
+      "// automatically the #rows property in preRenderTable().",
+      "$form['contacts'] = [",
       "  '#type' => 'table',",
       "  '#caption' => $this->t('Sample Table'),",
-      "  '#header' => array($this->t('Name'), $this->t('Phone')),",
-      ");",
+      "  '#header' => [$this->t('Name'), $this->t('Phone')],",
+      "  '#rows' => [],",
+      "  '#empty' => $this->t('No entries available.'),",
+      "];",
       "",
+      "// Add arbitrarily four rows to the table. Each row contains two fields",
+      "// (name and phone). The preRenderTable() method will add each sub-element",
+      "// (or children) of the table element to the #rows property.",
       "for ($i = 1; $i <= 4; $i++) {",
-      "  $form['contacts'][$i]['#attributes'] = array('class' => array('foo', 'baz'));",
-      "  $form['contacts'][$i]['name'] = array(",
+      "   // Add foo and baz classes for each row.",
+      "  $form['contacts'][$i]['#attributes'] = ['class' => ['foo', 'baz']];",
+      "",
+      "  // Set the first column.",
+      "  $form['contacts'][$i]['name'] = [",
       "    '#type' => 'textfield',",
       "    '#title' => $this->t('Name'),",
       "    '#title_display' => 'invisible',",
-      "  );",
+      "  ];",
       "",
-      "  $form['contacts'][$i]['phone'] = array(",
+      "   // Set the second column.",
+      "  $form['contacts'][$i]['phone'] = [",
       "    '#type' => 'tel',",
       "    '#title' => $this->t('Phone'),",
       "    '#title_display' => 'invisible',",
-      "  );",
+      "  ];",
       "}",
       "",
-      "$form['contacts'][]['colspan_example'] = array(",
+      "// Add the fifth row as a colspan of two columns.",
+      "$form['contacts'][]['colspan_example'] = [",
       "  '#plain_text' => 'Colspan Example',",
-      "  '#wrapper_attributes' => array('colspan' => 2, 'class' => array('foo', 'bar')),",
-      ");",
+      "  '#wrapper_attributes' => ['colspan' => 2, 'class' => ['foo', 'bar']],",
+      "];",
       "@endcode",
-      "@see \\Drupal\\Core\\Render\\Element\\Tableselect",
-      "",
-      "@FormElement(\"table\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Tableselect"
     ],
     "scope": "php"
   },
@@ -1687,19 +1942,17 @@
       "  3 => ['color' => 'Blue', 'shape' => 'Hexagon', '#disabled' => TRUE],",
       "];",
       "",
-      "$form['table'] = array(",
+      "$form['table'] = [",
       "  '#type' => 'tableselect',",
       "  '#header' => $header,",
       "  '#options' => $options,",
       "  '#empty' => $this->t('No shapes found'),",
-      ");",
+      "];",
       "@endcode",
       "",
       "See https://www.drupal.org/node/945102 for a full explanation.",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Table",
-      "",
-      "@FormElement(\"tableselect\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Table"
     ],
     "scope": "php"
   },
@@ -1732,16 +1985,14 @@
       "",
       "Usage example:",
       "@code",
-      "$form['phone'] = array(",
+      "$form['phone'] = [",
       "  '#type' => 'tel',",
       "  '#title' => $this->t('Phone'),",
       "  '#pattern' => '[^\\d]*',",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element",
-      "",
-      "@FormElement(\"tel\")"
+      "@see \\Drupal\\Core\\Render\\Element"
     ],
     "scope": "php"
   },
@@ -1776,16 +2027,14 @@
       "",
       "Usage example:",
       "@code",
-      "$form['text'] = array(",
+      "$form['text'] = [",
       "  '#type' => 'textarea',",
       "  '#title' => $this->t('Text'),",
-      ");",
+      "];",
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Textfield",
-      "@see \\Drupal\\filter\\Element\\TextFormat",
-      "",
-      "@FormElement(\"textarea\")"
+      "@see \\Drupal\\filter\\Element\\TextFormat"
     ],
     "scope": "php"
   },
@@ -1823,7 +2072,7 @@
       "",
       "Usage example:",
       "@code",
-      "$form['title'] = array(",
+      "$form['title'] = [",
       "  '#type' => 'textfield',",
       "  '#title' => $this->t('Subject'),",
       "  '#default_value' => $node->title,",
@@ -1831,7 +2080,7 @@
       "  '#maxlength' => 128,",
       "  '#pattern' => 'some-prefix-[a-z]+',",
       "  '#required' => TRUE,",
-      ");",
+      "];",
       "@endcode",
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Color",
@@ -1842,9 +2091,7 @@
       "@see \\Drupal\\Core\\Render\\Element\\PasswordConfirm",
       "@see \\Drupal\\Core\\Render\\Element\\Range",
       "@see \\Drupal\\Core\\Render\\Element\\Tel",
-      "@see \\Drupal\\Core\\Render\\Element\\Url",
-      "",
-      "@FormElement(\"textfield\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Url"
     ],
     "scope": "php"
   },
@@ -1869,9 +2116,7 @@
       "This is generally used to protect against cross-site forgeries. A token",
       "element is automatically added to each Drupal form by an implementation of",
       "\\Drupal\\Core\\Form\\FormBuilderInterface::prepareForm() so you don't generally",
-      "have to add one yourself.",
-      "",
-      "@FormElement(\"token\")"
+      "have to add one yourself."
     ],
     "scope": "php"
   },
@@ -1903,18 +2148,16 @@
       "",
       "Usage example:",
       "@code",
-      "$form['homepage'] = array(",
+      "$form['homepage'] = [",
       "  '#type' => 'url',",
       "  '#title' => $this->t('Home Page'),",
       "  '#size' => 30,",
       "  '#pattern' => '*.example.com',",
       "  ...",
-      ");",
+      "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Textfield",
-      "",
-      "@FormElement(\"url\")"
+      "@see \\Drupal\\Core\\Render\\Element\\Textfield"
     ],
     "scope": "php"
   },
@@ -1946,10 +2189,8 @@
       "",
       "Usage Example:",
       "@code",
-      "$form['entity_id'] = array('#type' => 'value', '#value' => $entity_id);",
-      "@endcode",
-      "",
-      "@FormElement(\"value\")"
+      "$form['entity_id'] = ['#type' => 'value', '#value' => $entity_id];",
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -1981,35 +2222,33 @@
       "",
       "Usage example:",
       "@code",
-      "$form['information'] = array(",
+      "$form['information'] = [",
       "  '#type' => 'vertical_tabs',",
       "  '#default_tab' => 'edit-publication',",
-      ");",
+      "];",
       "",
-      "$form['author'] = array(",
+      "$form['author'] = [",
       "  '#type' => 'details',",
       "  '#title' => $this->t('Author'),",
       "  '#group' => 'information',",
-      ");",
+      "];",
       "",
-      "$form['author']['name'] = array(",
+      "$form['author']['name'] = [",
       "  '#type' => 'textfield',",
       "  '#title' => $this->t('Name'),",
-      ");",
+      "];",
       "",
-      "$form['publication'] = array(",
+      "$form['publication'] = [",
       "  '#type' => 'details',",
       "  '#title' => $this->t('Publication'),",
       "  '#group' => 'information',",
-      ");",
+      "];",
       "",
-      "$form['publication']['publisher'] = array(",
+      "$form['publication']['publisher'] = [",
       "  '#type' => 'textfield',",
       "  '#title' => $this->t('Publisher'),",
-      ");",
-      "@endcode",
-      "",
-      "@FormElement(\"vertical_tabs\")"
+      "];",
+      "@endcode"
     ],
     "scope": "php"
   },
@@ -2041,15 +2280,13 @@
       "",
       "Usage example:",
       "@code",
-      "$form['weight'] = array(",
+      "$form['weight'] = [",
       "  '#type' => 'weight',",
       "  '#title' => $this->t('Weight'),",
       "  '#default_value' => $edit['weight'],",
       "  '#delta' => 10,",
-      ");",
-      "@endcode",
-      "",
-      "@FormElement(\"weight\")"
+      "];",
+      "@endcode"
     ],
     "scope": "php"
   }
