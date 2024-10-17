@@ -2,15 +2,15 @@ import { stdout } from "node:process";
 import { readFile } from "fs/promises";
 import engine from "php-parser";
 
-export async function getRawElements(apiFiles) {
+export async function getRawElements(elementFiles) {
 
   const rawElements = [];
 
   let i = 0;
-  let pct = Math.floor(i / apiFiles.length);
+  let pct = Math.floor(i / elementFiles.length);
   stdout.write(`  - ${pct}% scanning\r`)
 
-  for (const file of apiFiles) {
+  for (const file of elementFiles) {
 
     const contents = await readFile(file, {
       encoding: 'utf-8',
@@ -32,12 +32,16 @@ export async function getRawElements(apiFiles) {
     parsedElements
       .filter(element => (
         element.kind === 'namespace' &&
-        (element.loc.source.includes('@RenderElement') ||
-        element.loc.source.includes('@FormElement'))
+        (element.loc.source.includes('#[RenderElement') ||
+        element.loc.source.includes('#[FormElement'))
       ))
       .forEach(element => {
+        console.log(file);
         const classElement = element.children.find(child => child.kind === 'class');
-        const docs = classElement ? classElement.leadingComments.at(-1) : undefined;
+        let docs = classElement?.leadingComments?.at(-1);
+        if (!docs) {
+          docs = classElement?.attrGroups?.at(0)?.leadingComments?.at(-1);
+        }
         const name = classElement ? classElement.name.name.toLowerCase(): undefined;
         const type = element.loc.source.includes('@RenderElement') ? 'RenderElement' : 'FormElement';
 

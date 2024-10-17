@@ -196,6 +196,54 @@
     ],
     "scope": "php"
   },
+  "access_policy.super_user": {
+    "prefix": [
+      "@Service (\"access_policy.super_user\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Session\\SuperUserAccessPolicy",
+      " */",
+      "${1:\\$access_policy_super_user_service} = \\Drupal::service('access_policy.super_user');",
+      ""
+    ],
+    "description": [
+      "Grants user 1 an all access pass."
+    ],
+    "scope": "php"
+  },
+  "access_policy.user_roles": {
+    "prefix": [
+      "@Service (\"access_policy.user_roles\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Session\\UserRolesAccessPolicy",
+      " */",
+      "${1:\\$access_policy_user_roles_service} = \\Drupal::service('access_policy.user_roles');",
+      ""
+    ],
+    "description": [
+      "Grants permissions based on a user's roles."
+    ],
+    "scope": "php"
+  },
+  "access_policy_processor": {
+    "prefix": [
+      "@Service (\"access_policy_processor\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Session\\AccessPolicyProcessor",
+      " */",
+      "${1:\\$access_policy_processor_service} = \\Drupal::service('access_policy_processor');",
+      ""
+    ],
+    "description": [
+      "Processes access policies into permissions for an account."
+    ],
+    "scope": "php"
+  },
   "account_switcher": {
     "prefix": [
       "@Service (\"account_switcher\")"
@@ -575,6 +623,54 @@
     ],
     "scope": "php"
   },
+  "cache.access_policy": {
+    "prefix": [
+      "@Service (\"cache.access_policy\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
+      " */",
+      "${1:\\$cache_access_policy_service} = \\Drupal::service('cache.access_policy');",
+      ""
+    ],
+    "description": [
+      "Defines an interface for cache implementations.",
+      "",
+      "All cache implementations have to implement this interface.",
+      "Drupal\\Core\\Cache\\DatabaseBackend provides the default implementation, which",
+      "can be consulted as an example.",
+      "",
+      "The cache identifiers are case sensitive.",
+      "",
+      "@ingroup cache"
+    ],
+    "scope": "php"
+  },
+  "cache.access_policy_memory": {
+    "prefix": [
+      "@Service (\"cache.access_policy_memory\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\CacheBackendInterface",
+      " */",
+      "${1:\\$cache_access_policy_memory_service} = \\Drupal::service('cache.access_policy_memory');",
+      ""
+    ],
+    "description": [
+      "Defines an interface for cache implementations.",
+      "",
+      "All cache implementations have to implement this interface.",
+      "Drupal\\Core\\Cache\\DatabaseBackend provides the default implementation, which",
+      "can be consulted as an example.",
+      "",
+      "The cache identifiers are case sensitive.",
+      "",
+      "@ingroup cache"
+    ],
+    "scope": "php"
+  },
   "cache.backend.apcu": {
     "prefix": [
       "@Service (\"cache.backend.apcu\")"
@@ -640,6 +736,25 @@
       " * @var Drupal\\Core\\Cache\\MemoryBackendFactory",
       " */",
       "${1:\\$cache_backend_memory_service} = \\Drupal::service('cache.backend.memory');",
+      ""
+    ],
+    "description": [
+      "   * Instantiated memory cache bins.",
+      "   *",
+      "   * @var \\Drupal\\Core\\Cache\\MemoryBackend[]",
+      "   */"
+    ],
+    "scope": "php"
+  },
+  "cache.backend.memory.memory": {
+    "prefix": [
+      "@Service (\"cache.backend.memory.memory\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\MemoryCache\\MemoryCacheFactory",
+      " */",
+      "${1:\\$cache_backend_memory_memory_service} = \\Drupal::service('cache.backend.memory.memory');",
       ""
     ],
     "description": [
@@ -1514,6 +1629,25 @@
     ],
     "scope": "php"
   },
+  "config.checkpoints": {
+    "prefix": [
+      "@Service (\"config.checkpoints\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Config\\Checkpoint\\LinearHistory",
+      " */",
+      "${1:\\$config_checkpoints_service} = \\Drupal::service('config.checkpoints');",
+      ""
+    ],
+    "description": [
+      "A chronological list of Checkpoint objects.",
+      "",
+      "@internal",
+      "  This API is experimental."
+    ],
+    "scope": "php"
+  },
   "config.factory": {
     "prefix": [
       "@Service (\"config.factory\")"
@@ -1636,6 +1770,34 @@
       "The class gets another storage and a cache backend injected. It reads from",
       "the cache and delegates the read to the storage on a cache miss. It also",
       "handles cache invalidation."
+    ],
+    "scope": "php"
+  },
+  "config.storage.checkpoint": {
+    "prefix": [
+      "@Service (\"config.storage.checkpoint\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Config\\Checkpoint\\CheckpointStorage",
+      " */",
+      "${1:\\$config_storage_checkpoint_service} = \\Drupal::service('config.storage.checkpoint');",
+      ""
+    ],
+    "description": [
+      "Provides a config storage that can make checkpoints.",
+      "",
+      "This storage wraps the active storage, and provides the ability to take",
+      "checkpoints. Once a checkpoint has been created all configuration operations",
+      "made after the checkpoint will be recorded, so it is possible to revert to",
+      "original state when the checkpoint was taken.",
+      "",
+      "This class cannot be used to checkpoint another storage since it relies on",
+      "events triggered by the configuration system in order to work. It is the",
+      "responsibility of the caller to construct this class with the active storage.",
+      "",
+      "@internal",
+      "  This API is experimental."
     ],
     "scope": "php"
   },
@@ -2171,7 +2333,7 @@
       "",
       "If the render context is empty, then the controller either did not do any",
       "rendering at all, or used the RendererInterface::renderRoot() or",
-      "::renderPlain() methods. In that case, no bubbleable metadata is lost.",
+      "::renderInIsolation() methods. In that case, no bubbleable metadata is lost.",
       "",
       "If the render context is not empty, then the controller did use",
       "RendererInterface::render(), and bubbleable metadata was collected.",
@@ -2206,10 +2368,10 @@
     "description": [
       "Provides a plugin manager for element plugins.",
       "",
-      "@see \\Drupal\\Core\\Render\\Annotation\\RenderElement",
-      "@see \\Drupal\\Core\\Render\\Annotation\\FormElement",
-      "@see \\Drupal\\Core\\Render\\Element\\RenderElement",
-      "@see \\Drupal\\Core\\Render\\Element\\FormElement",
+      "@see \\Drupal\\Core\\Render\\Attribute\\RenderElement",
+      "@see \\Drupal\\Core\\Render\\Attribute\\FormElement",
+      "@see \\Drupal\\Core\\Render\\Element\\RenderElementBase",
+      "@see \\Drupal\\Core\\Render\\Element\\FormElementBase",
       "@see \\Drupal\\Core\\Render\\Element\\ElementInterface",
       "@see \\Drupal\\Core\\Render\\Element\\FormElementInterface",
       "@see plugin_api"
@@ -3166,21 +3328,8 @@
       ""
     ],
     "description": [
-      "Processes attachments of HTML responses.",
-      "",
-      "This class is used by the rendering service to process the #attached part of",
-      "the render array, for HTML responses.",
-      "",
-      "To render attachments to HTML for testing without a controller, use the",
-      "'bare_html_page_renderer' service to generate a",
-      "Drupal\\Core\\Render\\HtmlResponse object. Then use its getContent(),",
-      "getStatusCode(), and/or the headers property to access the result.",
-      "",
-      "@see template_preprocess_html()",
-      "@see \\Drupal\\Core\\Render\\AttachmentsResponseProcessorInterface",
-      "@see \\Drupal\\Core\\Render\\BareHtmlPageRenderer",
-      "@see \\Drupal\\Core\\Render\\HtmlResponse",
-      "@see \\Drupal\\Core\\Render\\MainContent\\HtmlRenderer"
+      "// cspell:ignore turbolinks",
+      ""
     ],
     "scope": "php"
   },
@@ -3317,6 +3466,22 @@
     ],
     "scope": "php"
   },
+  "http_middleware.content_length": {
+    "prefix": [
+      "@Service (\"http_middleware.content_length\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\StackMiddleware\\ContentLength",
+      " */",
+      "${1:\\$http_middleware_content_length_service} = \\Drupal::service('http_middleware.content_length');",
+      ""
+    ],
+    "description": [
+      "Adds a Content-Length HTTP header to responses."
+    ],
+    "scope": "php"
+  },
   "http_middleware.cors": {
     "prefix": [
       "@Service (\"http_middleware.cors\")"
@@ -3393,9 +3558,8 @@
     "description": [
       "Wrap session logic around a HTTP request.",
       "",
-      "Note, the session service is not injected into this class in order to prevent",
-      "premature initialization of session storage (database). Instead the session",
-      "service is retrieved from the container only when handling the request."
+      "Note, the session service is wrapped in a closure in order to prevent",
+      "premature initialization of session storage (database)."
     ],
     "scope": "php"
   },
@@ -3473,21 +3637,19 @@
     ],
     "scope": "php"
   },
-  "kernel_destruct_subscriber": {
+  "install_profile_uninstall_validator": {
     "prefix": [
-      "@Service (\"kernel_destruct_subscriber\")"
+      "@Service (\"install_profile_uninstall_validator\")"
     ],
     "body": [
       "/**",
-      " * @var Drupal\\Core\\EventSubscriber\\KernelDestructionSubscriber",
+      " * @var Drupal\\Core\\Extension\\InstallProfileUninstallValidator",
       " */",
-      "${1:\\$kernel_destruct_subscriber_service} = \\Drupal::service('kernel_destruct_subscriber');",
+      "${1:\\$install_profile_uninstall_validator_service} = \\Drupal::service('install_profile_uninstall_validator');",
       ""
     ],
     "description": [
-      "Destructs services that are initiated and tagged with \"needs_destruction\".",
-      "",
-      "@see \\Drupal\\Core\\DestructableInterface"
+      "Ensures install profile can only be uninstalled if the modules are available."
     ],
     "scope": "php"
   },
@@ -4325,8 +4487,9 @@
     "description": [
       "Handles options requests.",
       "",
-      "Therefore it sends an options response using all methods on all possible",
-      "routes."
+      "Listens to KernelEvents::REQUEST and responds to OPTIONS requests by",
+      "providing an Allow header listing all the HTTP methods allowed for the",
+      "requested routes."
     ],
     "scope": "php"
   },
@@ -4648,7 +4811,8 @@
       ""
     ],
     "description": [
-      "Provides a default password generator."
+      "// cspell:ignore abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789'",
+      ""
     ],
     "scope": "php"
   },
@@ -4896,7 +5060,7 @@
     "description": [
       "Provides an Archiver plugin manager.",
       "",
-      "@see \\Drupal\\Core\\Archiver\\Annotation\\Archiver",
+      "@see \\Drupal\\Core\\Archiver\\Attribute\\Archiver",
       "@see \\Drupal\\Core\\Archiver\\ArchiverInterface",
       "@see plugin_api"
     ],
@@ -4936,11 +5100,58 @@
     "description": [
       "A plugin manager for condition plugins.",
       "",
-      "@see \\Drupal\\Core\\Condition\\Annotation\\Condition",
+      "@see \\Drupal\\Core\\Condition\\Attribute\\Condition",
       "@see \\Drupal\\Core\\Condition\\ConditionInterface",
       "@see \\Drupal\\Core\\Condition\\ConditionPluginBase",
       "",
       "@ingroup plugin_api"
+    ],
+    "scope": "php"
+  },
+  "plugin.manager.config_action": {
+    "prefix": [
+      "@Service (\"plugin.manager.config_action\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Config\\Action\\ConfigActionManager",
+      " */",
+      "${1:\\$plugin_manager_config_action_service} = \\Drupal::service('plugin.manager.config_action');",
+      ""
+    ],
+    "description": [
+      "@defgroup config_action_api Config Action API",
+      "@{",
+      "Information about the classes and interfaces that make up the Config Action",
+      "API.",
+      "",
+      "Configuration actions are plugins that manipulate simple configuration or",
+      "configuration entities. The configuration action plugin manager can apply",
+      "configuration actions. For example, the API is leveraged by recipes to create",
+      "roles if they do not exist already and grant permissions to those roles.",
+      "",
+      "To define a configuration action in a module you need to:",
+      "- Define a Config Action plugin by creating a new class that implements the",
+      "  \\Drupal\\Core\\Config\\Action\\ConfigActionPluginInterface, in namespace",
+      "  Plugin\\ConfigAction under your module namespace. For more information about",
+      "  creating plugins, see the @link plugin_api Plugin API topic. @endlink",
+      "- Config action plugins use the attributes defined by",
+      " \\Drupal\\Core\\Config\\Action\\Attribute\\ConfigAction. See the",
+      "  @link attribute Attributes topic @endlink for more information about",
+      "  attributes.",
+      "",
+      "Further information and examples:",
+      "- \\Drupal\\Core\\Config\\Action\\Plugin\\ConfigAction\\EntityMethod derives",
+      "  configuration actions from config entity methods which have the",
+      "  \\Drupal\\Core\\Config\\Action\\Attribute\\ActionMethod attribute.",
+      "- \\Drupal\\Core\\Config\\Action\\Plugin\\ConfigAction\\EntityCreate allows you to",
+      "  create configuration entities if they do not exist.",
+      "- \\Drupal\\Core\\Config\\Action\\Plugin\\ConfigAction\\SimpleConfigUpdate allows",
+      "  you to update simple configuration using a config action.",
+      "@}",
+      "",
+      "@internal",
+      "  This API is experimental."
     ],
     "scope": "php"
   },
@@ -4958,7 +5169,7 @@
     "description": [
       "Manages discovery of display variant plugins.",
       "",
-      "@see \\Drupal\\Core\\Display\\Annotation\\DisplayVariant",
+      "@see \\Drupal\\Core\\Display\\Attribute\\DisplayVariant",
       "@see \\Drupal\\Core\\Display\\VariantInterface",
       "@see \\Drupal\\Core\\Display\\VariantBase",
       "@see plugin_api"
@@ -4979,10 +5190,10 @@
     "description": [
       "Provides a plugin manager for element plugins.",
       "",
-      "@see \\Drupal\\Core\\Render\\Annotation\\RenderElement",
-      "@see \\Drupal\\Core\\Render\\Annotation\\FormElement",
-      "@see \\Drupal\\Core\\Render\\Element\\RenderElement",
-      "@see \\Drupal\\Core\\Render\\Element\\FormElement",
+      "@see \\Drupal\\Core\\Render\\Attribute\\RenderElement",
+      "@see \\Drupal\\Core\\Render\\Attribute\\FormElement",
+      "@see \\Drupal\\Core\\Render\\Element\\RenderElementBase",
+      "@see \\Drupal\\Core\\Render\\Element\\FormElementBase",
       "@see \\Drupal\\Core\\Render\\Element\\ElementInterface",
       "@see \\Drupal\\Core\\Render\\Element\\FormElementInterface",
       "@see plugin_api"
@@ -5200,6 +5411,27 @@
     ],
     "scope": "php"
   },
+  "plugin.manager.sdc": {
+    "prefix": [
+      "@Service (\"plugin.manager.sdc\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Theme\\ComponentPluginManager",
+      " */",
+      "${1:\\$plugin_manager_sdc_service} = \\Drupal::service('plugin.manager.sdc');",
+      ""
+    ],
+    "description": [
+      "Defines a plugin manager to deal with components.",
+      "",
+      "Modules and themes can create components by adding a folder under",
+      "MODULENAME/components/my-component/my-component.component.yml.",
+      "",
+      "@see plugin_api"
+    ],
+    "scope": "php"
+  },
   "plugin_form.factory": {
     "prefix": [
       "@Service (\"plugin_form.factory\")"
@@ -5304,7 +5536,7 @@
       ""
     ],
     "description": [
-      "Defines the key/value store factory for the database backend."
+      "Defines the queue factory for the database backend."
     ],
     "scope": "php"
   },
@@ -5445,22 +5677,6 @@
     ],
     "description": [
       "Throws 406 if requesting non-HTML format and controller returns render array."
-    ],
-    "scope": "php"
-  },
-  "request_close_subscriber": {
-    "prefix": [
-      "@Service (\"request_close_subscriber\")"
-    ],
-    "body": [
-      "/**",
-      " * @var Drupal\\Core\\EventSubscriber\\RequestCloseSubscriber",
-      " */",
-      "${1:\\$request_close_subscriber_service} = \\Drupal::service('request_close_subscriber');",
-      ""
-    ],
-    "description": [
-      "Subscriber for all responses."
     ],
     "scope": "php"
   },
@@ -5957,7 +6173,8 @@
       ""
     ],
     "description": [
-      "A Route Provider front-end for all Drupal-stored routes."
+      "// cspell:ignore filesort",
+      ""
     ],
     "scope": "php"
   },
@@ -6037,9 +6254,7 @@
       ""
     ],
     "description": [
-      "Provides a YAML serialization implementation.",
-      "",
-      "Proxy implementation that will choose the best library based on availability."
+      "Provides a YAML serialization implementation using symfony/yaml."
     ],
     "scope": "php"
   },
@@ -6141,8 +6356,7 @@
       "storing and retrieving session data has been extracted from it in Symfony 2.1",
       "but the class name was not changed.",
       "",
-      "@todo",
-      "  In fact the NativeSessionStorage class already implements all of the",
+      "@todo In fact the NativeSessionStorage class already implements all of the",
       "  functionality required by a typical Symfony application. Normally it is not",
       "  necessary to subclass it at all. In order to reach the point where Drupal",
       "  can use the Symfony session management unmodified, the code implemented",
@@ -6552,7 +6766,7 @@
       "",
       "// [date:...] tokens use the current date automatically.",
       "$token_service = \\Drupal::token();",
-      "$data = array('node' => $node, 'user' => $user);",
+      "$data = ['node' => $node, 'user' => $user];",
       "$result = $token_service->replace($text, $data);",
       "return $result",
       "@endcode",
@@ -6773,13 +6987,8 @@
       ""
     ],
     "description": [
-      "Provides all and missing update implementations.",
-      "",
-      "Note: This registry is specific to a type of updates, like 'post_update' as",
-      "example.",
-      "",
-      "It therefore scans for functions named like the type of updates, so it looks",
-      "like EXTENSION_UPDATETYPE_NAME() with NAME being a machine name."
+      "// cspell:ignore updatetype",
+      ""
     ],
     "scope": "php"
   },
@@ -6790,12 +6999,19 @@
     "body": [
       "/**",
       " * @var Drupal\\Core\\Update\\UpdateRegistryFactory",
+      " * @deprecated The \"update.post_update_registry_factory\" service is deprecated. You should use the 'update.post_update_registry' service instead. See https://www.drupal.org/node/3423659",
       " */",
       "${1:\\$update_post_update_registry_factory_service} = \\Drupal::service('update.post_update_registry_factory');",
       ""
     ],
     "description": [
-      "Service factory for the update registry."
+      "DEPRECATED",
+      "Service factory for the update registry.",
+      "",
+      "@deprecated in drupal:10.3.0 and is removed from drupal:11.0.0. Use",
+      "\\Drupal\\Core\\Update\\UpdateRegistry instead.",
+      "",
+      "@see https://www.drupal.org/node/3423659"
     ],
     "scope": "php"
   },
@@ -6822,12 +7038,19 @@
     "body": [
       "/**",
       " * @var Drupal\\Core\\Update\\UpdateHookRegistryFactory",
+      " * @deprecated The \"update.update_hook_registry_factory\" service is deprecated. You should use the 'update.update_hook_registry' service instead. See https://www.drupal.org/node/3423659",
       " */",
       "${1:\\$update_update_hook_registry_factory_service} = \\Drupal::service('update.update_hook_registry_factory');",
       ""
     ],
     "description": [
-      "Service factory for the versioning update registry."
+      "DEPRECATED",
+      "Service factory for the versioning update registry.",
+      "",
+      "@deprecated in drupal:10.3.0 and is removed from drupal:11.0.0. Use",
+      "\\Drupal\\Core\\Update\\UpdateHookRegistry instead.",
+      "",
+      "@see https://www.drupal.org/node/3423659"
     ],
     "scope": "php"
   },
@@ -6891,6 +7114,22 @@
     ],
     "scope": "php"
   },
+  "validation.basic_recursive_validator_factory": {
+    "prefix": [
+      "@Service (\"validation.basic_recursive_validator_factory\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Validation\\BasicRecursiveValidatorFactory",
+      " */",
+      "${1:\\$validation_basic_recursive_validator_factory_service} = \\Drupal::service('validation.basic_recursive_validator_factory');",
+      ""
+    ],
+    "description": [
+      "A factory for creating Symfony recursive validators."
+    ],
+    "scope": "php"
+  },
   "validation.constraint": {
     "prefix": [
       "@Service (\"validation.constraint\")"
@@ -6916,9 +7155,53 @@
       "",
       "Constraint plugins may specify data types to which support is limited via the",
       "'type' key of plugin definitions. See",
-      "\\Drupal\\Core\\Validation\\Annotation\\Constraint for details.",
+      "\\Drupal\\Core\\Validation\\Attribute\\Constraint for details.",
       "",
-      "@see \\Drupal\\Core\\Validation\\Annotation\\Constraint"
+      "@see \\Drupal\\Core\\Validation\\Attribute\\Constraint"
+    ],
+    "scope": "php"
+  },
+  "variation_cache.access_policy": {
+    "prefix": [
+      "@Service (\"variation_cache.access_policy\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\VariationCacheInterface",
+      " */",
+      "${1:\\$variation_cache_access_policy_service} = \\Drupal::service('variation_cache.access_policy');",
+      ""
+    ],
+    "description": [
+      "Defines an interface for variation cache implementations.",
+      "",
+      "A variation cache wraps any provided cache backend and adds support for cache",
+      "contexts to it. The actual caching still happens in the original cache",
+      "backend.",
+      "",
+      "@ingroup cache"
+    ],
+    "scope": "php"
+  },
+  "variation_cache.access_policy_memory": {
+    "prefix": [
+      "@Service (\"variation_cache.access_policy_memory\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\VariationCacheInterface",
+      " */",
+      "${1:\\$variation_cache_access_policy_memory_service} = \\Drupal::service('variation_cache.access_policy_memory');",
+      ""
+    ],
+    "description": [
+      "Defines an interface for variation cache implementations.",
+      "",
+      "A variation cache wraps any provided cache backend and adds support for cache",
+      "contexts to it. The actual caching still happens in the original cache",
+      "backend.",
+      "",
+      "@ingroup cache"
     ],
     "scope": "php"
   },
