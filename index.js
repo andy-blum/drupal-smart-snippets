@@ -22,20 +22,20 @@ let allServices = {};
 
 // 2. Clean tmp directory.
 try {
-  // const contents = await readdir('./tmp');
-  // for (const item of contents) {
-  //   await rm(`./tmp/${item}`, {
-  //     force: true,
-  //     recursive: true
-  //   });
-  // }
+  const contents = await readdir('./tmp');
+  for (const item of contents) {
+    await rm(`./tmp/${item}`, {
+      force: true,
+      recursive: true
+    });
+  }
 } catch (error) {}
 
 for (const version of SUPPORTED_VERSIONS) {
   console.log(`Drupal ${version}`);
 
   // 3. Download & un-archive tarball.
-  // await getCoreVersion(version);
+  await getCoreVersion(version);
   console.log(`  - Downloaded`);
 
   /*******************************
