@@ -12,6 +12,7 @@ import { sortSnippets } from "./src/sortSnippets.js";
 import { formatServices } from "./src/formatServices.js";
 
 const SUPPORTED_VERSIONS = [
+  '11.0.0',
   '10.3.0',
 ];
 
