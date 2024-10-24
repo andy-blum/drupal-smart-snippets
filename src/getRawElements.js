@@ -10,43 +10,43 @@ export async function getRawElements(elementFiles) {
   let pct = Math.floor(i / elementFiles.length);
   stdout.write(`  - ${pct}% scanning\r`)
 
+  const parser = new engine({
+    parser: {
+      locations: true,
+      extractDoc: true,
+    },
+    ast: {
+      withPositions: true,
+      withSource: true
+    }
+  });
+
   for (const file of elementFiles) {
 
     const contents = await readFile(file, {
       encoding: 'utf-8',
     });
 
-    const parser = new engine({
-      parser: {
-        locations: true,
-        extractDoc: true,
-      },
-      ast: {
-        withPositions: true,
-        withSource: true
+    // #[*Element(*)]
+    if (contents.match(/#\[[\w]+Element\([^\s]*\)\]/g)) {
+      const parsedElements = parser.parseCode(contents).children;
+
+      for (const element of parsedElements) {
+        const phpClass = element.children.find(child => child.kind === 'class');
+
+        const attributeType = phpClass.attrGroups?.at(0)?.attrs?.at(0)?.name;
+        const attributeValue = phpClass.attrGroups?.at(0)?.attrs?.at(0)?.args[0]?.value;
+        const docs = phpClass?.leadingComments?.at(-1) ||
+          phpClass.attrGroups?.at(0)?.leadingComments?.at(-1) ||
+          "";
+
+        rawElements.push({
+          name: attributeValue,
+          type: attributeType,
+          docs
+        })
       }
-    });
-
-    const parsedElements = parser.parseCode(contents).children;
-
-    parsedElements
-      .filter(element => (
-        element.kind === 'namespace' &&
-        (element.loc.source.includes('#[RenderElement') ||
-        element.loc.source.includes('#[FormElement'))
-      ))
-      .forEach(element => {
-        console.log(file);
-        const classElement = element.children.find(child => child.kind === 'class');
-        let docs = classElement?.leadingComments?.at(-1);
-        if (!docs) {
-          docs = classElement?.attrGroups?.at(0)?.leadingComments?.at(-1);
-        }
-        const name = classElement ? classElement.name.name.toLowerCase(): undefined;
-        const type = element.loc.source.includes('@RenderElement') ? 'RenderElement' : 'FormElement';
-
-        rawElements.push({name, type, docs});
-      });
+    }
   }
 
   return rawElements;
