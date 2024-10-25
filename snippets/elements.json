@@ -1,17 +1,13 @@
 {
   "@Element (\"actions\")": {
     "prefix": [
-      "@FormElement (\"actions\")",
+      "@RenderElement (\"actions\")",
       "@Element (\"actions\")",
       "actions"
     ],
     "body": [
       "[",
       "  '#type' => 'actions',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -34,17 +30,13 @@
   },
   "@Element (\"ajax\")": {
     "prefix": [
-      "@FormElement (\"ajax\")",
+      "@RenderElement (\"ajax\")",
       "@Element (\"ajax\")",
       "ajax"
     ],
     "body": [
       "[",
       "  '#type' => 'ajax',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -61,19 +53,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"breaklocklink\")": {
+  "@Element (\"break_lock_link\")": {
     "prefix": [
-      "@FormElement (\"breaklocklink\")",
-      "@Element (\"breaklocklink\")",
-      "breaklocklink"
+      "@RenderElement (\"break_lock_link\")",
+      "@Element (\"break_lock_link\")",
+      "break_lock_link"
     ],
     "body": [
       "[",
-      "  '#type' => 'breaklocklink',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'break_lock_link',",
       "  '#label' => '',",
       "  '#lock' => '',",
       "  '#url' => '',",
@@ -254,19 +242,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"componentelement\")": {
+  "@Element (\"component\")": {
     "prefix": [
-      "@FormElement (\"componentelement\")",
-      "@Element (\"componentelement\")",
-      "componentelement"
+      "@RenderElement (\"component\")",
+      "@Element (\"component\")",
+      "component"
     ],
     "body": [
       "[",
-      "  '#type' => 'componentelement',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'component',",
       "  '#component' => '',",
       "  '#props' => '',",
       "  '#slots' => '',",
@@ -303,17 +287,13 @@
   },
   "@Element (\"container\")": {
     "prefix": [
-      "@FormElement (\"container\")",
+      "@RenderElement (\"container\")",
       "@Element (\"container\")",
       "container"
     ],
     "body": [
       "[",
       "  '#type' => 'container',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#optional' => '',",
       "]${5|\\,,;|}"
     ],
@@ -354,19 +334,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"contextuallinks\")": {
+  "@Element (\"contextual_links\")": {
     "prefix": [
-      "@FormElement (\"contextuallinks\")",
-      "@Element (\"contextuallinks\")",
-      "contextuallinks"
+      "@RenderElement (\"contextual_links\")",
+      "@Element (\"contextual_links\")",
+      "contextual_links"
     ],
     "body": [
       "[",
-      "  '#type' => 'contextuallinks',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'contextual_links',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -374,19 +350,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"contextuallinksplaceholder\")": {
+  "@Element (\"contextual_links_placeholder\")": {
     "prefix": [
-      "@FormElement (\"contextuallinksplaceholder\")",
-      "@Element (\"contextuallinksplaceholder\")",
-      "contextuallinksplaceholder"
+      "@RenderElement (\"contextual_links_placeholder\")",
+      "@Element (\"contextual_links_placeholder\")",
+      "contextual_links_placeholder"
     ],
     "body": [
       "[",
-      "  '#type' => 'contextuallinksplaceholder',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'contextual_links_placeholder',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -470,17 +442,13 @@
   },
   "@Element (\"deprecated\")": {
     "prefix": [
-      "@FormElement (\"deprecated\")",
+      "@RenderElement (\"deprecated\")",
       "@Element (\"deprecated\")",
       "deprecated"
     ],
     "body": [
       "[",
       "  '#type' => 'deprecated',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -488,15 +456,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"deprecatedextendsformelement\")": {
+  "@Element (\"deprecated_extends_form\")": {
     "prefix": [
-      "@FormElement (\"deprecatedextendsformelement\")",
-      "@Element (\"deprecatedextendsformelement\")",
-      "deprecatedextendsformelement"
+      "@FormElement (\"deprecated_extends_form\")",
+      "@Element (\"deprecated_extends_form\")",
+      "deprecated_extends_form"
     ],
     "body": [
       "[",
-      "  '#type' => 'deprecatedextendsformelement',",
+      "  '#type' => 'deprecated_extends_form',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -510,19 +478,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"deprecatedextendsrenderelement\")": {
+  "@Element (\"deprecated_extends_render\")": {
     "prefix": [
-      "@FormElement (\"deprecatedextendsrenderelement\")",
-      "@Element (\"deprecatedextendsrenderelement\")",
-      "deprecatedextendsrenderelement"
+      "@RenderElement (\"deprecated_extends_render\")",
+      "@Element (\"deprecated_extends_render\")",
+      "deprecated_extends_render"
     ],
     "body": [
       "[",
-      "  '#type' => 'deprecatedextendsrenderelement',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'deprecated_extends_render',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -534,17 +498,13 @@
   },
   "@Element (\"details\")": {
     "prefix": [
-      "@FormElement (\"details\")",
+      "@RenderElement (\"details\")",
       "@Element (\"details\")",
       "details"
     ],
     "body": [
       "[",
       "  '#type' => 'details',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#open' => '',",
       "  '#summary_attributes' => '',",
       "]${5|\\,,;|}"
@@ -583,17 +543,13 @@
   },
   "@Element (\"dropbutton\")": {
     "prefix": [
-      "@FormElement (\"dropbutton\")",
+      "@RenderElement (\"dropbutton\")",
       "@Element (\"dropbutton\")",
       "dropbutton"
     ],
     "body": [
       "[",
       "  '#type' => 'dropbutton',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#links' => '',",
       "  '#dropbutton_type' => '',",
       "]${5|\\,,;|}"
@@ -677,15 +633,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"entityautocomplete\")": {
+  "@Element (\"entity_autocomplete\")": {
     "prefix": [
-      "@FormElement (\"entityautocomplete\")",
-      "@Element (\"entityautocomplete\")",
-      "entityautocomplete"
+      "@FormElement (\"entity_autocomplete\")",
+      "@Element (\"entity_autocomplete\")",
+      "entity_autocomplete"
     ],
     "body": [
       "[",
-      "  '#type' => 'entityautocomplete',",
+      "  '#type' => 'entity_autocomplete',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -754,19 +710,31 @@
     ],
     "scope": "php"
   },
+  "@Element (\"field_ui_table\")": {
+    "prefix": [
+      "@RenderElement (\"field_ui_table\")",
+      "@Element (\"field_ui_table\")",
+      "field_ui_table"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'field_ui_table',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a field_ui table element."
+    ],
+    "scope": "php"
+  },
   "@Element (\"fieldgroup\")": {
     "prefix": [
-      "@FormElement (\"fieldgroup\")",
+      "@RenderElement (\"fieldgroup\")",
       "@Element (\"fieldgroup\")",
       "fieldgroup"
     ],
     "body": [
       "[",
       "  '#type' => 'fieldgroup',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -785,17 +753,13 @@
   },
   "@Element (\"fieldset\")": {
     "prefix": [
-      "@FormElement (\"fieldset\")",
+      "@RenderElement (\"fieldset\")",
       "@Element (\"fieldset\")",
       "fieldset"
     ],
     "body": [
       "[",
       "  '#type' => 'fieldset',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -816,26 +780,6 @@
       "",
       "@see \\Drupal\\Core\\Render\\Element\\Fieldgroup",
       "@see \\Drupal\\Core\\Render\\Element\\Details"
-    ],
-    "scope": "php"
-  },
-  "@Element (\"fielduitable\")": {
-    "prefix": [
-      "@FormElement (\"fielduitable\")",
-      "@Element (\"fielduitable\")",
-      "fielduitable"
-    ],
-    "body": [
-      "[",
-      "  '#type' => 'fielduitable',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
-      "]${5|\\,,;|}"
-    ],
-    "description": [
-      "Provides a field_ui table element."
     ],
     "scope": "php"
   },
@@ -872,17 +816,13 @@
   },
   "@Element (\"form\")": {
     "prefix": [
-      "@FormElement (\"form\")",
+      "@RenderElement (\"form\")",
       "@Element (\"form\")",
       "form"
     ],
     "body": [
       "[",
       "  '#type' => 'form',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -929,17 +869,13 @@
   },
   "@Element (\"html\")": {
     "prefix": [
-      "@FormElement (\"html\")",
+      "@RenderElement (\"html\")",
       "@Element (\"html\")",
       "html"
     ],
     "body": [
       "[",
       "  '#type' => 'html',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -947,19 +883,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"htmltag\")": {
+  "@Element (\"html_tag\")": {
     "prefix": [
-      "@FormElement (\"htmltag\")",
-      "@Element (\"htmltag\")",
-      "htmltag"
+      "@RenderElement (\"html_tag\")",
+      "@Element (\"html_tag\")",
+      "html_tag"
     ],
     "body": [
       "[",
-      "  '#type' => 'htmltag',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'html_tag',",
       "  '#tag' => '',",
       "  '#attributes' => '',",
       "  '#value' => '',",
@@ -989,15 +921,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"imagebutton\")": {
+  "@Element (\"image_button\")": {
     "prefix": [
-      "@FormElement (\"imagebutton\")",
-      "@Element (\"imagebutton\")",
-      "imagebutton"
+      "@FormElement (\"image_button\")",
+      "@Element (\"image_button\")",
+      "image_button"
     ],
     "body": [
       "[",
-      "  '#type' => 'imagebutton',",
+      "  '#type' => 'image_button',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -1009,19 +941,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"inlinetemplate\")": {
+  "@Element (\"inline_template\")": {
     "prefix": [
-      "@FormElement (\"inlinetemplate\")",
-      "@Element (\"inlinetemplate\")",
-      "inlinetemplate"
+      "@RenderElement (\"inline_template\")",
+      "@Element (\"inline_template\")",
+      "inline_template"
     ],
     "body": [
       "[",
-      "  '#type' => 'inlinetemplate',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'inline_template',",
       "  '#template' => '',",
       "  '#context' => '',",
       "]${5|\\,,;|}"
@@ -1073,17 +1001,13 @@
   },
   "@Element (\"label\")": {
     "prefix": [
-      "@FormElement (\"label\")",
+      "@RenderElement (\"label\")",
       "@Element (\"label\")",
       "label"
     ],
     "body": [
       "[",
       "  '#type' => 'label',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1095,15 +1019,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"languageconfiguration\")": {
+  "@Element (\"language_configuration\")": {
     "prefix": [
-      "@FormElement (\"languageconfiguration\")",
-      "@Element (\"languageconfiguration\")",
-      "languageconfiguration"
+      "@FormElement (\"language_configuration\")",
+      "@Element (\"language_configuration\")",
+      "language_configuration"
     ],
     "body": [
       "[",
-      "  '#type' => 'languageconfiguration',",
+      "  '#type' => 'language_configuration',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -1115,15 +1039,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"languageselect\")": {
+  "@Element (\"language_select\")": {
     "prefix": [
-      "@FormElement (\"languageselect\")",
-      "@Element (\"languageselect\")",
-      "languageselect"
+      "@FormElement (\"language_select\")",
+      "@Element (\"language_select\")",
+      "language_select"
     ],
     "body": [
       "[",
-      "  '#type' => 'languageselect',",
+      "  '#type' => 'language_select',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -1141,19 +1065,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"layoutbuilder\")": {
+  "@Element (\"layout_builder\")": {
     "prefix": [
-      "@FormElement (\"layoutbuilder\")",
-      "@Element (\"layoutbuilder\")",
-      "layoutbuilder"
+      "@RenderElement (\"layout_builder\")",
+      "@Element (\"layout_builder\")",
+      "layout_builder"
     ],
     "body": [
       "[",
-      "  '#type' => 'layoutbuilder',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'layout_builder',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1166,17 +1086,13 @@
   },
   "@Element (\"link\")": {
     "prefix": [
-      "@FormElement (\"link\")",
+      "@RenderElement (\"link\")",
       "@Element (\"link\")",
       "link"
     ],
     "body": [
       "[",
       "  '#type' => 'link',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#url' => '',",
       "]${5|\\,,;|}"
     ],
@@ -1199,15 +1115,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"machinename\")": {
+  "@Element (\"machine_name\")": {
     "prefix": [
-      "@FormElement (\"machinename\")",
-      "@Element (\"machinename\")",
-      "machinename"
+      "@FormElement (\"machine_name\")",
+      "@Element (\"machine_name\")",
+      "machine_name"
     ],
     "body": [
       "[",
-      "  '#type' => 'machinename',",
+      "  '#type' => 'machine_name',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -1281,15 +1197,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"managedfile\")": {
+  "@Element (\"managed_file\")": {
     "prefix": [
-      "@FormElement (\"managedfile\")",
-      "@Element (\"managedfile\")",
-      "managedfile"
+      "@FormElement (\"managed_file\")",
+      "@Element (\"managed_file\")",
+      "managed_file"
     ],
     "body": [
       "[",
-      "  '#type' => 'managedfile',",
+      "  '#type' => 'managed_file',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -1301,19 +1217,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"morelink\")": {
+  "@Element (\"more_link\")": {
     "prefix": [
-      "@FormElement (\"morelink\")",
-      "@Element (\"morelink\")",
-      "morelink"
+      "@RenderElement (\"more_link\")",
+      "@Element (\"more_link\")",
+      "more_link"
     ],
     "body": [
       "[",
-      "  '#type' => 'morelink',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'more_link',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1379,17 +1291,13 @@
   },
   "@Element (\"operations\")": {
     "prefix": [
-      "@FormElement (\"operations\")",
+      "@RenderElement (\"operations\")",
       "@Element (\"operations\")",
       "operations"
     ],
     "body": [
       "[",
       "  '#type' => 'operations',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1405,17 +1313,13 @@
   },
   "@Element (\"page\")": {
     "prefix": [
-      "@FormElement (\"page\")",
+      "@RenderElement (\"page\")",
       "@Element (\"page\")",
       "page"
     ],
     "body": [
       "[",
       "  '#type' => 'page',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1426,19 +1330,33 @@
     ],
     "scope": "php"
   },
+  "@Element (\"page_title\")": {
+    "prefix": [
+      "@RenderElement (\"page_title\")",
+      "@Element (\"page_title\")",
+      "page_title"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'page_title',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a render element for the title of an HTML page.",
+      "",
+      "This represents the title of the HTML page's body."
+    ],
+    "scope": "php"
+  },
   "@Element (\"pager\")": {
     "prefix": [
-      "@FormElement (\"pager\")",
+      "@RenderElement (\"pager\")",
       "@Element (\"pager\")",
       "pager"
     ],
     "body": [
       "[",
       "  '#type' => 'pager',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "  '#element' => '',",
       "  '#pagination_heading_level' => '',",
       "  '#parameters' => '',",
@@ -1473,28 +1391,6 @@
       "  '#type' => 'pager',",
       "];",
       "@endcode"
-    ],
-    "scope": "php"
-  },
-  "@Element (\"pagetitle\")": {
-    "prefix": [
-      "@FormElement (\"pagetitle\")",
-      "@Element (\"pagetitle\")",
-      "pagetitle"
-    ],
-    "body": [
-      "[",
-      "  '#type' => 'pagetitle',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
-      "]${5|\\,,;|}"
-    ],
-    "description": [
-      "Provides a render element for the title of an HTML page.",
-      "",
-      "This represents the title of the HTML page's body."
     ],
     "scope": "php"
   },
@@ -1537,15 +1433,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"passwordconfirm\")": {
+  "@Element (\"password_confirm\")": {
     "prefix": [
-      "@FormElement (\"passwordconfirm\")",
-      "@Element (\"passwordconfirm\")",
-      "passwordconfirm"
+      "@FormElement (\"password_confirm\")",
+      "@Element (\"password_confirm\")",
+      "password_confirm"
     ],
     "body": [
       "[",
-      "  '#type' => 'passwordconfirm',",
+      "  '#type' => 'password_confirm',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -1575,15 +1471,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"pathelement\")": {
+  "@Element (\"path\")": {
     "prefix": [
-      "@FormElement (\"pathelement\")",
-      "@Element (\"pathelement\")",
-      "pathelement"
+      "@FormElement (\"path\")",
+      "@Element (\"path\")",
+      "path"
     ],
     "body": [
       "[",
-      "  '#type' => 'pathelement',",
+      "  '#type' => 'path',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -1599,19 +1495,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"processedtext\")": {
+  "@Element (\"processed_text\")": {
     "prefix": [
-      "@FormElement (\"processedtext\")",
-      "@Element (\"processedtext\")",
-      "processedtext"
+      "@RenderElement (\"processed_text\")",
+      "@Element (\"processed_text\")",
+      "processed_text"
     ],
     "body": [
       "[",
-      "  '#type' => 'processedtext',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'processed_text',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1729,19 +1621,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"responsiveimage\")": {
+  "@Element (\"responsive_image\")": {
     "prefix": [
-      "@FormElement (\"responsiveimage\")",
-      "@Element (\"responsiveimage\")",
-      "responsiveimage"
+      "@RenderElement (\"responsive_image\")",
+      "@Element (\"responsive_image\")",
+      "responsive_image"
     ],
     "body": [
       "[",
-      "  '#type' => 'responsiveimage',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'responsive_image',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1876,19 +1764,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"statusmessages\")": {
+  "@Element (\"status_messages\")": {
     "prefix": [
-      "@FormElement (\"statusmessages\")",
-      "@Element (\"statusmessages\")",
-      "statusmessages"
+      "@RenderElement (\"status_messages\")",
+      "@Element (\"status_messages\")",
+      "status_messages"
     ],
     "body": [
       "[",
-      "  '#type' => 'statusmessages',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'status_messages',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1905,19 +1789,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"statusreport\")": {
+  "@Element (\"status_report\")": {
     "prefix": [
-      "@FormElement (\"statusreport\")",
-      "@Element (\"statusreport\")",
-      "statusreport"
+      "@RenderElement (\"status_report\")",
+      "@Element (\"status_report\")",
+      "status_report"
     ],
     "body": [
       "[",
-      "  '#type' => 'statusreport',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'status_report',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1925,19 +1805,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"statusreportpage\")": {
+  "@Element (\"status_report_page\")": {
     "prefix": [
-      "@FormElement (\"statusreportpage\")",
-      "@Element (\"statusreportpage\")",
-      "statusreportpage"
+      "@RenderElement (\"status_report_page\")",
+      "@Element (\"status_report_page\")",
+      "status_report_page"
     ],
     "body": [
       "[",
-      "  '#type' => 'statusreportpage',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'status_report_page',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -1986,19 +1862,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"systemcompactlink\")": {
+  "@Element (\"system_compact_link\")": {
     "prefix": [
-      "@FormElement (\"systemcompactlink\")",
-      "@Element (\"systemcompactlink\")",
-      "systemcompactlink"
+      "@RenderElement (\"system_compact_link\")",
+      "@Element (\"system_compact_link\")",
+      "system_compact_link"
     ],
     "body": [
       "[",
-      "  '#type' => 'systemcompactlink',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'system_compact_link',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -2243,6 +2115,46 @@
     ],
     "scope": "php"
   },
+  "@Element (\"text_format\")": {
+    "prefix": [
+      "@RenderElement (\"text_format\")",
+      "@Element (\"text_format\")",
+      "text_format"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'text_format',",
+      "  '#base_type' => '',",
+      "  '#format' => '',",
+      "  '#allowed_formats' => '',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a text format render element.",
+      "",
+      "Properties:",
+      "- #base_type: The form element #type to use for the 'value' element.",
+      "  'textarea' by default.",
+      "- #format: (optional) The text format ID to preselect. If omitted, the",
+      "  default format for the current user will be used.",
+      "- #allowed_formats: (optional) An array of text format IDs that are available",
+      "  for this element. If omitted, all text formats that the current user has",
+      "  access to will be allowed.",
+      "",
+      "Usage Example:",
+      "@code",
+      "$form['body'] = [",
+      "  '#type' => 'text_format',",
+      "  '#title' => 'Body',",
+      "  '#format' => 'full_html',",
+      "  '#default_value' => 'The quick brown fox jumped over the lazy dog.',",
+      "];",
+      "@endcode",
+      "",
+      "@see \\Drupal\\Core\\Render\\Element\\Textarea"
+    ],
+    "scope": "php"
+  },
   "@Element (\"textarea\")": {
     "prefix": [
       "@FormElement (\"textarea\")",
@@ -2342,50 +2254,6 @@
     ],
     "scope": "php"
   },
-  "@Element (\"textformat\")": {
-    "prefix": [
-      "@FormElement (\"textformat\")",
-      "@Element (\"textformat\")",
-      "textformat"
-    ],
-    "body": [
-      "[",
-      "  '#type' => 'textformat',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
-      "  '#base_type' => '',",
-      "  '#format' => '',",
-      "  '#allowed_formats' => '',",
-      "]${5|\\,,;|}"
-    ],
-    "description": [
-      "Provides a text format render element.",
-      "",
-      "Properties:",
-      "- #base_type: The form element #type to use for the 'value' element.",
-      "  'textarea' by default.",
-      "- #format: (optional) The text format ID to preselect. If omitted, the",
-      "  default format for the current user will be used.",
-      "- #allowed_formats: (optional) An array of text format IDs that are available",
-      "  for this element. If omitted, all text formats that the current user has",
-      "  access to will be allowed.",
-      "",
-      "Usage Example:",
-      "@code",
-      "$form['body'] = [",
-      "  '#type' => 'text_format',",
-      "  '#title' => 'Body',",
-      "  '#format' => 'full_html',",
-      "  '#default_value' => 'The quick brown fox jumped over the lazy dog.',",
-      "];",
-      "@endcode",
-      "",
-      "@see \\Drupal\\Core\\Render\\Element\\Textarea"
-    ],
-    "scope": "php"
-  },
   "@Element (\"token\")": {
     "prefix": [
       "@FormElement (\"token\")",
@@ -2413,17 +2281,13 @@
   },
   "@Element (\"toolbar\")": {
     "prefix": [
-      "@FormElement (\"toolbar\")",
+      "@RenderElement (\"toolbar\")",
       "@Element (\"toolbar\")",
       "toolbar"
     ],
     "body": [
       "[",
       "  '#type' => 'toolbar',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -2431,19 +2295,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"toolbaritem\")": {
+  "@Element (\"toolbar_item\")": {
     "prefix": [
-      "@FormElement (\"toolbaritem\")",
-      "@Element (\"toolbaritem\")",
-      "toolbaritem"
+      "@RenderElement (\"toolbar_item\")",
+      "@Element (\"toolbar_item\")",
+      "toolbar_item"
     ],
     "body": [
       "[",
-      "  '#type' => 'toolbaritem',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
+      "  '#type' => 'toolbar_item',",
       "]${5|\\,,;|}"
     ],
     "description": [
@@ -2527,15 +2387,15 @@
     ],
     "scope": "php"
   },
-  "@Element (\"verticaltabs\")": {
+  "@Element (\"vertical_tabs\")": {
     "prefix": [
-      "@FormElement (\"verticaltabs\")",
-      "@Element (\"verticaltabs\")",
-      "verticaltabs"
+      "@FormElement (\"vertical_tabs\")",
+      "@Element (\"vertical_tabs\")",
+      "vertical_tabs"
     ],
     "body": [
       "[",
-      "  '#type' => 'verticaltabs',",
+      "  '#type' => 'vertical_tabs',",
       "  '#title' => ${1|t(''),$this->t('')|},",
       "  '#title_display' => '${2|before,after,invisible,attribute|}',",
       "  '#description' => ${3|t(''),$this->t('')|},",
@@ -2587,17 +2447,13 @@
   },
   "@Element (\"view\")": {
     "prefix": [
-      "@FormElement (\"view\")",
+      "@RenderElement (\"view\")",
       "@Element (\"view\")",
       "view"
     ],
     "body": [
       "[",
       "  '#type' => 'view',",
-      "  '#title' => ${1|t(''),$this->t('')|},",
-      "  '#title_display' => '${2|before,after,invisible,attribute|}',",
-      "  '#description' => ${3|t(''),$this->t('')|},",
-      "  '#required' => ${4|TRUE,FALSE|},",
       "]${5|\\,,;|}"
     ],
     "description": [
