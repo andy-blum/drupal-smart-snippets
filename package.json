@@ -1,55 +1,76 @@
 {
-    "name": "drupal-smart-snippets",
-    "displayName": "Drupal Smart Snippets",
-    "description": "Context-aware snippets for Drupal development",
-    "version": "3.0.0-alpha",
-    "publisher": "andrewdavidblum",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/andy-blum/smart-drupal-snippets"
-    },
-    "engines": {
-        "vscode": "^1.95.0"
-    },
-    "galleryBanner": {
-        "color": "#0678BE",
-        "theme": "dark"
-    },
-    "icon": "images/drupal_logo.png",
-    "categories": [
-        "Snippets"
-    ],
-    "keywords": [
-        "Drupal",
-        "Drupal-9",
-        "Drupal-10",
-        "PHP",
-        "Snippets"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "php",
-                "aliases": [
-                    "PHP",
-                    "php"
-                ],
-                "extensions": [
-                    ".engine",
-                    ".install",
-                    ".inc",
-                    ".make",
-                    ".module",
-                    ".profile",
-                    ".test",
-                    ".theme"
-                ]
-            }
+  "name": "drupal-smart-snippets",
+  "displayName": "Drupal Smart Snippets",
+  "description": "Context-aware snippets for Drupal development",
+  "version": "3.0.0-alpha",
+  "publisher": "andrewdavidblum",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andy-blum/smart-drupal-snippets"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "galleryBanner": {
+    "color": "#0678BE",
+    "theme": "dark"
+  },
+  "icon": "images/drupal_logo.png",
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "Drupal",
+    "Drupal-9",
+    "Drupal-10",
+    "PHP",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "php",
+        "aliases": [
+          "PHP",
+          "php"
+        ],
+        "extensions": [
+          ".engine",
+          ".install",
+          ".inc",
+          ".make",
+          ".module",
+          ".profile",
+          ".test",
+          ".theme"
         ]
-    },
-    "dependencies": {
-        "php-parser": "^3.1.4"
-    },
-    "scripts": {
-    }
+      }
+    ]
+  },
+  "dependencies": {
+    "php-parser": "^3.1.4"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "start": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "build": "npm run check-types && npm run lint && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "@types/vscode": "^1.97.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.21.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.7.3"
+  }
 }

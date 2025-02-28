@@ -1,9 +1,13 @@
 .vscode/**
 .vscode-test/**
-node_modules/
-tmp/
+node_modules/**
+src/**
 package-lock.json
 .gitignore
 .nvmrc
-scrape.js
 vsc-extension-quickstart.md
+esbuild.js
+**/tsconfig.json
+**/eslint.config.mjs
+**/*.map
+**/*.ts
