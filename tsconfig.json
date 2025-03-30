@@ -8,7 +8,7 @@
 		"sourceMap": true,
 		"rootDir": "src",
 		"outDir": "dist",
-		"strict": true,
+		"strict": false,
 		"noImplicitAny": false,
 		"esModuleInterop": true,
 		"skipLibCheck": true

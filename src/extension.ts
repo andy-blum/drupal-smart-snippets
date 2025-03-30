@@ -1,15 +1,20 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export async function activate(context: vscode.ExtensionContext) {
+import hookCompletions from './completions/hooks';
+import serviceCompletions from './completions/services';
+import elementCompletions from './completions/elements';
+import logger from './util/logger';
 
-	const logger = vscode.window.createOutputChannel('Drupal Smart Snippets');
+export async function activate(context: vscode.ExtensionContext) {
+	// TODO: Remove these lines before publishing.
+	logger.show();
 	logger.appendLine('Drupal Smart Snippets is now active!');
-	vscode.window.showInformationMessage('Drupal Smart Snippets is now active!');
+
+	const hooks = await hookCompletions();
+	const services = await serviceCompletions();
+	const elements = await elementCompletions();
+
+	context.subscriptions.push(...hooks, ...services, ...elements);
 }
 
-// This method is called when your extension is deactivated
 export function deactivate() {}

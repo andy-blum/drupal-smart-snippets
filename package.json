@@ -9,7 +9,7 @@
     "url": "https://github.com/andy-blum/smart-drupal-snippets"
   },
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.0.0"
   },
   "galleryBanner": {
     "color": "#0678BE",
@@ -52,7 +52,8 @@
     ]
   },
   "dependencies": {
-    "php-parser": "^3.1.4"
+    "php-parser": "^3.1.4",
+    "yaml": "^2.7.0"
   },
   "scripts": {
     "vscode:prepublish": "npm run build",
