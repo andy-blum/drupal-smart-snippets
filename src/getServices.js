@@ -8,7 +8,24 @@ export async function getServices(version) {
       encoding: 'utf-8',
     });
 
-    const { services } = parse(serviceYmlContents);
+    // Parse YAML with custom tags for Symfony/Drupal service definitions
+    // These tags are used by Symfony's dependency injection but we just need to preserve them as strings
+    const { services } = parse(serviceYmlContents, {
+      customTags: [
+        {
+          tag: '!tagged_iterator',
+          resolve: (str) => `!tagged_iterator ${str}`
+        },
+        {
+          tag: '!tagged',
+          resolve: (str) => `!tagged ${str}`
+        },
+        {
+          tag: '!service_locator',
+          resolve: (str) => `!service_locator ${str}`
+        }
+      ]
+    });
 
     res(Object.entries(services));
 	});

@@ -32,7 +32,12 @@ export async function getRawElements(elementFiles) {
       const parsedElements = parser.parseCode(contents).children;
 
       for (const element of parsedElements) {
-        const phpClass = element.children.find(child => child.kind === 'class');
+        const phpClass = element.children?.find(child => child.kind === 'class');
+
+        // Skip if no class was found in this element
+        if (!phpClass) {
+          continue;
+        }
 
         const attributeType = phpClass.attrGroups?.at(0)?.attrs?.at(0)?.name;
         const attributeValue = phpClass.attrGroups?.at(0)?.attrs?.at(0)?.args[0]?.value;
