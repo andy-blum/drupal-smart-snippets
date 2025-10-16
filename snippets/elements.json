@@ -102,19 +102,27 @@
       "  '#required' => ${4|TRUE,FALSE|},",
       "  '#limit_validation_errors' => '',",
       "  '#value' => '',",
+      "  '#submit_button' => '',",
       "]${5|\\,,;|}"
     ],
     "description": [
       "Provides an action button form element.",
       "",
-      "When the button is pressed, the form will be submitted to Drupal, where it is",
-      "validated and rebuilt. The submit handler is not invoked.",
+      "When the button is pressed:",
+      "- If #submit_button is TRUE (default), the form will be submitted to Drupal,",
+      "  where it is validated and rebuilt. The submit handler is not invoked.",
+      "- If #submit_button is FALSE, the button will act as a regular HTML button",
+      "  (with the 'type' attribute set to 'button') and will not trigger a form",
+      "  submission. This allows developers to define custom client-side behavior",
+      "  using JavaScript or other mechanisms.",
       "",
       "Properties:",
       "- #limit_validation_errors: An array of form element keys that will block",
       "  form submission when validation for these elements or any child elements",
       "  fails. Specify an empty array to suppress all form validation errors.",
       "- #value: The text to be shown on the button.",
+      "- #submit_button: This has a default value of TRUE. If set to FALSE, the",
+      "  'type' attribute is set to 'button.'",
       "",
       "",
       "Usage Example:",
@@ -259,7 +267,7 @@
       "]${5|\\,,;|}"
     ],
     "description": [
-      "Provides a Single Directory Component render element.",
+      "Provides a Single-Directory Component render element.",
       "",
       "Properties:",
       "- #component: The machine name of the component.",
@@ -905,8 +913,8 @@
       "- #tag: The tag name to output.",
       "- #attributes: (array, optional) HTML attributes to apply to the tag. The",
       "  attributes are escaped, see \\Drupal\\Core\\Template\\Attribute.",
-      "- #value: (string, optional) A string containing the textual contents of",
-      "  the tag.",
+      "- #value: (string|MarkupInterface, optional) The textual contents of the tag.",
+      "  Strings will be XSS admin filtered.",
       "- #noscript: (bool, optional) When set to TRUE, the markup",
       "  (including any prefix or suffix) will be wrapped in a  element.",
       "",
@@ -917,7 +925,47 @@
       "  '#tag' => 'p',",
       "  '#value' => $this->t('Hello World'),",
       "];",
-      "@endcode"
+      "@endcode",
+      "",
+      "@see \\Drupal\\Component\\Utility\\Xss::filterAdmin()."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"icon\")": {
+    "prefix": [
+      "@RenderElement (\"icon\")",
+      "@Element (\"icon\")",
+      "icon"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'icon',",
+      "  '#pack_id' => '',",
+      "  '#icon_id' => '',",
+      "  '#settings' => '',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a render element to display an icon.",
+      "",
+      "Properties:",
+      "- #pack_id: (string) Icon Pack provider plugin id.",
+      "- #icon_id: (string) Name of the icon.",
+      "- #settings: (array) Settings sent to the inline Twig template.",
+      "",
+      "Usage Example:",
+      "@code",
+      "$build['icon'] = [",
+      "  '#type' => 'icon',",
+      "  '#pack_id' => 'material_symbols',",
+      "  '#icon_id' => 'home',",
+      "  '#settings' => [",
+      "    'width' => 64,",
+      "  ],",
+      "];",
+      "@endcode",
+      "",
+      "@internal"
     ],
     "scope": "php"
   },
@@ -2230,6 +2278,7 @@
       "- #pattern: A string for the native HTML5 pattern attribute.",
       "",
       "Usage example:",
+      "",
       "@code",
       "$form['title'] = [",
       "  '#type' => 'textfield',",
@@ -2242,15 +2291,8 @@
       "];",
       "@endcode",
       "",
-      "@see \\Drupal\\Core\\Render\\Element\\Color",
-      "@see \\Drupal\\Core\\Render\\Element\\Email",
-      "@see \\Drupal\\Core\\Render\\Element\\MachineName",
-      "@see \\Drupal\\Core\\Render\\Element\\Number",
-      "@see \\Drupal\\Core\\Render\\Element\\Password",
-      "@see \\Drupal\\Core\\Render\\Element\\PasswordConfirm",
-      "@see \\Drupal\\Core\\Render\\Element\\Range",
-      "@see \\Drupal\\Core\\Render\\Element\\Tel",
-      "@see \\Drupal\\Core\\Render\\Element\\Url"
+      "@see \\Drupal\\Core\\Render\\Element",
+      "@see \\Drupal\\Core\\Render\\Element\\Textarea"
     ],
     "scope": "php"
   },
@@ -2310,6 +2352,22 @@
       "Provides a toolbar item that is wrapped in markup for common styling.",
       "",
       "The 'tray' property contains a renderable array."
+    ],
+    "scope": "php"
+  },
+  "@Element (\"top_bar\")": {
+    "prefix": [
+      "@RenderElement (\"top_bar\")",
+      "@Element (\"top_bar\")",
+      "top_bar"
+    ],
+    "body": [
+      "[",
+      "  '#type' => 'top_bar',",
+      "]${5|\\,,;|}"
+    ],
+    "description": [
+      "Provides a render element for the default Drupal toolbar."
     ],
     "scope": "php"
   },
