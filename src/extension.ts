@@ -14,7 +14,11 @@ export async function activate(context: vscode.ExtensionContext) {
 	const services = await serviceCompletions();
 	const elements = await elementCompletions();
 
-	context.subscriptions.push(...hooks, ...services, ...elements);
+	context.subscriptions.push(
+    ...(Array.isArray(hooks) ? hooks : [hooks]),
+    ...(Array.isArray(services) ? services : [services]),
+    ...(Array.isArray(elements) ? elements : [elements])
+  );
 }
 
 export function deactivate() {}

@@ -23,48 +23,89 @@ import type * as PHP from "php-parser";
  * This function:
  * 1. Finds all Element classes in the Drupal codebase
  * 2. Extracts element definitions from these files
- * 3. Formats them as completion items
- * 4. Registers them with the VS Code completion system
+ * 3. Formats them as metadata objects
+ * 4. Registers a single completion item provider that maps metadata to VS Code completions
  *
- * @returns {Promise<vscode.Disposable[]>} Array of completion item providers that can be registered with VS Code
+ * @returns {Promise<vscode.Disposable>} A completion item provider registration
  */
 export default async function elementCompletions() {
   const webRoot = await getWebRoot();
   if (!webRoot) {
+    logger.appendLine('Could not find Drupal root. Element completions will not be available.');
     return [];
   }
+
+  const elementRegistry = new Map<string, Array<{name: string, snippet: string, description: string}>>();
+
+  const indexFile = async (file: vscode.Uri) => {
+    try {
+      const elements = await findElements(file);
+      const formattedElements = elements.map(formatElement);
+      elementRegistry.set(file.fsPath, formattedElements);
+    } catch (error) {
+      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
+    }
+  };
 
   const files = await vscode.workspace.findFiles(
     new vscode.RelativePattern(webRoot, '**/Element/*.php')
   );
 
-  const elementCompletions = [];
-  let errorCount = 0;
+  logger.appendLine(`Indexing elements from ${files.length} files...`);
 
   for (const file of files) {
-    try {
-      const elements = await findElements(file);
-      const formattedElements = elements.map(formatElement);
-      const completions = formattedElements.map(generateCompletionItem);
-      elementCompletions.push(...completions);
-    } catch (error) {
-      errorCount++;
-      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
+    await indexFile(file);
+  }
+
+  logger.appendLine(`Successfully indexed elements.`);
+
+  // Setup watcher for future changes
+  const watcher = vscode.workspace.createFileSystemWatcher(
+    new vscode.RelativePattern(webRoot, '**/Element/*.php')
+  );
+  watcher.onDidChange(uri => indexFile(uri));
+  watcher.onDidCreate(uri => indexFile(uri));
+  watcher.onDidDelete(uri => elementRegistry.delete(uri.fsPath));
+
+  // Register a single completion item provider for all elements
+  const provider = vscode.languages.registerCompletionItemProvider('php', {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      // Only offer element completions in Drupal project structure
+      const isDrupalProject = (
+        document.fileName.includes('themes/') ||
+        document.fileName.includes('modules/')
+      );
+
+      if (!isDrupalProject) {
+        return [];
+      }
+
+      const allElements = Array.from(elementRegistry.values()).flat();
+
+      return allElements.map(element => {
+        const completion = new vscode.CompletionItem(`element:${element.name}`);
+        completion.kind = vscode.CompletionItemKind.Struct;
+        completion.documentation = new vscode.MarkdownString(element.description);
+        completion.insertText = new vscode.SnippetString(element.snippet);
+        completion.sortText = `000-${element.name}`;
+        return completion;
+      });
     }
-  }
+  });
 
-  if (errorCount > 0) {
-    logger.appendLine(`Completed with ${errorCount} errors. Some elements may not be available.`);
-  }
-
-  return elementCompletions;
+  return [provider, watcher];
 }
 
 /**
  * Scans a file for Element class definitions with #[FormElement] or #[RenderElement] attributes
  *
  * @param {vscode.Uri} file - The URI of the PHP file to scan
- * @returns {Promise<Array<{name: string, type: string, docs: PHP.CommentBlock}>>} Array of element objects
+ * @returns {Promise<Array<{name: string, type: string, docs: PHP.CommentBlock | undefined}>>} Array of element objects
  * @throws {Error} If the file cannot be read or parsed
  */
 async function findElements(file: vscode.Uri) {
@@ -74,22 +115,49 @@ async function findElements(file: vscode.Uri) {
 
   const elements = [];
 
-  if (parsed && parsed.children) {
-    for (const node of parsed.children) {
+  const findClasses = (nodes: any[]) => {
+    for (const node of nodes) {
       if (node.kind === 'class') {
         const phpClass = node as PHP.Class;
-        const attributeGroup = phpClass.attrGroups?.at(0);
-        const attribute = attributeGroup?.attrs?.at(0);
+        let name = '';
+        let type = '';
+        let docs = phpClass.leadingComments?.at(-1);
 
-        if (attribute && (attribute.name === 'FormElement' || attribute.name === 'RenderElement')) {
-          const name = attribute.args[0]?.value;
-          const type = attribute.name;
-          const docs = phpClass.leadingComments?.at(-1) || attributeGroup.leadingComments?.at(-1);
+        // 1. Try modern PHP Attributes
+        if (phpClass.attrGroups) {
+          for (const attributeGroup of phpClass.attrGroups) {
+            for (const attribute of attributeGroup.attrs) {
+              const attrName = typeof attribute.name === 'string' ? attribute.name : (attribute.name as any).name;
+              if (attrName === 'FormElement' || attrName === 'RenderElement') {
+                name = attribute.args[0]?.kind === 'string' ? (attribute.args[0] as any).value : '';
+                type = attrName;
+                docs = docs || attributeGroup.leadingComments?.at(-1);
+              }
+            }
+          }
+        }
 
+        // 2. Fallback to legacy DocBlock Annotations
+        if (!name && docs?.value) {
+          const annotationRegex = /@(\w+Element)\("([^"]+)"\)/;
+          const match = docs.value.match(annotationRegex);
+          if (match) {
+            type = match[1];
+            name = match[2];
+          }
+        }
+
+        if (name && type) {
           elements.push({ name, type, docs });
         }
+      } else if (node.children) {
+        findClasses(node.children);
       }
     }
+  };
+
+  if (parsed && parsed.children) {
+    findClasses(parsed.children);
   }
 
   return elements;
@@ -150,9 +218,6 @@ function formatElementSnippetString(name: string, type: string, docs: PHP.Commen
  * Formats the element documentation from PHP comments into Markdown
  *
  * @param {Object} params - The element documentation parameters
- * @param {string} params.name - The element name
- * @param {string} params.type - The element type
- * @param {PHP.CommentBlock} params.docs - The documentation comment block
  * @returns {string} Markdown-formatted documentation text
  */
 function formatElementDocumentation({ name, type, docs }: { name: string, type: string, docs: PHP.CommentBlock | undefined }) {
@@ -185,13 +250,10 @@ function formatElementDocumentation({ name, type, docs }: { name: string, type: 
 }
 
 /**
- * Shapes parsed element data into a format ready for VS Code completion items
+ * Shapes parsed element data into a format ready for metadata storage
  *
  * @param {Object} element - The element data object
- * @param {string} element.name - The element name
- * @param {string} element.type - The element type
- * @param {PHP.CommentBlock} element.docs - The documentation comment block
- * @returns {Object} An object with name, snippet, and description ready for completion item creation
+ * @returns {Object} An object with name, snippet, and description
  */
 function formatElement({ name, type, docs }: { name: string, type: string, docs: PHP.CommentBlock | undefined }) {
   const snippet = formatElementSnippetString(name, type, docs);
@@ -199,48 +261,7 @@ function formatElement({ name, type, docs }: { name: string, type: string, docs:
 
   return {
     name,
-    type,
     snippet,
     description,
   };
-}
-
-/**
- * Creates a VS Code completion item provider for PHP files with element completions
- *
- * @param {Object} elementData - The processed element data
- * @param {string} elementData.name - The element name
- * @param {string} elementData.type - The element type
- * @param {string} elementData.snippet - The snippet string
- * @param {string} elementData.description - The markdown documentation
- * @returns {vscode.Disposable} A completion item provider registration
- */
-function generateCompletionItem({ name, type, snippet, description }: { name: string, type: string, snippet: string, description: string }) {
-  return vscode.languages.registerCompletionItemProvider('php', {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      // Only offer element completions in Drupal project structure
-      const isDrupalProject = (
-        document.fileName.includes('themes/') ||
-        document.fileName.includes('modules/')
-      );
-
-      // Early return if not in a Drupal project structure
-      if (!isDrupalProject) { return []; }
-
-      const completions = [];
-
-      const completion = new vscode.CompletionItem(`element: ${name}`);
-      completion.kind = vscode.CompletionItemKind.Struct;
-      completion.documentation = new vscode.MarkdownString(description);
-      completion.insertText = new vscode.SnippetString(snippet);
-      completions.push(completion);
-
-      return completions;
-    }
-  });
 }

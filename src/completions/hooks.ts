@@ -4,11 +4,6 @@
  * This module provides IntelliSense completions for Drupal hooks in PHP files.
  * It scans *.api.php files within the Drupal codebase to extract hook definitions
  * and provides them as completion items with properly formatted documentation.
- *
- * The hook completions include:
- * - Properly formatted function signatures with placeholder replacements
- * - Documentation from the API comments
- * - Automatic integration with VS Code's snippet system
  */
 
 import logger from "../util/logger";
@@ -20,19 +15,26 @@ import * as vscode from "vscode";
 /**
  * Provides hook completions for the VS Code editor
  *
- * This function:
- * 1. Finds all *.api.php files in the Drupal codebase
- * 2. Extracts hook definitions from these files
- * 3. Formats them as completion items
- * 4. Registers them with the VS Code completion system
- *
- * @returns {Promise<vscode.Disposable[]>} Array of completion item providers that can be registered with VS Code
+ * @returns {Promise<vscode.Disposable[]>} Array containing the provider and the file watcher
  */
 export default async function hookCompletions() {
   const webRoot = await getWebRoot();
   if (!webRoot) {
+    logger.appendLine('Could not find Drupal root. Hook completions will not be available.');
     return [];
   }
+
+  const hookRegistry = new Map<string, Array<{name: string, definition: string, description: string}>>();
+  
+  const indexFile = async (file: vscode.Uri) => {
+    try {
+      const hooks = await findHooks(file);
+      const formattedHooks = hooks.map(formatHook);
+      hookRegistry.set(file.fsPath, formattedHooks);
+    } catch (error) {
+      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
+    }
+  };
 
   const files = await vscode.workspace.findFiles(`**/*.api.php`)
     .then(files => (
@@ -40,40 +42,66 @@ export default async function hookCompletions() {
       files.filter(({path}) => path.startsWith(webRoot))
     ));
 
-  logger.appendLine(files.length.toString());
-
-  const hookCompletions = [];
-  let errorCount = 0;
+  logger.appendLine(`Indexing hooks from ${files.length} files...`);
 
   for (const file of files) {
-    try {
-      const hooks = await findHooks(file);
-      const formattedHooks = hooks.map(formatHook);
-      const completions = formattedHooks.map(generateCompletionItem);
-      hookCompletions.push(...completions);
-    } catch (error) {
-      errorCount++;
-      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
+    await indexFile(file);
+  }
+
+  logger.appendLine(`Successfully indexed hooks.`);
+
+  // Setup watcher for future changes
+  const watcher = vscode.workspace.createFileSystemWatcher(`**/*.api.php`);
+  watcher.onDidChange(uri => indexFile(uri));
+  watcher.onDidCreate(uri => indexFile(uri));
+  watcher.onDidDelete(uri => hookRegistry.delete(uri.fsPath));
+
+  // Register a single completion item provider for all hooks
+  const provider = vscode.languages.registerCompletionItemProvider('php', {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      // Only offer hook completions in Drupal project structure
+      const isDrupalProject = (
+        document.fileName.includes('themes/') ||
+        document.fileName.includes('modules/')
+      );
+
+      if (!isDrupalProject) {
+        return [];
+      }
+
+      // Check if we're in an OOP-style hook implementation class
+      const isOOP = document.fileName.includes('src/Hook');
+
+      const allHooks = Array.from(hookRegistry.values()).flat();
+
+      return allHooks.map(hook => {
+        const completion = new vscode.CompletionItem(hook.name);
+        completion.documentation = new vscode.MarkdownString(hook.description);
+        completion.sortText = `000-${hook.name}`;
+
+        if (isOOP) {
+          completion.insertText = new vscode.SnippetString(formatOOPHookSnippetString(hook.name, hook.definition));
+          completion.kind = vscode.CompletionItemKind.Method;
+        } else {
+          completion.insertText = new vscode.SnippetString(formatProceduralHookSnippetString(hook.name, hook.definition));
+          completion.kind = vscode.CompletionItemKind.Function;
+        }
+
+        return completion;
+      });
     }
-  }
+  });
 
-  if (errorCount > 0) {
-    logger.appendLine(`Completed with ${errorCount} errors. Some hooks may not be available.`);
-  }
-
-  return hookCompletions;
+  return [provider, watcher];
 }
 
 /**
  * Scans a file for all defined functions beginning with "hook_"
- *
- * This function parses PHP code to extract hook definitions and their documentation.
- * It uses the php-parser library to parse the PHP code and extract function definitions.
- *
- * @param {vscode.Uri} file - The URI of the API file to scan
- * @returns {Promise<Array<{name: string, definition: string, docs: PHP.CommentBlock, isDeprecated: boolean}>>}
- *          Array of hook objects containing name, definition, documentation, and deprecation status
- * @throws {Error} If the file cannot be read or parsed
  */
 async function findHooks(file: vscode.Uri) {
   const content = await vscode.workspace.fs.readFile(file);
@@ -100,28 +128,11 @@ async function findHooks(file: vscode.Uri) {
 }
 
 /**
- * Converts a hook function definition into a VS Code snippet string with placeholders
- *
- * This function:
- * 1. Identifies placeholders in hook names (like 'hook', 'HOOK', 'ENTITY_TYPE')
- * 2. Replaces them with tabstops and placeholders in VS Code snippet format
- * 3. Formats the result with proper implementation comment
- * 4. Sets the cursor position with $0
- *
- * @param {string} name - The original hook name (e.g., 'hook_entity_view')
- * @param {string} definition - The function definition from the API file
- * @returns {string} A formatted snippet string ready for VS Code completion
+ * Converts a hook function definition into a procedural VS Code snippet string
  */
-function formatHookSnippetString(name, definition) {
-
-  // This regex looks for:
-  // [A-Z]+ - One or more uppercase letters
-  // (_(?=[A-Z])[A-Z]+)* - Optionally followed by an underscore and more uppercase letters
-  // This captures placeholder patterns like: ENTITY_TYPE, NODE_TYPE, BUNDLE, etc.
+function formatProceduralHookSnippetString(name, definition) {
   const placeholderRegex = /[A-Z]+(_(?=[A-Z])[A-Z]+)*/g;
 
-  // Parts of the function name that need replaced.
-  // "hook", "HOOK", "MULTI_WORD"
   const placeholders = [
     'hook',
     ...Array.from(
@@ -129,17 +140,13 @@ function formatHookSnippetString(name, definition) {
     )
   ];
 
-  // Escape variable names.
-  // @see https://code.visualstudio.com/docs/editor/userdefinedsnippets#_how-do-i-have-a-snippet-place-a-variable-in-the-pasted-script
   let titleWithPlaceholders = definition.replaceAll('$', '\\$');
 
-  // Create tab-stops at placeholders.
   placeholders.forEach((placeholder, i) => {
     titleWithPlaceholders = titleWithPlaceholders
       .replace(placeholder, `\${${i + 1}:${placeholder}}`);
   });
 
-  // Auto-replace `hook` with filename.
   titleWithPlaceholders = titleWithPlaceholders
     .replace("${1:hook}", "${1:${TM_FILENAME_BASE:hook}}");
 
@@ -154,20 +161,81 @@ function formatHookSnippetString(name, definition) {
 }
 
 /**
- * Formats the hook documentation from PHP comments into Markdown for VS Code hover/completion
- *
- * This function:
- * 1. Extracts the hook's description from its PHP doc block
- * 2. Cleans up the comment syntax and formats it as Markdown
- * 3. Adds extension title and function signature
- * 4. Adds deprecation notice if applicable
- *
- * @param {Object} params - The hook documentation parameters
- * @param {PHP.CommentBlock} params.docs - The PHP comment block associated with the hook
- * @param {string} params.definition - The function definition string
- * @param {string} params.name - The hook name
- * @param {boolean} params.isDeprecated - Whether the hook is marked as deprecated
- * @returns {string} Markdown-formatted documentation text
+ * Converts a hook function definition into an OOP VS Code snippet string
+ */
+function formatOOPHookSnippetString(name: string, definition: string) {
+  const hookNameNoPrefix = name.replace(/^hook_/, '');
+
+  // Extract arguments from definition: "function hook_name(args)" -> "args"
+  const argsMatch = definition.match(/\((.*)\)/s);
+  const args = argsMatch ? argsMatch[1] : '';
+  const escapedArgs = args.replaceAll('$', '\\$');
+
+  const placeholderRegex = /[A-Z]+(_(?=[A-Z])[A-Z]+)*/g;
+
+  // Find all placeholders and their positions
+  const matches = Array.from(hookNameNoPrefix.matchAll(placeholderRegex));
+
+  // Build parts list: alternating between static and placeholder
+  let lastIndex = 0;
+  const parts: Array<{text: string, isPlaceholder: boolean, placeholderIndex?: number}> = [];
+  let pIndex = 1;
+
+  for (const match of matches) {
+    if (match.index! > lastIndex) {
+      parts.push({
+        text: hookNameNoPrefix.slice(lastIndex, match.index),
+        isPlaceholder: false
+      });
+    }
+    parts.push({
+      text: match[0],
+      isPlaceholder: true,
+      placeholderIndex: pIndex++
+    });
+    lastIndex = match.index! + match[0].length;
+  }
+  if (lastIndex < hookNameNoPrefix.length) {
+    parts.push({
+      text: hookNameNoPrefix.slice(lastIndex),
+      isPlaceholder: false
+    });
+  }
+
+  let attributeSnippet = "";
+  let methodSnippet = "";
+
+  parts.forEach((part, index) => {
+    if (part.isPlaceholder) {
+      attributeSnippet += `\${${part.placeholderIndex}:${part.text}}`;
+      const transform = (index === 0) ? "camelcase" : "capitalize";
+      methodSnippet += `\${${part.placeholderIndex}/(.*)/\${1:/${transform}}/}`;
+    } else {
+      attributeSnippet += part.text;
+      const subParts = part.text.split('_').filter(s => s !== '');
+      subParts.forEach((sub, subIndex) => {
+        if (index === 0 && subIndex === 0 && !part.text.startsWith('_')) {
+          methodSnippet += sub.toLowerCase();
+        } else {
+          methodSnippet += sub.charAt(0).toUpperCase() + sub.slice(1).toLowerCase();
+        }
+      });
+    }
+  });
+
+  return [
+    `/**`,
+    ` * Implements hook_${hookNameNoPrefix}().`,
+    ` */`,
+    `#[Hook('${attributeSnippet}')]`,
+    `public function ${methodSnippet}(${escapedArgs}) {`,
+    `  $0`,
+    `}`
+  ].join('\n');
+}
+
+/**
+ * Formats the hook documentation from PHP comments into Markdown
  */
 function formatHookDocumentation({docs, definition, name, isDeprecated}: {docs: PHP.CommentBlock | undefined, definition: string, name: string, isDeprecated: boolean}) {
   const desc = [];
@@ -177,18 +245,13 @@ function formatHookDocumentation({docs, definition, name, isDeprecated}: {docs: 
       .map(line => {
         if (line !== '/**' && line !== ' */') {
           return line
-            // Remove PHP comment markup
             .replace(/^\s\*\s{0,1}/g, '')
-
-            // Special/escaped character replacement
             .replaceAll("&quot;", "\"")
             .replaceAll(/<([^>]*)>/g, "");
         }
       })
       .filter(line => line !== undefined));
   }
-
-  // Add extension title
 
   desc.splice(0, 0,
     '**Drupal Smart Snippets**', '',
@@ -203,90 +266,14 @@ function formatHookDocumentation({docs, definition, name, isDeprecated}: {docs: 
 }
 
 /**
- * Shapes parsed hook data into a format ready for VS Code completion items
- *
- * This function coordinates the transformation of raw hook data into the format
- * needed for VS Code completions by:
- * 1. Creating a snippet string with the formatHookSnippetString function
- * 2. Formatting the documentation with the formatHookDocumentation function
- *
- * @param {Object} hook - The hook data object
- * @param {string} hook.name - The hook name
- * @param {string} hook.definition - The function definition
- * @param {PHP.CommentBlock} hook.docs - The documentation comment block
- * @param {boolean} hook.isDeprecated - Whether the hook is deprecated
- * @returns {Object} An object with name, snippet, and description ready for completion item creation
+ * Shapes parsed hook data into a format ready for metadata storage
  */
 function formatHook({name, definition, docs, isDeprecated}: {name: string, definition: string, docs: PHP.CommentBlock | undefined, isDeprecated: boolean}) {
-  // convert function definition to snippet string with tab-stops & placeholders.
-  const titleWithPlaceholders = formatHookSnippetString(name, definition);
-
-  // Format description text
   const desc = formatHookDocumentation({docs, definition, name, isDeprecated});
 
   return {
     name,
-    snippet: titleWithPlaceholders,
+    definition,
     description: desc,
   };
-}
-
-/**
- * Creates a VS Code completion item provider for PHP files with hook completions
- *
- * This function registers a completion item provider that:
- * 1. Checks if the current file is in a Drupal project
- * 2. Determines if it should provide OOP or procedural hook completions
- * 3. Creates and returns appropriate completion items
- *
- * @param {Object} hookData - The processed hook data
- * @param {string} hookData.name - The hook name
- * @param {string} hookData.snippet - The snippet string with placeholders
- * @param {string} hookData.description - The markdown documentation
- * @returns {vscode.Disposable} A completion item provider registration
- */
-function generateCompletionItem({name, snippet, description}: {name: string, snippet: string, description: string}) {
-  return vscode.languages.registerCompletionItemProvider('php', {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      // Only offer hook completions in Drupal project structure
-      // This simple heuristic checks if the file is in a themes or modules directory
-      const isDrupalProject = (
-        document.fileName.includes('themes/') ||
-        document.fileName.includes('modules/')
-      );
-
-      // Check if we're in an OOP-style hook implementation class
-      // Drupal 11+ allows OOP hook implementations via classes in src/Hook directories
-      const isOOP = document.fileName.includes('src/Hook');
-
-      // Early return if not in a Drupal project structure
-      if (!isDrupalProject) { return []; }
-
-      const completions = [];
-
-        if (isOOP) {
-          const completion = new vscode.CompletionItem(name);
-          completion.documentation = new vscode.MarkdownString(description);
-          // const file = document.getText().split('\n').filter((lineText, lineNum) => lineNum !== position.line).join('\n');
-          // const parsed = parser.parseCode(file, document.uri.fsPath);
-          completion.insertText = new vscode.SnippetString(snippet);
-          completion.kind = vscode.CompletionItemKind.Method;
-          completions.push(completion);
-        } else {
-          const completion = new vscode.CompletionItem(name);
-          completion.sortText = '000-' + name;
-          completion.documentation = new vscode.MarkdownString(description);
-          completion.insertText = new vscode.SnippetString(snippet);
-          completion.kind = vscode.CompletionItemKind.Function;
-          completions.push(completion);
-        }
-
-      return completions;
-    }
-  });
 }

@@ -4,68 +4,220 @@
  * This module provides IntelliSense completions for Drupal services in YAML files.
  * It scans *.services.yml files within the Drupal codebase to extract service definitions
  * and provides them as completion items with properly formatted documentation.
- *
- * The service completions include:
- * - Properly formatted service injection code with placeholders
- * - Documentation from the service class comments
- * - Automatic integration with VS Code's snippet system
  */
 
 import logger from "../util/logger";
 import getWebRoot from "../util/getWebRoot";
+import parser from "../util/parser";
 import { parse } from 'yaml';
 import * as vscode from "vscode";
+import type * as PHP from "php-parser";
 
 /**
  * Provides service completions for the VS Code editor
- *
- * This function:
- * 1. Finds all *.services.yml files in the Drupal codebase
- * 2. Extracts service definitions from these files
- * 3. Formats them as completion items
- * 4. Registers them with the VS Code completion system
- *
- * @returns {Promise<vscode.Disposable[]>} Array of completion item providers that can be registered with VS Code
  */
 export default async function serviceCompletions() {
   const webRoot = await getWebRoot();
   if (!webRoot) {
+    logger.appendLine('Could find Drupal root. Service completions will not be available.');
     return [];
   }
+
+  const serviceRegistry = new Map<string, Array<{name: string, value: any, description: string}>>();
+
+  const indexFile = async (file: vscode.Uri) => {
+    try {
+      const services = await findServices(file);
+      const formattedServices = services.map(formatService);
+      serviceRegistry.set(file.fsPath, formattedServices);
+    } catch (error) {
+      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
+    }
+  };
 
   const files = await vscode.workspace.findFiles(`**/*.services.yml`)
     .then(files => (
       files.filter(({path}) => path.startsWith(webRoot))
     ));
 
-  const serviceCompletions = [];
-  let errorCount = 0;
+  logger.appendLine(`Indexing services from ${files.length} files...`);
 
   for (const file of files) {
-    try {
-      const services = await findServices(file);
-      const formattedServices = services.map(formatService);
-      const completions = formattedServices.map(generateCompletionItem);
-      serviceCompletions.push(...completions);
-    } catch (error) {
-      errorCount++;
-      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
+    await indexFile(file);
+  }
+
+  logger.appendLine(`Successfully indexed services.`);
+
+  // Setup watcher for future changes
+  const watcher = vscode.workspace.createFileSystemWatcher(`**/*.services.yml`);
+  watcher.onDidChange(uri => indexFile(uri));
+  watcher.onDidCreate(uri => indexFile(uri));
+  watcher.onDidDelete(uri => serviceRegistry.delete(uri.fsPath));
+
+  // Register a single completion item provider for all services
+  const provider = vscode.languages.registerCompletionItemProvider('php', {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      // Only offer service completions in Drupal project structure
+      const isDrupalProject = (
+        document.fileName.includes('themes/') ||
+        document.fileName.includes('modules/')
+      );
+
+      if (!isDrupalProject) {
+        return [];
+      }
+
+      // Check if we're in an OOP context
+      const isOOP = document.fileName.includes('/src/');
+
+      // Parse the current document to find namespaces and use statements
+      const { namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart } = parseDocument(document);
+
+      const allServices = Array.from(serviceRegistry.values()).flat();
+
+      return allServices.map(service => {
+        const fullClass = service.value?.class;
+        const completion = new vscode.CompletionItem(`service:${service.name}`);
+        completion.kind = vscode.CompletionItemKind.Class;
+        completion.documentation = new vscode.MarkdownString(service.description);
+        completion.sortText = `000-${service.name}`;
+
+        let classToUse = fullClass || 'Unknown';
+        const additionalTextEdits: vscode.TextEdit[] = [];
+
+        if (fullClass && fullClass.startsWith('\\')) {
+          // Remove leading backslash for comparison
+          const normalizedFullClass = fullClass.substring(1);
+          classToUse = handleClassImport(normalizedFullClass, document, namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart, additionalTextEdits);
+        } else if (fullClass && !fullClass.includes('%')) {
+          classToUse = handleClassImport(fullClass, document, namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart, additionalTextEdits);
+        }
+
+        completion.insertText = new vscode.SnippetString(formatServiceSnippetString(service.name, classToUse, isOOP));
+        completion.additionalTextEdits = additionalTextEdits;
+        
+        return completion;
+      });
     }
+  });
+
+  return [provider, watcher];
+}
+
+/**
+ * Parses the document to extract namespace and use statements
+ */
+function parseDocument(document: vscode.TextDocument) {
+  let namespace = '';
+  const useStatements = new Map<string, string>(); // FQN -> alias/name
+  let lastUseStatementEnd = 0;
+  let namespaceEnd = 0;
+  let firstNodeStart = 0;
+
+  try {
+    const parsed = parser.parseCode(document.getText(), document.fileName);
+    
+    const walk = (nodes: any[]) => {
+      for (const node of nodes) {
+        if (firstNodeStart === 0 && node.kind !== 'inline') {
+          firstNodeStart = node.loc.start.line;
+        }
+
+        if (node.kind === 'namespace') {
+          namespace = node.name;
+          namespaceEnd = node.loc.end.line;
+          if (node.children) {
+            walk(node.children);
+          }
+        } else if (node.kind === 'usegroup') {
+          for (const item of node.items) {
+            const fqn = item.name;
+            const alias = item.alias ? (typeof item.alias === 'string' ? item.alias : item.alias.name) : fqn.split('\\').pop();
+            useStatements.set(fqn, alias);
+          }
+          lastUseStatementEnd = node.loc.end.line;
+        }
+      }
+    };
+
+    if (parsed && parsed.children) {
+      walk(parsed.children);
+    }
+  } catch (e) {
+    // Ignore parse errors in the current document
   }
 
-  if (errorCount > 0) {
-    logger.appendLine(`Completed with ${errorCount} errors. Some services may not be available.`);
+  return { namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart };
+}
+
+/**
+ * Determines the best way to reference a class and prepares additional edits if needed
+ */
+function handleClassImport(
+  fullClass: string, 
+  document: vscode.TextDocument,
+  namespace: string, 
+  useStatements: Map<string, string>, 
+  lastUseStatementEnd: number, 
+  namespaceEnd: number, 
+  firstNodeStart: number,
+  additionalTextEdits: vscode.TextEdit[]
+): string {
+  const parts = fullClass.split('\\');
+  const className = parts.pop() || '';
+  const classNamespace = parts.join('\\');
+
+  // 1. Already imported (via parser)?
+  if (useStatements.has(fullClass)) {
+    return useStatements.get(fullClass) || className;
   }
 
-  return serviceCompletions;
+  // 2. Backup check: exists in text? (In case parser failed on broken document)
+  const docText = document.getText();
+  if (docText.includes(`use ${fullClass};`)) {
+    return className;
+  }
+
+  // 3. Same namespace?
+  if (classNamespace === namespace) {
+    return className;
+  }
+
+  // Check if the short name is already taken by another use statement
+  const isShortNameTaken = Array.from(useStatements.values()).includes(className);
+
+  if (isShortNameTaken) {
+    // Fallback to FQN if short name is taken
+    return `\\${fullClass}`;
+  }
+
+  // Not imported, let's add a use statement
+  let insertLine = 0;
+  if (lastUseStatementEnd) {
+    insertLine = lastUseStatementEnd;
+  } else if (namespaceEnd) {
+    insertLine = namespaceEnd;
+  } else if (firstNodeStart > 1) {
+    insertLine = firstNodeStart - 1;
+  } else {
+    insertLine = 1;
+  }
+
+  const useText = `use ${fullClass};\n`;
+  
+  // Only add if not already in edits (multiple services might use same class)
+  additionalTextEdits.push(vscode.TextEdit.insert(new vscode.Position(insertLine, 0), useText));
+
+  return className;
 }
 
 /**
  * Extracts services from a services.yml file
- *
- * @param {vscode.Uri} file - The URI of the services YAML file to scan
- * @returns {Promise<Array<{name: string, value: any}>>} Array of service objects
- * @throws {Error} If the file cannot be read or parsed
  */
 async function findServices(file: vscode.Uri) {
   const content = await vscode.workspace.fs.readFile(file);
@@ -77,36 +229,32 @@ async function findServices(file: vscode.Uri) {
     return [];
   }
 
-  return Object.entries(services).map(([name, value]) => ({ name, value }));
+  return Object.entries(services)
+    .filter(([name]) => !name.startsWith('_'))
+    .map(([name, value]) => ({ name, value }));
 }
 
 /**
- * Creates a service snippet with properly formatted service injection code
- *
- * @param {string} name - The service name
- * @param {any} value - The service definition
- * @returns {string} A formatted snippet string ready for VS Code completion
+ * Creates a service snippet
  */
-function formatServiceSnippetString(name: string, value: any) {
-  // Replace dots with underscores for variable name
+function formatServiceSnippetString(name: string, className: string, isOOP: boolean) {
   const variableName = name.replaceAll('.', '_');
+  const lines = [];
 
-  return [
-    `/**`,
-    ` * @var ${value?.class || 'Unknown'}`,
-    ` */`,
-    `\${1:\\$${variableName}_service} = \\Drupal::service('${name}');`,
-    ``
-  ].join('\n');
+  if (isOOP) {
+    lines.push(`// @todo: Consider using Dependency Injection instead of \\Drupal::service().`);
+  }
+
+  lines.push(`\\$\${1:${variableName}_service} = \\Drupal::service('${name}');`);
+  lines.push(`assert(\\$\${1} instanceof ${className});`);
+  lines.push(``);
+
+  return lines.join('\n');
 }
 
-// /**
-//  * Extracts and formats service documentation
-//  *
-//  * @param {string} name - The service name
-//  * @param {any} value - The service definition
-//  * @returns {string} Markdown-formatted documentation text
-//  */
+/**
+ * Extracts and formats service documentation
+ */
 function formatServiceDocumentation(name: string, value: any) {
   const description = [];
 
@@ -125,7 +273,6 @@ function formatServiceDocumentation(name: string, value: any) {
     description.splice(2, 0, `_DEPRECATED: ${deprecationWarning}_`);
   }
 
-  // Add any additional documentation if available
   if (value?.description) {
     description.push('', value?.description);
   }
@@ -134,67 +281,14 @@ function formatServiceDocumentation(name: string, value: any) {
 }
 
 /**
- * Shapes parsed service data into a format ready for VS Code completion items
- *
- * @param {Object} service - The service data object
- * @param {string} service.name - The service name
- * @param {any} service.value - The service definition
- * @returns {Object} An object with name, snippet, and description ready for completion item creation
+ * Shapes parsed service data
  */
 function formatService({ name, value }: { name: string, value: any }) {
-  const snippet = formatServiceSnippetString(name, value);
   const description = formatServiceDocumentation(name, value);
 
   return {
     name,
-    snippet,
+    value,
     description,
   };
-}
-
-/**
- * Creates a VS Code completion item provider for PHP files with service completions
- *
- * @param {Object} serviceData - The processed service data
- * @param {string} serviceData.name - The service name
- * @param {string} serviceData.snippet - The snippet string
- * @param {string} serviceData.description - The markdown documentation
- * @returns {vscode.Disposable} A completion item provider registration
- */
-function generateCompletionItem({ name, snippet, description }: { name: string, snippet: string, description: string }) {
-  return vscode.languages.registerCompletionItemProvider('php', {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      // Only offer service completions in Drupal project structure
-      const isDrupalProject = (
-        document.fileName.includes('themes/') ||
-        document.fileName.includes('modules/')
-      );
-
-      // Check if we're in an OOP context
-      const isOOP = document.fileName.includes('/src/');
-
-      // Early return if not in a Drupal project structure
-      if (!isDrupalProject) { return []; }
-
-      const completions = [];
-
-      if (isOOP) {
-        // TODO: Implement OOP service injection completion
-        // For now, skip OOP completions
-      } else {
-        const completion = new vscode.CompletionItem(`service:${name}`);
-        completion.kind = vscode.CompletionItemKind.Class;
-        completion.documentation = new vscode.MarkdownString(description);
-        completion.insertText = new vscode.SnippetString(snippet);
-        completions.push(completion);
-      }
-
-      return completions;
-    }
-  });
 }
