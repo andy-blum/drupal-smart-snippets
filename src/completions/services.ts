@@ -8,10 +8,23 @@
 
 import logger from "../util/logger";
 import getWebRoot from "../util/getWebRoot";
-import parser from "../util/parser";
+import { getCachedAnalysis } from "../util/parserCache";
 import { parse } from 'yaml';
 import * as vscode from "vscode";
-import type * as PHP from "php-parser";
+
+interface ServiceCompletionMetadata {
+  fullClass: string;
+  isOOP: boolean;
+  serviceName: string;
+  documentUri: string;
+}
+
+/**
+ * Custom CompletionItem that includes service metadata
+ */
+class ServiceCompletionItem extends vscode.CompletionItem {
+  data?: ServiceCompletionMetadata;
+}
 
 /**
  * Provides service completions for the VS Code editor
@@ -59,8 +72,6 @@ export default async function serviceCompletions() {
     provideCompletionItems(
       document: vscode.TextDocument,
       position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
     ) {
       // Only offer service completions in Drupal project structure
       const isDrupalProject = (
@@ -84,9 +95,6 @@ export default async function serviceCompletions() {
       // Check if we're in an OOP context
       const isOOP = document.fileName.includes('/src/');
 
-      // Parse the current document to find namespaces and use statements
-      const { namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart } = parseDocument(document);
-
       const allServices = Array.from(serviceRegistry.values()).flat();
 
       const wordRange = document.getWordRangeAtPosition(position);
@@ -96,78 +104,71 @@ export default async function serviceCompletions() {
       );
 
       return allServices.map(service => {
-        const fullClass = service.value?.class;
-        const completion = new vscode.CompletionItem(`service:${service.name}`, vscode.CompletionItemKind.Class);
+        const fullClass = service.value?.class || 'Unknown';
+        
+        // Lightweight completion item creation
+        const completion = new ServiceCompletionItem(`service:${service.name}`, vscode.CompletionItemKind.Class);
         completion.range = replaceRange;
         completion.documentation = new vscode.MarkdownString(service.description);
         completion.sortText = `000-${service.name}`;
+        
+        // Enforce short name immediately in the snippet
+        const className = fullClass.split('\\').pop() || 'Unknown';
+        completion.insertText = new vscode.SnippetString(formatServiceSnippetString(service.name, className, isOOP));
 
-        let classToUse = fullClass || 'Unknown';
-        const additionalTextEdits: vscode.TextEdit[] = [];
-
-        if (fullClass && fullClass.startsWith('\\')) {
-          // Remove leading backslash for comparison
-          const normalizedFullClass = fullClass.substring(1);
-          classToUse = handleClassImport(normalizedFullClass, document, namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart, additionalTextEdits);
-        } else if (fullClass && !fullClass.includes('%')) {
-          classToUse = handleClassImport(fullClass, document, namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart, additionalTextEdits);
-        }
-
-        completion.insertText = new vscode.SnippetString(formatServiceSnippetString(service.name, classToUse, isOOP));
-        completion.additionalTextEdits = additionalTextEdits;
+        // Store metadata for lazy resolution of use statements
+        const metadata: ServiceCompletionMetadata = {
+          fullClass,
+          isOOP,
+          serviceName: service.name,
+          documentUri: document.uri.toString()
+        };
+        completion.data = metadata;
         
         return completion;
       });
+    },
+
+    resolveCompletionItem(item: ServiceCompletionItem) {
+      const metadata = item.data;
+      if (!metadata || metadata.fullClass === 'Unknown') {
+        return item;
+      }
+
+      const document = vscode.workspace.textDocuments.find(doc => doc.uri.toString() === metadata.documentUri);
+      if (!document) {
+        return item;
+      }
+
+      // Heavy lifting happens only for the selected item
+      const normalizedFullClass = metadata.fullClass.startsWith('\\') 
+        ? metadata.fullClass.substring(1) 
+        : metadata.fullClass;
+
+      // Only add use statement if it's not a parameter (contains %)
+      if (!normalizedFullClass.includes('%')) {
+        const analysis = getCachedAnalysis(document);
+        const additionalTextEdits: vscode.TextEdit[] = [];
+        
+        handleClassImport(
+          normalizedFullClass, 
+          document, 
+          analysis.namespace, 
+          analysis.useStatements, 
+          analysis.lastUseStatementEnd, 
+          analysis.namespaceEnd, 
+          analysis.firstNodeStart, 
+          additionalTextEdits
+        );
+
+        item.additionalTextEdits = additionalTextEdits;
+      }
+
+      return item;
     }
   }, ':');
 
   return [provider, watcher];
-}
-
-/**
- * Parses the document to extract namespace and use statements
- */
-function parseDocument(document: vscode.TextDocument) {
-  let namespace = '';
-  const useStatements = new Map<string, string>(); // FQN -> alias/name
-  let lastUseStatementEnd = 0;
-  let namespaceEnd = 0;
-  let firstNodeStart = 0;
-
-  try {
-    const parsed = parser.parseCode(document.getText(), document.fileName);
-    
-    const walk = (nodes: any[]) => {
-      for (const node of nodes) {
-        if (firstNodeStart === 0 && node.kind !== 'inline') {
-          firstNodeStart = node.loc.start.line;
-        }
-
-        if (node.kind === 'namespace') {
-          namespace = node.name;
-          namespaceEnd = node.loc.end.line;
-          if (node.children) {
-            walk(node.children);
-          }
-        } else if (node.kind === 'usegroup') {
-          for (const item of node.items) {
-            const fqn = item.name;
-            const alias = item.alias ? (typeof item.alias === 'string' ? item.alias : item.alias.name) : fqn.split('\\').pop();
-            useStatements.set(fqn, alias);
-          }
-          lastUseStatementEnd = node.loc.end.line;
-        }
-      }
-    };
-
-    if (parsed && parsed.children) {
-      walk(parsed.children);
-    }
-  } catch (e) {
-    // Ignore parse errors in the current document
-  }
-
-  return { namespace, useStatements, lastUseStatementEnd, namespaceEnd, firstNodeStart };
 }
 
 /**
@@ -187,12 +188,12 @@ function handleClassImport(
   const className = parts.pop() || '';
   const classNamespace = parts.join('\\');
 
-  // 1. Already imported (via parser)?
+  // 1. Already imported?
   if (useStatements.has(fullClass)) {
     return useStatements.get(fullClass) || className;
   }
 
-  // 2. Backup check: exists in text? (In case parser failed on broken document)
+  // 2. Backup check: exists in text?
   const docText = document.getText();
   if (docText.includes(`use ${fullClass};`)) {
     return className;
@@ -203,30 +204,41 @@ function handleClassImport(
     return className;
   }
 
-  // Check if the short name is already taken by another use statement
-  const isShortNameTaken = Array.from(useStatements.values()).includes(className);
-
-  if (isShortNameTaken) {
-    // Fallback to FQN if short name is taken
-    return `\\${fullClass}`;
-  }
-
   // Not imported, let's add a use statement
   let insertLine = 0;
+  let useText = `use ${fullClass};\n`;
+
   if (lastUseStatementEnd) {
     insertLine = lastUseStatementEnd;
+    const nextLine = document.lineAt(Math.min(lastUseStatementEnd, document.lineCount - 1));
+    if (nextLine.text.trim() !== '') {
+      useText += '\n';
+    }
   } else if (namespaceEnd) {
     insertLine = namespaceEnd;
-  } else if (firstNodeStart > 1) {
-    insertLine = firstNodeStart - 1;
+    const lineAfterNamespace = document.lineAt(Math.min(namespaceEnd, document.lineCount - 1));
+    const hasBlankAfterNamespace = lineAfterNamespace.text.trim() === '';
+    
+    if (hasBlankAfterNamespace) {
+      // Use the existing blank line
+      insertLine = namespaceEnd + 1;
+      const lineAfterBlank = document.lineAt(Math.min(namespaceEnd + 1, document.lineCount - 1));
+      if (lineAfterBlank.text.trim() !== '') {
+        useText += '\n';
+      }
+    } else {
+      // Create a blank line
+      useText = `\nuse ${fullClass};\n\n`;
+    }
   } else {
-    insertLine = 1;
+    insertLine = firstNodeStart > 1 ? firstNodeStart - 1 : 0;
+    useText = `use ${fullClass};\n\n`;
   }
 
-  const useText = `use ${fullClass};\n`;
-  
-  // Only add if not already in edits (multiple services might use same class)
-  additionalTextEdits.push(vscode.TextEdit.insert(new vscode.Position(insertLine, 0), useText));
+  // Only add if not already in edits
+  if (!additionalTextEdits.some(edit => edit.newText.includes(fullClass))) {
+    additionalTextEdits.push(vscode.TextEdit.insert(new vscode.Position(insertLine, 0), useText));
+  }
 
   return className;
 }
