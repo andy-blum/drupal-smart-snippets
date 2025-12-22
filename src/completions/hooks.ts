@@ -25,7 +25,7 @@ export default async function hookCompletions() {
   }
 
   const hookRegistry = new Map<string, Array<{name: string, definition: string, description: string}>>();
-  
+
   const indexFile = async (file: vscode.Uri) => {
     try {
       const hooks = await findHooks(file);
@@ -75,7 +75,12 @@ export default async function hookCompletions() {
       }
 
       // Check if we're in an OOP-style hook implementation class
-      const isOOP = document.fileName.includes('src/Hook');
+      const isOOPHookDir = document.fileName.includes('src/Hook/');
+      const isSrcDir = document.fileName.includes('/src/');
+
+      if (!isOOPHookDir && isSrcDir) {
+        return [];
+      }
 
       const allHooks = Array.from(hookRegistry.values()).flat();
 
@@ -84,7 +89,7 @@ export default async function hookCompletions() {
         completion.documentation = new vscode.MarkdownString(hook.description);
         completion.sortText = `000-${hook.name}`;
 
-        if (isOOP) {
+        if (isOOPHookDir) {
           completion.insertText = new vscode.SnippetString(formatOOPHookSnippetString(hook.name, hook.definition));
           completion.kind = vscode.CompletionItemKind.Method;
         } else {
