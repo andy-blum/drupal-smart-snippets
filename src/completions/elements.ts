@@ -30,6 +30,10 @@ import type * as PHP from "php-parser";
  */
 export default async function elementCompletions() {
   const webRoot = await getWebRoot();
+  if (!webRoot) {
+    return [];
+  }
+
   const files = await vscode.workspace.findFiles(
     new vscode.RelativePattern(webRoot, '**/Element/*.php')
   );
@@ -70,18 +74,20 @@ async function findElements(file: vscode.Uri) {
 
   const elements = [];
 
-  for (const node of parsed.children) {
-    if (node.kind === 'class') {
-      const phpClass = node as PHP.Class;
-      const attributeGroup = phpClass.attrGroups?.at(0);
-      const attribute = attributeGroup?.attrs?.at(0);
+  if (parsed && parsed.children) {
+    for (const node of parsed.children) {
+      if (node.kind === 'class') {
+        const phpClass = node as PHP.Class;
+        const attributeGroup = phpClass.attrGroups?.at(0);
+        const attribute = attributeGroup?.attrs?.at(0);
 
-      if (attribute && (attribute.name === 'FormElement' || attribute.name === 'RenderElement')) {
-        const name = attribute.args[0]?.value;
-        const type = attribute.name;
-        const docs = phpClass.leadingComments?.at(-1) || attributeGroup.leadingComments?.at(-1);
+        if (attribute && (attribute.name === 'FormElement' || attribute.name === 'RenderElement')) {
+          const name = attribute.args[0]?.value;
+          const type = attribute.name;
+          const docs = phpClass.leadingComments?.at(-1) || attributeGroup.leadingComments?.at(-1);
 
-        elements.push({ name, type, docs });
+          elements.push({ name, type, docs });
+        }
       }
     }
   }
@@ -97,7 +103,7 @@ async function findElements(file: vscode.Uri) {
  * @param {PHP.CommentBlock} docs - The documentation comment block
  * @returns {string} A formatted snippet string ready for VS Code completion
  */
-function formatElementSnippetString(name: string, type: string, docs: PHP.CommentBlock) {
+function formatElementSnippetString(name: string, type: string, docs: PHP.CommentBlock | undefined) {
   const body = [`[`, `  '#type' => '${name}',`];
 
   if (type === 'FormElement') {
@@ -110,28 +116,30 @@ function formatElementSnippetString(name: string, type: string, docs: PHP.Commen
     );
   }
 
-  // Extract properties from docblock
-  const propertiesRegex = /Properties:(.*)(?=(@code\n))/s;
-  const propertiesMatch = docs.value.match(propertiesRegex);
-  const propertiesString = propertiesMatch ? propertiesMatch[1] : '';
-  const properties = propertiesString.match(/(#\w+):{1}/g) || [];
+  if (docs?.value) {
+    // Extract properties from docblock
+    const propertiesRegex = /Properties:(.*)(?=(@code\n))/s;
+    const propertiesMatch = docs.value.match(propertiesRegex);
+    const propertiesString = propertiesMatch ? propertiesMatch[1] : '';
+    const properties = propertiesString.match(/(#\w+):{1}/g) || [];
 
-  // Add properties found in description
-  if (properties.length > 0) {
-    const excludeProperties = [
-      '#type',
-      '#title',
-      '#title_display',
-      '#description',
-      '#required',
-    ];
+    // Add properties found in description
+    if (properties.length > 0) {
+      const excludeProperties = [
+        '#type',
+        '#title',
+        '#title_display',
+        '#description',
+        '#required',
+      ];
 
-    properties.forEach(prop => {
-      const property = prop.slice(0, -1); // Remove colon
-      if (!excludeProperties.includes(property)) {
-        body.push(`  '${property}' => '',`);
-      }
-    });
+      properties.forEach(prop => {
+        const property = prop.slice(0, -1); // Remove colon
+        if (!excludeProperties.includes(property)) {
+          body.push(`  '${property}' => '',`);
+        }
+      });
+    }
   }
 
   body.push(`]\${5|\\,,;|}`);
@@ -147,23 +155,25 @@ function formatElementSnippetString(name: string, type: string, docs: PHP.Commen
  * @param {PHP.CommentBlock} params.docs - The documentation comment block
  * @returns {string} Markdown-formatted documentation text
  */
-function formatElementDocumentation({ name, type, docs }: { name: string, type: string, docs: PHP.CommentBlock }) {
+function formatElementDocumentation({ name, type, docs }: { name: string, type: string, docs: PHP.CommentBlock | undefined }) {
   const desc = [];
 
-  // Format description text
-  desc.push(...docs.value
-    .split('\n')
-    .map(line => {
-      if (line !== '/**' && line !== ' */') {
-        return line
-          // Remove PHP comment markup
-          .replace(/^\s\*\s{0,1}/g, '')
-          // Special/escaped character replacement
-          .replaceAll("&quot;", "\"")
-          .replaceAll(/<([^>]*)>/g, "");
-      }
-    })
-    .filter(line => line !== undefined));
+  if (docs?.value) {
+    // Format description text
+    desc.push(...docs.value
+      .split('\n')
+      .map(line => {
+        if (line !== '/**' && line !== ' */') {
+          return line
+            // Remove PHP comment markup
+            .replace(/^\s\*\s{0,1}/g, '')
+            // Special/escaped character replacement
+            .replaceAll("&quot;", "\"")
+            .replaceAll(/<([^>]*)>/g, "");
+        }
+      })
+      .filter(line => line !== undefined));
+  }
 
   // Add extension title and element info
   desc.splice(0, 0,
@@ -183,7 +193,7 @@ function formatElementDocumentation({ name, type, docs }: { name: string, type: 
  * @param {PHP.CommentBlock} element.docs - The documentation comment block
  * @returns {Object} An object with name, snippet, and description ready for completion item creation
  */
-function formatElement({ name, type, docs }: { name: string, type: string, docs: PHP.CommentBlock }) {
+function formatElement({ name, type, docs }: { name: string, type: string, docs: PHP.CommentBlock | undefined }) {
   const snippet = formatElementSnippetString(name, type, docs);
   const description = formatElementDocumentation({ name, type, docs });
 

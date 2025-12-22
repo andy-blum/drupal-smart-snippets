@@ -29,6 +29,10 @@ import * as vscode from "vscode";
  */
 export default async function serviceCompletions() {
   const webRoot = await getWebRoot();
+  if (!webRoot) {
+    return [];
+  }
+
   const files = await vscode.workspace.findFiles(`**/*.services.yml`)
     .then(files => (
       files.filter(({path}) => path.startsWith(webRoot))

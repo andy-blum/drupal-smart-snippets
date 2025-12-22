@@ -30,14 +30,17 @@ import * as vscode from "vscode";
  */
 export default async function hookCompletions() {
   const webRoot = await getWebRoot();
+  if (!webRoot) {
+    return [];
+  }
+
   const files = await vscode.workspace.findFiles(`**/*.api.php`)
     .then(files => (
       // Filter out files that aren't within DRUPAL_ROOT
       files.filter(({path}) => path.startsWith(webRoot))
     ));
 
-  console.log(files);
-
+  logger.appendLine(files.length.toString());
 
   const hookCompletions = [];
   let errorCount = 0;
@@ -85,10 +88,10 @@ async function findHooks(file: vscode.Uri) {
       return false;
     })
     .map((hook: PHP.Function) => {
-      const docs = hook.leadingComments.at(-1);
+      const docs = hook.leadingComments?.at(-1);
       const name = (hook.name as PHP.Identifier).name || (hook.name as string);
-      const definition = hook.loc.source;
-      const isDeprecated = hook.leadingComments.at(-1).value.includes('@deprecated');
+      const definition = hook.loc?.source || '';
+      const isDeprecated = docs?.value?.includes('@deprecated') || false;
 
       return {name, definition, docs, isDeprecated};
     });
@@ -166,22 +169,24 @@ function formatHookSnippetString(name, definition) {
  * @param {boolean} params.isDeprecated - Whether the hook is marked as deprecated
  * @returns {string} Markdown-formatted documentation text
  */
-function formatHookDocumentation({docs, definition, name, isDeprecated}: {docs: PHP.CommentBlock, definition: string, name: string, isDeprecated: boolean}) {
+function formatHookDocumentation({docs, definition, name, isDeprecated}: {docs: PHP.CommentBlock | undefined, definition: string, name: string, isDeprecated: boolean}) {
   const desc = [];
-  desc.push(...docs.value
-    .split('\n')
-    .map(line => {
-      if (line !== '/**' && line !== ' */') {
-        return line
-          // Remove PHP comment markup
-          .replace(/^\s\*\s{0,1}/g, '')
+  if (docs?.value) {
+    desc.push(...docs.value
+      .split('\n')
+      .map(line => {
+        if (line !== '/**' && line !== ' */') {
+          return line
+            // Remove PHP comment markup
+            .replace(/^\s\*\s{0,1}/g, '')
 
-          // Special/escaped character replacement
-          .replaceAll("&quot;", "\"")
-          .replaceAll(/<([^>]*)>/g, "");
-      }
-    })
-    .filter(line => line !== undefined));
+            // Special/escaped character replacement
+            .replaceAll("&quot;", "\"")
+            .replaceAll(/<([^>]*)>/g, "");
+        }
+      })
+      .filter(line => line !== undefined));
+  }
 
   // Add extension title
 
@@ -212,7 +217,7 @@ function formatHookDocumentation({docs, definition, name, isDeprecated}: {docs: 
  * @param {boolean} hook.isDeprecated - Whether the hook is deprecated
  * @returns {Object} An object with name, snippet, and description ready for completion item creation
  */
-function formatHook({name, definition, docs, isDeprecated}: {name: string, definition: string, docs: PHP.CommentBlock, isDeprecated: boolean}) {
+function formatHook({name, definition, docs, isDeprecated}: {name: string, definition: string, docs: PHP.CommentBlock | undefined, isDeprecated: boolean}) {
   // convert function definition to snippet string with tab-stops & placeholders.
   const titleWithPlaceholders = formatHookSnippetString(name, definition);
 
@@ -265,14 +270,16 @@ function generateCompletionItem({name, snippet, description}: {name: string, sni
       const completions = [];
 
         if (isOOP) {
-          // const completion = new vscode.CompletionItem(`${name} 💧`);
-          // completion.documentation = new vscode.MarkdownString(description.join('\n'));
+          const completion = new vscode.CompletionItem(name);
+          completion.documentation = new vscode.MarkdownString(description);
           // const file = document.getText().split('\n').filter((lineText, lineNum) => lineNum !== position.line).join('\n');
-          // const parsed = phpParser.parseCode(file, document.uri.fsPath);
-          // completion.insertText = new vscode.SnippetString('HOOK SHIT');
-          // completion.kind = vscode.CompletionItemKind.Method;
+          // const parsed = parser.parseCode(file, document.uri.fsPath);
+          completion.insertText = new vscode.SnippetString(snippet);
+          completion.kind = vscode.CompletionItemKind.Method;
+          completions.push(completion);
         } else {
           const completion = new vscode.CompletionItem(name);
+          completion.sortText = '000-' + name;
           completion.documentation = new vscode.MarkdownString(description);
           completion.insertText = new vscode.SnippetString(snippet);
           completion.kind = vscode.CompletionItemKind.Function;
