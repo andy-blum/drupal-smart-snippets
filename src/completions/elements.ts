@@ -85,18 +85,33 @@ export default async function elementCompletions() {
         return [];
       }
 
+      // Gatekeeper: Only parse if 'element:' is in the current line
+      const lineText = document.lineAt(position).text;
+      const linePrefix = lineText.substring(0, position.character);
+      const elementIndex = linePrefix.lastIndexOf('element:');
+
+      if (elementIndex === -1) {
+        return [];
+      }
+
       const allElements = Array.from(elementRegistry.values()).flat();
 
+      const wordRange = document.getWordRangeAtPosition(position);
+      const replaceRange = new vscode.Range(
+        new vscode.Position(position.line, elementIndex),
+        wordRange ? wordRange.end : position
+      );
+
       return allElements.map(element => {
-        const completion = new vscode.CompletionItem(`element:${element.name}`);
-        completion.kind = vscode.CompletionItemKind.Struct;
+        const completion = new vscode.CompletionItem(`element:${element.name}`, vscode.CompletionItemKind.Struct);
+        completion.range = replaceRange;
         completion.documentation = new vscode.MarkdownString(element.description);
         completion.insertText = new vscode.SnippetString(element.snippet);
         completion.sortText = `000-${element.name}`;
         return completion;
       });
     }
-  });
+  }, ':');
 
   return [provider, watcher];
 }

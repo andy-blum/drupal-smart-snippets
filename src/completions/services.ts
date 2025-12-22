@@ -72,6 +72,15 @@ export default async function serviceCompletions() {
         return [];
       }
 
+      // Gatekeeper: Only parse if 'service:' is in the current line
+      const lineText = document.lineAt(position).text;
+      const linePrefix = lineText.substring(0, position.character);
+      const serviceIndex = linePrefix.lastIndexOf('service:');
+
+      if (serviceIndex === -1) {
+        return [];
+      }
+
       // Check if we're in an OOP context
       const isOOP = document.fileName.includes('/src/');
 
@@ -80,10 +89,16 @@ export default async function serviceCompletions() {
 
       const allServices = Array.from(serviceRegistry.values()).flat();
 
+      const wordRange = document.getWordRangeAtPosition(position);
+      const replaceRange = new vscode.Range(
+        new vscode.Position(position.line, serviceIndex),
+        wordRange ? wordRange.end : position
+      );
+
       return allServices.map(service => {
         const fullClass = service.value?.class;
-        const completion = new vscode.CompletionItem(`service:${service.name}`);
-        completion.kind = vscode.CompletionItemKind.Class;
+        const completion = new vscode.CompletionItem(`service:${service.name}`, vscode.CompletionItemKind.Class);
+        completion.range = replaceRange;
         completion.documentation = new vscode.MarkdownString(service.description);
         completion.sortText = `000-${service.name}`;
 
@@ -104,7 +119,7 @@ export default async function serviceCompletions() {
         return completion;
       });
     }
-  });
+  }, ':');
 
   return [provider, watcher];
 }
