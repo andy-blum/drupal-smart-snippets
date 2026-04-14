@@ -1278,6 +1278,29 @@
     ],
     "scope": "php"
   },
+  "hook_entity_duplicate": {
+    "prefix": "hook_entity_duplicate",
+    "body": [
+      "/**",
+      " * Implements hook_entity_duplicate().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_duplicate(\\Drupal\\Core\\Entity\\EntityInterface \\$duplicate, \\Drupal\\Core\\Entity\\EntityInterface \\$entity): void {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Acts when duplicating an existing entity.",
+      "",
+      "@param \\Drupal\\Core\\Entity\\EntityInterface $duplicate",
+      "  The duplicated entity object.",
+      "@param \\Drupal\\Core\\Entity\\EntityInterface $entity",
+      "  The original entity object.",
+      "",
+      "@ingroup entity_crud",
+      "@see hook_ENTITY_TYPE_duplicate()"
+    ],
+    "scope": "php"
+  },
   "hook_entity_extra_field_info": {
     "prefix": "hook_entity_extra_field_info",
     "body": [
@@ -1845,6 +1868,29 @@
     ],
     "scope": "php"
   },
+  "hook_entity_reference_selection_alter": {
+    "prefix": "hook_entity_reference_selection_alter",
+    "body": [
+      "/**",
+      " * Implements hook_entity_reference_selection_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_entity_reference_selection_alter(array &\\$plugins): void {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Modify the list of available entity reference plugins.",
+      "",
+      "This hook may be used to modify plugin properties after they have been",
+      "specified by other modules.",
+      "",
+      "@param array $plugins",
+      "  An array of all the existing plugin definitions, passed by reference.",
+      "",
+      "@see \\Drupal\\Core\\Entity\\EntityReferenceSelection\\SelectionPluginManager"
+    ],
+    "scope": "php"
+  },
   "hook_entity_revision_create": {
     "prefix": "hook_entity_revision_create",
     "body": [
@@ -2205,6 +2251,29 @@
       "",
       "@ingroup entity_crud",
       "@see hook_entity_delete()"
+    ],
+    "scope": "php"
+  },
+  "hook_ENTITY_TYPE_duplicate": {
+    "prefix": "hook_ENTITY_TYPE_duplicate",
+    "body": [
+      "/**",
+      " * Implements hook_ENTITY_TYPE_duplicate().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_${2:ENTITY_TYPE}_duplicate(\\Drupal\\Core\\Entity\\EntityInterface \\$duplicate, \\Drupal\\Core\\Entity\\EntityInterface \\$entity): void {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Acts when duplicating an existing entity of a specific type.",
+      "",
+      "@param \\Drupal\\Core\\Entity\\EntityInterface $duplicate",
+      "  The duplicated entity object.",
+      "@param \\Drupal\\Core\\Entity\\EntityInterface $entity",
+      "  The original entity object.",
+      "",
+      "@ingroup entity_crud",
+      "@see hook_entity_duplicate()"
     ],
     "scope": "php"
   },
@@ -4040,6 +4109,26 @@
     ],
     "scope": "php"
   },
+  "hook_icon_pack_alter": {
+    "prefix": "hook_icon_pack_alter",
+    "body": [
+      "/**",
+      " * Implements hook_icon_pack_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_icon_pack_alter(array &\\$icon_packs): void {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Alter icon pack definitions.",
+      "",
+      "Allows modules to modify icon pack definitions.",
+      "",
+      "@param array $icon_packs",
+      "  The array of icon pack definitions, keyed by icon pack ID."
+    ],
+    "scope": "php"
+  },
   "hook_image_effect_info_alter": {
     "prefix": "hook_image_effect_info_alter",
     "body": [
@@ -5394,6 +5483,56 @@
     ],
     "scope": "php"
   },
+  "hook_navigation_defaults": {
+    "prefix": "hook_navigation_defaults",
+    "body": [
+      "/**",
+      " * Implements hook_navigation_defaults().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_navigation_defaults(): array {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Provides default content for the Navigation bar.",
+      "",
+      "@return array",
+      "  An associative array of navigation block definitions.",
+      "  The following elements should be part of each definition array:",
+      "   - delta: The expected delta where the block should be placed in the",
+      "   Navigation bar. Defaults to 0.",
+      "   - configuration: The key-value array with the Navigation Block definition.",
+      "   It should include the following elements, besides the Navigation block",
+      "   specific settings:",
+      "     - id: The Navigation Block plugin ID.",
+      "     - label: The block label.",
+      "     - label_display: '0' or 'visible' depending on whether the label should",
+      "       be displayed or not.",
+      "     - provider: The module that provides the block. In general, the module",
+      "       that defines the Navigation block."
+    ],
+    "scope": "php"
+  },
+  "hook_navigation_menu_link_tree_alter": {
+    "prefix": "hook_navigation_menu_link_tree_alter",
+    "body": [
+      "/**",
+      " * Implements hook_navigation_menu_link_tree_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_navigation_menu_link_tree_alter(array &\\$tree): void {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Alter the content of a given Navigation menu link tree.",
+      "",
+      "@param array &$tree",
+      "  The Navigation link tree.",
+      "",
+      "@see \\Drupal\\navigation\\Menu\\NavigationMenuLinkTree::transform()"
+    ],
+    "scope": "php"
+  },
   "hook_node_access_records": {
     "prefix": "hook_node_access_records",
     "body": [
@@ -5655,6 +5794,61 @@
       "@see \\Drupal\\node\\NodeViewBuilder::renderLinks()",
       "@see \\Drupal\\node\\NodeViewBuilder::buildLinks()",
       "@see entity_crud"
+    ],
+    "scope": "php"
+  },
+  "hook_node_search_ranking": {
+    "prefix": "hook_node_search_ranking",
+    "body": [
+      "/**",
+      " * Implements hook_node_search_ranking().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_node_search_ranking(): array {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Provide additional methods of scoring for core search results for nodes.",
+      "",
+      "A node's search score is used to rank it among other nodes matched by the",
+      "search, with the highest-ranked nodes appearing first in the search listing.",
+      "",
+      "For example, a module allowing users to vote on content could expose an",
+      "option to allow search results' rankings to be influenced by the average",
+      "voting score of a node.",
+      "",
+      "All scoring mechanisms are provided as options to site administrators, and",
+      "may be tweaked based on individual sites or disabled altogether if they do",
+      "not make sense. Individual scoring mechanisms, if enabled, are assigned a",
+      "weight from 1 to 10. The weight represents the factor of magnification of",
+      "the ranking mechanism, with higher-weighted ranking mechanisms having more",
+      "influence. In order for the weight system to work, each scoring mechanism",
+      "must return a value between 0 and 1 for every node. That value is then",
+      "multiplied by the administrator-assigned weight for the ranking mechanism,",
+      "and then the weighted scores from all ranking mechanisms are added, which",
+      "brings about the same result as a weighted average.",
+      "",
+      "@return array",
+      "  An associative array of ranking data. The keys should be strings,",
+      "  corresponding to the internal name of the ranking mechanism, such as",
+      "  'recent', or 'comments'. The values should be arrays themselves, with the",
+      "  following keys available:",
+      "  - title: (required) The human readable name of the ranking mechanism.",
+      "  - join: (optional) An array with information to join any additional",
+      "    necessary table. This is not necessary if the table required is already",
+      "    joined to by the base query, such as for the {node} table. Other tables",
+      "    should use the full table name as an alias to avoid naming collisions.",
+      "  - score: (required) The part of a query string to calculate the score for",
+      "    the ranking mechanism based on values in the database. This does not need",
+      "    to be wrapped in parentheses, as it will be done automatically; it also",
+      "    does not need to take the weighted system into account, as it will be",
+      "    done automatically. It does, however, need to calculate a decimal between",
+      "    0 and 1; be careful not to cast the entire score to an integer by",
+      "    inadvertently introducing a variable argument.",
+      "  - arguments: (optional) If any arguments are required for the score, they",
+      "    can be specified in an array here.",
+      "",
+      "@ingroup entity_crud"
     ],
     "scope": "php"
   },
@@ -5939,7 +6133,8 @@
       "a THEME.post_update.php file.",
       "",
       "These updates are executed after all hook_update_N() implementations. At this",
-      "stage Drupal is already fully repaired so you can use any API as you wish.",
+      "stage Drupal is already fully bootstrapped so you can use any API as you",
+      "wish.",
       "",
       "NAME can be arbitrary machine names. In contrast to hook_update_N() the",
       "alphanumeric naming of functions in the file is the only thing which ensures",
@@ -6374,6 +6569,68 @@
       "",
       "@param array $definitions",
       "  The collection of resource definitions."
+    ],
+    "scope": "php"
+  },
+  "hook_runtime_requirements": {
+    "prefix": "hook_runtime_requirements",
+    "body": [
+      "/**",
+      " * Implements hook_runtime_requirements().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_runtime_requirements(): array {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Check runtime requirements and do status reporting.",
+      "",
+      "Requirements are displayed on the 'Status report' (/admin/reports/status).",
+      "",
+      "Runtime requirements do not impact installation or updates of modules that",
+      "define them. These requirements are only used to display information on the",
+      "status report but do not impact site behavior. They can be used for more",
+      "general status information like maintenance tasks and security issues.",
+      "The returned requirements will be listed on the status report in the",
+      "administration section, with an indication of the severity level.",
+      "Moreover, any requirement with severity of RequirementSeverity::Error will",
+      "result in a notice on the 'Configuration' administration page",
+      "(/admin/config).",
+      "",
+      "@return array",
+      "  An associative array where the keys are arbitrary but must be unique (it",
+      "  is suggested to use the module short name as a prefix) and the values are",
+      "  themselves associative arrays with the following elements:",
+      "  - title: The name of the requirement.",
+      "  - value: The current value (e.g., version, time, level, etc).",
+      "  - description: The description of the requirement/status.",
+      "  - severity: (optional) An instance of",
+      "    \\Drupal\\Core\\Extension\\Requirement\\RequirementSeverity enum. Defaults to",
+      "    RequirementSeverity::OK."
+    ],
+    "scope": "php"
+  },
+  "hook_runtime_requirements_alter": {
+    "prefix": "hook_runtime_requirements_alter",
+    "body": [
+      "/**",
+      " * Implements hook_runtime_requirements_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_runtime_requirements_alter(array &\\$requirements): void {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Alters runtime requirements data.",
+      "",
+      "Implementations are able to alter the title, value, description or the",
+      "severity of certain requirements defined by hook_requirements() and",
+      "hook_runtime_requirements() implementations, or even remove such entries.",
+      "",
+      "@param array $requirements",
+      "  The requirements data to be altered.",
+      "",
+      "@see hook_runtime_requirements()"
     ],
     "scope": "php"
   },
@@ -7730,6 +7987,59 @@
       "",
       "@see \\Drupal\\update\\UpdateManager::getProjects()",
       "@see \\Drupal\\Core\\Utility\\ProjectInfo::processInfoList()"
+    ],
+    "scope": "php"
+  },
+  "hook_update_requirements": {
+    "prefix": "hook_update_requirements",
+    "body": [
+      "/**",
+      " * Implements hook_update_requirements().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_update_requirements() {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Check requirements before running database updates.",
+      "",
+      "This hook is invoked when update.php is run and when database updates are",
+      "triggered via the CLI.",
+      "",
+      "@return array",
+      "  An associative array where the keys are arbitrary but must be unique (it",
+      "  is suggested to use the module short name as a prefix) and the values are",
+      "  themselves associative arrays with the following elements:",
+      "  - title: The name of the requirement.",
+      "  - value: The current value (e.g., version, time, level, etc).",
+      "  - description: The description of the requirement/status.",
+      "  - severity: (optional) An instance of",
+      "    \\Drupal\\Core\\Extension\\Requirement\\RequirementSeverity enum. Defaults to",
+      "    RequirementSeverity::OK."
+    ],
+    "scope": "php"
+  },
+  "hook_update_requirements_alter": {
+    "prefix": "hook_update_requirements_alter",
+    "body": [
+      "/**",
+      " * Implements hook_update_requirements_alter().",
+      " */",
+      "function ${1:${TM_FILENAME_BASE:hook}}_update_requirements_alter(array &\\$requirements): void {",
+      "  $0",
+      "}"
+    ],
+    "description": [
+      "Alters update requirements data.",
+      "",
+      "Implementations are able to alter the title, value, description or the",
+      "severity of certain requirements defined by hook_requirements() and",
+      "hook_update_requirements() implementations, or even remove such entries.",
+      "",
+      "@param array $requirements",
+      "  The requirements data to be altered.",
+      "",
+      "@see hook_update_requirements()"
     ],
     "scope": "php"
   },

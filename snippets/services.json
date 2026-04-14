@@ -928,6 +928,29 @@
     ],
     "scope": "php"
   },
+  "cache.memory": {
+    "prefix": [
+      "@Service (\"cache.memory\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\MemoryCache\\MemoryCacheInterface",
+      " */",
+      "${1:\\$cache_memory_service} = \\Drupal::service('cache.memory');",
+      ""
+    ],
+    "description": [
+      "Defines an interface for memory cache implementations.",
+      "",
+      "This has additional requirements over CacheBackendInterface and",
+      "CacheTagsInvalidatorInterface. Objects stored must be the same instance when",
+      "retrieved from cache, so that this can be used as a replacement for protected",
+      "properties and similar.",
+      "",
+      "@ingroup cache"
+    ],
+    "scope": "php"
+  },
   "cache.menu": {
     "prefix": [
       "@Service (\"cache.menu\")"
@@ -1506,6 +1529,23 @@
     ],
     "scope": "php"
   },
+  "cache_prewarmer": {
+    "prefix": [
+      "@Service (\"cache_prewarmer\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\PreWarm\\CachePreWarmer",
+      " */",
+      "${1:\\$cache_prewarmer_service} = \\Drupal::service('cache_prewarmer');",
+      ""
+    ],
+    "description": [
+      "// cspell:ignore ABCDEF FCDABE BEDAFC",
+      ""
+    ],
+    "scope": "php"
+  },
   "cache_router_rebuild_subscriber": {
     "prefix": [
       "@Service (\"cache_router_rebuild_subscriber\")"
@@ -1551,6 +1591,22 @@
     ],
     "description": [
       "Cache tags invalidations checksum implementation that uses the database."
+    ],
+    "scope": "php"
+  },
+  "cache_tags.preloader": {
+    "prefix": [
+      "@Service (\"cache_tags.preloader\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\EventSubscriber\\CacheTagPreloadSubscriber",
+      " */",
+      "${1:\\$cache_tags_preloader_service} = \\Drupal::service('cache_tags.preloader');",
+      ""
+    ],
+    "description": [
+      "Preloads frequently used cache tags."
     ],
     "scope": "php"
   },
@@ -2300,6 +2356,174 @@
     "description": [
       "// cspell:ignore xbeg, xlen, ybeg, ylen",
       ""
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Breadcrumb\\BreadcrumbPreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Breadcrumb\\BreadcrumbPreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Breadcrumb\\BreadcrumbPreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Breadcrumb\\BreadcrumbPreprocess_service} = \\Drupal::service('Drupal\\Core\\Breadcrumb\\BreadcrumbPreprocess');",
+      ""
+    ],
+    "description": [
+      "Breadcrumb theme preprocess.",
+      "",
+      "@internal"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Cache\\MemoryCache\\MemoryCacheInterface": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Cache\\MemoryCache\\MemoryCacheInterface\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Cache\\MemoryCache\\LruMemoryCache",
+      " * @deprecated The \"Drupal\\Core\\Cache\\MemoryCache\\MemoryCacheInterface\" service is deprecated in drupal:11.3.0 and is removed from drupal:13.0.0. Use #Autowire to pick a specific cache bin, such as cache.memory. See https://www.drupal.org/node/3546856",
+      " */",
+      "${1:\\$Drupal\\Core\\Cache\\MemoryCache\\MemoryCacheInterface_service} = \\Drupal::service('Drupal\\Core\\Cache\\MemoryCache\\MemoryCacheInterface');",
+      ""
+    ],
+    "description": [
+      "DEPRECATED",
+      "Defines a least recently used (LRU) static cache implementation.",
+      "",
+      "Stores cache items in memory using a PHP array. The number of cache items is",
+      "limited to a fixed number of slots. When the all slots are full, older items",
+      "are purged based on least recent usage.",
+      "",
+      "@ingroup cache"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Datetime\\DatePreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Datetime\\DatePreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Datetime\\DatePreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Datetime\\DatePreprocess_service} = \\Drupal::service('Drupal\\Core\\Datetime\\DatePreprocess');",
+      ""
+    ],
+    "description": [
+      "Preprocess for common/core theme templates.",
+      "",
+      "@internal"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Field\\FieldPreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Field\\FieldPreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Field\\FieldPreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Field\\FieldPreprocess_service} = \\Drupal::service('Drupal\\Core\\Field\\FieldPreprocess');",
+      ""
+    ],
+    "description": [
+      "Field theme preprocess.",
+      "",
+      "@internal"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Form\\FormPreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Form\\FormPreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Form\\FormPreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Form\\FormPreprocess_service} = \\Drupal::service('Drupal\\Core\\Form\\FormPreprocess');",
+      ""
+    ],
+    "description": [
+      "Initial preprocess callbacks for the form system.",
+      "",
+      "@internal"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Menu\\MenuPreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Menu\\MenuPreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Menu\\MenuPreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Menu\\MenuPreprocess_service} = \\Drupal::service('Drupal\\Core\\Menu\\MenuPreprocess');",
+      ""
+    ],
+    "description": [
+      "Menu theme preprocess.",
+      "",
+      "@internal"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Pager\\PagerPreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Pager\\PagerPreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Pager\\PagerPreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Pager\\PagerPreprocess_service} = \\Drupal::service('Drupal\\Core\\Pager\\PagerPreprocess');",
+      ""
+    ],
+    "description": [
+      "Pager theme preprocess.",
+      "",
+      "@internal"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Theme\\ImagePreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Theme\\ImagePreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Theme\\ImagePreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Theme\\ImagePreprocess_service} = \\Drupal::service('Drupal\\Core\\Theme\\ImagePreprocess');",
+      ""
+    ],
+    "description": [
+      "Image theme preprocess.",
+      "",
+      "@internal"
+    ],
+    "scope": "php"
+  },
+  "Drupal\\Core\\Theme\\ThemePreprocess": {
+    "prefix": [
+      "@Service (\"Drupal\\Core\\Theme\\ThemePreprocess\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Theme\\ThemePreprocess",
+      " */",
+      "${1:\\$Drupal\\Core\\Theme\\ThemePreprocess_service} = \\Drupal::service('Drupal\\Core\\Theme\\ThemePreprocess');",
+      ""
+    ],
+    "description": [
+      "Preprocess for common/core theme templates.",
+      "",
+      "@internal"
     ],
     "scope": "php"
   },
@@ -3371,6 +3595,29 @@
     ],
     "scope": "php"
   },
+  "htmx_content_view_subscriber": {
+    "prefix": [
+      "@Service (\"htmx_content_view_subscriber\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\EventSubscriber\\HtmxContentViewSubscriber",
+      " */",
+      "${1:\\$htmx_content_view_subscriber_service} = \\Drupal::service('htmx_content_view_subscriber');",
+      ""
+    ],
+    "description": [
+      "View subscriber rendering main content from `_htmx_route` option routes.",
+      "",
+      "Uses HtmxRenderer to create an HTML response  for any route with the",
+      "`_htmx_route` option set to TRUE. This subscriber runs before the",
+      "MainContentViewSubscriber.",
+      "",
+      "@see \\Drupal\\Core\\Render\\MainContent\\MainContentRendererInterface",
+      "@see \\Drupal\\Core\\Render\\MainContent\\HtmxRenderer"
+    ],
+    "scope": "php"
+  },
   "http_client": {
     "prefix": [
       "@Service (\"http_client\")"
@@ -3938,6 +4185,22 @@
     ],
     "scope": "php"
   },
+  "logger.channel.default_content": {
+    "prefix": [
+      "@Service (\"logger.channel.default_content\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Logger\\LoggerChannel",
+      " */",
+      "${1:\\$logger_channel_default_content_service} = \\Drupal::service('logger.channel.default_content');",
+      ""
+    ],
+    "description": [
+      "Defines a logger channel that most implementations will use."
+    ],
+    "scope": "php"
+  },
   "logger.channel.file": {
     "prefix": [
       "@Service (\"logger.channel.file\")"
@@ -4166,6 +4429,40 @@
       "@see \\Drupal\\Core\\Render\\BareHtmlPageRenderer",
       "@see \\Drupal\\Core\\Render\\HtmlResponse",
       "@see \\Drupal\\Core\\Render\\HtmlResponseAttachmentsProcessor"
+    ],
+    "scope": "php"
+  },
+  "main_content_renderer.htmx": {
+    "prefix": [
+      "@Service (\"main_content_renderer.htmx\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Render\\MainContent\\HtmxRenderer",
+      " */",
+      "${1:\\$main_content_renderer_htmx_service} = \\Drupal::service('main_content_renderer.htmx');",
+      ""
+    ],
+    "description": [
+      "Main content renderer for HTMX requests.",
+      "",
+      "This renderer is invoked when:",
+      "- The HTMX request adds the `_wrapper_format` query parameter with value",
+      "  `drupal_htmx`.",
+      "- The route has the `_htmx_route` option set to TRUE.",
+      "",
+      "Attachments in HTML responses are handled by",
+      "\\Drupal\\Core\\Render\\AttachmentsResponseProcessorInterface and",
+      "\\Drupal\\Core\\Render\\HtmlResponseAttachmentsProcessor.",
+      "",
+      "@see \\Drupal\\Core\\EventSubscriber\\MainContentViewSubscriber",
+      "@see \\Drupal\\Core\\Theme\\ThemePreprocess::preprocessHtml()",
+      "@see \\Drupal\\Core\\Render\\AttachmentsResponseProcessorInterface",
+      "@see \\Drupal\\Core\\Render\\BareHtmlPageRenderer",
+      "@see \\Drupal\\Core\\Render\\HtmlResponse",
+      "@see \\Drupal\\Core\\Render\\HtmlResponseAttachmentsProcessor",
+      "@see \\Drupal\\Core\\EventSubscriber\\MainContentViewSubscriber",
+      "@see \\Drupal\\Core\\EventSubscriber\\HtmxContentViewSubscriber"
     ],
     "scope": "php"
   },
@@ -5003,6 +5300,22 @@
     ],
     "description": [
       "Renders placeholders using a chain of placeholder strategies."
+    ],
+    "scope": "php"
+  },
+  "placeholder_strategy.cached": {
+    "prefix": [
+      "@Service (\"placeholder_strategy.cached\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\Render\\Placeholder\\CachedStrategy",
+      " */",
+      "${1:\\$placeholder_strategy_cached_service} = \\Drupal::service('placeholder_strategy.cached');",
+      ""
+    ],
+    "description": [
+      "Looks up placeholders in the render cache and returns those we could find."
     ],
     "scope": "php"
   },
@@ -6607,6 +6920,30 @@
     ],
     "scope": "php"
   },
+  "stream_wrapper.module": {
+    "prefix": [
+      "@Service (\"stream_wrapper.module\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\StreamWrapper\\ModuleStream",
+      " */",
+      "${1:\\$stream_wrapper_module_service} = \\Drupal::service('stream_wrapper.module');",
+      ""
+    ],
+    "description": [
+      "Defines the read-only module:// stream wrapper for module files.",
+      "",
+      "Only enabled modules are supported.",
+      "",
+      "Example usage:",
+      "@code",
+      "module://my_module/css/component.css",
+      "@endcode",
+      "Points to the component.css file in the module my_module's css directory."
+    ],
+    "scope": "php"
+  },
   "stream_wrapper.public": {
     "prefix": [
       "@Service (\"stream_wrapper.public\")"
@@ -6642,6 +6979,30 @@
       "",
       "Provides support for storing temporarily accessible files with the Drupal",
       "file interface."
+    ],
+    "scope": "php"
+  },
+  "stream_wrapper.theme": {
+    "prefix": [
+      "@Service (\"stream_wrapper.theme\")"
+    ],
+    "body": [
+      "/**",
+      " * @var Drupal\\Core\\StreamWrapper\\ThemeStream",
+      " */",
+      "${1:\\$stream_wrapper_theme_service} = \\Drupal::service('stream_wrapper.theme');",
+      ""
+    ],
+    "description": [
+      "Defines the read-only theme:// stream wrapper for theme files.",
+      "",
+      "Only enabled themes are supported.",
+      "",
+      "Example Usage:",
+      "@code",
+      "theme://my_theme/css/component.css",
+      "@endcode",
+      "Points to the component.css file in the theme my_theme's css directory."
     ],
     "scope": "php"
   },
