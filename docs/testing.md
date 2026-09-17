@@ -50,6 +50,14 @@ core's own `*.test.js` files are ignored.
 | `test` | `npm ci`, type-check, lint, unit tests |
 | `drupal-core (main)` | fetch core `main`, run the compatibility suite |
 | `drupal-core (11.x)` | fetch core `11.x`, run the compatibility suite |
+| `package` (PRs only) | `npm run package` builds a `.vsix`, uploads it as a workflow artifact, and posts or updates a sticky PR comment linking to it |
+
+The `package` job is what to reach for when testing a PR by hand: download
+the artifact, unzip it, and install the `.vsix` with
+`code --install-extension <file>.vsix` or **Install from VSIX...** in the
+Extensions view. Artifacts are kept for 14 days. Pull requests from forks
+still get the artifact, but the comment is skipped because their token cannot
+write to the repository.
 
 The workflow also runs weekly on a schedule so that changes in core's `main`
 branch that break parsing are noticed between PRs.
