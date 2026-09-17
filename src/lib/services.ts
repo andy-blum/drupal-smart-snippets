@@ -10,6 +10,7 @@ export interface Service {
  *  - explicit `class:` keys
  *  - class-keyed (autowired) services, where the ID is the FQCN
  *  - aliases, either `foo: '@bar'` or `foo: { alias: bar }`
+ *  - `parent:` definitions that inherit the parent's class
  */
 export function resolveClass(name: string, value: any, byName: Map<string, any>, depth = 0): string | null {
   const aliasTarget = typeof value === 'string' && value.startsWith('@')
@@ -21,11 +22,31 @@ export function resolveClass(name: string, value: any, byName: Map<string, any>,
   }
 
   const cls = value?.class || (name.includes('\\') ? name : null);
-  return cls ? cls.replace(/^\\/, '') : null;
+  if (cls) {
+    return cls.replace(/^\\/, '');
+  }
+
+  if (value?.parent && depth < 5 && byName.has(value.parent)) {
+    return resolveClass(value.parent, byName.get(value.parent), byName, depth + 1);
+  }
+
+  return null;
+}
+
+/**
+ * Whether a service should be offered as a completion. Excluded:
+ *  - abstract services, which only exist as `parent:` targets
+ *  - named autowiring aliases (`Foo\BarInterface $baz`), which are for
+ *    constructor injection, not `\Drupal::service()`
+ * Both stay in the registry so alias and parent lookups still resolve.
+ */
+export function isCompletable({ name, value }: Service): boolean {
+  return value?.abstract !== true && !/\s/.test(name);
 }
 
 export function findServices(text: string): Service[] {
-  const parsed = parse(text);
+  // Core uses Symfony tags like `!tagged_iterator`; the values are irrelevant here.
+  const parsed = parse(text, { logLevel: 'silent' });
   const { services } = parsed || {};
 
   if (!services) {
@@ -41,7 +62,7 @@ export function findServices(text: string): Service[] {
  * Creates a service snippet
  */
 export function formatServiceSnippetString(name: string, className: string | undefined, isOOP: boolean) {
-  const variableName = name.replaceAll('.', '_').replaceAll('\\', '_');
+  const variableName = name.replace(/\W+/g, '_');
   const lines = [];
 
   if (isOOP) {

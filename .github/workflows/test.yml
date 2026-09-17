@@ -4,6 +4,9 @@ on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    # Weekly, so drift in Drupal core's main branch is caught between PRs.
+    - cron: '0 6 * * 1'
 
 jobs:
   test:
@@ -18,3 +21,22 @@ jobs:
       - run: npm run check-types
       - run: npm run lint
       - run: npm test
+
+  drupal-core:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ref: [main, 11.x]
+    name: drupal-core (${{ matrix.ref }})
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run fetch-core
+        env:
+          DRUPAL_CORE_REF: ${{ matrix.ref }}
+      - run: npm run test:core

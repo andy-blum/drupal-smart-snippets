@@ -33,3 +33,14 @@ services:
     description: 'A service with a description.'
   alias.loop.a: '@alias.loop.b'
   alias.loop.b: '@alias.loop.a'
+  logger.channel_base:
+    abstract: true
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: ['@logger.factory', 'get']
+  logger.channel.fixture:
+    parent: logger.channel_base
+    arguments: ['fixture']
+  tagged:
+    class: Drupal\fixture\Tagged
+    arguments: ['@stream_wrapper_manager', !tagged_iterator mime_type_guesser]
+  'Drupal\fixture\Named $named': '@current_user'

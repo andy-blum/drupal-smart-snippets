@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { fixture } from './test-helpers';
-import { findServices, formatServiceDocumentation, formatServiceSnippetString, resolveClass } from './services';
+import { findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from './services';
 
 const services = findServices(fixture('fixture.services.yml'));
 const byName = new Map(services.map(s => [s.name, s.value]));
@@ -11,6 +11,18 @@ describe('findServices', () => {
     const names = services.map(s => s.name);
     expect(names).toContain('current_user');
     expect(names).not.toContain('_defaults');
+  });
+
+  it('keeps abstract parents and named autowire aliases in the registry but not in completions', () => {
+    expect(byName.has('logger.channel_base')).toBe(true);
+    expect(byName.has('Drupal\\fixture\\Named $named')).toBe(true);
+    const completable = services.filter(isCompletable).map(s => s.name);
+    expect(completable).not.toContain('logger.channel_base');
+    expect(completable).not.toContain('Drupal\\fixture\\Named $named');
+  });
+
+  it('tolerates Symfony YAML tags', () => {
+    expect(byName.get('tagged').class).toBe('Drupal\\fixture\\Tagged');
   });
 
   it('returns nothing when there is no services key', () => {
@@ -38,6 +50,10 @@ describe('resolveClass', () => {
 
   it('follows map aliases', () => {
     expect(classFor('legacy.alias')).toBe('Drupal\\Core\\Session\\AccountProxy');
+  });
+
+  it('inherits the class from an abstract parent', () => {
+    expect(classFor('logger.channel.fixture')).toBe('Drupal\\Core\\Logger\\LoggerChannel');
   });
 
   it('returns null when nothing identifies the class', () => {

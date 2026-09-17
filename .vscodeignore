@@ -12,3 +12,4 @@ esbuild.js
 **/*.map
 **/*.ts
 test/**
+scripts/**
