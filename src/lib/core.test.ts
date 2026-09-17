@@ -55,8 +55,8 @@ describe.skipIf(!available)('Drupal core compatibility', () => {
 
     it('produces valid snippets and documentation for every hook', () => {
       for (const hook of hooks) {
-        const procedural = formatProceduralHookSnippetString(hook.name, hook.definition);
-        const oop = formatOOPHookSnippetString(hook.name, hook.definition);
+        const procedural = formatProceduralHookSnippetString(hook.name, hook.definition, hook.deprecation);
+        const oop = formatOOPHookSnippetString(hook.name, hook.definition, hook.deprecation);
 
         expect(procedural, hook.name).toContain('${1:${TM_FILENAME_BASE:hook}}');
         expect(hasStrayDollar(procedural), `${hook.name} procedural: ${procedural}`).toBe(false);

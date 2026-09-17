@@ -15,9 +15,9 @@ export function findHooks(text: string, filename = 'unknown.api.php') {
       const docs = hook.leadingComments?.at(-1);
       const name = (hook.name as PHP.Identifier).name || (hook.name as string);
       const definition = hook.loc?.source || '';
-      const isDeprecated = docs?.value?.includes('@deprecated') || false;
+      const deprecation = deprecationMessage(docs);
 
-      return {name, definition, docs, isDeprecated};
+      return {name, definition, docs, isDeprecated: deprecation !== null, deprecation};
     });
 
   return hooks;
@@ -26,7 +26,30 @@ export function findHooks(text: string, filename = 'unknown.api.php') {
 /**
  * Converts a hook function definition into a procedural VS Code snippet string
  */
-export function formatProceduralHookSnippetString(name: string, definition: string) {
+/**
+ * The text of a docblock's `@deprecated` tag, collapsed to one line, or null.
+ */
+export function deprecationMessage(docs: PHP.CommentBlock | undefined): string | null {
+  const match = docs?.value?.match(/@deprecated\b([\s\S]*?)(?=\n\s*\*\s*@|\n\s*\*\s*\n|\n\s*\*\/)/);
+  if (!match) {
+    return null;
+  }
+  return match[1].replace(/\n\s*\*\s?/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * The docblock lines shared by both snippet shapes.
+ */
+function docblock(name: string, deprecation: string | null) {
+  const lines = [`/**`, ` * Implements ${name}().`];
+  if (deprecation !== null) {
+    lines.push(` *`, ` * @deprecated ${deprecation}`.trimEnd());
+  }
+  lines.push(` */`);
+  return lines;
+}
+
+export function formatProceduralHookSnippetString(name: string, definition: string, deprecation: string | null = null) {
   const placeholderRegex = /[A-Z]+(_(?=[A-Z])[A-Z]+)*/g;
 
   const placeholders = [
@@ -47,9 +70,7 @@ export function formatProceduralHookSnippetString(name: string, definition: stri
     .replace("${1:hook}", "${1:${TM_FILENAME_BASE:hook}}");
 
   return [
-    `/**`,
-    ` * Implements ${name}().`,
-    ` */`,
+    ...docblock(name, deprecation),
     `${titleWithPlaceholders} {`,
     `  $0`,
     `}`
@@ -59,7 +80,7 @@ export function formatProceduralHookSnippetString(name: string, definition: stri
 /**
  * Converts a hook function definition into an OOP VS Code snippet string
  */
-export function formatOOPHookSnippetString(name: string, definition: string) {
+export function formatOOPHookSnippetString(name: string, definition: string, deprecation: string | null = null) {
   const hookNameNoPrefix = name.replace(/^hook_/, '');
 
   // Extract arguments from definition: "function hook_name(args)" -> "args"
@@ -120,9 +141,7 @@ export function formatOOPHookSnippetString(name: string, definition: string) {
   });
 
   return [
-    `/**`,
-    ` * Implements hook_${hookNameNoPrefix}().`,
-    ` */`,
+    ...docblock(`hook_${hookNameNoPrefix}`, deprecation),
     `#[Hook('${attributeSnippet}')]`,
     `public function ${methodSnippet}(${escapedArgs}) {`,
     `  $0`,
@@ -164,12 +183,13 @@ export function formatHookDocumentation({docs, definition, name, isDeprecated}: 
 /**
  * Shapes parsed hook data into a format ready for metadata storage
  */
-export function formatHook({name, definition, docs, isDeprecated}: {name: string, definition: string, docs: PHP.CommentBlock | undefined, isDeprecated: boolean}) {
+export function formatHook({name, definition, docs, isDeprecated, deprecation}: {name: string, definition: string, docs: PHP.CommentBlock | undefined, isDeprecated: boolean, deprecation: string | null}) {
   const desc = formatHookDocumentation({docs, definition, name, isDeprecated});
 
   return {
     name,
     definition,
     description: desc,
+    deprecation,
   };
 }

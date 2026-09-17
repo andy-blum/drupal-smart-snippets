@@ -38,11 +38,15 @@ export default function hookCompletions(webRoot: vscode.Uri): [vscode.Disposable
         completion.documentation = new vscode.MarkdownString(hook.description);
         completion.sortText = `000-${hook.name}`;
 
+        if (hook.deprecation !== null) {
+          completion.tags = [vscode.CompletionItemTag.Deprecated];
+        }
+
         if (isOOPHookDir) {
-          completion.insertText = new vscode.SnippetString(formatOOPHookSnippetString(hook.name, hook.definition));
+          completion.insertText = new vscode.SnippetString(formatOOPHookSnippetString(hook.name, hook.definition, hook.deprecation));
           completion.kind = vscode.CompletionItemKind.Method;
         } else {
-          completion.insertText = new vscode.SnippetString(formatProceduralHookSnippetString(hook.name, hook.definition));
+          completion.insertText = new vscode.SnippetString(formatProceduralHookSnippetString(hook.name, hook.definition, hook.deprecation));
           completion.kind = vscode.CompletionItemKind.Function;
         }
 

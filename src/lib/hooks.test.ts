@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { fixture } from './test-helpers';
-import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from './hooks';
+import { deprecationMessage, findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from './hooks';
 
 const hooks = findHooks(fixture('fixture.api.php'), 'fixture.api.php');
 const byName = Object.fromEntries(hooks.map(hook => [hook.name, hook]));
@@ -24,9 +24,13 @@ describe('findHooks', () => {
     );
   });
 
-  it('flags @deprecated hooks', () => {
+  it('flags @deprecated hooks and captures the message on one line', () => {
     expect(byName.hook_legacy_thing.isDeprecated).toBe(true);
+    expect(byName.hook_legacy_thing.deprecation).toBe(
+      'in drupal:10.1.0 and is removed from drupal:11.0.0. Use hook_something_else() instead.'
+    );
     expect(byName.hook_form_alter.isDeprecated).toBe(false);
+    expect(byName.hook_form_alter.deprecation).toBeNull();
   });
 
   it('attaches the docblock', () => {
@@ -68,6 +72,28 @@ describe('formatProceduralHookSnippetString', () => {
       byName.hook_form_FORM_ID_alter.definition
     );
     expect(snippet).toContain('_form_${2:FORM_ID}_alter(');
+  });
+
+  it('writes the deprecation into the docblock', () => {
+    const { name, definition, deprecation } = byName.hook_legacy_thing;
+    expect(formatProceduralHookSnippetString(name, definition, deprecation).split('\n').slice(0, 5)).toEqual([
+      '/**',
+      ' * Implements hook_legacy_thing().',
+      ' *',
+      ' * @deprecated in drupal:10.1.0 and is removed from drupal:11.0.0. Use hook_something_else() instead.',
+      ' */',
+    ]);
+    expect(formatOOPHookSnippetString(name, definition, deprecation)).toContain(' * @deprecated in drupal:10.1.0');
+  });
+});
+
+describe('deprecationMessage', () => {
+  it('stops at the next tag', () => {
+    expect(deprecationMessage({ kind: 'commentblock', value: '/**\n * Foo.\n *\n * @deprecated Gone.\n * @see x\n */' } as any)).toBe('Gone.');
+  });
+
+  it('handles a bare tag', () => {
+    expect(deprecationMessage({ kind: 'commentblock', value: '/**\n * @deprecated\n */' } as any)).toBe('');
   });
 });
 

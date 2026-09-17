@@ -64,6 +64,10 @@ docblock. Two snippet shapes are generated from each:
   attribute, and the method name mirrors them with VS Code's `camelcase` /
   `capitalize` transforms so editing the attribute updates the method name.
 
+A hook whose docblock carries `@deprecated` gets that message in the
+generated docblock and is tagged deprecated in the completion list, as are
+deprecated services.
+
 ### Services
 
 `findServices` returns every entry under `services:` except `_defaults` and
