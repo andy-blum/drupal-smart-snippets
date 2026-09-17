@@ -3,21 +3,22 @@ import * as vscode from 'vscode';
 import hookCompletions from './completions/hooks';
 import serviceCompletions from './completions/services';
 import elementCompletions from './completions/elements';
+import getWebRoot from './util/getWebRoot';
 import logger from './util/logger';
 
 export async function activate(context: vscode.ExtensionContext) {
-	// TODO: Remove these lines before publishing.
-	logger.show();
-	logger.appendLine('Drupal Smart Snippets is now active!');
+  logger.appendLine('Drupal Smart Snippets is now active!');
 
-	const hooks = await hookCompletions();
-	const services = await serviceCompletions();
-	const elements = await elementCompletions();
+  const webRoot = await getWebRoot();
+  if (!webRoot) {
+    return;
+  }
 
-	context.subscriptions.push(
-    ...(Array.isArray(hooks) ? hooks : [hooks]),
-    ...(Array.isArray(services) ? services : [services]),
-    ...(Array.isArray(elements) ? elements : [elements])
+  // Providers read live registries, so register them before indexing finishes.
+  context.subscriptions.push(
+    ...hookCompletions(webRoot),
+    ...serviceCompletions(webRoot),
+    ...elementCompletions(webRoot),
   );
 }
 

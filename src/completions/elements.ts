@@ -1,100 +1,36 @@
 /**
  * Drupal Element Completions Provider
  *
- * This module provides IntelliSense completions for Drupal render elements in PHP files.
- * It scans Element classes within the Drupal codebase to extract element definitions
- * and provides them as completion items with properly formatted documentation.
- *
- * The element completions include:
- * - Properly formatted element arrays with placeholders
- * - Documentation from the element class comments
- * - Automatic integration with VS Code's snippet system
+ * Indexes every `Element/*.php` class under the web root, reading the
+ * `#[FormElement]` / `#[RenderElement]` attribute (or legacy annotation), and
+ * offers a render array snippet for each on the `element:` prefix.
  */
 
-import logger from "../util/logger";
-import getWebRoot from "../util/getWebRoot";
 import parser from "../util/parser";
+import { createIndexer, isInWebRoot } from "../util/indexer";
 import * as vscode from "vscode";
 import type * as PHP from "php-parser";
 
-/**
- * Provides element completions for the VS Code editor
- *
- * This function:
- * 1. Finds all Element classes in the Drupal codebase
- * 2. Extracts element definitions from these files
- * 3. Formats them as metadata objects
- * 4. Registers a single completion item provider that maps metadata to VS Code completions
- *
- * @returns {Promise<vscode.Disposable>} A completion item provider registration
- */
-export default async function elementCompletions() {
-  const webRoot = await getWebRoot();
-  if (!webRoot) {
-    logger.appendLine('Could not find Drupal root. Element completions will not be available.');
-    return [];
-  }
+export default function elementCompletions(webRoot: vscode.Uri): vscode.Disposable[] {
+  const index = createIndexer({
+    label: 'elements',
+    webRoot,
+    glob: '**/Element/*.php',
+    parse: async file => (await findElements(file)).map(formatElement),
+  });
 
-  const elementRegistry = new Map<string, Array<{name: string, snippet: string, description: string}>>();
-
-  const indexFile = async (file: vscode.Uri) => {
-    try {
-      const elements = await findElements(file);
-      const formattedElements = elements.map(formatElement);
-      elementRegistry.set(file.fsPath, formattedElements);
-    } catch (error) {
-      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
-    }
-  };
-
-  const files = await vscode.workspace.findFiles(
-    new vscode.RelativePattern(webRoot, '**/Element/*.php')
-  );
-
-  logger.appendLine(`Indexing elements from ${files.length} files...`);
-
-  for (const file of files) {
-    await indexFile(file);
-  }
-
-  logger.appendLine(`Successfully indexed elements.`);
-
-  // Setup watcher for future changes
-  const watcher = vscode.workspace.createFileSystemWatcher(
-    new vscode.RelativePattern(webRoot, '**/Element/*.php')
-  );
-  watcher.onDidChange(uri => indexFile(uri));
-  watcher.onDidCreate(uri => indexFile(uri));
-  watcher.onDidDelete(uri => elementRegistry.delete(uri.fsPath));
-
-  // Register a single completion item provider for all elements
   const provider = vscode.languages.registerCompletionItemProvider('php', {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      // Only offer element completions in Drupal project structure
-      const isDrupalProject = (
-        document.fileName.includes('themes/') ||
-        document.fileName.includes('modules/')
-      );
-
-      if (!isDrupalProject) {
+    provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
+      if (!isInWebRoot(document, webRoot)) {
         return [];
       }
 
-      // Gatekeeper: Only parse if 'element:' is in the current line
-      const lineText = document.lineAt(position).text;
-      const linePrefix = lineText.substring(0, position.character);
+      const linePrefix = document.lineAt(position).text.substring(0, position.character);
       const elementIndex = linePrefix.lastIndexOf('element:');
 
       if (elementIndex === -1) {
         return [];
       }
-
-      const allElements = Array.from(elementRegistry.values()).flat();
 
       const wordRange = document.getWordRangeAtPosition(position);
       const replaceRange = new vscode.Range(
@@ -102,7 +38,7 @@ export default async function elementCompletions() {
         wordRange ? wordRange.end : position
       );
 
-      return allElements.map(element => {
+      return index.all().map(element => {
         const completion = new vscode.CompletionItem(`element:${element.name}`, vscode.CompletionItemKind.Struct);
         completion.range = replaceRange;
         completion.documentation = new vscode.MarkdownString(element.description);
@@ -113,16 +49,9 @@ export default async function elementCompletions() {
     }
   }, ':');
 
-  return [provider, watcher];
+  return [provider, index];
 }
 
-/**
- * Scans a file for Element class definitions with #[FormElement] or #[RenderElement] attributes
- *
- * @param {vscode.Uri} file - The URI of the PHP file to scan
- * @returns {Promise<Array<{name: string, type: string, docs: PHP.CommentBlock | undefined}>>} Array of element objects
- * @throws {Error} If the file cannot be read or parsed
- */
 async function findElements(file: vscode.Uri) {
   const content = await vscode.workspace.fs.readFile(file);
   const text = Buffer.from(content).toString('utf8');

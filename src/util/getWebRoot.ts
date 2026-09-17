@@ -1,11 +1,15 @@
 import * as vscode from 'vscode';
 import logger from "../util/logger";
 
-export default async function() {
-  const drupal_php = await vscode.workspace.findFiles('**/core/lib/Drupal.php').then(([file]) => (file?.path));
-  if (!drupal_php) {
+/**
+ * Locates the Drupal web root (the directory containing `core/`) by searching
+ * the workspace for `core/lib/Drupal.php`.
+ */
+export default async function(): Promise<vscode.Uri | null> {
+  const [drupalPhp] = await vscode.workspace.findFiles('**/core/lib/Drupal.php', '**/node_modules/**', 1);
+  if (!drupalPhp) {
     logger.appendLine('Could not find Drupal root. Snippets will not be available.');
     return null;
   }
-  return drupal_php.replace('core/lib/Drupal.php', '');
+  return vscode.Uri.joinPath(drupalPhp, '..', '..', '..');
 }

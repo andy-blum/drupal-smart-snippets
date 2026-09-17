@@ -1,90 +1,39 @@
 /**
  * Drupal Hook Completions Provider
  *
- * This module provides IntelliSense completions for Drupal hooks in PHP files.
- * It scans *.api.php files within the Drupal codebase to extract hook definitions
- * and provides them as completion items with properly formatted documentation.
+ * Indexes every `*.api.php` under the web root and offers the `hook_*`
+ * definitions found there as completions. Inside `src/Hook/` the snippet is an
+ * OOP `#[Hook]` method; elsewhere it is a procedural function.
  */
 
-import logger from "../util/logger";
 import parser from "../util/parser";
-import getWebRoot from "../util/getWebRoot";
+import { createIndexer, isInWebRoot } from "../util/indexer";
 import type * as PHP from "php-parser";
 import * as vscode from "vscode";
 
-/**
- * Provides hook completions for the VS Code editor
- *
- * @returns {Promise<vscode.Disposable[]>} Array containing the provider and the file watcher
- */
-export default async function hookCompletions() {
-  const webRoot = await getWebRoot();
-  if (!webRoot) {
-    logger.appendLine('Could not find Drupal root. Hook completions will not be available.');
-    return [];
-  }
+export default function hookCompletions(webRoot: vscode.Uri): vscode.Disposable[] {
+  const index = createIndexer({
+    label: 'hooks',
+    webRoot,
+    glob: '**/*.api.php',
+    parse: async file => (await findHooks(file)).map(formatHook),
+  });
 
-  const hookRegistry = new Map<string, Array<{name: string, definition: string, description: string}>>();
-
-  const indexFile = async (file: vscode.Uri) => {
-    try {
-      const hooks = await findHooks(file);
-      const formattedHooks = hooks.map(formatHook);
-      hookRegistry.set(file.fsPath, formattedHooks);
-    } catch (error) {
-      logger.appendLine(`Error reading file ${file.fsPath}: ${error}`);
-    }
-  };
-
-  const files = await vscode.workspace.findFiles(`**/*.api.php`)
-    .then(files => (
-      // Filter out files that aren't within DRUPAL_ROOT
-      files.filter(({path}) => path.startsWith(webRoot))
-    ));
-
-  logger.appendLine(`Indexing hooks from ${files.length} files...`);
-
-  for (const file of files) {
-    await indexFile(file);
-  }
-
-  logger.appendLine(`Successfully indexed hooks.`);
-
-  // Setup watcher for future changes
-  const watcher = vscode.workspace.createFileSystemWatcher(`**/*.api.php`);
-  watcher.onDidChange(uri => indexFile(uri));
-  watcher.onDidCreate(uri => indexFile(uri));
-  watcher.onDidDelete(uri => hookRegistry.delete(uri.fsPath));
-
-  // Register a single completion item provider for all hooks
   const provider = vscode.languages.registerCompletionItemProvider('php', {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      // Only offer hook completions in Drupal project structure
-      const isDrupalProject = (
-        document.fileName.includes('themes/') ||
-        document.fileName.includes('modules/')
-      );
-
-      if (!isDrupalProject) {
+    provideCompletionItems(document: vscode.TextDocument) {
+      if (!isInWebRoot(document, webRoot)) {
         return [];
       }
 
-      // Check if we're in an OOP-style hook implementation class
-      const isOOPHookDir = document.fileName.includes('src/Hook/');
-      const isSrcDir = document.fileName.includes('/src/');
+      const path = document.uri.path;
+      const isOOPHookDir = path.includes('/src/Hook/');
 
-      if (!isOOPHookDir && isSrcDir) {
+      // Classes outside src/Hook can't implement hooks.
+      if (!isOOPHookDir && path.includes('/src/')) {
         return [];
       }
 
-      const allHooks = Array.from(hookRegistry.values()).flat();
-
-      return allHooks.map(hook => {
+      return index.all().map(hook => {
         const completion = new vscode.CompletionItem(hook.name);
         completion.documentation = new vscode.MarkdownString(hook.description);
         completion.sortText = `000-${hook.name}`;
@@ -102,12 +51,9 @@ export default async function hookCompletions() {
     }
   });
 
-  return [provider, watcher];
+  return [provider, index];
 }
 
-/**
- * Scans a file for all defined functions beginning with "hook_"
- */
 async function findHooks(file: vscode.Uri) {
   const content = await vscode.workspace.fs.readFile(file);
   const text = Buffer.from(content).toString('utf8');
