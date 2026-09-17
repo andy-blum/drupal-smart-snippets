@@ -75,3 +75,6 @@ Press F5 in VS Code ("Run Drupal Smart Snippets") to launch an Extension
 Development Host with the built extension, then open a Drupal project in it.
 `npm start` keeps the bundle rebuilt on save. Indexing progress and parse
 errors are written to the "Drupal Smart Snippets" channel in the Output panel.
+
+[manual-testing.md](manual-testing.md) is the full checklist for verifying a
+PR by hand, starting from the `.vsix` the `package` job attaches.
