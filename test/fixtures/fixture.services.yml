@@ -1,0 +1,35 @@
+services:
+  _defaults:
+    autoconfigure: true
+  current_user:
+    class: Drupal\Core\Session\AccountProxy
+    arguments: ['@event_dispatcher']
+  Drupal\Core\Session\AccountInterface: '@current_user'
+  Drupal\Core\Session\AccountProxyInterface: '@current_user'
+  legacy.alias:
+    alias: current_user
+  Drupal\fixture\Autowired:
+    autowire: true
+  leading.slash:
+    class: \Drupal\fixture\LeadingSlash
+  no.class:
+    factory: ['@some.factory', 'create']
+  locale.project:
+    class: Drupal\locale\LocaleProjectStorage
+    deprecated: The "%service_id%" service is deprecated in drupal:11.4.0 and is removed from drupal:13.0.0. Use the 'Drupal\locale\LocaleProjectRepository' service instead.
+  symfony.deprecated:
+    class: Drupal\fixture\Symfony
+    deprecated:
+      package: drupal/fixture
+      version: '2.0'
+  symfony.deprecated.message:
+    class: Drupal\fixture\SymfonyMessage
+    deprecated:
+      package: drupal/fixture
+      version: '2.0'
+      message: 'The %service_id% service goes away in 3.0.'
+  described:
+    class: Drupal\fixture\Described
+    description: 'A service with a description.'
+  alias.loop.a: '@alias.loop.b'
+  alias.loop.b: '@alias.loop.a'

@@ -1,0 +1,109 @@
+import { describe, expect, it } from 'vitest';
+import { fixture } from './test-helpers';
+import { findServices, formatServiceDocumentation, formatServiceSnippetString, resolveClass } from './services';
+
+const services = findServices(fixture('fixture.services.yml'));
+const byName = new Map(services.map(s => [s.name, s.value]));
+const classFor = (name: string) => resolveClass(name, byName.get(name), byName);
+
+describe('findServices', () => {
+  it('lists services and skips _defaults', () => {
+    const names = services.map(s => s.name);
+    expect(names).toContain('current_user');
+    expect(names).not.toContain('_defaults');
+  });
+
+  it('returns nothing when there is no services key', () => {
+    expect(findServices(fixture('empty.services.yml'))).toEqual([]);
+    expect(findServices('')).toEqual([]);
+  });
+});
+
+describe('resolveClass', () => {
+  it('uses an explicit class', () => {
+    expect(classFor('current_user')).toBe('Drupal\\Core\\Session\\AccountProxy');
+  });
+
+  it('strips a leading backslash', () => {
+    expect(classFor('leading.slash')).toBe('Drupal\\fixture\\LeadingSlash');
+  });
+
+  it('treats a class-keyed service as its own class', () => {
+    expect(classFor('Drupal\\fixture\\Autowired')).toBe('Drupal\\fixture\\Autowired');
+  });
+
+  it('follows string aliases', () => {
+    expect(classFor('Drupal\\Core\\Session\\AccountInterface')).toBe('Drupal\\Core\\Session\\AccountProxy');
+  });
+
+  it('follows map aliases', () => {
+    expect(classFor('legacy.alias')).toBe('Drupal\\Core\\Session\\AccountProxy');
+  });
+
+  it('returns null when nothing identifies the class', () => {
+    expect(classFor('no.class')).toBeNull();
+  });
+
+  it('gives up on alias cycles', () => {
+    expect(classFor('alias.loop.a')).toBeNull();
+  });
+});
+
+describe('formatServiceSnippetString', () => {
+  it('assigns and asserts the class', () => {
+    expect(formatServiceSnippetString('current_user', 'AccountProxy', false)).toBe([
+      "\\$${1:current_user_service} = \\Drupal::service('current_user');",
+      'assert(\\$${1} instanceof AccountProxy);',
+      '',
+    ].join('\n'));
+  });
+
+  it('adds the DI reminder in OOP files', () => {
+    expect(formatServiceSnippetString('current_user', 'AccountProxy', true)).toMatch(/^\/\/ @todo: Consider using Dependency Injection/);
+  });
+
+  it('omits the assert when the class is unknown', () => {
+    expect(formatServiceSnippetString('no.class', undefined, false)).not.toContain('assert(');
+  });
+
+  it('makes a valid variable name from a class-keyed ID', () => {
+    expect(formatServiceSnippetString('Drupal\\fixture\\Autowired', 'Autowired', false))
+      .toContain('${1:Drupal_fixture_Autowired_service}');
+  });
+});
+
+describe('formatServiceDocumentation', () => {
+  it('shows the class and service ID', () => {
+    const doc = formatServiceDocumentation('current_user', byName.get('current_user'), classFor('current_user'));
+    expect(doc).toBe([
+      '**Drupal Smart Snippets**', '',
+      '`Drupal\\Core\\Session\\AccountProxy`', '',
+      'Service ID: `current_user`',
+    ].join('\n'));
+  });
+
+  it('substitutes %service_id% in a string deprecation', () => {
+    const doc = formatServiceDocumentation('locale.project', byName.get('locale.project'), classFor('locale.project'));
+    expect(doc.split('\n').slice(0, 5)).toEqual([
+      '**Drupal Smart Snippets**', '',
+      expect.stringMatching(/^_DEPRECATED: The "locale.project" service is deprecated in drupal:11\.4\.0/), '',
+      '`Drupal\\locale\\LocaleProjectStorage`',
+    ]);
+  });
+
+  it('handles a Symfony-style deprecation map without a message', () => {
+    const doc = formatServiceDocumentation('symfony.deprecated', byName.get('symfony.deprecated'), classFor('symfony.deprecated'));
+    expect(doc).toContain('_DEPRECATED: This service is deprecated._');
+  });
+
+  it('uses the message from a Symfony-style deprecation map', () => {
+    const doc = formatServiceDocumentation('symfony.deprecated.message', byName.get('symfony.deprecated.message'), classFor('symfony.deprecated.message'));
+    expect(doc).toContain('_DEPRECATED: The symfony.deprecated.message service goes away in 3.0._');
+  });
+
+  it('falls back to Unknown and appends a description', () => {
+    const doc = formatServiceDocumentation('described', byName.get('described'), classFor('described'));
+    expect(doc).toContain('A service with a description.');
+    expect(formatServiceDocumentation('no.class', byName.get('no.class'), null)).toContain('`Unknown`');
+  });
+});
