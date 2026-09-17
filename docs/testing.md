@@ -24,10 +24,10 @@ DRUPAL_CORE_REF=11.x npm run fetch-core # any branch or tag
 npm run test:core
 ```
 
-`scripts/fetch-drupal-core.mjs` downloads a tarball from
-git.drupalcode.org into `test/drupal-core/` (gitignored). GitLab needs
-`?ref_type=heads` for branch names containing dots and intermittently returns
-406 while it builds the archive, so the script retries.
+`scripts/fetch-drupal-core.mjs` downloads a branch tarball from the
+[GitHub mirror of core](https://github.com/drupal/drupal) into
+`test/drupal-core/` (gitignored). The mirror tracks git.drupalcode.org, whose
+own archive endpoint intermittently returns 406.
 
 `src/lib/core.test.ts` then runs the same functions over every `*.api.php`,
 `*.services.yml`, and `Element/*.php` in that tree. It asserts invariants

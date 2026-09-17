@@ -13,3 +13,4 @@ esbuild.js
 **/*.ts
 test/**
 scripts/**
+docs/**

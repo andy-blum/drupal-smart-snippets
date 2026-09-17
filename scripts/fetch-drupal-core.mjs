@@ -1,8 +1,9 @@
 // Downloads a Drupal core tarball into test/drupal-core for the core
-// compatibility suite (src/lib/core.test.ts).
+// compatibility suite (src/lib/core.test.ts). Uses the GitHub mirror, which
+// tracks git.drupalcode.org and serves archives reliably.
 //
 //   node scripts/fetch-drupal-core.mjs            # main branch
-//   DRUPAL_CORE_REF=11.2.x node scripts/fetch-drupal-core.mjs
+//   DRUPAL_CORE_REF=11.x node scripts/fetch-drupal-core.mjs
 
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -11,26 +12,16 @@ import { join } from 'node:path';
 
 const ref = process.env.DRUPAL_CORE_REF || 'main';
 const dest = process.env.DRUPAL_CORE_DIR || join(import.meta.dirname, '..', 'test', 'drupal-core');
-// `ref_type=heads` is required for branch names containing dots, e.g. `11.x`.
-const url = `https://git.drupalcode.org/project/drupal/-/archive/${ref}/drupal-${ref}.tar.gz?ref_type=heads`;
+const url = `https://github.com/drupal/drupal/archive/refs/heads/${ref}.tar.gz`;
 
-// GitLab intermittently answers archive requests with 406 while it builds
-// the tarball, so retry a few times before giving up.
-async function download(attempts = 4) {
-  for (let attempt = 1; attempt <= attempts; attempt++) {
-    console.log(`Fetching ${url} (attempt ${attempt})`);
-    const response = await fetch(url);
-    if (response.ok) {
-      return Buffer.from(await response.arrayBuffer());
-    }
-    console.warn(`${response.status} ${response.statusText}`);
-    await new Promise(resolve => setTimeout(resolve, attempt * 5000));
-  }
-  throw new Error(`Failed to fetch ${url} after ${attempts} attempts`);
+console.log(`Fetching ${url}`);
+const response = await fetch(url);
+if (!response.ok) {
+  throw new Error(`${response.status} ${response.statusText} fetching ${url}`);
 }
 
 const tarball = join(tmpdir(), `drupal-${ref}.tar.gz`);
-writeFileSync(tarball, await download());
+writeFileSync(tarball, Buffer.from(await response.arrayBuffer()));
 
 rmSync(dest, { recursive: true, force: true });
 mkdirSync(dest, { recursive: true });

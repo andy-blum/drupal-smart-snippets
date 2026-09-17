@@ -59,7 +59,9 @@ jobs:
       - id: meta
         run: |
           echo "version=$(node -p 'require("./package.json").version')" >> "$GITHUB_OUTPUT"
-          echo "sha=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+          echo "sha=${HEAD_SHA::7}" >> "$GITHUB_OUTPUT"
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
       - run: npm run package -- --out drupal-smart-snippets-${{ steps.meta.outputs.version }}-${{ steps.meta.outputs.sha }}.vsix
       - id: upload
         uses: actions/upload-artifact@v4
