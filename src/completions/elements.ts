@@ -6,12 +6,12 @@
  * offers a render array snippet for each on the `element:` prefix.
  */
 
-import { createIndexer, isInWebRoot } from "../util/indexer";
+import { createIndexer, isInWebRoot, type Indexer } from "../util/indexer";
 import { findElements, formatElement } from "../lib/elements";
 import { readText } from "../util/readText";
 import * as vscode from "vscode";
 
-export default function elementCompletions(webRoot: vscode.Uri): vscode.Disposable[] {
+export default function elementCompletions(webRoot: vscode.Uri): [vscode.Disposable, Indexer<unknown>] {
   const index = createIndexer({
     label: 'elements',
     webRoot,

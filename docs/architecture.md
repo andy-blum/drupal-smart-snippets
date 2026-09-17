@@ -26,7 +26,14 @@ glob and a parse function it:
   parallel, storing results per file;
 - creates a `FileSystemWatcher` for the same glob so edits, new files, and
   deletions update the registry without a reload;
-- exposes `all()` for the provider to read.
+- creates a second watcher for directory events, because tools like composer
+  install a module by renaming a whole directory into place, which VS Code
+  reports as one event for the directory rather than one per file; a new
+  directory is scanned with the same glob, a deleted one has its entries
+  dropped;
+- exposes `all()` for the provider to read and `reindex()` for the
+  **Drupal Smart Snippets: Reindex** command, the fallback when a change is
+  missed.
 
 `isInWebRoot()` is the gate every provider applies first. It compares
 `document.uri.path`, not `fileName`, so it behaves the same on Windows.

@@ -49,6 +49,13 @@
           ".theme"
         ]
       }
+    ],
+    "commands": [
+      {
+        "command": "drupalSmartSnippets.reindex",
+        "title": "Reindex hooks, services, and elements",
+        "category": "Drupal Smart Snippets"
+      }
     ]
   },
   "dependencies": {

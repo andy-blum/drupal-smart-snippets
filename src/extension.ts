@@ -15,10 +15,12 @@ export async function activate(context: vscode.ExtensionContext) {
   }
 
   // Providers read live registries, so register them before indexing finishes.
+  const modules = [hookCompletions(webRoot), serviceCompletions(webRoot), elementCompletions(webRoot)];
+  const indexers = modules.map(([, indexer]) => indexer);
+
   context.subscriptions.push(
-    ...hookCompletions(webRoot),
-    ...serviceCompletions(webRoot),
-    ...elementCompletions(webRoot),
+    ...modules.flat(),
+    vscode.commands.registerCommand('drupalSmartSnippets.reindex', () => Promise.all(indexers.map(indexer => indexer.reindex()))),
   );
 }
 

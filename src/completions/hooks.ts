@@ -6,12 +6,12 @@
  * OOP `#[Hook]` method; elsewhere it is a procedural function.
  */
 
-import { createIndexer, isInWebRoot } from "../util/indexer";
+import { createIndexer, isInWebRoot, type Indexer } from "../util/indexer";
 import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from "../lib/hooks";
 import { readText } from "../util/readText";
 import * as vscode from "vscode";
 
-export default function hookCompletions(webRoot: vscode.Uri): vscode.Disposable[] {
+export default function hookCompletions(webRoot: vscode.Uri): [vscode.Disposable, Indexer<unknown>] {
   const index = createIndexer({
     label: 'hooks',
     webRoot,
