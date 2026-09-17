@@ -2,6 +2,8 @@ name: Test
 
 on:
   pull_request:
+    # labeled/unlabeled so the changelog job re-evaluates the skip label.
+    types: [opened, synchronize, reopened, labeled, unlabeled]
   push:
     branches: [main]
   schedule:
@@ -21,6 +23,22 @@ jobs:
       - run: npm run check-types
       - run: npm run lint
       - run: npm test
+
+  changelog:
+    # Every PR must touch CHANGELOG.md unless it carries the skip-changelog label.
+    if: github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'skip-changelog')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          if git diff --quiet "origin/$BASE...HEAD" -- CHANGELOG.md; then
+            echo "::error file=CHANGELOG.md::This pull request does not change CHANGELOG.md. Add an entry under [Unreleased], or apply the skip-changelog label."
+            exit 1
+          fi
+        env:
+          BASE: ${{ github.base_ref }}
 
   drupal-core:
     runs-on: ubuntu-latest

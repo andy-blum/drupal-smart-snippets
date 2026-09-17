@@ -55,6 +55,7 @@ core's own `*.test.js` files are ignored.
 | Job | Steps |
 | --- | --- |
 | `test` | `npm ci`, type-check, lint, unit tests |
+| `changelog` (PRs only) | fails unless the PR changes `CHANGELOG.md`; apply the `skip-changelog` label to opt out |
 | `drupal-core (main)` | fetch core `main`, run the compatibility suite |
 | `drupal-core (11.x)` | fetch core `11.x`, run the compatibility suite |
 | `package` (PRs only) | `npm run package` builds a `.vsix`, uploads it as a workflow artifact, and posts or updates a sticky PR comment linking to it |
