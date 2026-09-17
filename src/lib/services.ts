@@ -81,7 +81,7 @@ export function findServices(text: string): Service[] {
 /**
  * Creates a service snippet
  */
-export function formatServiceSnippetString(name: string, className: string | undefined, isOOP: boolean, deprecation: string | null = null) {
+export function formatServiceSnippetString(name: string, fullClass: string | null, isOOP: boolean, deprecation: string | null = null) {
   const variableName = name.replace(/\W+/g, '_');
   const lines = [];
 
@@ -95,8 +95,10 @@ export function formatServiceSnippetString(name: string, className: string | und
 
   lines.push(`\\$\${1:${variableName}_service} = \\Drupal::service('${name}');`);
 
-  if (className) {
-    lines.push(`assert(\\$\${1} instanceof ${className});`);
+  // Fully qualified so no `use` statement is needed; other extensions don't
+  // add imports for names that arrive inside a snippet.
+  if (fullClass) {
+    lines.push(`assert(\\$\${1} instanceof \\${fullClass});`);
   }
 
   lines.push(``);

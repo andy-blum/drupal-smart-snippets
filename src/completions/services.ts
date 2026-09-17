@@ -43,7 +43,6 @@ export default function serviceCompletions(webRoot: vscode.Uri): [vscode.Disposa
 
       return services.filter(isCompletable).map(({ name, value }) => {
         const fullClass = resolveClass(name, value, byName);
-        const className = fullClass?.split('\\').pop();
 
         const deprecation = deprecationMessage(name, value);
 
@@ -51,7 +50,7 @@ export default function serviceCompletions(webRoot: vscode.Uri): [vscode.Disposa
         completion.range = replaceRange;
         completion.documentation = new vscode.MarkdownString(formatServiceDocumentation(name, value, fullClass));
         completion.sortText = `000-${name}`;
-        completion.insertText = new vscode.SnippetString(formatServiceSnippetString(name, className, isOOP, deprecation));
+        completion.insertText = new vscode.SnippetString(formatServiceSnippetString(name, fullClass, isOOP, deprecation));
         if (deprecation !== null) {
           completion.tags = [vscode.CompletionItemTag.Deprecated];
         }

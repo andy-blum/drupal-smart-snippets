@@ -71,24 +71,24 @@ describe('resolveClass', () => {
 });
 
 describe('formatServiceSnippetString', () => {
-  it('assigns and asserts the class', () => {
-    expect(formatServiceSnippetString('current_user', 'AccountProxy', false)).toBe([
+  it('assigns and asserts the fully qualified class', () => {
+    expect(formatServiceSnippetString('current_user', 'Drupal\\Core\\Session\\AccountProxy', false)).toBe([
       "\\$${1:current_user_service} = \\Drupal::service('current_user');",
-      'assert(\\$${1} instanceof AccountProxy);',
+      'assert(\\$${1} instanceof \\Drupal\\Core\\Session\\AccountProxy);',
       '',
     ].join('\n'));
   });
 
   it('adds the DI reminder in OOP files', () => {
-    expect(formatServiceSnippetString('current_user', 'AccountProxy', true)).toMatch(/^\/\/ @todo: Consider using Dependency Injection/);
+    expect(formatServiceSnippetString('current_user', 'Drupal\\Core\\Session\\AccountProxy', true)).toMatch(/^\/\/ @todo: Consider using Dependency Injection/);
   });
 
   it('omits the assert when the class is unknown', () => {
-    expect(formatServiceSnippetString('no.class', undefined, false)).not.toContain('assert(');
+    expect(formatServiceSnippetString('no.class', null, false)).not.toContain('assert(');
   });
 
   it('adds a @deprecated comment when given a deprecation', () => {
-    const snippet = formatServiceSnippetString('locale.project', 'LocaleProjectStorage', true, 'The "locale.project" service is deprecated.');
+    const snippet = formatServiceSnippetString('locale.project', 'Drupal\\locale\\LocaleProjectStorage', true, 'The "locale.project" service is deprecated.');
     expect(snippet.split('\n').slice(0, 2)).toEqual([
       '// @deprecated The "locale.project" service is deprecated.',
       '// @todo: Consider using Dependency Injection instead of \\Drupal::service().',
@@ -96,7 +96,7 @@ describe('formatServiceSnippetString', () => {
   });
 
   it('makes a valid variable name from a class-keyed ID', () => {
-    expect(formatServiceSnippetString('Drupal\\fixture\\Autowired', 'Autowired', false))
+    expect(formatServiceSnippetString('Drupal\\fixture\\Autowired', 'Drupal\\fixture\\Autowired', false))
       .toContain('${1:Drupal_fixture_Autowired_service}');
   });
 });

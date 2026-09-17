@@ -97,7 +97,7 @@ describe.skipIf(!available)('Drupal core compatibility', () => {
     it('produces snippets and documentation for every service', () => {
       for (const service of services.filter(isCompletable)) {
         const fullClass = classFor(service.name);
-        const snippet = formatServiceSnippetString(service.name, fullClass?.split('\\').pop(), false, deprecationMessage(service.name, service.value));
+        const snippet = formatServiceSnippetString(service.name, fullClass, false, deprecationMessage(service.name, service.value));
         expect(snippet, service.name).toContain(`\\Drupal::service('${service.name}')`);
         expect(hasStrayDollar(snippet), `${service.name}: ${snippet}`).toBe(false);
         expect(() => formatServiceDocumentation(service.name, service.value, fullClass), service.name).not.toThrow();

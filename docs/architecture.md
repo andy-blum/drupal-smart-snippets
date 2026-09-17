@@ -74,8 +74,10 @@ deprecated services.
 `_instanceof`. `resolveClass` is called at completion time, with the whole
 registry available, so aliases and parents defined in other files resolve.
 The snippet assigns `\Drupal::service('id')` to a variable and adds an
-`assert($var instanceof Class)` line for type hinting; the assert is omitted
-when no class can be determined. A deprecated service gets a `// @deprecated`
+`assert($var instanceof \Fully\Qualified\Class)` line for type hinting; the
+name is fully qualified because other extensions only add `use` statements
+for their own completions, not for names inside an inserted snippet. The
+assert is omitted when no class can be determined. A deprecated service gets a `// @deprecated`
 comment carrying the message from the YAML; inside `src/` a `@todo` comment
 recommends dependency injection instead.
 

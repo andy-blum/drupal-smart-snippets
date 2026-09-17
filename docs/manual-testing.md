@@ -151,14 +151,17 @@ In `dsstest.module`, on a blank line type `service:`.
 
   ```php
   $current_user_service = \Drupal::service('current_user');
-  assert($current_user_service instanceof AccountProxy);
+  assert($current_user_service instanceof \Drupal\Core\Session\AccountProxy);
   ```
 
   The variable name is selected in both places.
-- [ ] `service:Drupal\Core\Session\AccountInterface` asserts `AccountProxy`
-  too (alias followed).
-- [ ] `service:logger.channel.default` asserts `LoggerChannel` (class
-  inherited from `parent: logger.channel_base`).
+- [ ] `service:Drupal\Core\Session\AccountInterface` asserts
+  `\Drupal\Core\Session\AccountProxy` too (alias followed).
+- [ ] `service:logger.channel.default` asserts
+  `\Drupal\Core\Logger\LoggerChannel` (class inherited from
+  `parent: logger.channel_base`).
+- [ ] No `use` statement is added and Intelephense reports no unresolved
+  name: the assert uses the fully qualified class.
 - [ ] `logger.channel_base` itself is **not** in the list (abstract), and no
   ID containing a space or `$` is listed (named-autowire aliases).
 - [ ] Type `service:` in the middle of an existing line, after other text,
@@ -219,7 +222,7 @@ In `dsstest.module`, type `element:`.
       class: Drupal\dsstest\Thing
   ```
 
-  `service:dsstest.thing` appears, asserting `Thing`. Delete the file: gone.
+  `service:dsstest.thing` appears, asserting `\Drupal\dsstest\Thing`. Delete the file: gone.
 - [ ] Create `web/modules/custom/dsstest/src/Element/DssBox.php` with
   `#[RenderElement('dss_box')]` on a class: `element:dss_box` appears.
 - [ ] Edit a PHP file under `vendor/`: nothing is logged.
@@ -246,9 +249,10 @@ In `dsstest.module`:
 
 - [ ] `hook_webform_element_alter` is offered; accepting gives
   `dsstest_webform_element_alter(array &$element, \Drupal\Core\Form\FormStateInterface $form_state, array $context)`.
-- [ ] `service:webform.request` asserts `WebformRequest`.
-- [ ] `service:logger.channel.webform` asserts `LoggerChannel` (contrib
-  child of a core abstract parent).
+- [ ] `service:webform.request` asserts `\Drupal\webform\WebformRequest`.
+- [ ] `service:logger.channel.webform` asserts
+  `\Drupal\Core\Logger\LoggerChannel` (contrib child of a core abstract
+  parent).
 - [ ] `element:webform_signature` inserts a form element (`#title` etc.)
   with `'#type' => 'webform_signature'`. Webform's elements use
   `@FormElement` docblock annotations, not attributes, so this is the only
@@ -262,7 +266,7 @@ In `DsstestHooks.php`:
   and `public function webformElementAlter(...)`.
 - [ ] `hook_webform_handler_info_alter` gives `webformHandlerInfoAlter`.
 - [ ] `service:webform.token_manager` includes the DI `@todo` line and
-  asserts `WebformTokenManager`.
+  asserts `\Drupal\webform\WebformTokenManager`.
 
 ### Webform removal
 
