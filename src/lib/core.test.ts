@@ -1,5 +1,6 @@
 /**
- * Compatibility suite against a real Drupal core checkout.
+ * Compatibility suite against a real Drupal core checkout, with the webform
+ * module under modules/contrib as a sample of contrib code.
  *
  * Skipped unless test/drupal-core exists (or DRUPAL_CORE_DIR points somewhere).
  * Populate it with `npm run fetch-core`. Assertions are invariants that must
@@ -15,6 +16,8 @@ import { findElements, formatElement } from './elements';
 
 const root = process.env.DRUPAL_CORE_DIR || join(__dirname, '..', '..', 'test', 'drupal-core');
 const available = existsSync(join(root, 'core', 'lib', 'Drupal.php'));
+const webform = join(root, 'modules', 'contrib', 'webform');
+const webformAvailable = existsSync(join(webform, 'webform.info.yml'));
 
 // Called at collection time even when the suite is skipped, so guard the read.
 const listFiles = (test: (path: string) => boolean) => available
@@ -138,6 +141,48 @@ describe.skipIf(!available)('Drupal core compatibility', () => {
     it('extracts documented properties', () => {
       expect(formatElement(byName.get('checkbox')!).snippet).toContain("'#return_value' => ''");
       expect(formatElement(byName.get('details')!).snippet).toContain("'#open' => ''");
+    });
+  });
+
+  // Contrib modules are indexed the same way as core; webform is a good sample
+  // because it ships its own hooks, services, and a large set of elements that
+  // still use docblock annotations rather than attributes.
+  describe.skipIf(!webformAvailable)('webform (contrib)', () => {
+    const under = (path: string) => join(root, path).startsWith(webform);
+
+    it('finds hooks from webform.api.php', () => {
+      const files = listFiles(path => path.endsWith('.api.php') && under(path));
+      const names = new Set(files.flatMap(file => findHooks(readFileSync(file, 'utf8'), file)).map(hook => hook.name));
+      expect(files.length).toBeGreaterThanOrEqual(1);
+      expect(names.size).toBeGreaterThan(20);
+      expect(names.has('hook_webform_element_alter')).toBe(true);
+      expect(names.has('hook_webform_element_info_alter')).toBe(true);
+    });
+
+    it('resolves webform services, including aliases into core', () => {
+      const files = listFiles(path => path.endsWith('.services.yml'));
+      const services = files.flatMap(file => findServices(readFileSync(file, 'utf8')));
+      const byName = new Map(services.map(service => [service.name, service.value]));
+      const classFor = (name: string) => resolveClass(name, byName.get(name), byName);
+
+      expect(classFor('webform.request')).toBe('Drupal\\webform\\WebformRequest');
+      expect(classFor('webform.token_manager')).toBe('Drupal\\webform\\WebformTokenManager');
+      expect(classFor('logger.channel.webform')).toBe('Drupal\\Core\\Logger\\LoggerChannel');
+    });
+
+    it('finds annotation-based elements', () => {
+      const files = listFiles(path => /[\\/]Element[\\/][^\\/]+\.php$/.test(path) && under(path));
+      const elements = files.flatMap(file => findElements(readFileSync(file, 'utf8'), file));
+      const byName = new Map(elements.map(element => [element.name, element]));
+
+      expect(elements.length).toBeGreaterThan(60);
+      expect(byName.get('webform_signature')?.type).toBe('FormElement');
+      expect(byName.get('webform_message')?.type).toBe('FormElement');
+      for (const element of elements) {
+        const { snippet } = formatElement(element);
+        expect(snippet, element.name).toMatch(/^\[\n  '#type' => '.+',\n[\s\S]*\]\$\{5\|\\,,;\|\}$/);
+        expect(hasStrayDollar(snippet), `${element.name}: ${snippet}`).toBe(false);
+      }
     });
   });
 });

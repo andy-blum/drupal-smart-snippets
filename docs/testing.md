@@ -19,15 +19,22 @@ snippet output, add the failing case here first.
 ## Drupal core compatibility
 
 ```bash
-npm run fetch-core                      # main branch
-DRUPAL_CORE_REF=11.x npm run fetch-core # any branch or tag
+npm run fetch-core                                       # core main + webform 6.3.x
+DRUPAL_CORE_REF=11.x WEBFORM_REF=6.3.x npm run fetch-core # other branches
 npm run test:core
 ```
 
-`scripts/fetch-drupal-core.mjs` downloads a branch tarball from the
-[GitHub mirror of core](https://github.com/drupal/drupal) into
-`test/drupal-core/` (gitignored). The mirror tracks git.drupalcode.org, whose
-own archive endpoint intermittently returns 406.
+`scripts/fetch-drupal-core.mjs` downloads a core branch tarball from the
+[GitHub mirror](https://github.com/drupal/drupal) into `test/drupal-core/`
+(gitignored), then drops the webform module from ftp.drupal.org into
+`modules/contrib/webform` inside it. The mirror is used because
+git.drupalcode.org's own archive endpoint intermittently returns 406.
+
+Webform stands in for contrib code: it ships its own `*.api.php`, services
+that alias into core (`logger.channel.webform`), and about 90 elements that
+still use `@FormElement` docblock annotations, whereas core has moved to
+attributes. Because it sits inside the web root, the core assertions run over
+it too; a `webform (contrib)` block adds checks specific to it.
 
 `src/lib/core.test.ts` then runs the same functions over every `*.api.php`,
 `*.services.yml`, and `Element/*.php` in that tree. It asserts invariants
