@@ -57,4 +57,4 @@ Extensions like PHP Intelephense provide their own hook completions by scanning 
 
 ## Contributions
 This project is maintained on [GitHub](https://github.com/andy-blum/drupal-smart-snippets).
-Your bugs, feature requests, and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how the extension works and how to run the tests.
+Your bugs, feature requests, and pull requests are welcome. Developer documentation is in [docs/](docs/README.md).
