@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { fixture } from './test-helpers';
-import { findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from './services';
+import { deprecationMessage, findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from './services';
 
 const services = findServices(fixture('fixture.services.yml'));
 const byName = new Map(services.map(s => [s.name, s.value]));
@@ -19,6 +19,11 @@ describe('findServices', () => {
     const completable = services.filter(isCompletable).map(s => s.name);
     expect(completable).not.toContain('logger.channel_base');
     expect(completable).not.toContain('Drupal\\fixture\\Named $named');
+  });
+
+  it('does not offer private services', () => {
+    expect(byName.has('private.thing')).toBe(true);
+    expect(services.filter(isCompletable).map(s => s.name)).not.toContain('private.thing');
   });
 
   it('tolerates Symfony YAML tags', () => {
@@ -82,9 +87,32 @@ describe('formatServiceSnippetString', () => {
     expect(formatServiceSnippetString('no.class', undefined, false)).not.toContain('assert(');
   });
 
+  it('adds a @deprecated comment when given a deprecation', () => {
+    const snippet = formatServiceSnippetString('locale.project', 'LocaleProjectStorage', true, 'The "locale.project" service is deprecated.');
+    expect(snippet.split('\n').slice(0, 2)).toEqual([
+      '// @deprecated The "locale.project" service is deprecated.',
+      '// @todo: Consider using Dependency Injection instead of \\Drupal::service().',
+    ]);
+  });
+
   it('makes a valid variable name from a class-keyed ID', () => {
     expect(formatServiceSnippetString('Drupal\\fixture\\Autowired', 'Autowired', false))
       .toContain('${1:Drupal_fixture_Autowired_service}');
+  });
+});
+
+describe('deprecationMessage', () => {
+  it('returns null when not deprecated', () => {
+    expect(deprecationMessage('current_user', byName.get('current_user'))).toBeNull();
+  });
+
+  it('fills in %service_id% for string deprecations', () => {
+    expect(deprecationMessage('locale.project', byName.get('locale.project'))).toMatch(/^The "locale.project" service is deprecated/);
+  });
+
+  it('handles Symfony-style maps with and without a message', () => {
+    expect(deprecationMessage('symfony.deprecated', byName.get('symfony.deprecated'))).toBe('This service is deprecated.');
+    expect(deprecationMessage('symfony.deprecated.message', byName.get('symfony.deprecated.message'))).toBe('The symfony.deprecated.message service goes away in 3.0.');
   });
 });
 

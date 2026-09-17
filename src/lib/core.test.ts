@@ -11,7 +11,7 @@ import { describe, expect, it } from 'vitest';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from './hooks';
-import { findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from './services';
+import { deprecationMessage, findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from './services';
 import { findElements, formatElement } from './elements';
 
 const root = process.env.DRUPAL_CORE_DIR || join(__dirname, '..', '..', 'test', 'drupal-core');
@@ -97,7 +97,7 @@ describe.skipIf(!available)('Drupal core compatibility', () => {
     it('produces snippets and documentation for every service', () => {
       for (const service of services.filter(isCompletable)) {
         const fullClass = classFor(service.name);
-        const snippet = formatServiceSnippetString(service.name, fullClass?.split('\\').pop(), false);
+        const snippet = formatServiceSnippetString(service.name, fullClass?.split('\\').pop(), false, deprecationMessage(service.name, service.value));
         expect(snippet, service.name).toContain(`\\Drupal::service('${service.name}')`);
         expect(hasStrayDollar(snippet), `${service.name}: ${snippet}`).toBe(false);
         expect(() => formatServiceDocumentation(service.name, service.value, fullClass), service.name).not.toThrow();

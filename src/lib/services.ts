@@ -36,12 +36,32 @@ export function resolveClass(name: string, value: any, byName: Map<string, any>,
 /**
  * Whether a service should be offered as a completion. Excluded:
  *  - abstract services, which only exist as `parent:` targets
+ *  - private services (`public: false`), which the container won't hand out
  *  - named autowiring aliases (`Foo\BarInterface $baz`), which are for
  *    constructor injection, not `\Drupal::service()`
- * Both stay in the registry so alias and parent lookups still resolve.
+ * All stay in the registry so alias and parent lookups still resolve.
  */
 export function isCompletable({ name, value }: Service): boolean {
-  return value?.abstract !== true && !/\s/.test(name);
+  return value?.abstract !== true && value?.public !== false && !/\s/.test(name);
+}
+
+/**
+ * The deprecation message for a service, with Symfony's placeholders filled
+ * in. `deprecated:` is either a bare string or a `{ package, version, message }`
+ * map, where `message` is optional.
+ */
+export function deprecationMessage(name: string, value: any): string | null {
+  if (!value?.deprecated) {
+    return null;
+  }
+
+  const message = typeof value.deprecated === 'string'
+    ? value.deprecated
+    : value.deprecated.message;
+
+  return typeof message === 'string'
+    ? message.replaceAll('%alias_id%', name).replaceAll('%service_id%', name)
+    : 'This service is deprecated.';
 }
 
 export function findServices(text: string): Service[] {
@@ -61,9 +81,13 @@ export function findServices(text: string): Service[] {
 /**
  * Creates a service snippet
  */
-export function formatServiceSnippetString(name: string, className: string | undefined, isOOP: boolean) {
+export function formatServiceSnippetString(name: string, className: string | undefined, isOOP: boolean, deprecation: string | null = null) {
   const variableName = name.replace(/\W+/g, '_');
   const lines = [];
+
+  if (deprecation) {
+    lines.push(`// @deprecated ${deprecation}`);
+  }
 
   if (isOOP) {
     lines.push(`// @todo: Consider using Dependency Injection instead of \\Drupal::service().`);
@@ -87,16 +111,9 @@ export function formatServiceDocumentation(name: string, value: any, fullClass: 
     `Service ID: \`${name}\``
   ];
 
-  if (value?.deprecated) {
-    // Either a bare string or a Symfony-style `{ package, version, message }` map.
-    const message = typeof value.deprecated === 'string'
-      ? value.deprecated
-      : value.deprecated.message;
-    const deprecationWarning = typeof message === 'string'
-      ? message.replaceAll('%alias_id%', name).replaceAll('%service_id%', name)
-      : 'This service is deprecated.';
-
-    description.splice(2, 0, `_DEPRECATED: ${deprecationWarning}_`, ``);
+  const deprecation = deprecationMessage(name, value);
+  if (deprecation) {
+    description.splice(2, 0, `_DEPRECATED: ${deprecation}_`, ``);
   }
 
   if (value?.description) {

@@ -44,3 +44,6 @@ services:
     class: Drupal\fixture\Tagged
     arguments: ['@stream_wrapper_manager', !tagged_iterator mime_type_guesser]
   'Drupal\fixture\Named $named': '@current_user'
+  private.thing:
+    class: Drupal\fixture\PrivateThing
+    public: false

@@ -6,7 +6,7 @@
  */
 
 import { createIndexer, isInWebRoot, type Indexer } from "../util/indexer";
-import { findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from "../lib/services";
+import { deprecationMessage, findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from "../lib/services";
 import { readText } from "../util/readText";
 import * as vscode from "vscode";
 
@@ -49,7 +49,7 @@ export default function serviceCompletions(webRoot: vscode.Uri): [vscode.Disposa
         completion.range = replaceRange;
         completion.documentation = new vscode.MarkdownString(formatServiceDocumentation(name, value, fullClass));
         completion.sortText = `000-${name}`;
-        completion.insertText = new vscode.SnippetString(formatServiceSnippetString(name, className, isOOP));
+        completion.insertText = new vscode.SnippetString(formatServiceSnippetString(name, className, isOOP, deprecationMessage(name, value)));
 
         return completion;
       });

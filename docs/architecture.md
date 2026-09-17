@@ -48,7 +48,7 @@ which is what makes them unit-testable.
 | Module | Indexes | Trigger | Notes |
 | --- | --- | --- | --- |
 | `hooks` | `**/*.api.php` | any word in a file under the web root | Skipped inside `src/` unless the path contains `src/Hook/`, where the snippet becomes a `#[Hook]` method instead of a procedural function. |
-| `services` | `**/*.services.yml` | `service:` prefix | Resolves the class through `class:`, class-keyed autowired IDs, `alias:` / `'@id'` aliases, and `parent:`. Abstract services and named-autowire aliases (`Foo\Bar $baz`) stay in the registry for lookups but are not offered. |
+| `services` | `**/*.services.yml` | `service:` prefix | Resolves the class through `class:`, class-keyed autowired IDs, `alias:` / `'@id'` aliases, and `parent:`. Abstract, private (`public: false`), and named-autowire alias (`Foo\Bar $baz`) services stay in the registry for lookups but are not offered. |
 | `elements` | `**/Element/*.php` | `element:` prefix | Reads `#[FormElement]` / `#[RenderElement]` attributes, falling back to `@FormElement` / `@RenderElement` annotations. Properties listed under `Properties:` in the docblock become tab stops. |
 
 ### Hooks
@@ -71,8 +71,9 @@ docblock. Two snippet shapes are generated from each:
 registry available, so aliases and parents defined in other files resolve.
 The snippet assigns `\Drupal::service('id')` to a variable and adds an
 `assert($var instanceof Class)` line for type hinting; the assert is omitted
-when no class can be determined. Inside `src/` a `@todo` comment recommends
-dependency injection instead.
+when no class can be determined. A deprecated service gets a `// @deprecated`
+comment carrying the message from the YAML; inside `src/` a `@todo` comment
+recommends dependency injection instead.
 
 ### Elements
 
