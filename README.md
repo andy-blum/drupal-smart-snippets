@@ -28,7 +28,7 @@ The extension fully supports both traditional procedural hooks as well as the mo
 </details>
 
 ## Services
-Accessing Drupal services via `\Drupal::service()` often loses IDE type-hinting. This extension provides easy access to core and contrib services with proper data typing.
+Accessing Drupal services via `\Drupal::service()` often loses IDE type-hinting. This extension provides easy access to core and contrib services with proper data typing. Type `service:` followed by the service ID (e.g., `service: entity_type.manager`).
 
 - **Universal Support**: Works in both procedural `.module` files and OOP classes.
 - **DI Recommendation**: In OOP contexts (within `/src/`), snippets include a `@todo` suggestion to use proper Dependency Injection instead of the service locator pattern.
@@ -56,5 +56,5 @@ To ensure you get the best experience and avoid duplicate hook completions from 
 Extensions like PHP Intelephense provide their own hook completions by scanning `*.api.php` files. However, those completions often lack the smart casing, placeholder tab-stops, and modern Drupal support provided by this extension. By excluding these files from Intelephense, you ensure that **Drupal Smart Snippets** remains your primary source for Drupal IntelliSense.
 
 ## Contributions
-This project is maintained on [Github](https://github.com/andrewdavidblum/smart-drupal-snippets).
-Your bugs, feature requests, and pull requests are welcome.
+This project is maintained on [GitHub](https://github.com/andy-blum/drupal-smart-snippets).
+Your bugs, feature requests, and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how the extension works and how to run the tests.

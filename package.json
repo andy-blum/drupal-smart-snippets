@@ -6,7 +6,7 @@
   "publisher": "andrewdavidblum",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andy-blum/smart-drupal-snippets"
+    "url": "https://github.com/andy-blum/drupal-smart-snippets"
   },
   "engines": {
     "vscode": "^1.97.0"
