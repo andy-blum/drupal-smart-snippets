@@ -90,5 +90,19 @@ export function createIndexer<T>({ label, webRoot, glob, parse }: IndexerOptions
  * (always forward-slashed) rather than `fileName` so it works on Windows.
  */
 export function isInWebRoot(document: vscode.TextDocument, webRoot: vscode.Uri): boolean {
-  return document.uri.path.startsWith(webRoot.path.replace(/\/?$/, '/'));
+  return document.uri.path.startsWith(webRootPrefix(webRoot));
+}
+
+/**
+ * The document's path relative to the web root, with a leading slash
+ * (`/modules/custom/foo/src/Hook/FooHooks.php`). Use this rather than
+ * `uri.path` for directory checks so a checkout under `~/src/` does not
+ * match `/src/`.
+ */
+export function pathInWebRoot(document: vscode.TextDocument, webRoot: vscode.Uri): string {
+  return document.uri.path.slice(webRootPrefix(webRoot).length - 1);
+}
+
+function webRootPrefix(webRoot: vscode.Uri): string {
+  return webRoot.path.replace(/\/?$/, '/');
 }

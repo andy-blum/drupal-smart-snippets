@@ -5,7 +5,7 @@
  * `\\Drupal::service()` snippet for each service on the `service:` prefix.
  */
 
-import { createIndexer, isInWebRoot, type Indexer } from "../util/indexer";
+import { createIndexer, isInWebRoot, pathInWebRoot, type Indexer } from "../util/indexer";
 import { deprecationMessage, findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from "../lib/services";
 import { readText } from "../util/readText";
 import * as vscode from "vscode";
@@ -31,7 +31,7 @@ export default function serviceCompletions(webRoot: vscode.Uri): [vscode.Disposa
         return [];
       }
 
-      const isOOP = document.uri.path.includes('/src/');
+      const isOOP = pathInWebRoot(document, webRoot).includes('/src/');
       const services = index.all();
       const byName = new Map(services.map(service => [service.name, service.value]));
 

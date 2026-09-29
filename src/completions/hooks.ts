@@ -6,7 +6,7 @@
  * OOP `#[Hook]` method; elsewhere it is a procedural function.
  */
 
-import { createIndexer, isInWebRoot, type Indexer } from "../util/indexer";
+import { createIndexer, isInWebRoot, pathInWebRoot, type Indexer } from "../util/indexer";
 import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from "../lib/hooks";
 import { readText } from "../util/readText";
 import * as vscode from "vscode";
@@ -25,7 +25,7 @@ export default function hookCompletions(webRoot: vscode.Uri): [vscode.Disposable
         return [];
       }
 
-      const path = document.uri.path;
+      const path = pathInWebRoot(document, webRoot);
       const isOOPHookDir = path.includes('/src/Hook/');
 
       // Classes outside src/Hook can't implement hooks.
