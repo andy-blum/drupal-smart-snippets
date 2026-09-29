@@ -1,3 +1,4 @@
+import { escapeSnippet } from './snippet';
 import parser from "../util/parser";
 import type * as PHP from "php-parser";
 
@@ -43,7 +44,7 @@ export function deprecationMessage(docs: PHP.CommentBlock | undefined): string |
 function docblock(name: string, deprecation: string | null) {
   const lines = [`/**`, ` * Implements ${name}().`];
   if (deprecation !== null) {
-    lines.push(` *`, ` * @deprecated ${deprecation}`.trimEnd());
+    lines.push(` *`, ` * @deprecated ${escapeSnippet(deprecation)}`.trimEnd());
   }
   lines.push(` */`);
   return lines;

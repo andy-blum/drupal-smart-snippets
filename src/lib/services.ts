@@ -1,3 +1,4 @@
+import { escapeSnippet } from './snippet';
 import { parse } from 'yaml';
 
 export interface Service {
@@ -86,7 +87,7 @@ export function formatServiceSnippetString(name: string, fullClass: string | nul
   const lines = [];
 
   if (deprecation) {
-    lines.push(`// @deprecated ${deprecation}`);
+    lines.push(`// @deprecated ${escapeSnippet(deprecation)}`);
   }
 
   if (isOOP) {

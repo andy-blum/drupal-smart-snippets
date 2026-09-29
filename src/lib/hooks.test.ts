@@ -85,6 +85,14 @@ describe('formatProceduralHookSnippetString', () => {
     ]);
     expect(formatOOPHookSnippetString(name, definition, deprecation)).toContain(' * @deprecated in drupal:10.1.0');
   });
+
+  it('escapes snippet syntax in the deprecation message', () => {
+    const { name, definition } = byName.hook_legacy_thing;
+    const message = "Use $form['#foo'] or ${bar} instead. Path: C:\\x";
+    const escaped = " * @deprecated Use \\$form['#foo'] or \\${bar\\} instead. Path: C:\\\\x";
+    expect(formatProceduralHookSnippetString(name, definition, message)).toContain(escaped);
+    expect(formatOOPHookSnippetString(name, definition, message)).toContain(escaped);
+  });
 });
 
 describe('deprecationMessage', () => {

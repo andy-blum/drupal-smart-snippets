@@ -95,6 +95,11 @@ describe('formatServiceSnippetString', () => {
     ]);
   });
 
+  it('escapes snippet syntax in the deprecation message', () => {
+    const snippet = formatServiceSnippetString('old.thing', null, false, "Use $form['#foo'] or ${bar} instead.");
+    expect(snippet.split('\n')[0]).toBe("// @deprecated Use \\$form['#foo'] or \\${bar\\} instead.");
+  });
+
   it('makes a valid variable name from a class-keyed ID', () => {
     expect(formatServiceSnippetString('Drupal\\fixture\\Autowired', 'Drupal\\fixture\\Autowired', false))
       .toContain('${1:Drupal_fixture_Autowired_service}');
