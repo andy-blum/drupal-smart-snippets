@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { fixture } from './test-helpers';
-import { deprecationMessage, findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from './hooks';
+import { deprecationMessage, findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString, isProceduralOnly } from './hooks';
 
 const hooks = findHooks(fixture('fixture.api.php'), 'fixture.api.php');
 const byName = Object.fromEntries(hooks.map(hook => [hook.name, hook]));
@@ -152,5 +152,19 @@ describe('formatHook', () => {
     ].join('\n'))).toBe(true);
     expect(description).toContain('Old hook kept for the deprecation test.');
     expect(description).not.toContain('/**');
+  });
+});
+
+describe('isProceduralOnly', () => {
+  it('flags the hooks core rejects as #[Hook] methods', () => {
+    for (const name of ['hook_install', 'hook_uninstall', 'hook_schema', 'hook_requirements', 'hook_update_last_removed', 'hook_update_N', 'hook_update_10001', 'hook_post_update_fix_things']) {
+      expect(isProceduralOnly(name), name).toBe(true);
+    }
+  });
+
+  it('allows ordinary hooks', () => {
+    for (const name of ['hook_form_alter', 'hook_cron', 'hook_help', 'hook_updater_info', 'hook_schema_alter', 'hook_entity_update']) {
+      expect(isProceduralOnly(name), name).toBe(false);
+    }
   });
 });

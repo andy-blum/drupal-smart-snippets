@@ -151,6 +151,34 @@ export function formatOOPHookSnippetString(name: string, definition: string, dep
 }
 
 /**
+ * Hooks core refuses to collect from `#[Hook]` attributes; they must stay
+ * procedural (in the `.install` file). Mirrors `$staticDenyHooks` and the
+ * `preg_match` in `HookCollectorPass::checkForProceduralOnlyHooks()`. The
+ * core suite checks this copy against the fetched core checkout.
+ */
+export const PROCEDURAL_ONLY_HOOKS = [
+  'install',
+  'install_tasks',
+  'install_tasks_alter',
+  'removed_post_updates',
+  'requirements',
+  'schema',
+  'uninstall',
+  'update_dependencies',
+  'update_last_removed',
+];
+export const PROCEDURAL_ONLY_PATTERN = /^(post_update_|update_\d+$)/;
+
+/**
+ * Whether a `hook_*` name can only be implemented procedurally.
+ */
+export function isProceduralOnly(hookName: string): boolean {
+  const name = hookName.replace(/^hook_/, '');
+  // `hook_update_N` is the documented placeholder for `hook_update_1234`.
+  return PROCEDURAL_ONLY_HOOKS.includes(name) || PROCEDURAL_ONLY_PATTERN.test(name) || name === 'update_N';
+}
+
+/**
  * Formats the hook documentation from PHP comments into Markdown
  */
 export function formatHookDocumentation({docs, definition, name, isDeprecated}: {docs: PHP.CommentBlock | undefined, definition: string, name: string, isDeprecated: boolean}) {

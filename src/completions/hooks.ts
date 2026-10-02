@@ -7,7 +7,7 @@
  */
 
 import { createIndexer, isInWebRoot, pathInWebRoot, type Indexer } from "../util/indexer";
-import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from "../lib/hooks";
+import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString, isProceduralOnly } from "../lib/hooks";
 import { readText } from "../util/readText";
 import * as vscode from "vscode";
 
@@ -33,7 +33,10 @@ export default function hookCompletions(webRoot: vscode.Uri): [vscode.Disposable
         return [];
       }
 
-      return index.all().map(hook => {
+      // Core rejects these as #[Hook] methods; they belong in the .install file.
+      const hooks = isOOPHookDir ? index.all().filter(hook => !isProceduralOnly(hook.name)) : index.all();
+
+      return hooks.map(hook => {
         const completion = new vscode.CompletionItem(hook.name);
         completion.documentation = new vscode.MarkdownString(hook.description);
         completion.sortText = `000-${hook.name}`;

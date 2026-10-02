@@ -10,7 +10,7 @@
 import { describe, expect, it } from 'vitest';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString } from './hooks';
+import { findHooks, formatHook, formatOOPHookSnippetString, formatProceduralHookSnippetString, PROCEDURAL_ONLY_HOOKS, PROCEDURAL_ONLY_PATTERN } from './hooks';
 import { deprecationMessage, findServices, formatServiceDocumentation, formatServiceSnippetString, isCompletable, resolveClass } from './services';
 import { findElements, formatElement } from './elements';
 
@@ -67,6 +67,21 @@ describe.skipIf(!available)('Drupal core compatibility', () => {
         expect(description, hook.name).toMatch(/^\*\*Drupal Smart Snippets\*\*/);
         expect(description, hook.name).not.toContain('/**');
       }
+    });
+
+    it('mirrors the procedural-only deny list in HookCollectorPass', () => {
+      const source = readFileSync(join(root, 'core', 'lib', 'Drupal', 'Core', 'Hook', 'HookCollectorPass.php'), 'utf8');
+      const method = source.match(/function checkForProceduralOnlyHooks\([\s\S]*?\n  }\n/)?.[0];
+      expect(method, 'checkForProceduralOnlyHooks() not found; core restructured it').toBeDefined();
+
+      const list = method!.match(/\$staticDenyHooks = \[([^\]]*)\]/)?.[1];
+      const pattern = method!.match(/preg_match\('([^']+)'/)?.[1];
+      expect(list, 'could not read $staticDenyHooks').toBeDefined();
+      expect(pattern, 'could not read the preg_match pattern').toBeDefined();
+
+      const coreHooks = Array.from(list!.matchAll(/'([^']+)'/g), m => m[1]).sort();
+      expect(coreHooks).toEqual([...PROCEDURAL_ONLY_HOOKS].sort());
+      expect(pattern).toBe(`/${PROCEDURAL_ONLY_PATTERN.source}/`);
     });
   });
 
