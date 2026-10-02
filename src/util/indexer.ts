@@ -34,7 +34,9 @@ export function createIndexer<T>({ label, webRoot, glob, parse }: IndexerOptions
   };
 
   const indexDirectory = async (base: vscode.Uri) => {
-    const files = await vscode.workspace.findFiles(new vscode.RelativePattern(base, glob));
+    // `null` ignores the user's `files.exclude`; a hidden vendor/ or
+    // modules/contrib/ must still be indexed.
+    const files = await vscode.workspace.findFiles(new vscode.RelativePattern(base, glob), null);
     logger.appendLine(`Indexing ${label} from ${files.length} files...`);
     await Promise.all(files.map(indexFile));
     logger.appendLine(`Successfully indexed ${label}.`);
