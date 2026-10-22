@@ -80,7 +80,12 @@ describe.skipIf(!available)('Drupal core compatibility', () => {
       expect(pattern, 'could not read the preg_match pattern').toBeDefined();
 
       const coreHooks = Array.from(list!.matchAll(/'([^']+)'/g), m => m[1]).sort();
-      expect(coreHooks).toEqual([...PROCEDURAL_ONLY_HOOKS].sort());
+      // Denied on 11.x but removed from core main (Drupal 12); we keep them
+      // until Drupal 11 coverage is dropped.
+      const drupal11Only = ['hook_info', 'module_implements_alter'];
+      const stable = (hooks: readonly string[]) => hooks.filter(hook => !drupal11Only.includes(hook)).sort();
+      expect(stable(coreHooks)).toEqual(stable(PROCEDURAL_ONLY_HOOKS));
+      expect(PROCEDURAL_ONLY_HOOKS).toEqual(expect.arrayContaining(coreHooks));
       expect(pattern).toBe(`/${PROCEDURAL_ONLY_PATTERN.source}/`);
     });
   });

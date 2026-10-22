@@ -157,6 +157,8 @@ export function formatOOPHookSnippetString(name: string, definition: string, dep
  * core suite checks this copy against the fetched core checkout.
  */
 export const PROCEDURAL_ONLY_HOOKS = [
+  'hook_info', // remove after 11.x support ends.
+  'module_implements_alter', // remove after 11.x support ends.
   'install',
   'install_tasks',
   'install_tasks_alter',
