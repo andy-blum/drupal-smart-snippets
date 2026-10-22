@@ -1,0 +1,100 @@
+name: Test
+
+on:
+  pull_request:
+    # labeled/unlabeled so the changelog job re-evaluates the skip label.
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+  push:
+    branches: [main]
+  schedule:
+    # Weekly, so drift in Drupal core's main branch is caught between PRs.
+    - cron: '0 6 * * 1'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check-types
+      - run: npm run lint
+      - run: npm test
+
+  changelog:
+    # Every PR must touch CHANGELOG.md unless it carries the skip-changelog label.
+    if: github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'skip-changelog')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          if git diff --quiet "origin/$BASE...HEAD" -- CHANGELOG.md; then
+            echo "::error file=CHANGELOG.md::This pull request does not change CHANGELOG.md. Add an entry under [Unreleased], or apply the skip-changelog label."
+            exit 1
+          fi
+        env:
+          BASE: ${{ github.base_ref }}
+
+  drupal-core:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ref: [main, 11.x]
+    name: drupal-core (${{ matrix.ref }})
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run fetch-core
+        env:
+          DRUPAL_CORE_REF: ${{ matrix.ref }}
+      - run: npm run test:core
+
+  package:
+    # Builds a .vsix for the PR and links it from a sticky comment so the
+    # change can be installed and tried without a local build.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - id: meta
+        run: |
+          echo "version=$(node -p 'require("./package.json").version')" >> "$GITHUB_OUTPUT"
+          echo "sha=${HEAD_SHA::7}" >> "$GITHUB_OUTPUT"
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      - run: npm run package -- --out drupal-smart-snippets-${{ steps.meta.outputs.version }}-${{ steps.meta.outputs.sha }}.vsix
+      - id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: drupal-smart-snippets-${{ steps.meta.outputs.version }}-${{ steps.meta.outputs.sha }}
+          path: '*.vsix'
+          retention-days: 14
+      - uses: marocchino/sticky-pull-request-comment@v2
+        # A fork's PR token can't comment; the artifact is still attached to the run.
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        with:
+          header: vsix
+          message: |
+            ### Try this PR
+
+            [Download `drupal-smart-snippets-${{ steps.meta.outputs.version }}-${{ steps.meta.outputs.sha }}.vsix`](${{ steps.upload.outputs.artifact-url }}) (built from ${{ github.event.pull_request.head.sha }}; the download is a zip containing the `.vsix`).
+
+            Install with `code --install-extension <file>.vsix`, or from the Extensions view menu: **Install from VSIX...**
